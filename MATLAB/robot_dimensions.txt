@@ -1,0 +1,11 @@
+    jointr(:,1) = [0;       0;    8.75]; % base is 8.75 cm tall
+    jointr(:,2) = [0;    -1.54;  13.33]; % link 1 is 13.33 tall and displaced by 1.54 cm in the neg. y-direction
+    jointr(:,3) = [0;       25;      0]; % link 2 is 25 cm long
+    jointr(:,4) = [0;       20;      0]; % link 3 is 20 cm long
+    jointr(:,5) = [0;       0;       8]; % distance from 1st wrist coor. frame to 2nd is 8 cm
+    jointr(:,6) = [0;       0;       0]; % no distance between 2nd and 3rd
+    jointr(:,7) = [0;       0;    5.25]; % dist. from 3rd wrist coor. frame to the end effector is 5.25 cm
+
+
+% Total reach: base + link 1 is 22 cm tall (and is displaced by 1.54 cm in the neg. y-direction)
+% links extend to 58.25 cm from link 1.
