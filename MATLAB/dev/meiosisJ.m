@@ -1,3 +1,5 @@
+close all;clear;clc
+
 l1 = 87.5;
 l2 = 250;
 l3 = 200;
@@ -9,7 +11,7 @@ q = [0;0;0;0;0;0];
 % Constant manip offsets:
 qA = [pi/2;0;pi/2;0;0;0];
 d = [l1;0;0;l3;0;l4];
-a = [0;-l3;0;0;0;0];
+a = [-14.5;-l3;0;0;0;0];
 alpha = [pi/2;0;pi/2;-pi/2;pi/2;0];
 
 % Computations

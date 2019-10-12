@@ -1,4 +1,4 @@
-function Meiosis_draw(gamma)
+function meiosis_draw(gamma)
     theta1 = gamma(1);
     theta2 = gamma(2);
     theta3 = gamma(3);
