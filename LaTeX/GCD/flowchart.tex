@@ -1,0 +1,37 @@
+\begin{tikzpicture}[node distance = 14ex, auto]
+    \node [cloud] (init) {Initialize};
+    \node [decision, below of=init] (select) {Select Distance};
+    \node [block, below of=select] (drive) {Drive Forward};
+    \node [data, below of=drive] (encoder) {Encoder Count};
+    \node [data, below of=encoder, node distance=3cm] (ir) {Infrared Sense};
+    \node [block, below of=ir] (straight) {Straight};
+    \node [proc, left of=straight,node distance=15ex] (correct) {Correct Left \\ or Right};
+    \node [block, right of=encoder,node distance=40ex] (slow) {Slow Down};
+    \node [block, right of=drive,node distance=40ex] (stop) {Turning};
+    \coordinate [below of=correct,node distance=10ex] (pathtodrive) {};
+    \coordinate [left of=drive,node distance=25ex] (pathtodrive2) {};
+    \coordinate [right of=drive,node distance=20ex] (pathtoturning) {};
+    \coordinate [right of=stop,node distance=8ex] (pathtoturn) {};
+    \node [proc,right of=straight,node distance=13.75ex] (turn) {Turn Left\\ or Right};
+    \node [term, right of=select, node distance=40ex] (end) {Stop};
+    \coordinate [below of=straight,node distance=13ex] (pathtoselect) {};
+    \coordinate [left of=correct,node distance=15ex] (pathtoselect2) {};
+
+    \path [line] (init) -- (select);
+    \path [line] (select) -- (drive);
+    \path [line] (drive) -- (encoder);
+    \path [line] (encoder) -- node [above right]{Below} node[below right]{Distance}(ir);
+    \path [line] (encoder) -- node[below]{Threshold} node[above]{Slow} (slow);
+    \path [line] (ir) -- node[left]{Not Turning~~}(correct);
+    \path [line,-] (correct) -- (pathtodrive);
+    \path [line] (ir) -- (straight);
+    \path [line,-] (encoder) -| (pathtoturning);
+    \path [line] (pathtoturning) -- node [above]{Turn} node[below]{Threshold} (stop);
+    \draw [line,-] (straight) |- (pathtodrive) -| (pathtodrive2);
+    \path [line] (slow) |- (ir);
+    \path [line] (stop) -- (pathtoturn) |- (ir);
+    \path [line] (ir) -- node[right]{~~Turning} (turn);
+    \path [line] (turn) |- (pathtoselect) -| (pathtoselect2) |- (select);
+    \path [line] (pathtodrive2) -- (drive);
+    \path [line] (select) -- node [above]{End of Maze} (end);
+\end{tikzpicture}
