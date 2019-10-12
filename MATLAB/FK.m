@@ -1,14 +1,14 @@
 function [X] = FK(gamma)
     T = zeros(3,3,7);
     T(:,:,1) = rotz(gamma(1));
-    T(:,:,2) = T(:,:,1)*rotz(gamma(2))*roty(pi/2);
+    T(:,:,2) = T(:,:,1)*rotx(gamma(2))*roty(pi/2);
     T(:,:,3) = T(:,:,2)*rotz(gamma(3));
-    T(:,:,4) = T(:,:,3)*rotz(gamma(4))*rotx(-pi/2);
-    T(:,:,5) = T(:,:,4)*rotz(gamma(5))*rotx(pi/2);
-    T(:,:,6) = T(:,:,5)*rotz(gamma(6))*rotx(-pi/2);
+    T(:,:,4) = T(:,:,3)*roty(gamma(4))*rotx(-pi/2);
+    T(:,:,5) = T(:,:,4)*roty(gamma(5));
+    T(:,:,6) = T(:,:,5)*rotz(gamma(6));
     
-    jointr(:,1) = [0;       0;    8.75];
-    jointr(:,2) = [0;    -1.54;  13.33];
+    jointr(:,1) = [0;       0;       8];
+    jointr(:,2) = [0;    -1.54;  14.08];
     jointr(:,3) = [0;       25;      0];
     jointr(:,4) = [0;       20;      0];
     jointr(:,5) = [0;       0;       8];
