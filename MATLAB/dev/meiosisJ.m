@@ -2,8 +2,8 @@
 
 l1 = 8 + 14.08;
 l2 = 25;
-l3 = 20;
-l4 = 13.25;
+l3 = 28;
+l4 = 5.25;
 offset = -1.54;
 
 % Joint Rotations (theta):
@@ -12,7 +12,7 @@ q = [0;0;0;0;0;0];
 % Constant manip offsets:
 qA    = [pi/2;     0; pi/2;      0;   0;  0];
 d     = [  l1;     0;    0;     l3;   0; l4];
-a     = [-offset; -l2;    0;     0;    0;  0];
+a     = [offset; l2;    0;     0;    0; 0];
 alpha = [pi/2;     0; pi/2; -pi/2; pi/2;  0];
 
 % Computations
