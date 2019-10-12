@@ -28,7 +28,7 @@ function meiosis_draw(gamma)
 
     %Relative Positions:
     rBfromI = [0;       0;       0];
-    r1fromB = [0;       0;       8]; % base is 8.75 cm tall
+    r1fromB = [0;       0;       8]; % base is 8 cm tall
     r2from1 = [0;    -1.54;  14.08]; % link 1 is 13.33 tall and displaced by 1.54 cm in the neg. y-direction
     r3from2 = [0;       25;      0]; % link 2 is 25 cm long
     r4from3 = [0;       20;      0]; % link 3 is 20 cm long
