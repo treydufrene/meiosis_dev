@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  10 OCT 2019 22:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  12 OCT 2019 09:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1500,20 +1500,26 @@ File: images/base_callouts.png Graphic file (type png)
 <use images/base_callouts.png>
 Package pdftex.def Info: images/base_callouts.png  used on input line 126.
 (pdftex.def)             Requested size: 1434.10432pt x 810.02426pt.
- [2 <./images/base_callouts.png>] [3] (./concept.aux) ) 
+ [2 <./images/base_callouts.png>]
+<images/eblock.jpg, id=31, 543.02875pt x 522.95375pt>
+File: images/eblock.jpg Graphic file (type jpg)
+<use images/eblock.jpg>
+Package pdftex.def Info: images/eblock.jpg  used on input line 152.
+(pdftex.def)             Requested size: 352.31625pt x 339.30147pt.
+ [3 <./images/eblock.jpg>] (./concept.aux) ) 
 Here is how much of TeX's memory you used:
- 41573 strings out of 494091
- 938223 string characters out of 6163523
- 1073368 words of memory out of 5000000
- 44570 multiletter control sequences out of 15000+600000
+ 41579 strings out of 494091
+ 938332 string characters out of 6163523
+ 1072376 words of memory out of 5000000
+ 44575 multiletter control sequences out of 15000+600000
  580887 words of font info for 56 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  62i,9n,92p,10440b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on concept.pdf (5 pages, 4046351 bytes).
+Output written on concept.pdf (5 pages, 4074193 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 50 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

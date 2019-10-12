@@ -139,11 +139,24 @@ From \emph{Figure \ref{fig:base}},
   \item \emph{Power Supply:}
   The power supply will be housed in the base as well; this allows the system to be more accessible and therefore more modifiable, where the end-user can easily expand the system to fulfill their needs.
 \end{enumerate}
-
-\subsection{Joints 1 \& 2}
-Much of the system’s physical design will be determined during the actual design of the manipulator, after the specifications stage. The figure below shows the basic overall conceptual design of the manipulator, having all six rotational joints, the latter three of which being in a spherical wrist configuration.
-\newpage
 %
+% \subsection{Joints 1 \& 2}
+% Much of the system’s physical design will be determined during the actual design of the manipulator, after the specifications stage. The figure below shows the basic overall conceptual design of the manipulator, having all six rotational joints, the latter three of which being in a spherical wrist configuration.
+\newpage
+
+\section{System Functions -- Block Diagrams}
+\subsection{Electrical System}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.75\textwidth]{eblock}
+  \caption{Electrical System Block Diagram}
+  \label{fig:eblock}
+\end{figure}
+%TODO Edit
+Figure 3.1 shows that the electrical systems of the manipulator will be relatively simple, with power being supplied by the standard 120V AC available from wall outlets. A power converter will be used to adapt the AC voltage to the required voltages for each component. To control the system, a Raspberry Pi will perform the necessary calculations for motor control (described below in software). It will then send these signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first rotational joint between the base and the first link will be actuated by a DC motor with an encoder to minimize cost.
+
+
 % \center
 % \null\vspace{20ex}
 % \begin{tikzpicture}

@@ -1,4 +1,4 @@
-PWD /Users/treydufrene/Google Drive/ERAU/Fall_19/ME407/CAPSTONE/Deliverables/Group Conceptual Design/LaTeX
+PWD /Users/treydufrene/GitHub/meiosis_dev/LaTeX/GCD
 INPUT /usr/local/texlive/2018basic/texmf.cnf
 INPUT /usr/local/texlive/2018basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2018basic/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -466,6 +466,9 @@ INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT images/base_callouts.png
 INPUT ./images/base_callouts.png
 INPUT ./images/base_callouts.png
+INPUT images/eblock.jpg
+INPUT ./images/eblock.jpg
+INPUT ./images/eblock.jpg
 INPUT concept.aux
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
