@@ -75,5 +75,3 @@ function Meiosis_draw(gamma)
     set(gca,'projection','perspective')
     hold off
 end
-
-% comment
