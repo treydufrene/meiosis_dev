@@ -1,4 +1,4 @@
-function gamma = MeiosisIK(pos,R)
+function gamma = meiosisIK(pos,R)
     
     eOff = [0;0;5.25];
     npos = pos - R*eOff;
@@ -25,4 +25,6 @@ function gamma = MeiosisIK(pos,R)
     t6 = atan2(-sin(t1)*R(1,1)+cos(t1)*R(2,1),sin(t1)*R(1,2)-cos(t1)*R(2,2));
 
     gamma = [t1,t2,t3,t4,t5,t6].';
+    
+    
 end
