@@ -25,30 +25,12 @@ r5from4 = [0;       0;       8]; % distance from 1st wrist coor. frame to 2nd is
 r6from5 = [0;       0;       0]; % no distance between 2nd and 3rd
 r7from6 = [0;       0;    5.25]; % dist. from 3rd wrist coor. frame to the end effector is 5.25 cm
 
-%Orientations wrt I:     
-T1 = rotz(theta1);
-T2 = T1*rotx(theta2)*roty(pi/2);
-T3 = T2*rotz(theta3);
-T4 = T3*roty(theta4)*rotx(-pi/2);
-T5 = T4*roty(theta5);
-T6 = T5*rotz(theta6);
-
-%Positions wrt I:
-rB = rBfromI;
-r1 = rB + r1fromB;
-r2 = r1 + T1*r2from1;
-r3 = r2 + T2*r3from2;
-r4 = r3 + T3*r4from3;
-r5 = r4 + T4*r5from4;
-r6 = r5 + T5*r6from5;
-
 % Constant manip offsets:
 qA    = [pi/2;     0; pi/2;      0;   0;  0];
 d     = [  l1;     0;    0;     l3;   0; l4];
 a     = [offset; l2;    0;     0;    0; 0];
 alpha = [pi/2;     0; pi/2; -pi/2; pi/2;  0];
 
-% Computations
 for i = 1:6
     A(:,:,i) = rotzh(q(i) + qA(i)) * transzh(d(i)) * transxh(a(i)) * rotxh(alpha(i)); 
 end
@@ -65,14 +47,13 @@ end
 
 % Desired Orientation:
 R = [...
-   0.0000    1.0000    0.0000;...
+    0.0000    1.0000    0.0000;...
     0.0000   0.0000    1.0000;...
     1.0000    0.0000   0.0000];
-% Desired EE XYZ:
+% Desired EE cartesian:
 od = [0.0000;...
       56.7100;...
       22.0800];
-% od = od + [0;1.54;0];
 
 % Wrist Center:
 oc = od - d(6)*R*[0;0;1];
@@ -105,25 +86,17 @@ gamma = [t1;t2;t3;t4;t5;t6];
 meiosis_draw(gamma)
 
 
+J = zeros(6);
+J(1:3,1) = cross([0;0;1],(o(1:3,6) - o(1:3,1)));
+J(1:3,2) = cross(z(1:3,1),(o(1:3,6) - o(1:3,1)));
+J(1:3,3) = cross(z(1:3,2),(o(1:3,6) - o(1:3,2)));
+J(1:3,4) = cross(z(1:3,3),(o(1:3,6) - o(1:3,3)));
+J(1:3,5) = cross(z(1:3,4),(o(1:3,6) - o(1:3,4)));
+J(1:3,6) = cross(z(1:3,5),(o(1:3,6) - o(1:3,5)));
 
+% J(4:6,1) = [0;0;1];
 
-
-
-
-
-
-
-% J = zeros(6);
-% J(1:3,1) = cross([0;0;1],(o(1:3,6) - o(1:3,1)));
-% J(1:3,2) = cross(z(1:3,1),(o(1:3,6) - o(1:3,1)));
-% J(1:3,3) = cross(z(1:3,2),(o(1:3,6) - o(1:3,2)));
-% J(1:3,4) = cross(z(1:3,3),(o(1:3,6) - o(1:3,3)));
-% J(1:3,5) = cross(z(1:3,4),(o(1:3,6) - o(1:3,4)));
-% J(1:3,6) = cross(z(1:3,5),(o(1:3,6) - o(1:3,5)));
-% 
-% % J(4:6,1) = [0;0;1];
-% 
-% for i = 1:6
-%     J(4:6,i) = z(1:3,i);
-% end
+for i = 1:6
+    J(4:6,i) = z(1:3,i);
+end
 

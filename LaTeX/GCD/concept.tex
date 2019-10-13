@@ -34,6 +34,8 @@
 \usepackage{BOONDOX-cal} % fancy mathtype script
 \usepackage{fancyhdr}
 \usepackage{flowchart}
+\usepackage{color, colortbl}
+
 
 \setcounter{secnumdepth}{5}
 \renewcommand{\bibname}{References}
@@ -56,11 +58,11 @@
 \usetikzlibrary{positioning, circuits.logic.US}
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=white!20,
-    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+    text width=5em, text badly centered, node distance=3.5cm, inner sep=0pt]
 \tikzstyle{term} = [rectangle, draw, fill=white!20,
     text width=5em, text centered, rounded corners, minimum height=2em]
 \tikzstyle{block} = [rectangle, draw, fill=white!20,
-    text width=4em, text centered, minimum height=4em]
+    text width=5em, text centered, minimum height=4em]
 \tikzstyle{line} = [draw, -latex']
 \tikzstyle{cloud} = [draw, ellipse,fill=white!20, node distance=3cm,
     minimum height=2em]
@@ -110,7 +112,7 @@ The terminator T-2000 is a science-fiction spectacle of a manipulator-- until yo
 \section{Physical System Overview}
 \emph{Figure \ref{fig:overall}} shows the overall design for the manipulator. Much of the system’s physical design will be determined during the actual design of the manipulator, after the specifications stage. The figure below shows the basic overall conceptual design of the manipulator, having all six rotational joints, the latter three of which being in a spherical wrist configuration.
 
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
   \includegraphics[frame, width=.75\textwidth]{overall_render}
   \caption{Overall System Conceptual Design }
@@ -121,7 +123,7 @@ The colored links in \emph{Figure \ref{fig:overall}} distinguish the different j
 \newpage
 \subsection{Base}
 The base of the manipulator will house several of the electronic components, such as the computational sytem, power supply, and motor controller. A cross section of the base can be seen in \emph{Figure \ref{fig:base}}.
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
   \includegraphics[frame, width=.75\textwidth]{base_callouts}
   \caption{Manipulator Base with Callouts}
@@ -139,50 +141,82 @@ From \emph{Figure \ref{fig:base}},
   \item \emph{Power Supply:}
   The power supply will be housed in the base as well; this allows the system to be more accessible and therefore more modifiable, where the end-user can easily expand the system to fulfill their needs.
 \end{enumerate}
-%
-% \subsection{Joints 1 \& 2}
-% Much of the system’s physical design will be determined during the actual design of the manipulator, after the specifications stage. The figure below shows the basic overall conceptual design of the manipulator, having all six rotational joints, the latter three of which being in a spherical wrist configuration.
 \newpage
+\subsection{Links}
+\emph{Figure \ref{fig:link1}} shows a few of the key features of our design. Point a shows the connection point for the end effector. The dimensions are the standard used by the Sawyer manipulator. This will likely be adjusted depending on the desired end effector. Point b shows the differential gearbox that will be used in the wrist of the robot. This allows for saved space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) which are tightened by screws.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame,width=.75\textwidth]{link_callouts}
+  \caption{Drawing Showing Key Features of Design}
+  \label{fig:link1}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame,width=.5\textwidth]{link_cross_section}
+  \caption{Drawing Showing Link Cross Section}
+  \label{fig:link2}
+\end{figure}
+\newpage
+\emph{Figure \ref{fig:link2}} shows the cross section for the design of the links. This features two clamps that hold the aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part. This allows for imprecise measurements in the aluminum tube that could be caused by the end user. The aluminum tube will be cut shorter than the actual required distance which will result in gaps between the tubing and the part (b). The proper distance will be achieved by the 3D printed parts lining up at point c.
 
 \section{System Functions}
-The system consists of two primary categories, the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm flowchart for the computational system as well as the intended end-user interface platform. 
-\subsection{Electrical System}
-
-\begin{figure}[h]
+The system consists of two primary categories, the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm flowchart for the computational system.
+\subsection{Electrical}
+\begin{figure}[htp]
   \centering
-  \includegraphics[width=.75\textwidth]{eblock}
+  \includegraphics[width=.5\textwidth]{eblock}
   \caption{Electrical System Block Diagram}
   \label{fig:eblock}
 \end{figure}
 
 \emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple, with power being supplied by the standard 120V AC available from wall outlets. A power converter will be used to adapt the AC voltage to the required voltages for each component. To control the system, a Raspberry Pi will perform the necessary calculations for motor control (described below in software). It will then send these signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first rotational joint between the base and the first link will be actuated by a DC motor with an encoder to minimize cost.
 
+\subsection{Software}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.85\textwidth]{sblock}
+  \caption{Software Flowchart}
+  \label{fig:sblock}
+\end{figure}
 
-% \center
-% \null\vspace{20ex}
-% \begin{tikzpicture}
-%   \draw (-1cm,0) -- (0,0) coordinate (base);
-%   \draw (0,0) -- (1cm,0);
-%   \draw (-1cm,-.5cm) -- (-1cm,0);
-%   \draw (1cm,-.5cm) -- (1cm,0);
-%   \node[cylinder, draw, rotate=90, label=1,
-%   minimum height=1.5cm, minimum width=1cm] at (0,1.5cm) (1) {};
-%   \draw (base) -- (1);
-%
-%
-% \end{tikzpicture}
+Similar to the electrical system, the software required for the system to function is not complex. \emph{Figure \ref{fig:sblock}} shows how the software will receive the desired pose or poses that the user would like the manipulator to reach and calculate the inverse kinematics to find the necessary joint angles to reach the pose. The waveforms/desired angles will be sent to the respective drivers/motors, and if a motor requires feedback to reach the correct position, positional information will be sent back to the computer so that the proper waveform will be sent to the respective motor at all times. When the motors have reached their desired positions, the controller will run the end effector function if it is called. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
 
-% \section{Electrical System}
-% The electrical-mechanical overview is shown below
-% \subsection{Electrical System Flowchart}
-%
-% \begin{figure}[ht]
-%   \centering
-%   \input{flowchart}
-%   \caption{Flow}
-%   % \label{fig:overall}
-% \end{figure}
+\section{Parts List and Manufacturing}
+Our costs are estimated from all specific components we invision requiring with a factor of safety. The 20\% factor of safety is the sum of 20\% of the cost for each item listed in Table 4.1 and is intended to account for shipping, taxes, and replacement/additional parts. Including this factor of safety, we satisfy requirement 2.1.2 with a predicted budget of \$586.80. 
 
+\begin{table}[htp]
+  \center
+  \caption{Predicted List of Parts}
+  \label{table:costs}
+  \begin{tabular}{C{3.5cm}cc|cc}
+  \textbf{Part} & \textbf{Unit Cost (USD)} & \textbf{Qty} & \textbf{Cost (USD)} & \textbf{Source} \\ \hline
+  2kg PLA & 32 & 1 & 32 & Amazon \\
+  Smart Servo & 140 & 2 & 280 & Trossen Robotics \\
+  Lower Torque Smart Servo (6 pack) & 225 & 1 & 225 & Trossen Robotics \\
+  DC Motor w/ Encoder & 30 & 1 & 30 & Robot Shop \\
+  Power Supply & 16 & 1 & 16 & Compt. Dist. Inc. \\
+  Rasberry Pi 3 & 35 & 1 & 35 & Adafruit \\
+  3 Pin Cables & 9 & 1 & 9 & Amazon \\
+  4 Pin Cables & 13 & 1 & 13 & Amazon \\
+  Gripper & 25 & 1 & 25 & Trossen Robotics \\
+  Factor of Safety (20\%) & & & 133 & \\
+  & & \textbf{Total} & 798 & \\
+  \end{tabular}
+\end{table}
+
+Our motor costs are approximated from three motor types. For use in joint one is one stepper motor [1]. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints two and three are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning [2]. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints two and three are not free to rotate \(360^{\circ}\). Finally, for the spherical wrist are three lower cost, lower torque smart servos, which also have PD control [3]. The gripper will also be actuated with one of these servos.\\
+
+Since each motor has the same voltage requirement of 12V and our manipulator is powered by 120V AC, we also account for the cost of a power supply. The power and communication buses are handled by four pin wires for the smart servos and three pin wires for the lower-cost smart servos. 2kg of PLA filament allows all components of the manipulator to be 3D printed with 100\% infill, making it an overestimate. With a 20]\% factor of safety to account for shipping, taxes, and unexpected part purchases, we are under our team budget of \$800 and design budget of \$1000.
+
+
+
+Figure 4.1 shows approximately half of our time for Fall semester will be used modeling the manipulator’s kinematics, motor dynamics, and physical links with the second half dedicated to interfacing parts, wiring, and testing components. Nonetheless, the manipulator should have a functional guise by the semester’s end, however, we anticipate our design will require further iterations before it satisfies all our requirements. We do not account for a refined control interface usable by novice robotics students, rather functional simulations and programing for the manipulator.
+
+
+\section{Decision Matrices}
+The design for the end effector attachment varied across each of the team member’s original conceptual designs, therefore a decision matrix was constructed in order to objectively decide on the design chosen for the attachment style.
 
 
 % Example citations:
@@ -229,7 +263,7 @@ The system consists of two primary categories, the electrical and software syste
 % This is some inline mathtype: $u = \frac{1}{2}mv^2$, (notice the fluidity and smaller size than the other mathtype)
 
 % \section{A Level Heading}
-% \begin{figure}[h]
+% \begin{figure}[htp]
 %   \centering
 %   \includegraphics[width=.75\textwidth]{filename}
 %   \caption{Figure with Callouts}
