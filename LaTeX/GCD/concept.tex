@@ -35,7 +35,7 @@
 \usepackage{fancyhdr}
 \usepackage{flowchart}
 \usepackage{color, colortbl}
-
+\usepackage{tocloft}
 
 \setcounter{secnumdepth}{5}
 \renewcommand{\bibname}{References}
@@ -70,9 +70,8 @@
     trapezium right angle=-70,draw, minimum height=1cm]
 \tikzstyle{proc} = [draw, predproc, align=center,
     minimum width=4em, minimum height=1cm]
-
+\setlength{\cftbeforetoctitleskip}{-2em}
 \newcommand{\Lag}{\mathcal{L}} % lagrangian L
-
 \begin{document}
 \normalem
 \input{coverpage}
@@ -241,85 +240,63 @@ Gripper Interchangability & & & & & & & & & & & & & & \cellcolor{Gray} & \cellco
 
 
 \emph{Table \ref{table:gantt}} shows approximately half of our time for Fall semester will be used modeling the manipulator’s kinematics, motor dynamics, and physical links with the second half dedicated to interfacing parts, wiring, and testing components. Nonetheless, the manipulator should have a functional guise by the semester’s end, however, we anticipate our design will require further iterations before it satisfies all our requirements. We do not account for a refined control interface usable by novice robotics students, rather functional simulations and programing for the manipulator.
-\newpage
 
 \section{Decision Matrices}
 The design for the end effector attachment varied across each of the team member’s original conceptual designs, therefore a decision matrix was constructed in order to objectively decide on the design chosen for the attachment style.
 
 \begin{table}[htp]
   \center
-  \caption{Decision}
-  % \label{table:gantt}
-\begin{tabular}{c|cccc}
-End Effector Removability & Ease of Use & Manufacturability & Durability & Total \\ \hline
-Weighting & 3.6 & 5 & 7 & \\
+  \caption{End Effector Attachment Design Decision Matrix}
+  \label{table:ee}
+\begin{tabular}{C{3.5cm}|cccc}
+\textbf{EE Attachment} & \textbf{Ease of Use} & \textbf{Manufacturability} & \textbf{Durability} & Total \\
+Weighting & 3.6 & 5 & 7 & \\\hline
 Screw Connections & 6.8 & 8.8 & 9.8 & \textbf{137.08} \\
 Snap Fit Joint & 8.6 & 5 & 2.2 & 71.36 \\
 Threaded End Effector & 6.3 & 5.4 & 7.3 & 100.78 \\
 \end{tabular}
 \end{table}
 
+As shown in \emph{Table \ref{table:ee}}, the design that is the optimal combination of  ease of use, the most manufacturable, and the most durable is the screw connections design.
+
+\begin{table}[htp]
+  \center
+  \caption{Material Choice Decision Matrix}
+  \label{table:mat}
+\small\begin{tabular}{c|cccccc}
+\textbf{Material} & \textbf{Cost} & \textbf{Weight} & \textbf{Accessibility} & \textbf{Manufacturability} & \textbf{Durability} & Total \\\normalsize
+Weighting & 9.2 & 6.6 & 8 & 6.4 & 5.4 & \\\hline
+3D Printed & 8 & 9 & 8 & 9.4 & 5 & 284.16 \\
+Aluminum & 4 & 5.8 & 5.8 & 6.6 & 9.2 & 213.4 \\
+Combination & 8 & 7.8 & 7 & 9 & 9.2 & \textbf{288.36} \\
+\end{tabular}
+\end{table}
+As seen in \emph{Table \ref{table:mat}}, the primary material chosen to create the manipulator is PLA / 3D printed material, this is due to its low cost and weight, accessibility and manufacturability; additionally, by using primarily 3D printed parts, the end-user’s cost is potentially lower and their ability to modify parts if desired is much easier.
+
+\begin{table}[htp]
+  \center
+  \caption{Computing Choice Decision Matrix}
+  \label{table:comp}
+\begin{tabular}{c|ccccc}
+\textbf{Computing System} & \textbf{Cost} & \textbf{Capabilities} & \textbf{Ease of Use} & \textbf{Independance} & Total \\
+Weights & 10 & 4.2 & 7.6 & 4.2 & \\ \hline
+RPi & 7.9 & 6 & 9 & 10 & \textbf{214.6} \\
+Jetson & 1 & 7 & 7 & 9 & 130.4 \\
+RPi + Arduino & 4.8 & 7 & 8 & 10 & 180.2 \\
+Arduino & 9 & 4 & 9 & 3 & 187.8 \\
+B Black & 1.2 & 7 & 7 & 10 & 136.6 \\
+B Green & 5 & 7 & 6 & 9 & 162.8 \\
+\end{tabular}
+\end{table}
+
+\emph{Table \ref{table:comp}} shows the decision matrix used to determine the computing system to be used in the mechatronic system. The primary attributes determined most important in the computing system are cost and ease of use, being that the targeted end-user will be performing hands-on programming of the system and one of the highest priorities in the system is the final cost.
 % Example citations:
 % \cite{DBLP:journals/corr/JohnsonAL16}
 % \cite{DBLP:journals/corr/abs-1803-09820}
 % \cite{DBLP:journals/corr/RonnebergerFB15}
 
-% \section{A Level Heading}
-% Sample table with tabulated data and reference label
-% \begin{table}[htp]
-%   \center
-%   \caption{DH Table for 6 DOF Manipulator}
-%   \label{table:dh}
-%   \color{red} bold col headers, table times new roman, 12pt., centered, \color{black} \\
-%   \begin{tabular}{C{1cm}|C{1cm}C{2cm}C{1cm}C{1cm}}
-%     \textbf{DH} & $d_i$ & $\theta_i$ & $a_i$ & $\alpha_i$ \\ \hline
-%     1 & 280 & $q_1 - \pi$ & 0 & $\sfrac{\pi}{2}$ \\
-%     2 & 0 & $q_2 + \sfrac{\pi}{2}$ & 210 & 0 \\
-%     3 & 0 & $q_3 - \sfrac{\pi}{2}$ & 75 & -$\sfrac{\pi}{2}$ \\
-%     4 & 210 & $q_4$ & 0 & $\sfrac{\pi}{2}$ \\
-%     5 & 0 & $q_5 - \pi$ & 0 & $\sfrac{\pi}{2}$ \\
-%     6 & 70 & $q_6$ & 0 & 0 \\
-%   \end{tabular}
-% \end{table}
-% here is the table reference callout
-% \emph{Table \ref{table:dh}} shows the Denavit–Hartenberg parameters for the manipulator.
 
-% Here is a centered mathtype with no number
-% $$
-% \vec{v}_G =
-% \left[\dot{\ell}_s\sin(\theta) + \frac{\ell_b\dot{\phi}\cos(\phi)}{2} +
-% \ell_s\dot{\theta}\cos(\theta)\right]\hat{\textrm{\i}} +
-% \left[\frac{\ell_b\dot{\phi}\sin(\phi)}{2} -
-% \dot{\ell}_s\cos(\theta) + \ell_s\dot{\theta}\sin(\theta)\right]\hat{\textrm{\j}}
-% $$
-
-% Here is a centered equation with number and reference label
-% \begin{equation}
-% \ddot{\theta} = \frac{d}{dt}\left(\frac{\partial\Lag}{\partial\dot{\theta}}\right) -
-% \frac{\partial\Lag}{\partial\theta} = \big(Q_{\theta}\big)_{\text{non}}
-% \label{eq:lagtheta}
-% \end{equation}
-
-% This is some inline mathtype: $u = \frac{1}{2}mv^2$, (notice the fluidity and smaller size than the other mathtype)
-
-% \section{A Level Heading}
-% \begin{figure}[htp]
-%   \centering
-%   \includegraphics[width=.75\textwidth]{filename}
-%   \caption{Figure with Callouts}
-%   \label{fig:figname}
-% \end{figure}
-
-% \begin{enumerate}[label=\alph*.]
-%   \item Description for callout a
-%   \item Description for callout b
-% \end{enumerate}
-
-% As seen in \emph{Figure \ref{fig:figname}}
-
-% \newpage
-% \bibliographystyle{plain}
-% \bibliography{JohnsonAL16,abs-1803-09820,RonnebergerFB15}
+\newpage
 
 % \newpage
 % \section*{Acknowledgements \& Attributions}

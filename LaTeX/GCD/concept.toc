@@ -6,4 +6,4 @@
 \contentsline {subsection}{\numberline {3.1}Electrical}{4}
 \contentsline {subsection}{\numberline {3.2}Software}{5}
 \contentsline {section}{\numberline {4}Parts List and Manufacturing}{6}
-\contentsline {section}{\numberline {5}Decision Matrices}{8}
+\contentsline {section}{\numberline {5}Decision Matrices}{7}
