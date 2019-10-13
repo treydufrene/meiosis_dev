@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  13 OCT 2019 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  13 OCT 2019 13:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1520,7 +1520,7 @@ Package pdftex.def Info: images/link_cross_section.png  used on input line 157.
 File: images/eblock.jpg Graphic file (type jpg)
 <use images/eblock.jpg>
 Package pdftex.def Info: images/eblock.jpg  used on input line 169.
-(pdftex.def)             Requested size: 234.8775pt x 226.19832pt.
+(pdftex.def)             Requested size: 258.36668pt x 248.82054pt.
 
 [4 <./images/eblock.jpg>]
 <images/sblock.jpg, id=41, 728.7225pt x 543.02875pt>
@@ -1528,25 +1528,20 @@ File: images/sblock.jpg Graphic file (type jpg)
 <use images/sblock.jpg>
 Package pdftex.def Info: images/sblock.jpg  used on input line 179.
 (pdftex.def)             Requested size: 399.29463pt x 297.53984pt.
- [5 <./images/sblock.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
-
- []
-
-[6] [7] (./concept.aux) ) 
+ [5 <./images/sblock.jpg>] [6] [7] [8] (./concept.aux) ) 
 Here is how much of TeX's memory you used:
- 41644 strings out of 494091
- 939394 string characters out of 6163523
- 1078672 words of memory out of 5000000
- 44633 multiletter control sequences out of 15000+600000
- 583885 words of font info for 57 fonts, out of 8000000 for 9000
+ 41648 strings out of 494091
+ 939442 string characters out of 6163523
+ 1098680 words of memory out of 5000000
+ 44636 multiletter control sequences out of 15000+600000
+ 586875 words of font info for 58 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 62i,11n,92p,10440b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,92p,10440b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on concept.pdf (9 pages, 4409231 bytes).
+Output written on concept.pdf (10 pages, 4412661 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

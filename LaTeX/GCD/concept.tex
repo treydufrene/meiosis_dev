@@ -166,7 +166,7 @@ The system consists of two primary categories, the electrical and software syste
 \subsection{Electrical}
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=.5\textwidth]{eblock}
+  \includegraphics[width=.55\textwidth]{eblock}
   \caption{Electrical System Block Diagram}
   \label{fig:eblock}
 \end{figure}
@@ -184,7 +184,7 @@ The system consists of two primary categories, the electrical and software syste
 Similar to the electrical system, the software required for the system to function is not complex. \emph{Figure \ref{fig:sblock}} shows how the software will receive the desired pose or poses that the user would like the manipulator to reach and calculate the inverse kinematics to find the necessary joint angles to reach the pose. The waveforms/desired angles will be sent to the respective drivers/motors, and if a motor requires feedback to reach the correct position, positional information will be sent back to the computer so that the proper waveform will be sent to the respective motor at all times. When the motors have reached their desired positions, the controller will run the end effector function if it is called. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
 
 \section{Parts List and Manufacturing}
-Our costs are estimated from all specific components we invision requiring with a factor of safety. The 20\% factor of safety is the sum of 20\% of the cost for each item listed in Table 4.1 and is intended to account for shipping, taxes, and replacement/additional parts. Including this factor of safety, we satisfy requirement 2.1.2 with a predicted budget of \$586.80. 
+Our costs are estimated from all specific components we invision requiring with a factor of safety. The 20\% factor of safety is the sum of 20\% of the cost for each item listed in Table 4.1 and is intended to account for shipping, taxes, and replacement/additional parts. Including this factor of safety, we satisfy requirement 2.1.2 with a predicted budget of \$586.80.
 
 \begin{table}[htp]
   \center
@@ -206,18 +206,58 @@ Our costs are estimated from all specific components we invision requiring with 
   \end{tabular}
 \end{table}
 
-Our motor costs are approximated from three motor types. For use in joint one is one stepper motor [1]. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints two and three are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning [2]. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints two and three are not free to rotate \(360^{\circ}\). Finally, for the spherical wrist are three lower cost, lower torque smart servos, which also have PD control [3]. The gripper will also be actuated with one of these servos.\\
+Our motor costs are approximated from three motor types. For use in joint one is one stepper motor [1]. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints two and three are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning [2]. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints two and three are not free to rotate \(360^{\circ}\). Finally, for the spherical wrist are three lower cost, lower torque smart servos, which also have PD control [3]. The gripper will also be actuated with one of these servos.
 
 Since each motor has the same voltage requirement of 12V and our manipulator is powered by 120V AC, we also account for the cost of a power supply. The power and communication buses are handled by four pin wires for the smart servos and three pin wires for the lower-cost smart servos. 2kg of PLA filament allows all components of the manipulator to be 3D printed with 100\% infill, making it an overestimate. With a 20]\% factor of safety to account for shipping, taxes, and unexpected part purchases, we are under our team budget of \$800 and design budget of \$1000.
+\definecolor{Gray}{gray}{0.9}
+
+\begin{table}[htp]
+  \center
+  \caption{Gantt Chart}
+  \label{table:gantt}
+\begin{tabular}{C{2.9cm}|cccccccccccccccccc}
+& \multicolumn{18}{c}{ Class Work Session } \\
+Software \small & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 \\\hline\normalsize
+\textbf{Kinematics} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & & & & \\
+Microcontroller Compatability & \cellcolor{Gray} & \cellcolor{Gray} & & & & & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & \\
+Motor Actuation & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\\hline
+\textbf{Motors} & & & & & & & & & & & & & & & & & & \\\hline
+Model & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & \\
+Calibration & & & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
+Interfacing & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & \\
+\textbf{Links} & & & & & & & & & & & & & & & & & & \\\hline
+Model & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & \\
+Print & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & \\
+\textbf{Wiring} & & & & & & & & & & & & & & & & & & \\\hline
+Bus Testing & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & & & & & \\
+Mapping & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & \\
+Implementation & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
+\textbf{Manipulator} & & & & & & & & & & & & & & & & & & \\\hline
+Link Fitting & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & \\
+Calibration & & & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
+Gripper Interchangability & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & & & \\
+\end{tabular}
+\end{table}
 
 
-
-Figure 4.1 shows approximately half of our time for Fall semester will be used modeling the manipulator’s kinematics, motor dynamics, and physical links with the second half dedicated to interfacing parts, wiring, and testing components. Nonetheless, the manipulator should have a functional guise by the semester’s end, however, we anticipate our design will require further iterations before it satisfies all our requirements. We do not account for a refined control interface usable by novice robotics students, rather functional simulations and programing for the manipulator.
-
+\emph{Table \ref{table:gantt}} shows approximately half of our time for Fall semester will be used modeling the manipulator’s kinematics, motor dynamics, and physical links with the second half dedicated to interfacing parts, wiring, and testing components. Nonetheless, the manipulator should have a functional guise by the semester’s end, however, we anticipate our design will require further iterations before it satisfies all our requirements. We do not account for a refined control interface usable by novice robotics students, rather functional simulations and programing for the manipulator.
+\newpage
 
 \section{Decision Matrices}
 The design for the end effector attachment varied across each of the team member’s original conceptual designs, therefore a decision matrix was constructed in order to objectively decide on the design chosen for the attachment style.
 
+\begin{table}[htp]
+  \center
+  \caption{Decision}
+  % \label{table:gantt}
+\begin{tabular}{c|cccc}
+End Effector Removability & Ease of Use & Manufacturability & Durability & Total \\ \hline
+Weighting & 3.6 & 5 & 7 & \\
+Screw Connections & 6.8 & 8.8 & 9.8 & \textbf{137.08} \\
+Snap Fit Joint & 8.6 & 5 & 2.2 & 71.36 \\
+Threaded End Effector & 6.3 & 5.4 & 7.3 & 100.78 \\
+\end{tabular}
+\end{table}
 
 % Example citations:
 % \cite{DBLP:journals/corr/JohnsonAL16}

@@ -481,6 +481,7 @@ INPUT images/sblock.jpg
 INPUT ./images/sblock.jpg
 INPUT ./images/sblock.jpg
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT concept.aux
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
