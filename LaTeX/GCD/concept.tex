@@ -104,13 +104,11 @@
 % \newpage
 
 \pagenumbering{arabic}
-
+\onehalfspacing
 \section{Introduction}
-Robotics is an incredibly fast growing field, yet numerous potential innovators for the discipline are never exposed to it. There are many industrial style manipulators available for commercial applications, but their cost is so high that they aren’t practical for many educational purposes. Schools in rural areas are extremely financially limited and cannot afford a manipulator, nor an instructor that can handle teaching the course due to complexity. \\
-Therefore we will solve this problem by creating a primarily 3D printed robotic manipulator with a removable end effector. The robot will use a variety of motors and servos to drive the links and will be run by a Raspberry Pi. This will enable the robot to be inexpensive yet still provide educational value.
-
+The terminator T-2000 is a science-fiction spectacle of a manipulator-- until you see the price. Channeling the inspiration many high school students may have for robotics, MEIOSIS robotics aims to provide an affordable manipulator to educators and enthusiasts. MEIOSIS uses primarily 3-D printed components and easily accessible materials. Among these materials are a Raspberry PI , smart servos and metal tubing. These features create an open-source manipulator accessible to the public to further robotics education.
 \section{Physical System Overview}
-\emph{Figure \ref{fig:overall}} shows the overall design for the manipulator. The overall reach of the robot will be approximately 530 mm. This length was chosen to decrease material cost and weight while still satisfying requirement 2.1.2 and 2.1.5, allowing the manipulating to pick and place objects to perform basic tasks.
+\emph{Figure \ref{fig:overall}} shows the overall design for the manipulator. Much of the system’s physical design will be determined during the actual design of the manipulator, after the specifications stage. The figure below shows the basic overall conceptual design of the manipulator, having all six rotational joints, the latter three of which being in a spherical wrist configuration.
 
 \begin{figure}[h]
   \centering
@@ -118,6 +116,8 @@ Therefore we will solve this problem by creating a primarily 3D printed robotic 
   \caption{Overall System Conceptual Design }
   \label{fig:overall}
 \end{figure}
+
+The colored links in \emph{Figure \ref{fig:overall}} distinguish the different joints and links of the manipulator. The overall reach of the robot will be 500 mm. This length was chosen to decrease material cost and weight while still satisfying requirement 2.1.2 and 2.1.5, allowing the manipulating to pick and place objects to perform basic tasks. The base of the robot will be made to contain the Raspberry Pi and other electrical components.
 \newpage
 \subsection{Base}
 The base of the manipulator will house several of the electronic components, such as the computational sytem, power supply, and motor controller. A cross section of the base can be seen in \emph{Figure \ref{fig:base}}.
@@ -144,7 +144,8 @@ From \emph{Figure \ref{fig:base}},
 % Much of the system’s physical design will be determined during the actual design of the manipulator, after the specifications stage. The figure below shows the basic overall conceptual design of the manipulator, having all six rotational joints, the latter three of which being in a spherical wrist configuration.
 \newpage
 
-\section{System Functions -- Block Diagrams}
+\section{System Functions}
+The system consists of two primary categories, the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm flowchart for the computational system as well as the intended end-user interface platform. 
 \subsection{Electrical System}
 
 \begin{figure}[h]
@@ -153,8 +154,8 @@ From \emph{Figure \ref{fig:base}},
   \caption{Electrical System Block Diagram}
   \label{fig:eblock}
 \end{figure}
-%TODO Edit
-Figure 3.1 shows that the electrical systems of the manipulator will be relatively simple, with power being supplied by the standard 120V AC available from wall outlets. A power converter will be used to adapt the AC voltage to the required voltages for each component. To control the system, a Raspberry Pi will perform the necessary calculations for motor control (described below in software). It will then send these signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first rotational joint between the base and the first link will be actuated by a DC motor with an encoder to minimize cost.
+
+\emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple, with power being supplied by the standard 120V AC available from wall outlets. A power converter will be used to adapt the AC voltage to the required voltages for each component. To control the system, a Raspberry Pi will perform the necessary calculations for motor control (described below in software). It will then send these signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first rotational joint between the base and the first link will be actuated by a DC motor with an encoder to minimize cost.
 
 
 % \center
@@ -181,10 +182,6 @@ Figure 3.1 shows that the electrical systems of the manipulator will be relative
 %   \caption{Flow}
 %   % \label{fig:overall}
 % \end{figure}
-
-
-
-
 
 
 
