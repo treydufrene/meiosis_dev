@@ -14,7 +14,6 @@ offset = 1;
 % euler = rotz(theta4)*rotx(-(pi)/2)*rotz(theta5)*rotx((pi)/2)*rotz(theta6)
 % euler = rotz(theta4)*roty(theta5)*rotz(theta6);
 
-
 % Constant manip offsets:
 qA    = [0;     0; pi/2;      0;   0;  0];
 d     = [  l1;     -offset;    0;     l3+l4;   0; l6];

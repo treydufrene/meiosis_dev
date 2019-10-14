@@ -1,4 +1,4 @@
-function gamma = MeiosisIK(pos,R)
+function gamma = meiosisIK(pos,R)
     
     eOff = [0;0;5.25];
     npos = pos - R*eOff;
