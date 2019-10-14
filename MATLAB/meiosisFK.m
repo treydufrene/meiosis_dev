@@ -1,4 +1,4 @@
-function [oe, phie, qc] = meiosisFK(gamma)
+function [o,R] = meiosisFK(gamma)
 l1 = 8 + 14.08;
 l2 = 25;
 l3 = 20;
@@ -34,8 +34,11 @@ for i = 1:5
     o(1:3,i+1) = T(1:3,4,i+1);
 end
 
-oe = o(1:3,6);
-phie = rotm2eul(T(1:3,1:3,6));
-qc = [0;0;0;0;0;0];
+o = o(1:3,6);
+R = T(1:3,1:3,6);
+% phie = rotm2eul(T(1:3,1:3,6));
+% qc = [0;0;0;0;0;0];
+
+
 
 end
