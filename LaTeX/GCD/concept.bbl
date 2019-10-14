@@ -5,12 +5,6 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[rob()]{robotis}
-Dynamixel rx-24f robot actuator.
-\newblock URL
-  \url{https://www.trossenrobotics.com/dynamixel-rx-24F-robot-actuator.aspx}.
-\newblock Last accessed 30 September 2019.
-
 \bibitem[mat()]{matterhackers}
 Nema 17 stepper motor 1.8.
 \newblock URL
@@ -20,6 +14,12 @@ Nema 17 stepper motor 1.8.
 \bibitem[rev()]{rev}
 Smart robot servo.
 \newblock URL \url{http://www.revrobotics.com/rev-41-1097/}.
+\newblock Last accessed 30 September 2019.
+
+\bibitem[rob()]{robotis}
+Dynamixel rx-24f robot actuator.
+\newblock URL
+  \url{https://www.trossenrobotics.com/dynamixel-rx-24F-robot-actuator.aspx}.
 \newblock Last accessed 30 September 2019.
 
 \end{thebibliography}

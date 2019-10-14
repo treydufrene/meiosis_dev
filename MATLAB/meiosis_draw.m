@@ -74,6 +74,6 @@ function meiosis_draw(gamma)
     camlight left
     set(gca,'projection','perspective')
     view([1;1;.5])
-    axis([-60 60 -60 60 -60 60])
+%     axis([-60 60 -60 60 -60 60])
     hold off
 end
