@@ -1,4 +1,7 @@
 clear;
+
+% Code for degrees needs to be edited for new design
+
 % Angles in Radians
 syms q6
 q0 = [0 0 0 0 0 0]';
@@ -6,10 +9,13 @@ T0 = TmatrixCapstone(q0);
 R0 = T0(1:3, 1:3);
 P0 = T0(1:3,4);
 theta0 = acos((trace(R0)-1)/2);
-q1 = [.1 .05 .05 .29 .29 .29]*pi/180;
+q1 = [.08 .08 .08 .1 .29 .29]*pi/180;
+
 % Anything below .1degree for t1 doesn't help much more
 % .01 degree for t2 and t3
 % t4, t5, t6 are pretty much set
+
+% Quadrature Encoders useful for getting precision
 
 T1 = TmatrixCapstone(q1);
 R1 = T1(1:3, 1:3);
