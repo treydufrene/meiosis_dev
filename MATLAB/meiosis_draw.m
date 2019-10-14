@@ -29,20 +29,20 @@ function meiosis_draw(gamma)
     %Relative Positions:
     rBfromI = [0;       0;       0];
     r1fromB = [0;       0;       8]; % base is 8 cm tall
-    r2from1 = [0;    -1.54;  14.08]; % link 1 is 13.33 tall and displaced by 1.54 cm in the neg. y-direction
-    r3from2 = [0;       25;      0]; % link 2 is 25 cm long
-    r4from3 = [0;       20;      0]; % link 3 is 20 cm long
+    r2from1 = [0;       0;   14.08]; % link 1 is 14.08 tall and displaced by 1.54 cm in the neg. y-direction
+    r3from2 = [25;      0;      -1]; % link 2 is 25 cm long
+    r4from3 = [20;      0;       0]; % link 3 is 20 cm long
     r5from4 = [0;       0;       8]; % distance from 1st wrist coor. frame to 2nd is 8 cm
     r6from5 = [0;       0;       0]; % no distance between 2nd and 3rd
     r7from6 = [0;       0;    5.25]; % dist. from 3rd wrist coor. frame to the end effector is 5.25 cm
 
     %Orientations wrt I:     
-    T1 = rotz(theta1);
-    T2 = T1*rotx(theta2)*roty(pi/2);
+    T1 = rotz(-pi/2)*rotz(theta1);
+    T2 = T1*rotx(pi/2)*roty(pi/2)*rotz(theta2);
     T3 = T2*rotz(theta3);
-    T4 = T3*roty(theta4)*rotx(-pi/2);
-    T5 = T4*roty(theta5);
-    T6 = T5*rotz(theta6);
+    T4 = T3*roty(pi/2)*rotz(pi/2)*rotz(theta4);
+    T5 = T4*rotx(-pi/2)*rotz(theta5);
+    T6 = T5*rotx(pi/2)*rotz(theta6);
 
     %Positions wrt I:
     rB = rBfromI;
@@ -73,5 +73,7 @@ function meiosis_draw(gamma)
     axis equal
     camlight left
     set(gca,'projection','perspective')
+    view([1;1;.5])
+    axis([-60 60 -60 60 -60 60])
     hold off
 end
