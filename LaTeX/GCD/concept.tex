@@ -21,7 +21,7 @@
 \usepackage{color}
 \usepackage{ulem}
 \usepackage{blindtext}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 \usepackage{contour}
 \usepackage{tabularx}
 \usepackage{circuitikz} % drawing fancy shit
@@ -36,7 +36,8 @@
 \usepackage{flowchart}
 \usepackage{color, colortbl}
 \usepackage{tocloft}
-
+\usepackage{url}
+\usepackage{etoolbox}
 
 \setcounter{secnumdepth}{5}
 \renewcommand{\bibname}{References}
@@ -53,6 +54,7 @@
 \renewcommand\linenumberfont{\ttfamily\small\color{gray}}
 \setlength\linenumbersep{6mm}
 % \hbadness=99999  % or any number >=10000
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \usetikzlibrary{arrows,calc,patterns,angles,quotes}
 \usetikzlibrary{shapes.geometric}
 \usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing} % for snakes!
@@ -206,7 +208,7 @@ Our costs are estimated from all specific components we invision requiring with 
   \end{tabular}
 \end{table}
 
-Our motor costs are approximated from three motor types. For use in joint one is one stepper motor \cite{robotis}. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints two and three are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning [2]. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints two and three are not free to rotate \(360^{\circ}\). Finally, for the spherical wrist are three lower cost, lower torque smart servos, which also have PD control [3]. The gripper will also be actuated with one of these servos.
+Our motor costs are approximated from three motor types. For use in joint one is one stepper motor \cite{robotis}. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints two and three are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning \cite{matterhackers}. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints two and three are not free to rotate \(360^{\circ}\). Finally, for the spherical wrist are three lower cost, lower torque smart servos, which also have PD control \cite{rev}. The gripper will also be actuated with one of these servos.
 
 Since each motor has the same voltage requirement of 12V and our manipulator is powered by 120V AC, we also account for the cost of a power supply. The power and communication buses are handled by four pin wires for the smart servos and three pin wires for the lower-cost smart servos. 2kg of PLA filament allows all components of the manipulator to be 3D printed with 100\% infill, making it an overestimate. With a 20]\% factor of safety to account for shipping, taxes, and unexpected part purchases, we are under our team budget of \$800 and design budget of \$1000.
 \definecolor{Gray}{gray}{0.9}
@@ -292,16 +294,10 @@ B Green & 5 & 7 & 6 & 9 & 162.8 \\
 
 \emph{Table \ref{table:comp}} shows the decision matrix used to determine the computing system to be used in the mechatronic system. The primary attributes determined most important in the computing system are cost and ease of use, being that the targeted end-user will be performing hands-on programming of the system and one of the highest priorities in the system is the final cost.
 
-% Example citations:
-% \cite{DBLP:journals/corr/JohnsonAL16}
-% \cite{DBLP:journals/corr/abs-1803-09820}
-% \cite{DBLP:journals/corr/RonnebergerFB15}
 
-
-\newpage
 \newpage
 \bibliographystyle{unsrtnat}
-\bibliography{ss}
+\bibliography{ss,stepper,servo}
 
 
 % \newpage

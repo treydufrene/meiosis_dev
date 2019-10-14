@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  14 OCT 2019 10:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  14 OCT 2019 11:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1307,8 +1307,14 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cftbeforetabskip=\skip117
 \cfttabindent=\skip118
 \cfttabnumwidth=\skip119
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip20
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count362
 )
-Package Listings Info: Made | a short reference for \lstinline on input line 48.
+Package Listings Info: Made | a short reference for \lstinline on input line 49.
  (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 ) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
@@ -1319,46 +1325,46 @@ File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
 File: tikzlibraryangles.code.tex 2013/08/28 v3.0.1a (rcs-revision 1.1)
 ) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
-) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
-(/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+)
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen362
 \pgfdecoratedremainingdistance=\dimen363
 \pgfdecoratedinputsegmentcompleteddistance=\dimen364
 \pgfdecoratedinputsegmentremainingdistance=\dimen365
 \pgf@decorate@distancetomove=\dimen366
-\pgf@decorate@repeatstate=\count362
+\pgf@decorate@repeatstate=\count363
 \pgfdecorationsegmentamplitude=\dimen367
 \pgfdecorationsegmentlength=\dimen368
 )
 \tikz@lib@dec@box=\box121
 ) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
-) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.US.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.code.tex
-(/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex))
-\tikz@lib@circ@count=\count363
+) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.US.code.tex
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex))
+\tikz@lib@circ@count=\count364
 \tikzcircuitssizeunit=\dimen369
 )) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.logic.US.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.logic.code.tex))) (./concept.aux)
 \openout1 = `concept.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 76.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1398,16 +1404,16 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/local/texlive/2018basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count364
+\scratchcounter=\count365
 \scratchdimen=\dimen370
 \scratchbox=\box122
-\nofMPsegments=\count365
-\nofMParguments=\count366
+\nofMPsegments=\count366
+\nofMParguments=\count367
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count367
+\MPscratchCnt=\count368
 \MPscratchDim=\dimen371
-\MPnumerator=\count368
-\makeMPintoPDFobject=\count369
+\MPnumerator=\count369
+\makeMPintoPDFobject=\count370
 \everyMPtoPDFconversion=\toks46
 ) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1456,45 +1462,45 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2018basic/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-\c@lstlisting=\count370
+\c@lstlisting=\count371
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 76.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 76.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 76.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 76.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 76.
+(Font)              <12> on input line 78.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 76.
+(Font)              <8> on input line 78.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 76.
-LaTeX Font Info:    Try loading font information for U+msa on input line 76.
+(Font)              <6> on input line 78.
+LaTeX Font Info:    Try loading font information for U+msa on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 76.
+LaTeX Font Info:    Try loading font information for U+msb on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 76.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 76.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 78.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./coverpage.tex
@@ -1531,7 +1537,7 @@ Package pdftex.def Info: images/text.png  used on input line 23.
 <images/overall_render.jpg, id=22, 1179.40625pt x 663.47874pt>
 File: images/overall_render.jpg Graphic file (type jpg)
 <use images/overall_render.jpg>
-Package pdftex.def Info: images/overall_render.jpg  used on input line 117.
+Package pdftex.def Info: images/overall_render.jpg  used on input line 119.
 (pdftex.def)             Requested size: 1179.40338pt x 663.47711pt.
  [1
 
@@ -1539,58 +1545,53 @@ Package pdftex.def Info: images/overall_render.jpg  used on input line 117.
 <images/base_callouts.png, id=27, 1434.10782pt x 810.02625pt>
 File: images/base_callouts.png Graphic file (type png)
 <use images/base_callouts.png>
-Package pdftex.def Info: images/base_callouts.png  used on input line 128.
+Package pdftex.def Info: images/base_callouts.png  used on input line 130.
 (pdftex.def)             Requested size: 1434.10432pt x 810.02426pt.
  [2 <./images/base_callouts.png>]
 <images/link_callouts.jpg, id=31, 1913.1475pt x 1084.05pt>
 File: images/link_callouts.jpg Graphic file (type jpg)
 <use images/link_callouts.jpg>
-Package pdftex.def Info: images/link_callouts.jpg  used on input line 150.
+Package pdftex.def Info: images/link_callouts.jpg  used on input line 152.
 (pdftex.def)             Requested size: 1913.14285pt x 1084.04736pt.
 <images/link_cross_section.png, id=32, 508.90125pt x 467.7475pt>
 File: images/link_cross_section.png Graphic file (type png)
 <use images/link_cross_section.png>
-Package pdftex.def Info: images/link_cross_section.png  used on input line 157.
+Package pdftex.def Info: images/link_cross_section.png  used on input line 159.
 (pdftex.def)             Requested size: 508.90001pt x 467.74634pt.
  [3 <./images/link_callouts.jpg> <./images/link_cross_section.png>]
 <images/eblock.jpg, id=37, 543.02875pt x 522.95375pt>
 File: images/eblock.jpg Graphic file (type jpg)
 <use images/eblock.jpg>
-Package pdftex.def Info: images/eblock.jpg  used on input line 169.
+Package pdftex.def Info: images/eblock.jpg  used on input line 171.
 (pdftex.def)             Requested size: 258.36668pt x 248.82054pt.
 
 [4 <./images/eblock.jpg>]
 <images/sblock.jpg, id=41, 728.7225pt x 543.02875pt>
 File: images/sblock.jpg Graphic file (type jpg)
 <use images/sblock.jpg>
-Package pdftex.def Info: images/sblock.jpg  used on input line 179.
+Package pdftex.def Info: images/sblock.jpg  used on input line 181.
 (pdftex.def)             Requested size: 399.29463pt x 297.53984pt.
  [5 <./images/sblock.jpg>] [6] [7]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 267.
+(Font)              <10.95> on input line 269.
  [8] (./concept.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 11.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Overfull \hbox (151.16927pt too wide) in paragraph at lines 9--12
-[]\T1/lmr/m/n/12 Dynamixel rx-24f robot ac-tu-a-tor.  URL \T1/lmtt/m/n/12 https://www.trossenrobotics.com/dynamixel-rx-24F-robot-actuator.aspx\T1/lmr/m/n/12 . 
- []
-
-) [9
+)) [9
 
 ] (./concept.aux) ) 
 Here is how much of TeX's memory you used:
- 41972 strings out of 494091
- 944309 string characters out of 6163523
- 1105732 words of memory out of 5000000
- 44944 multiletter control sequences out of 15000+600000
+ 42355 strings out of 494091
+ 948935 string characters out of 6163523
+ 1113762 words of memory out of 5000000
+ 45319 multiletter control sequences out of 15000+600000
  597232 words of font info for 67 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 62i,12n,92p,10440b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,92p,10440b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2018basic
 /texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on concept.pdf (11 pages, 4488742 bytes).
+Output written on concept.pdf (11 pages, 4495217 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream

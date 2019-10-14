@@ -323,6 +323,10 @@ INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/colortbl/colortbl.sty
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/colortbl/colortbl.sty
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/tocloft/tocloft.sty
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/tocloft/tocloft.sty
+INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
