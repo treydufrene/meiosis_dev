@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex concept"] 1571076705 "concept.aux" "concept.bbl" "concept" 1571076708
+["bibtex concept"] 1571076705 "concept.aux" "concept.bbl" "concept" 1571077048
   "/usr/local/texlive/2018basic/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1480098435 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "concept.aux" 1571076708 2562 bfeeaf447a354d6ede0e000659d00f00 ""
+  "concept.aux" 1571077048 2562 bfeeaf447a354d6ede0e000659d00f00 ""
   "servo.bib" 1571076684 149 ea03ce4f6bb14217415f1160e8c99c67 ""
   "ss.bib" 1571076499 197 d9131e4267a0a93fae8a1e8fceb2da11 ""
   "stepper.bib" 1571076503 276 3cb0ffd75c04d5cc96ecc819c8b8cdaf ""
   (generated)
-  "concept.blg"
   "concept.bbl"
-["pdflatex"] 1571076705 "concept.tex" "concept.pdf" "concept" 1571076708
+  "concept.blg"
+["pdflatex"] 1571077044 "concept.tex" "concept.pdf" "concept" 1571077048
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1480098668 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1480098668 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -286,12 +286,12 @@
   "/usr/local/texlive/2018basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1543950210 81527 a7343b4b22ff408d4cc51ef65ed8b136 ""
   "/usr/local/texlive/2018basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1531793462 2657848 1e11a26bc94fa37c1d76b0687eb54ce2 ""
   "/usr/local/texlive/2018basic/texmf.cnf" 1523933242 628 fc6344cfe40d0ae2a8eba43e51328a06 ""
-  "concept.aux" 1571076708 2562 bfeeaf447a354d6ede0e000659d00f00 ""
+  "concept.aux" 1571077048 2562 bfeeaf447a354d6ede0e000659d00f00 ""
   "concept.bbl" 1571076705 886 9d89aaa415aee8066b090bd930902acc "bibtex concept"
-  "concept.lof" 1571076708 580 6e670e36f533a0566f1da1d3e8795825 ""
-  "concept.lot" 1571076708 468 caa1dfdc77c40fafb15bc3236ee53ea4 ""
-  "concept.tex" 1571076690 20551 371abacc868bc9de0ef862676ba2c9ab ""
-  "concept.toc" 1571076708 540 93969766897c091636c70765819bd4be ""
+  "concept.lof" 1571077048 580 6e670e36f533a0566f1da1d3e8795825 ""
+  "concept.lot" 1571077048 468 caa1dfdc77c40fafb15bc3236ee53ea4 ""
+  "concept.tex" 1571077044 20392 a4ce2b4c5ef651481d7db9be753f70a6 ""
+  "concept.toc" 1571077048 540 93969766897c091636c70765819bd4be ""
   "coverpage.tex" 1570068377 577 c92f6d32108620737a1bc0a22cb87a98 ""
   "images/base_callouts.png" 1570664474 3455513 e55df94a5f388a613118f50985f18968 ""
   "images/eblock.jpg" 1570898403 26206 463eecea34c43d0593778c6178128673 ""
@@ -303,9 +303,9 @@
   "images/sblock.jpg" 1570996527 48883 2d272dc8ba7fdb2dd997f2d1ff4cdb33 ""
   "images/text.png" 1567787150 117402 c36fae0c831f4c6ddab33871e43b50d6 ""
   (generated)
-  "concept.log"
   "concept.aux"
-  "concept.toc"
   "concept.lot"
-  "concept.lof"
+  "concept.toc"
   "concept.pdf"
+  "concept.lof"
+  "concept.log"
