@@ -3,37 +3,37 @@
 \usepackage{setspace} % for single/doublespacing commands
 \usepackage{graphicx} % including graphics
 \usepackage{sectsty} % sexy section headings
-\usepackage{pdfpages} % including multipage pdfs
+% \usepackage{pdfpages} % including multipage pdfs
 \usepackage[export]{adjustbox} % for graphic frames and center
 \usepackage{siunitx}
-\usepackage[numbered]{matlab-prettifier} % including matlab w/ syntax highlighting
-\usepackage[T1]{fontenc} % prettier matlab font
-\usepackage{xfrac} % more legible inline fractions (\sfrac)
+% \usepackage[numbered]{matlab-prettifier} % including matlab w/ syntax highlighting
+% \usepackage[T1]{fontenc} % prettier matlab font
+% \usepackage{xfrac} % more legible inline fractions (\sfrac)
 \usepackage{lmodern} % font package for above
-\usepackage{multicol} % multiple columns
+% \usepackage{multicol} % multiple columns
 \usepackage[justification=centering]{caption} % figure captions (force centering)
-\usepackage{amsmath} % more math symbols and shit
+% \usepackage{amsmath} % more math symbols and shit
 \usepackage{enumitem} % add arguments for enumerate to change style
 \usepackage[list=true]{subcaption} % subfigures with list of figure support
 \usepackage{multirow}
-\usepackage{mathtools}
+% \usepackage{mathtools}
 \usepackage{booktabs}
 \usepackage{color}
 \usepackage{ulem}
-\usepackage{blindtext}
+% \usepackage{blindtext}
 \usepackage[numbers]{natbib}
 \usepackage{contour}
 \usepackage{tabularx}
-\usepackage{circuitikz} % drawing fancy shit
-\usepackage{cancel} % arrow and cross math cancel symbol
-\usepackage{lineno}
+% \usepackage{circuitikz} % drawing fancy shit
+% \usepackage{cancel} % arrow and cross math cancel symbol
+% \usepackage{lineno}
 \usepackage{framed}
 \usepackage{amssymb} % special math symbols
 \usepackage{listings}
 \usepackage{array}
-\usepackage{BOONDOX-cal} % fancy mathtype script
+% \usepackage{BOONDOX-cal} % fancy mathtype script
 \usepackage{fancyhdr}
-\usepackage{flowchart}
+% \usepackage{flowchart}
 \usepackage{color, colortbl}
 \usepackage{tocloft}
 \usepackage{url}
@@ -53,8 +53,8 @@
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\labelitemi{---}
 \lstset{numberstyle=\ttfamily\small\color{gray}}
-\renewcommand\linenumberfont{\ttfamily\small\color{gray}}
-\setlength\linenumbersep{6mm}
+% \renewcommand\linenumberfont{\ttfamily\small\color{gray}}
+% \setlength\linenumbersep{6mm}
 % \hbadness=99999  % or any number >=10000
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 % \usetikzlibrary{arrows,calc,patterns,angles,quotes}
@@ -62,7 +62,8 @@
 % \usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing} % for snakes!
 % \usetikzlibrary{positioning, circuits.logic.US}
 \setlength{\cftbeforetoctitleskip}{-2em}
-\newcommand{\Lag}{\mathcal{L}} % lagrangian L
+% \newcommand{\Lag}{\mathcal{L}} % lagrangian L
+\allsectionsfont{\raggedright}
 
 \begin{document}
 \normalem
@@ -99,86 +100,33 @@
 \pagenumbering{arabic}
 
 \section{Introduction}
+\section{Design Requirements}
+\subsection{Hardware}
+\subsubsection{The system shall cost the end-user no more than \$1000.}
+\subsubsection{The system shall be fully dexterous without being kinematically redundant.}
+\subsubsection{The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ}\) eigen angle from the base frame.}
+\subsubsection{The system end effector shall maintain a pose repeatability magnitude between 0.1—1.5 mm for the position and \(\pm 4^{\circ}\) eigen angle from the base frame for the orientation.}
+\subsubsection{The system’s reachable workspace shall be a hemisphere with a radius of 300-700 mm.}
+\subsubsection{The system’s dexterous workspace shall be a hemisphere within the workspace with a difference between the outer and inner radii of 280 mm.}
+\subsubsection{The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}
+This creates a robot capable of performing a variety of basic tasks, which enhances its educational value.
+\begin{enumerate}[label=\thesubsubsection\alph*.,leftmargin=3cm,font=\itshape]
+  \item \textit{The system will use a parallel gripper (purchased or 3D-Printed).} \\
+  This will be sufficient to perform pick and place operation on an Expo dry erase marker.
+  \item \textit{The end effector will attach to the manipulator using screws.}\\
+  This connection point will be standardized and will support many different configurations of screw positions. This allows for various grippers or custom end effectors to be implemented.
+\end{enumerate}
 
-% Example citations:
-% \cite{DBLP:journals/corr/JohnsonAL16}
-% \cite{DBLP:journals/corr/abs-1803-09820}
-% \cite{DBLP:journals/corr/RonnebergerFB15}
 
-% \section{A Level Heading}
-% Sample table with tabulated data and reference label
-% \begin{table}[htp]
-%   \center
-%   \caption{DH Table for 6 DOF Manipulator}
-%   \label{table:dh}
-%   \color{red} bold col headers, table times new roman, 12pt., centered, \color{black} \\
-%   \begin{tabular}{C{1cm}|C{1cm}C{2cm}C{1cm}C{1cm}}
-%     \textbf{DH} & $d_i$ & $\theta_i$ & $a_i$ & $\alpha_i$ \\ \hline
-%     1 & 280 & $q_1 - \pi$ & 0 & $\sfrac{\pi}{2}$ \\
-%     2 & 0 & $q_2 + \sfrac{\pi}{2}$ & 210 & 0 \\
-%     3 & 0 & $q_3 - \sfrac{\pi}{2}$ & 75 & -$\sfrac{\pi}{2}$ \\
-%     4 & 210 & $q_4$ & 0 & $\sfrac{\pi}{2}$ \\
-%     5 & 0 & $q_5 - \pi$ & 0 & $\sfrac{\pi}{2}$ \\
-%     6 & 70 & $q_6$ & 0 & 0 \\
-%   \end{tabular}
-% \end{table}
-% here is the table reference callout
-% \emph{Table \ref{table:dh}} shows the Denavit–Hartenberg parameters for the manipulator.
+\subsubsection{The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}
+\begin{enumerate}[label=\thesubsubsection\alph*.,leftmargin=3cm,font=\itshape]
+  \item \textit{The end effector will be capable of holding the marker still while moving.}\\
+  In order to be reliable when drawing, the marker should not move while being manipulated by the robot.
+  \item \textit{The end user will be able to select two points at which the robot will follow a trajectory between.} \\
+  This keeps the marker on the surface while moving to enable the robot to draw.
+\end{enumerate}
 
-% Here is a centered mathtype with no number
-% $$
-% \vec{v}_G =
-% \left[\dot{\ell}_s\sin(\theta) + \frac{\ell_b\dot{\phi}\cos(\phi)}{2} +
-% \ell_s\dot{\theta}\cos(\theta)\right]\hat{\textrm{\i}} +
-% \left[\frac{\ell_b\dot{\phi}\sin(\phi)}{2} -
-% \dot{\ell}_s\cos(\theta) + \ell_s\dot{\theta}\sin(\theta)\right]\hat{\textrm{\j}}
-% $$
-
-% Here is a centered equation with number and reference label
-% \begin{equation}
-% \ddot{\theta} = \frac{d}{dt}\left(\frac{\partial\Lag}{\partial\dot{\theta}}\right) -
-% \frac{\partial\Lag}{\partial\theta} = \big(Q_{\theta}\big)_{\text{non}}
-% \label{eq:lagtheta}
-% \end{equation}
-
-% This is some inline mathtype: $u = \frac{1}{2}mv^2$, (notice the fluidity and smaller size than the other mathtype)
-
-% \section{A Level Heading}
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=.75\textwidth]{filename}
-%   \caption{Figure with Callouts}
-%   \label{fig:figname}
-% \end{figure}
-
-% \begin{enumerate}[label=\alph*.]
-%   \item Description for callout a
-%   \item Description for callout b
-% \end{enumerate}
-
-% As seen in \emph{Figure \ref{fig:figname}}
-
-% \newpage
-% \bibliographystyle{plain}
-% \bibliography{JohnsonAL16,abs-1803-09820,RonnebergerFB15}
-
-% \newpage
-% \section*{Acknowledgements \& Attributions}
-% \begin{itemize}
-%   \item People!
-% \end{itemize}
-% \newpage
-
-% \newpage
-% \appendix
-% \renewcommand\thesection{\Roman{section}}
-% \renewcommand\thesubsection{\roman{subsection}}
-% \section*{Appendix}\label{sec:app}
-% Code listing
-%\begin{lstlisting}[frame=lines,style=Matlab-editor,basicstyle = \mlttfamily, caption=Example Code
-% Code Here
-%\end{lstlisting}
-
-% \includepdf[landscape,pages=-]{pdfname}
-
+\subsection{Software}
+\subsubsection{The system shall be open source.}
+\subsubsection{The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}
 \end{document}

@@ -104,7 +104,7 @@ The terminator T-2000 is a science-fiction spectacle of a robot -- until you see
 
 \section{Physical System Overview}
 \vspace{-.75\baselineskip}
-\emph{Figure \ref{fig:overall}} shows the overall conceptual design for the manipulator with callouts for the joint and link locations. It will be six rotational joints, the latter three comprising a spherical wrist. The overall reach of the robot will be 567 mm. This length was chosen to decrease material cost and weight while still allowing the manipulating to pick and place objects, satisfying requirements 2.1.2 and 2.1.5. The base of the robot will contain a Raspberry Pi and other electrical components.
+The physical design of the robotic manipulator will be shown through Figures \emph{\ref{fig:overall}, \ref{fig:base}, \ref{fig:link1},} and \emph{\ref{fig:link2}}.
 
 \begin{figure}[htp]
   \centering
@@ -130,11 +130,11 @@ From \emph{Figure \ref{fig:base}},
   \item \emph{Base Supports:}
   The base supports are located at each corner of the base and will allow the base of the manipulator to be securely attached to a variety of surfaces with either standard bolt/fastener hardware or suction cups.
   \item \emph{Computational System:}
-  The computational system will consist of a Raspberry Pi; the primary reason for this system being chosen is to fulfill the budget requirement, 2.1.1. The Raspberry Pi will perform the necessary computations for solving the kinematics of the manipulator and command the motors accordingly.
+  The computational system will be a Raspberry Pi; it will be housed in the base, which allows the Raspberry Pi to be more easily accessible. The primary reason for this system being chosen is to fulfill the budget requirement, 2.1.1. The Raspberry Pi will compute the manipulator's kinematics and command the motors accordingly.
   \item \emph{Airflow Cutouts:}
-  The side of the base will have cutouts to allow for the maximum amount of airflow to pass through; since the power supply is housed inside of the base as well as the computational system, the temperature must be regulated to prevent overheating.
+  The side of the base will have cutouts to allow for airflow through the base; since the power supply is housed inside of the base as well as the computational system, the temperature must be regulated to prevent overheating.
   \item \emph{Power Supply:}
-  The power supply will be housed in the base as well; this allows the system to be more accessible and therefore more modifiable, where the end-user can easily expand the system to fulfill their needs.
+  The power supply will be housed in the base as well; this allows the power supply to be more accessible and therefore more modifiable, so the end-user can easily expand the system to fulfill their needs.
 \end{enumerate}
 \subsection{Links}
 \emph{Figure \ref{fig:link1}} highlights a few of the key features of our design. Point (a) shows the connection point for the end effector. The mountings are the standard used by the Sawyer manipulator. This may be adjusted to accommodate lower cost, more accessible end effectors. Point (b) shows the differential gearbox that will be used in the manipulator’s wrist, saving space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) tightened by screws.
