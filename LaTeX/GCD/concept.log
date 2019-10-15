@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  14 OCT 2019 22:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  15 OCT 2019 09:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1513,60 +1513,59 @@ Package pdftex.def Info: images/overall_render.jpg  used on input line 108.
 (pdftex.def)             Requested size: 1179.40338pt x 663.47711pt.
  [1
 
- <./images/overall_render.jpg>]
-<images/base_callouts.png, id=27, 1434.10782pt x 810.02625pt>
+ <./images/overall_render.jpg>] [2]
+<images/base_callouts.png, id=30, 1434.10782pt x 810.02625pt>
 File: images/base_callouts.png Graphic file (type png)
 <use images/base_callouts.png>
 Package pdftex.def Info: images/base_callouts.png  used on input line 119.
 (pdftex.def)             Requested size: 1434.10432pt x 810.02426pt.
- [2 <./images/base_callouts.png>]
-<images/link_callouts.jpg, id=31, 1913.1475pt x 1084.05pt>
+ [3 <./images/base_callouts.png>]
+<images/link_callouts.jpg, id=34, 1913.1475pt x 1084.05pt>
 File: images/link_callouts.jpg Graphic file (type jpg)
 <use images/link_callouts.jpg>
 Package pdftex.def Info: images/link_callouts.jpg  used on input line 141.
 (pdftex.def)             Requested size: 1913.14285pt x 1084.04736pt.
-<images/link_cross_section.png, id=32, 508.90125pt x 467.7475pt>
+<images/link_cross_section.png, id=35, 508.90125pt x 467.7475pt>
 File: images/link_cross_section.png Graphic file (type png)
 <use images/link_cross_section.png>
 Package pdftex.def Info: images/link_cross_section.png  used on input line 148.
 (pdftex.def)             Requested size: 508.90001pt x 467.74634pt.
- [3 <./images/link_callouts.jpg> <./images/link_cross_section.png>]
-<images/eblock.jpg, id=37, 543.02875pt x 522.95375pt>
+ [4 <./images/link_callouts.jpg> <./images/link_cross_section.png>]
+<images/eblock.jpg, id=40, 543.02875pt x 522.95375pt>
 File: images/eblock.jpg Graphic file (type jpg)
 <use images/eblock.jpg>
 Package pdftex.def Info: images/eblock.jpg  used on input line 161.
 (pdftex.def)             Requested size: 258.36668pt x 248.82054pt.
-
-[4 <./images/eblock.jpg>]
-<images/sblock.jpg, id=41, 728.7225pt x 543.02875pt>
+ [5 <./images/eblock.jpg>]
+<images/sblock.jpg, id=45, 728.7225pt x 543.02875pt>
 File: images/sblock.jpg Graphic file (type jpg)
 <use images/sblock.jpg>
 Package pdftex.def Info: images/sblock.jpg  used on input line 172.
 (pdftex.def)             Requested size: 399.29463pt x 297.53984pt.
- [5 <./images/sblock.jpg>] [6] [7]
+ [6 <./images/sblock.jpg>] [7] [8]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 261.
- [8] [9] (./concept.bbl
+ [9] [10] (./concept.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 11.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [10
+)) [11
 
 ] (./concept.aux) ) 
 Here is how much of TeX's memory you used:
  41089 strings out of 494091
  905234 string characters out of 6163523
- 1065876 words of memory out of 5000000
+ 1065877 words of memory out of 5000000
  44113 multiletter control sequences out of 15000+600000
  597232 words of font info for 67 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  62i,12n,92p,10440b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2018basic
 /texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on concept.pdf (12 pages, 4501315 bytes).
+Output written on concept.pdf (13 pages, 4501752 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

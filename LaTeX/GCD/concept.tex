@@ -99,9 +99,9 @@
 \pagenumbering{arabic}
 \onehalfspacing
 \section{Introduction}
-The terminator T-2000 is a science-fiction spectacle of a manipulator-- until you see the price. Channeling the inspiration many high school students may have for robotics, MEIOSIS robotics aims to provide an affordable manipulator to educators and enthusiasts. MEIOSIS uses primarily 3-D printed components and easily accessible materials. Among these materials are a Raspberry PI , smart servos and metal tubing. These features create an open-source manipulator accessible to the public to further robotics education.
+The terminator T-2000 is a science-fiction spectacle of a robot -- until you see the price. Channeling the inspiration many high school students may have for robotics, MEIOSIS robotics aims to provide an affordable manipulator to educators and enthusiasts. MEIOSIS uses primarily 3-D printed components and easily accessible materials. Among these materials are a Raspberry PI , smart servos and metal tubing. These features create an open-source manipulator accessible to the public to further robotics education.
 \section{Physical System Overview}
-\emph{Figure \ref{fig:overall}} shows the overall design for the manipulator. Much of the system’s physical design will be determined during the actual design of the manipulator, after the specifications stage. The figure below shows the basic overall conceptual design of the manipulator, having all six rotational joints, the latter three of which being in a spherical wrist configuration.
+\emph{Figure \ref{fig:overall}} shows the overall conceptual design for the manipulator with callouts for the joint and link locations. It will be six rotational joints, the latter three comprising a spherical wrist. The overall reach of the robot will be 567 mm. This length was chosen to decrease material cost and weight while still allowing the manipulating to pick and place objects, satisfying requirements 2.1.2 and 2.1.5. The base of the robot will contain a Raspberry Pi and other electrical components.
 
 \begin{figure}[htp]
   \centering
@@ -134,7 +134,7 @@ From \emph{Figure \ref{fig:base}},
   The power supply will be housed in the base as well; this allows the system to be more accessible and therefore more modifiable, where the end-user can easily expand the system to fulfill their needs.
 \end{enumerate}
 \subsection{Links}
-\emph{Figure \ref{fig:link1}} highlights a few of the key features of our design. Point (a) shows the connection point for the end effector. The dimensions are the standard used by the Sawyer manipulator. This will likely be adjusted depending on the desired end effector. Point (b) shows the differential gearbox that will be used in the wrist of the robot. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) which are tightened by screws.
+\emph{Figure \ref{fig:link1}} highlights a few of the key features of our design. Point (a) shows the connection point for the end effector. The mountings are the standard used by the Sawyer manipulator. This may be adjusted to accommodate lower cost, more accessible end effectors. Point (b) shows the differential gearbox that will be used in the manipulator’s wrist, saving space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) tightened by screws.
 
 \begin{figure}[htp]
   \centering
@@ -150,7 +150,7 @@ From \emph{Figure \ref{fig:base}},
   \label{fig:link2}
 \end{figure}
 \newpage
-The cross section seen in \emph{Figure \ref{fig:link2}} shows the internal design that each link will have. This features two clamps that hold the aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part (b). This will allow for imprecise measurements in the aluminum tube. The link distance will be dictated by the 3D printed guides lining up at point (c).
+The cross section seen in \emph{Figure \ref{fig:link2}} shows the internal design for links two and three. It features two clamps that hold a hollow aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part (b). The proper length will be dictated by the 3D printed guides lining up at point (c). This allows for imprecise measurements in the aluminum tube length that could be caused by the end user’s manufacture of the bar.
 
 \section{System Functions}
 The system can be divided into two subsystems: the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm for the computational system.
