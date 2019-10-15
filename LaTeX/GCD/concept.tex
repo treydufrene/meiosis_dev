@@ -110,7 +110,7 @@ The terminator T-2000 is a science-fiction spectacle of a manipulator-- until yo
   \label{fig:overall}
 \end{figure}
 
-The colored links in \emph{Figure \ref{fig:overall}} distinguish the different joints and links of the manipulator. The overall reach of the robot will be 500 mm. This length was chosen to decrease material cost and weight while still satisfying requirement 2.1.2 and 2.1.5, allowing the manipulating to pick and place objects to perform basic tasks. The base of the robot will be made to contain the Raspberry Pi and other electrical components.
+The colored links in \emph{Figure \ref{fig:overall}} distinguish the different joints and links of the manipulator. The overall reach of the robot will be 567 mm. This length was chosen to decrease material cost and weight while still satisfying requirement 2.1.2 and 2.1.5, allowing the manipulating to pick and place objects to perform basic tasks. The base of the robot will be made to contain the Raspberry Pi and other electrical components.
 \newpage
 \subsection{Base}
 The base of the manipulator will house several of the electronic components, such as the computational sytem, power supply, and motor controller. A cross section of the base can be seen in \emph{Figure \ref{fig:base}}.
@@ -134,7 +134,7 @@ From \emph{Figure \ref{fig:base}},
   The power supply will be housed in the base as well; this allows the system to be more accessible and therefore more modifiable, where the end-user can easily expand the system to fulfill their needs.
 \end{enumerate}
 \subsection{Links}
-\emph{Figure \ref{fig:link1}} shows a few of the key features of our design. Point (a) shows the connection point for the end effector. The dimensions are the standard used by the Sawyer manipulator. This will likely be adjusted depending on the desired end effector. Point b shows the differential gearbox that will be used in the wrist of the robot. This allows for saved space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) which are tightened by screws.
+\emph{Figure \ref{fig:link1}} highlights a few of the key features of our design. Point (a) shows the connection point for the end effector. The dimensions are the standard used by the Sawyer manipulator. This will likely be adjusted depending on the desired end effector. Point (b) shows the differential gearbox that will be used in the wrist of the robot. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) which are tightened by screws.
 
 \begin{figure}[htp]
   \centering
@@ -142,19 +142,20 @@ From \emph{Figure \ref{fig:base}},
   \caption{Drawing Showing Key Features of Design}
   \label{fig:link1}
 \end{figure}
-
+\emph{Figure \ref{fig:link2}} is an image of the cross section of link 2 for the manipulator.
 \begin{figure}[htp]
   \centering
-  \includegraphics[frame,width=.5\textwidth]{link_cross_section}
+  \includegraphics[frame,width=.45\textwidth]{link_cross_section}
   \caption{Drawing Showing Link Cross Section}
   \label{fig:link2}
 \end{figure}
 \newpage
-\emph{Figure \ref{fig:link2}} shows the cross section for of the links. This features two clamps that hold the aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part (b). This will allow for imprecise measurements in the aluminum tube. The link distance will be dictated by the 3D printed guides lining up (c).
+The cross section seen in \emph{Figure \ref{fig:link2}} shows the internal design that each link will have. This features two clamps that hold the aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part (b). This will allow for imprecise measurements in the aluminum tube. The link distance will be dictated by the 3D printed guides lining up at point (c).
 
 \section{System Functions}
 The system can be divided into two subsystems: the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm for the computational system.
 \subsection{Electrical}
+
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.55\textwidth]{eblock}
@@ -165,6 +166,7 @@ The system can be divided into two subsystems: the electrical and software syste
 \emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple. Power is supplied by the 120V AC from standard wall outlets. A power supply will adapt the AC voltage to the required voltages for each component. One component is the Raspberry Pi which will perform calculations for motor control (described below in software). It will send signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first joint, between the base and the first link, will be actuated by a DC motor with an encoder to minimize cost.
 
 \subsection{Software}
+\emph{Figure \ref{fig:sblock}} shows the software flowchart for the system.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=.85\textwidth]{sblock}
@@ -181,19 +183,20 @@ Our costs are estimated from all specific components we invision requiring with 
   \center
   \caption{Predicted List of Parts}
   \label{table:costs}
-  \begin{tabular}{C{3.5cm}cc|cc}
-  \textbf{Part} & \textbf{Unit Cost (USD)} & \textbf{Qty} & \textbf{Cost (USD)} & \textbf{Source} \\ \hline
+  \begin{tabular}{C{3.5cm}C{3cm}C{1.5cm}|C{1.5cm}c}
+  \multirow{2}{*}{\textbf{Part}} & \textbf{Unit Cost (USD)} & \multirow{2}{*}{\textbf{Qty}} & \textbf{Cost (USD)} & \multirow{2}{*}{\textbf{Source}} \\ \hline
   2kg PLA & 32 & 1 & 32 & Amazon \\
   Smart Servo & 140 & 2 & 280 & Trossen Robotics \\
-  Lower Torque Smart Servo (6 pack) & 225 & 1 & 225 & Trossen Robotics \\
-  DC Motor w/ Encoder & 30 & 1 & 30 & Robot Shop \\
+  Lower Torque Smart Servo (6 pack) & \multirow{3}{*}{225} & \multirow{3}{*}{1} & \multirow{3}{*}{225} & \multirow{3}{*}{Trossen Robotics} \\
+  DC Motor w/ Encoder & \multirow{2}{*}{30} & \multirow{2}{*}{1} & \multirow{2}{*}{30} & \multirow{2}{*}{Robot Shop} \\
   Power Supply & 16 & 1 & 16 & Compt. Dist. Inc. \\
   Rasberry Pi 3 & 35 & 1 & 35 & Adafruit \\
   3 Pin Cables & 9 & 1 & 9 & Amazon \\
   4 Pin Cables & 13 & 1 & 13 & Amazon \\
   Gripper & 25 & 1 & 25 & Trossen Robotics \\
-  Factor of Safety (20\%) & & & 133 & \\
-  & & \textbf{Total} & 798 & \\
+  &&&\\
+  Factor of Safety (20\%) & & & \multirow{2}{*}{133} & \\
+  & & \textbf{Total} & \$798 & \\
   \end{tabular}
 \end{table}
 
