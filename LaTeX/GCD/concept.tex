@@ -134,7 +134,7 @@ From \emph{Figure \ref{fig:base}},
   The power supply will be housed in the base as well; this allows the system to be more accessible and therefore more modifiable, where the end-user can easily expand the system to fulfill their needs.
 \end{enumerate}
 \subsection{Links}
-\emph{Figure \ref{fig:link1}} shows a few of the key features of our design. Point a shows the connection point for the end effector. The dimensions are the standard used by the Sawyer manipulator. This will likely be adjusted depending on the desired end effector. Point b shows the differential gearbox that will be used in the wrist of the robot. This allows for saved space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) which are tightened by screws.
+\emph{Figure \ref{fig:link1}} shows a few of the key features of our design. Point (a) shows the connection point for the end effector. The dimensions are the standard used by the Sawyer manipulator. This will likely be adjusted depending on the desired end effector. Point b shows the differential gearbox that will be used in the wrist of the robot. This allows for saved space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) which are tightened by screws.
 
 \begin{figure}[htp]
   \centering
@@ -150,10 +150,10 @@ From \emph{Figure \ref{fig:base}},
   \label{fig:link2}
 \end{figure}
 \newpage
-\emph{Figure \ref{fig:link2}} shows the cross section for the design of the links. This features two clamps that hold the aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part. This allows for imprecise measurements in the aluminum tube that could be caused by the end user. The aluminum tube will be cut shorter than the actual required distance which will result in gaps between the tubing and the part (b). The proper distance will be achieved by the 3D printed parts lining up at point c.
+\emph{Figure \ref{fig:link2}} shows the cross section for of the links. This features two clamps that hold the aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part (b). This will allow for imprecise measurements in the aluminum tube. The link distance will be dictated by the 3D printed guides lining up (c).
 
 \section{System Functions}
-The system consists of two primary categories, the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm flowchart for the computational system.
+The system can be divided into two subsystems: the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm for the computational system.
 \subsection{Electrical}
 \begin{figure}[htp]
   \centering
@@ -162,7 +162,7 @@ The system consists of two primary categories, the electrical and software syste
   \label{fig:eblock}
 \end{figure}
 
-\emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple, with power being supplied by the standard 120V AC available from wall outlets. A power converter will be used to adapt the AC voltage to the required voltages for each component. To control the system, a Raspberry Pi will perform the necessary calculations for motor control (described below in software). It will then send these signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first rotational joint between the base and the first link will be actuated by a DC motor with an encoder to minimize cost.
+\emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple. Power is supplied by the 120V AC from standard wall outlets. A power supply will adapt the AC voltage to the required voltages for each component. One component is the Raspberry Pi which will perform calculations for motor control (described below in software). It will send signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first joint, between the base and the first link, will be actuated by a DC motor with an encoder to minimize cost.
 
 \subsection{Software}
 \begin{figure}[ht]
@@ -172,10 +172,10 @@ The system consists of two primary categories, the electrical and software syste
   \label{fig:sblock}
 \end{figure}
 
-Similar to the electrical system, the software required for the system to function is not complex. \emph{Figure \ref{fig:sblock}} shows how the software will receive the desired pose or poses that the user would like the manipulator to reach and calculate the inverse kinematics to find the necessary joint angles to reach the pose. The waveforms/desired angles will be sent to the respective drivers/motors, and if a motor requires feedback to reach the correct position, positional information will be sent back to the computer so that the proper waveform will be sent to the respective motor at all times. When the motors have reached their desired positions, the controller will run the end effector function if it is called. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
+Similar to the electrical system, the software is also simple. \emph{Figure \ref{fig:sblock}} shows the software will receive the desired pose or poses the user would like the manipulator to reach. Then use inverse kinematics to calculate the necessary joint angles. The waveforms/desired angles will be sent to the respective drivers/motors, and if a motor requires feedback to reach the correct position, positional information will be sent back to the Raspberry Pi to adjust the angle. When the motors have reached their desired pose, the Raspberry Pi will actuate the end effector if it is specified by the user. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
 
 \section{Parts List and Manufacturing}
-Our costs are estimated from all specific components we invision requiring with a factor of safety. The 20\% factor of safety is the sum of 20\% of the cost for each item listed in Table 4.1 and is intended to account for shipping, taxes, and replacement/additional parts. Including this factor of safety, we satisfy requirement 2.1.2 with a predicted budget of \$586.80.
+Our costs are estimated from all specific components we invision requiring with a factor of safety. The 20\% factor of safety is the sum of 20\% of the cost for each item listed in Table 4.1 and is intended to account for shipping, taxes, and replacement/additional parts. Including this factor of safety, we satisfy requirement 2.1.2 with a predicted budget of \$798.80.
 
 \begin{table}[htp]
   \center
@@ -197,7 +197,7 @@ Our costs are estimated from all specific components we invision requiring with 
   \end{tabular}
 \end{table}
 
-Our motor costs are approximated from three motor types. For use in joint one is one stepper motor \cite{robotis}. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints two and three are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning \cite{matterhackers}. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints two and three are not free to rotate \(360^{\circ}\). Finally, for the spherical wrist are three lower cost, lower torque smart servos, which also have PD control \cite{rev}. The gripper will also be actuated with one of these servos.
+Our motor costs are approximated from three motor types. For use in joint one is one stepper motor \cite{robotis}. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints 2 and 3 are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning \cite{matterhackers}. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints 2 and 3 are not free to rotate \(360^{\circ}\) and will be limited by software. Finally, for the spherical wrist are three lower cost, lower torque, smart servos which also have PD control and a \(0.290^{\circ}\) resolution \cite{rev}. The gripper will also be actuated with one of these servos.
 
 Since each motor has the same voltage requirement of 12V and our manipulator is powered by 120V AC, we also account for the cost of a power supply. The power and communication buses are handled by four pin wires for the smart servos and three pin wires for the lower-cost smart servos. 2kg of PLA filament allows all components of the manipulator to be 3D printed with 100\% infill, making it an overestimate. With a 20\% factor of safety to account for shipping, taxes, and unexpected part purchases, we are under our team budget of \$800 and design budget of \$1000.
 \definecolor{Gray}{gray}{0.5}
@@ -211,7 +211,7 @@ Since each motor has the same voltage requirement of 12V and our manipulator is 
 \textbf{Software} \small & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 \\\hline\normalsize
 Kinematics & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & & & & \\
 Microcontroller Compatability & \cellcolor{Gray} & \cellcolor{Gray} & & & & & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & \\
-Motor Actuation & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\\hline
+Motor Actuation & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
 \textbf{Motors} & & & & & & & & & & & & & & & & & & \\\hline
 Model & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & \\
 Calibration & & & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
@@ -231,10 +231,10 @@ Gripper Interchangability & & & & & & & & & & & & & & \cellcolor{Gray} & \cellco
 \end{table}
 
 
-\emph{Table \ref{table:gantt}} shows approximately half of our time for Fall semester will be used modeling the manipulator’s kinematics, motor dynamics, and physical links with the second half dedicated to interfacing parts, wiring, and testing components. Nonetheless, the manipulator should have a functional guise by the semester’s end, however, we anticipate our design will require further iterations before it satisfies all our requirements. We do not account for a refined control interface usable by novice robotics students, rather functional simulations and programing for the manipulator.
+\emph{Table \ref{table:gantt}} shows approximately half our time for Fall semester will be used modeling the manipulator’s kinematics, motor dynamics, and physical links with the second half dedicated to interfacing parts, wiring, and testing components. Nonetheless, the manipulator should have a functional guise by the semester’s end, however, we anticipate our design will require further iterations before it satisfies all our requirements. For example, a refined control interface usable by novice robotics students is not accounted for.
 
 \section{Decision Matrices}
-The design for the end effector attachment varied across each of the team member’s original conceptual designs, therefore a decision matrix was constructed in order to objectively decide on the design chosen for the attachment style.
+The design for the end effector attachment varied across each of the team member’s original conceptual designs, therefore a decision matrix was constructed to objectively decide on the best design for the manipulator.
 
 \begin{table}[htp]
   \center
@@ -249,7 +249,7 @@ Threaded End Effector & 6.3 & 5.4 & 7.3 & 100.78 \\
 \end{tabular}
 \end{table}
 
-As shown in \emph{Table \ref{table:ee}}, the design that is the optimal combination of  ease of use, the most manufacturable, and the most durable is the screw connections design.
+As shown in \emph{Table \ref{table:ee}}, the optimal design must be somewhat easy to use, easily manufacturable, and the most durable. This is the best represented by the screw connections design.
 
 \begin{table}[htp]
   \center
@@ -263,7 +263,7 @@ Aluminum & 4 & 5.8 & 5.8 & 6.6 & 9.2 & 213.4 \\
 Combination & 8 & 7.8 & 7 & 9 & 9.2 & \textbf{288.36} \\
 \end{tabular}
 \end{table}
-As seen in \emph{Table \ref{table:mat}}, the primary material chosen to create the manipulator is PLA / 3D printed material, this is due to its low cost and weight, accessibility and manufacturability; additionally, by using primarily 3D printed parts, the end-user’s cost is potentially lower and their ability to modify parts if desired is much easier.
+As seen in \emph{Table \ref{table:mat}}, the primary material chosen to create the manipulator is PLA / 3D printed material, this is due to its low cost and accessibility; additionally, it is lightweight, manufacturable, and durable. Further, by using primarily 3D printed parts, the end-user’s cost is potentially lower and their ability to modify parts is enhanced.
 \newpage
 \begin{table}[htp]
   \center
@@ -281,7 +281,7 @@ B Green & 5 & 7 & 6 & 9 & 162.8 \\
 \end{tabular}
 \end{table}
 
-\emph{Table \ref{table:comp}} shows the decision matrix used to determine the computing system to be used in the mechatronic system. The primary attributes determined most important in the computing system are cost and ease of use, being that the targeted end-user will be performing hands-on programming of the system and one of the highest priorities in the system is the final cost.
+\emph{Table \ref{table:comp}} shows the decision matrix used to determine the computing system. The most important attributes are cost and ease of use, being that the target end-user will be programming of system and the highest priority requirement is the system's final cost. Functionality beyond motor control and inverse kinematic calculations are not eminently important and operating independent of another computer is only desirable.
 
 
 \newpage

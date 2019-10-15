@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex concept"] 1571078399 "concept.aux" "concept.bbl" "concept" 1571078593
+["bibtex concept"] 1571078399 "concept.aux" "concept.bbl" "concept" 1571112659
   "/usr/local/texlive/2018basic/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "concept.aux" 1571078592 2562 0fdebc27eb0d5cdb0d3ce9348aa27d3b ""
+  "concept.aux" 1571112659 2562 0fdebc27eb0d5cdb0d3ce9348aa27d3b ""
   "servo.bib" 1571076684 149 ea03ce4f6bb14217415f1160e8c99c67 ""
   "ss.bib" 1571078317 173 4fe46b24cde511aa581e7c8e392b2112 ""
   "stepper.bib" 1571078397 251 db99721b379a655ae82cebc2ede14c3e ""
   (generated)
   "concept.bbl"
   "concept.blg"
-["pdflatex"] 1571078589 "concept.tex" "concept.pdf" "concept" 1571078593
+["pdflatex"] 1571112656 "concept.tex" "concept.pdf" "concept" 1571112659
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1480098668 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1480098668 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -267,15 +267,15 @@
   "/usr/local/texlive/2018basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1543950210 81527 a7343b4b22ff408d4cc51ef65ed8b136 ""
   "/usr/local/texlive/2018basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1531793462 2657848 1e11a26bc94fa37c1d76b0687eb54ce2 ""
   "/usr/local/texlive/2018basic/texmf.cnf" 1523933242 628 fc6344cfe40d0ae2a8eba43e51328a06 ""
-  "concept.aux" 1571078592 2562 0fdebc27eb0d5cdb0d3ce9348aa27d3b ""
+  "concept.aux" 1571112659 2562 0fdebc27eb0d5cdb0d3ce9348aa27d3b ""
   "concept.bbl" 1571078399 886 82dfa30f3a5fb01a847ad82156d7b4f2 "bibtex concept"
-  "concept.lof" 1571078592 580 6e670e36f533a0566f1da1d3e8795825 ""
-  "concept.lot" 1571078592 468 3e2f490b20d9ff25388892447f1b2582 ""
-  "concept.tex" 1571078589 19773 37e92987c64ed25c83f2c3d4aedcbec4 ""
-  "concept.toc" 1571078592 540 84983b905358888ad591cb3ab2492bae ""
+  "concept.lof" 1571112659 580 6e670e36f533a0566f1da1d3e8795825 ""
+  "concept.lot" 1571112659 468 3e2f490b20d9ff25388892447f1b2582 ""
+  "concept.tex" 1571112656 19466 7d8c473ef7427313fa0059fa943aeb11 ""
+  "concept.toc" 1571112659 540 84983b905358888ad591cb3ab2492bae ""
   "coverpage.tex" 1570068377 577 c92f6d32108620737a1bc0a22cb87a98 ""
   "images/base_callouts.png" 1570664474 3455513 e55df94a5f388a613118f50985f18968 ""
-  "images/eblock.jpg" 1570898403 26206 463eecea34c43d0593778c6178128673 ""
+  "images/eblock.jpg" 1571111354 31897 e0da41538b255ff0668d9dd7d699a347 ""
   "images/erau.png" 1566965613 202969 aef113bf89157c8ddf943a7c8a77402a ""
   "images/link_callouts.jpg" 1570995186 94647 35526fef479338f9fc5acffc75a831fb ""
   "images/link_cross_section.png" 1570995727 233141 809fa1aec1f4468fa955ecb2d1811bb6 ""
@@ -285,8 +285,8 @@
   "images/text.png" 1567787150 117402 c36fae0c831f4c6ddab33871e43b50d6 ""
   (generated)
   "concept.log"
-  "concept.lof"
-  "concept.toc"
   "concept.pdf"
   "concept.aux"
   "concept.lot"
+  "concept.toc"
+  "concept.lof"
