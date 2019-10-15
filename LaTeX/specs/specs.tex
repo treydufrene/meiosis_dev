@@ -21,7 +21,7 @@
 \usepackage{color}
 \usepackage{ulem}
 \usepackage{blindtext}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 \usepackage{contour}
 \usepackage{tabularx}
 \usepackage{circuitikz} % drawing fancy shit
@@ -33,7 +33,15 @@
 \usepackage{array}
 \usepackage{BOONDOX-cal} % fancy mathtype script
 \usepackage{fancyhdr}
+\usepackage{flowchart}
+\usepackage{color, colortbl}
+\usepackage{tocloft}
+\usepackage{url}
+\usepackage{etoolbox}
 
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+\setcounter{secnumdepth}{5}
 \renewcommand{\bibname}{References}
 \sisetup{output-exponent-marker=\ensuremath{\mathrm{e}}}
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
@@ -48,8 +56,12 @@
 \renewcommand\linenumberfont{\ttfamily\small\color{gray}}
 \setlength\linenumbersep{6mm}
 % \hbadness=99999  % or any number >=10000
-\usetikzlibrary{arrows,calc,patterns,angles,quotes}
-\usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing} % for snakes!
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+% \usetikzlibrary{arrows,calc,patterns,angles,quotes}
+% \usetikzlibrary{shapes.geometric}
+% \usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing} % for snakes!
+% \usetikzlibrary{positioning, circuits.logic.US}
+\setlength{\cftbeforetoctitleskip}{-2em}
 \newcommand{\Lag}{\mathcal{L}} % lagrangian L
 
 \begin{document}
