@@ -100,7 +100,7 @@
 \onehalfspacing
 \section{Introduction}
 \vspace{-.75\baselineskip}
-The terminator T-2000 is a science-fiction spectacle of a robot -- until you see the price. Channeling the inspiration many high school students may have for robotics, MEIOSIS robotics aims to provide an affordable manipulator to educators and enthusiasts. MEIOSIS uses primarily 3-D printed components and easily accessible materials. Among these materials are a Raspberry PI , smart servos and metal tubing. These features create an open-source manipulator accessible to the public to further robotics education.
+The terminator T-2000 is a science-fiction spectacle of a robot -- until you see the price. Channeling the inspiration many high school students may have for robotics, MEIOSIS robotics aims to provide an affordable manipulator to educators and enthusiasts. MEIOSIS uses primarily 3-D printed components and easily accessible materials. Among these materials are a Raspberry PI, smart servos and metal tubing. These features create an open-source manipulator accessible to the public to further robotics education.
 
 \section{Physical System Overview}
 \vspace{-.75\baselineskip}
@@ -113,14 +113,14 @@ The physical design of the robotic manipulator will be shown through Figures \em
   \label{fig:overall}
 \end{figure}
 
-The colored links in \emph{Figure \ref{fig:overall}} distinguish the different joints and links of the manipulator. The overall reach of the robot will be 567 mm. This length was chosen to decrease material cost and weight while still satisfying requirement 2.1.2 and 2.1.5, allowing the manipulating to pick and place objects to perform basic tasks. The base of the robot will be made to contain the Raspberry Pi and other electrical components.
+The colored links in \emph{Figure \ref{fig:overall}} distinguish the different joints and links of the manipulator. The overall reach of the robot will be 582.5 mm. This length was chosen to decrease material cost and weight while still satisfying requirement 2.1.2 and 2.1.5, allowing the manipulating to pick and place objects to perform basic tasks. The base of the robot will be made to contain the Raspberry Pi and other electrical components.
 \newpage
 \subsection{Base}
-The base of the manipulator will house several of the electronic components, such as the computational sytem, power supply, and motor controller. A cross section of the base can be seen in \emph{Figure \ref{fig:base}}.
+The base of the manipulator will house several of the electronic components, such as the computational system, power supply, and motor controller. A cross section of the base can be seen in \emph{Figure \ref{fig:base}}.
 \begin{figure}[htp]
   \centering
   \includegraphics[frame, width=.75\textwidth]{base_callouts}
-  \caption{Manipulator Base with Callouts}
+  \caption{Manipulator Base with Call-outs}
   \label{fig:base}
 \end{figure}
 
@@ -137,27 +137,29 @@ From \emph{Figure \ref{fig:base}},
   The power supply will be housed in the base as well; this allows the power supply to be more accessible and therefore more modifiable, so the end-user can easily expand the system to fulfill their needs.
 \end{enumerate}
 \subsection{Links}
-\emph{Figure \ref{fig:link1}} highlights a few of the key features of our design. Point (a) shows the connection point for the end effector. The mountings are the standard used by the Sawyer manipulator. This may be adjusted to accommodate lower cost, more accessible end effectors. Point (b) shows the differential gearbox that will be used in the manipulator’s wrist, saving space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) tightened by screws.
-
+\emph{Figure \ref{fig:link1}} is an image of the robot that shows the links and their key features.\\
 \begin{figure}[htp]
   \centering
-  \includegraphics[frame,width=.75\textwidth]{link_callouts}
+  \includegraphics[frame,width=.63\textwidth]{link_callouts}
   \caption{Drawing Showing Key Features of Design}
   \label{fig:link1}
-\end{figure}
+\end{figure} \\
+\emph{Figure \ref{fig:link1}} highlights a few of the key features of our design. Call-out a shows the connection point for the end effector. The mountings are the standard used by the Sawyer manipulator. This may be adjusted to accommodate lower cost, more accessible end effectors. Call-out (b) shows the differential gearbox that will be used in the manipulator’s wrist, saving space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) tightened by screws.
+
 \emph{Figure \ref{fig:link2}} is an image of the cross section of link 2 for the manipulator.
 \begin{figure}[htp]
   \centering
-  \includegraphics[frame,width=.45\textwidth]{link_cross_section}
+  \includegraphics[frame,width=.35\textwidth]{link_cross_section}
   \caption{Drawing Showing Link Cross Section}
   \label{fig:link2}
 \end{figure}
 \newpage
-The cross section seen in \emph{Figure \ref{fig:link2}} shows the internal design for links two and three. It features two clamps that hold a hollow aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed part (b). The proper length will be dictated by the 3D printed guides lining up at point (c). This allows for imprecise measurements in the aluminum tube length that could be caused by the end user’s manufacture of the bar.
+The cross section seen in \emph{Figure \ref{fig:link2}} shows the internal design for links two and three. It features two clamps that hold a hollow aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed call-out (b). The proper length will be dictated by the 3D printed guides lining up at call-out (c). This allows for imprecision in the manufacturing of the aluminum tube.
 
 \section{System Functions}
 The system can be divided into two subsystems: the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm for the computational system.
 \subsection{Electrical}
+\emph{Figure \ref{fig:eblock}} is the block diagram for the electrical system of the manipulator.
 
 \begin{figure}[htp]
   \centering
@@ -166,7 +168,7 @@ The system can be divided into two subsystems: the electrical and software syste
   \label{fig:eblock}
 \end{figure}
 
-\emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple. Power is supplied by the 120V AC from standard wall outlets. A power supply will adapt the AC voltage to the required voltages for each component. One component is the Raspberry Pi which will perform calculations for motor control (described below in software). It will send signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first joint, between the base and the first link, will be actuated by a DC motor with an encoder to minimize cost.
+\emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple. Power is supplied by the 120V AC from standard wall outlets. A power supply will adapt the AC voltage to the required voltages for each component. One component is the Raspberry Pi, which will perform calculations for motor control (described below in software). It will send signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first joint, between the base and the first link, will be actuated by a DC motor with an encoder to minimize cost.
 
 \subsection{Software}
 \emph{Figure \ref{fig:sblock}} shows the software flowchart for the system.
@@ -177,10 +179,10 @@ The system can be divided into two subsystems: the electrical and software syste
   \label{fig:sblock}
 \end{figure}
 
-Similar to the electrical system, the software is also simple. \emph{Figure \ref{fig:sblock}} shows the software will receive the desired pose or poses the user would like the manipulator to reach. Then use inverse kinematics to calculate the necessary joint angles. The waveforms/desired angles will be sent to the respective drivers/motors, and if a motor requires feedback to reach the correct position, positional information will be sent back to the Raspberry Pi to adjust the angle. When the motors have reached their desired pose, the Raspberry Pi will actuate the end effector if it is specified by the user. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
+Similar to the electrical system, the software is also simple. \emph{Figure \ref{fig:sblock}} shows that the software will receive the desired pose or poses the user would like the manipulator to reach. Then the Raspberry Pi will use inverse kinematics to calculate the necessary joint angles. The wave-forms/desired angles will be sent to the respective drivers/motors, and positional information will be sent back to the Raspberry Pi to adjust the DC motor angle. When the motors have reached their desired pose, the Raspberry Pi will actuate the end effector if it is specified by the user. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
 
 \section{Parts List and Manufacturing}
-Our costs are estimated from all specific components we invision requiring with a factor of safety. The 20\% factor of safety is the sum of 20\% of the cost for each item listed in Table 4.1 and is intended to account for shipping, taxes, and replacement/additional parts. Including this factor of safety, we satisfy requirement 2.1.2 with a predicted budget of \$798.80.
+Our costs are estimated from all specific components we envision requiring with a factor of safety. The 20\% factor of safety is the sum of 20\% of the cost for each item listed in Table 4.1 and is intended to account for shipping, taxes, and replacement/additional parts. Including this factor of safety, we satisfy requirement 2.1.1 with a predicted budget of \$798.80.
 
 \begin{table}[htp]
   \center
@@ -193,7 +195,7 @@ Our costs are estimated from all specific components we invision requiring with 
   Lower Torque Smart Servo (6 pack) & \multirow{3}{*}{225} & \multirow{3}{*}{1} & \multirow{3}{*}{225} & \multirow{3}{*}{Trossen Robotics} \\
   DC Motor w/ Encoder & \multirow{2}{*}{30} & \multirow{2}{*}{1} & \multirow{2}{*}{30} & \multirow{2}{*}{Robot Shop} \\
   Power Supply & 16 & 1 & 16 & Compt. Dist. Inc. \\
-  Rasberry Pi 3 & 35 & 1 & 35 & Adafruit \\
+  Raspberry Pi 3 & 35 & 1 & 35 & Adafruit \\
   3 Pin Cables & 9 & 1 & 9 & Amazon \\
   4 Pin Cables & 13 & 1 & 13 & Amazon \\
   Gripper & 25 & 1 & 25 & Trossen Robotics \\
@@ -203,35 +205,38 @@ Our costs are estimated from all specific components we invision requiring with 
   \end{tabular}
 \end{table}
 
-Our motor costs are approximated from three motor types. For use in joint one is one stepper motor \cite{robotis}. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints 2 and 3 are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning \cite{matterhackers}. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints 2 and 3 are not free to rotate \(360^{\circ}\) and will be limited by software. Finally, for the spherical wrist are three lower cost, lower torque, smart servos which also have PD control and a \(0.290^{\circ}\) resolution \cite{rev}. The gripper will also be actuated with one of these servos.
+Our motor costs are approximated from three motor types. For use in joint one is one stepper motor \cite{robotis}. It should experience minimal torque from gravity acting on the other links and does not require a continuous voltage to maintain position. The built-in encoder provides feedback for accurate motion and limiting the rotation to 2$\pi$ radians. For use in joints 2 and 3 are two smart servos with holding torque of 1.6N$\cdot$m. These feature a built in PD control, which means no overshooting, that can be precise to 0.29\(^{\circ}\) with tuning \cite{matterhackers}. So long as the links, servos, and payload after the base do not exceed 0.65kg acting through the horizontally outstretched arm’s centroid, 250mm from the base, the torque is sufficient. Although the servos are continuous rotation, joints 2 and 3 are not free to rotate \(360^{\circ}\) and will be limited by software. Finally, for the spherical wrist are three lower cost, lower torque, smart servos which also have PD control and a \(0.29^{\circ}\) resolution \cite{rev}. The gripper will also be actuated with one of these servos.
 
 Since each motor has the same voltage requirement of 12V and our manipulator is powered by 120V AC, we also account for the cost of a power supply. The power and communication buses are handled by four pin wires for the smart servos and three pin wires for the lower-cost smart servos. 2kg of PLA filament allows all components of the manipulator to be 3D printed with 100\% infill, making it an overestimate. With a 20\% factor of safety to account for shipping, taxes, and unexpected part purchases, we are under our team budget of \$800 and design budget of \$1000.
+
+\emph{Table \ref{table:gantt}} shows the Gantt chart for the remainder of the fall semester.
 \definecolor{Gray}{gray}{0.5}
+\definecolor{DGray}{gray}{0.4}
 
 \begin{table}[htp]
   \center
   \caption{Gantt Chart}
   \label{table:gantt}
 \begin{tabular}{C{2.9cm}|cccccccccccccccccc}
-& \multicolumn{18}{c}{ Class Work Session } \\
+& \multicolumn{18}{c}{ Class Work Session } \\ 
 \textbf{Software} \small & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 \\\hline\normalsize
-Kinematics & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & & & & \\
+Kinematics & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & & & & & & & & & & & & & \\
 Microcontroller Compatability & \cellcolor{Gray} & \cellcolor{Gray} & & & & & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & \\
-Motor Actuation & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
+Motor Actuation & & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & & & & & & & & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} \\
 \textbf{Motors} & & & & & & & & & & & & & & & & & & \\\hline
 Model & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & \\
-Calibration & & & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
+Calibration & & & & & & & & & & & & & & & & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} \\
 Interfacing & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & \\
 \textbf{Links} & & & & & & & & & & & & & & & & & & \\\hline
-Model & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & \\
+Model & & & & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & & & & & & & & & \\
 Print & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & \\
 \textbf{Wiring} & & & & & & & & & & & & & & & & & & \\\hline
-Bus Testing & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & & & & & & & & & & \\
+Bus Testing & & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & & & & & & & & & & & & & & \\
 Mapping & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & & & \\
-Implementation & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
+Implementation & & & & & & & & & & & & & & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} \\
 \textbf{Manipulator} & & & & & & & & & & & & & & & & & & \\\hline
 Link Fitting & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} & & & \\
-Calibration & & & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & \cellcolor{Gray} \\
+Calibration & & & & & & & & & & & & & & & & \cellcolor{DGray} & \cellcolor{DGray} & \cellcolor{DGray} \\
 Gripper Interchangability & & & & & & & & & & & & & & \cellcolor{Gray} & \cellcolor{Gray} & & & \\
 \end{tabular}
 \end{table}
