@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex specs"] 1571196674 "specs.aux" "specs.bbl" "specs" 1571196774
+["bibtex specs"] 1571200222 "specs.aux" "specs.bbl" "specs" 1571200705
   "/usr/local/texlive/2018basic/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
   "robo.bib" 1571196667 139 d6155c228749b75ff17c370b810cafc7 ""
-  "specs.aux" 1571196774 2863 40fe50dace7010439b88ec8514d323ab ""
+  "specs.aux" 1571200704 2879 3676b98c7e000892ea793ce4bbaa29c5 ""
   (generated)
   "specs.blg"
   "specs.bbl"
-["pdflatex"] 1571196771 "specs.tex" "specs.pdf" "specs" 1571196774
+["pdflatex"] 1571200702 "specs.tex" "specs.pdf" "specs" 1571200705
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1480098668 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1480098668 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1480098668 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -140,15 +140,15 @@
   "images/model.png" 1571162296 1458630 a684cd5575cc179ee63068e8a963864c ""
   "images/text.png" 1567787150 117402 c36fae0c831f4c6ddab33871e43b50d6 ""
   "images/zero.png" 1570914980 144938 a187d03cbf1521276d78d116aa61bad3 ""
-  "specs.aux" 1571196774 2863 40fe50dace7010439b88ec8514d323ab ""
-  "specs.bbl" 1571196674 425 407aeb9f4f4d90f8d548c30e7fd7eb84 "bibtex specs"
-  "specs.lof" 1571196774 332 a0332befc5caa457d7b0e14f44154d4d ""
-  "specs.tex" 1571196771 9436 e6ecf00611c8946cd0923259752abb97 ""
-  "specs.toc" 1571196774 1897 4c1416f7458e56052917ac27724a1188 ""
+  "specs.aux" 1571200704 2879 3676b98c7e000892ea793ce4bbaa29c5 ""
+  "specs.bbl" 1571200222 425 407aeb9f4f4d90f8d548c30e7fd7eb84 "bibtex specs"
+  "specs.lof" 1571200704 332 4a38556e08fe9b63b155ff0e0acab416 ""
+  "specs.tex" 1571200702 11512 7ff8c561acfce5b5456775ea719866a9 ""
+  "specs.toc" 1571200704 1897 c06bc50164b01695a810614a0963c4cb ""
   (generated)
-  "specs.log"
-  "specs.pdf"
+  "specs.lot"
   "specs.aux"
   "specs.lof"
+  "specs.pdf"
   "specs.toc"
-  "specs.lot"
+  "specs.log"

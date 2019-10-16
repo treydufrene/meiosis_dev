@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  15 OCT 2019 20:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  15 OCT 2019 21:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -924,15 +924,15 @@ Package pdftex.def Info: images/model.png  used on input line 96.
 <images/zero.png, id=31, 1056.94875pt x 472.76625pt>
 File: images/zero.png Graphic file (type png)
 <use images/zero.png>
-Package pdftex.def Info: images/zero.png  used on input line 139.
+Package pdftex.def Info: images/zero.png  used on input line 146.
 (pdftex.def)             Requested size: 352.31625pt x 157.58595pt.
- [3 <./images/zero.png>] [4]
-<images/dex.pdf, id=40, 419.25134pt x 419.09534pt>
+ [3 <./images/zero.png>] [4] [5]
+<images/dex.pdf, id=44, 419.25134pt x 419.09534pt>
 File: images/dex.pdf Graphic file (type pdf)
 <use images/dex.pdf>
-Package pdftex.def Info: images/dex.pdf  used on input line 175.
+Package pdftex.def Info: images/dex.pdf  used on input line 188.
 (pdftex.def)             Requested size: 419.25032pt x 419.0943pt.
- [5 <./images/dex.pdf>] (./specs.bbl) [6
+ [6 <./images/dex.pdf>] (./specs.bbl) [7
 
 ] (./specs.aux) ) 
 Here is how much of TeX's memory you used:
@@ -944,10 +944,10 @@ Here is how much of TeX's memory you used:
  319 hyphenation exceptions out of 8191
  53i,8n,92p,10401b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on specs.pdf (8 pages, 2417431 bytes).
+Output written on specs.pdf (9 pages, 2419736 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
