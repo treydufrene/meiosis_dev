@@ -103,12 +103,13 @@
 \subsubsection{The system shall cost the end-user no more than \$1000.}
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
   \item \textit{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.}
-  \item \textit{The system shall cost the end-user no more than \$1000.}
+  \item \textit{The total cost of the materials for the end-user no more than \$1000.}
 \end{enumerate}
 
 \subsubsection{The system shall be fully dexterous without being kinematically redundant.}
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
-\item \textit{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.}
+\item \textit{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.} \\
+\emph{Figure \ref{fig:zero}} (pg. \pageref{fig:zero}) shows a six degree-of-freedom rotary manipulator with it's coordinate frames in zeroed positions.
 \end{enumerate}
 
 \subsubsection{The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ}\) eigen angle from the base frame.}
@@ -127,17 +128,18 @@ This workspace will provide enough movement to manipulate objects in order to pe
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
   \item \textit{The length of link one, two, three, four, and the wrist shall be 220.8 mm, 250 mm, 200 mm, 80 mm, and 52.5 mm respectively. This results in a total height of 220.8 mm with a total reach of 582.5 mm in the zeroed configuration.}
 \end{enumerate}
-\newpage
+
 \subsubsection{The system’s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.}
 This workspace will provide enough movement to manipulate objects in order to perform basic tasks. 280mm is slightly greater than the length of letter paper.
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=.75\textwidth]{zero}
-  \caption{Kinematic Model Representing Zeroed Configuration}
-  \label{fig:zero}
-\end{figure}
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
-  \item \textit{With respect to the kinematic model shown above in Figure \ref{fig:zero}, the rotational limit of joint one, two, three, four, five, and six shall be \(\pm180^{\circ}\), \(\pm9.7^{\circ}\) to \(177.5^{\circ}\), \(-150.6^{\circ}\) to \(-19.3^{\circ}\), \(\pm180^{\circ}\), \(-180^{\circ}\) to \(-1.6^{\circ}\), and \(\pm180^{\circ}\) respectively.}
+  \item \textit{With respect to the kinematic model shown in Figure \ref{fig:zero}, the rotational limit of joint one, two, three, four, five, and six shall be \(\pm180^{\circ}\), \(\pm9.7^{\circ}\) to \(177.5^{\circ}\), \(-150.6^{\circ}\) to \(-19.3^{\circ}\), \(\pm180^{\circ}\), \(-180^{\circ}\) to \(-1.6^{\circ}\), and \(\pm180^{\circ}\) respectively.} \\
+  As shown in \emph{Figure \ref{fig:dex}} (Appendix, pg. \pageref{sec:app}), to be fully dexterous within our 280 mm dexterous workspace the manipulator must have the joint angles specified above.
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[width=.75\textwidth]{zero}
+    \caption{Kinematic Model Representing Zeroed Configuration \cite{robo}}
+    \label{fig:zero}
+  \end{figure}
 \end{enumerate}
 \subsubsection{The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}
 This creates a robot capable of performing a variety of basic tasks, which enhances its educational value.
@@ -162,4 +164,22 @@ This will create an easily obtainable, low cost method of distributing the syste
   \item \textit{The system shall have a user interface capable of accepting user input.}
   \item \textit{The system shall be capable of performing floating point arithmetic for the inverse kinematic calculations.}
 \end{enumerate}
+
+\newpage
+\appendix
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\roman{subsection}}
+\section*{Appendix}\label{sec:app}
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame,width=.75\textwidth]{dex}
+  \caption{Cross Section of Dexterous Workspace Quadrant}
+  \label{fig:dex}
+\end{figure}
+
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{robo}
+
+
 \end{document}

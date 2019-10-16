@@ -238,6 +238,11 @@ INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/rm-lmro12.tfm
 INPUT images/zero.png
 INPUT ./images/zero.png
 INPUT ./images/zero.png
+INPUT images/dex.pdf
+INPUT ./images/dex.pdf
+INPUT ./images/dex.pdf
+INPUT specs.bbl
+INPUT specs.bbl
 INPUT specs.aux
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
