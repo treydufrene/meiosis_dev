@@ -118,9 +118,9 @@ To ensure that the robot has educational value, the accuracy must be defined so 
 \end{enumerate}
 \subsubsection{The system end effector shall maintain a pose repeatability magnitude between 0.1—1.5 mm for the position and \(\pm 4^{\circ}\) eigen angle from the base frame for the orientation.}
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
-  \item \textit{Joint one and two of the system shall possess an angle error of no more than .05 degrees.}
-  \item \textit{Joint three of the system shall possess an angle error of no more than .1 degrees.}
-  \item \textit{Joints four, five, and six shall possess an angle error of no more than .3 degrees.}
+  \item \textit{Joint one and two of the system shall possess an angle error of no more than .025 degrees.}
+  \item \textit{Joint three of the system shall possess an angle error of no more than .03 degrees.}
+  \item \textit{Joints four, five, and six shall possess an angle error of no more than .29 degrees.}
 \end{enumerate}
 \subsubsection{The system’s reachable workspace shall be a hemisphere with a radius of 300-700 mm.}
 This workspace will provide enough movement to manipulate objects in order to perform basic tasks.
@@ -142,22 +142,24 @@ This workspace will provide enough movement to manipulate objects in order to pe
 \subsubsection{The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}
 This creates a robot capable of performing a variety of basic tasks, which enhances its educational value.
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
-  \item \textit{The system will use a parallel gripper (purchased or 3D-Printed).}
-  \item \textit{The end effector will attach to the manipulator using screws.}
+  \item \textit{The system will use an actuatable parallel gripper that can close to 18mm.}
+  \item \textit{The end effector will attach to the manipulator using screws configured in a pattern that can mount a Dynamixel AX-12A servo.}
 \end{enumerate}
-
 
 \subsubsection{The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
-  \item \textit{The end effector will be capable of holding the marker still while moving.}\\
-  In order to be reliable when drawing, the marker should not move while being manipulated by the robot.
-  \item \textit{The end user will be able to select two points at which the robot will follow a trajectory between.} \\
-  This keeps the marker on the surface while moving to enable the robot to draw.
+  \item \textit{The end effector shall be capable of applying a gripping force of 0.028449 Newtons as to prevent slipping while writing.}
 \end{enumerate}
 
 \subsection{Software}
 \subsubsection{The system shall be open source.}
 This will create an easily obtainable, low cost method of distributing the system’s source code, which may be modified for personal use.
+\begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
+  \item \textit{The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.}
+\end{enumerate}
 \subsubsection{The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}
-This simplicity makes the system of use to inexperienced users.
+\begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
+  \item \textit{The system shall have a user interface capable of accepting user input.}
+  \item \textit{The system shall be capable of performing floating point arithmetic for the inverse kinematic calculations.}
+\end{enumerate}
 \end{document}
