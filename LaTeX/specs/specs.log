@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  15 OCT 2019 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  15 OCT 2019 22:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -912,42 +912,42 @@ Package pdftex.def Info: images/text.png  used on input line 23.
 \tf@lof=\write4
 \openout4 = `specs.lof'.
 
- [1]
-<images/model.png, id=19, 1331.97626pt x 802.49812pt>
+ [1] [1
+
+]
+<images/model.png, id=24, 1331.97626pt x 802.49812pt>
 File: images/model.png Graphic file (type png)
 <use images/model.png>
-Package pdftex.def Info: images/model.png  used on input line 96.
+Package pdftex.def Info: images/model.png  used on input line 117.
 (pdftex.def)             Requested size: 1331.973pt x 802.49615pt.
- [1
-
- <./images/model.png>] [2]
+ [2 <./images/model.png>]
 <images/zero.png, id=31, 1056.94875pt x 472.76625pt>
 File: images/zero.png Graphic file (type png)
 <use images/zero.png>
-Package pdftex.def Info: images/zero.png  used on input line 146.
+Package pdftex.def Info: images/zero.png  used on input line 150.
 (pdftex.def)             Requested size: 352.31625pt x 157.58595pt.
- [3 <./images/zero.png>] [4] [5]
-<images/dex.pdf, id=44, 419.25134pt x 419.09534pt>
+ [3] [4 <./images/zero.png>] [5] [6]
+<images/dex.pdf, id=47, 419.25134pt x 419.09534pt>
 File: images/dex.pdf Graphic file (type pdf)
 <use images/dex.pdf>
-Package pdftex.def Info: images/dex.pdf  used on input line 188.
+Package pdftex.def Info: images/dex.pdf  used on input line 193.
 (pdftex.def)             Requested size: 419.25032pt x 419.0943pt.
- [6 <./images/dex.pdf>] (./specs.bbl) [7
+ [7 <./images/dex.pdf>] (./specs.bbl) [8
 
 ] (./specs.aux) ) 
 Here is how much of TeX's memory you used:
  18419 strings out of 494091
  356411 string characters out of 6163523
- 385903 words of memory out of 5000000
+ 386903 words of memory out of 5000000
  21858 multiletter control sequences out of 15000+600000
  582649 words of font info for 56 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 53i,8n,92p,10401b,665s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,8n,92p,10401b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on specs.pdf (9 pages, 2419728 bytes).
+Output written on specs.pdf (10 pages, 2420839 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -91,15 +91,14 @@
 
 \section{Introduction}
 \raggedright
-\begin{figure}[htp]
-  \centering
-  \includegraphics[frame,width=.75\textwidth]{model}
-  \caption{Overview of Physical System}
-  \label{fig:model}
-\end{figure}
-\section{Design Requirements}
-\subsection{Hardware}
+With the intention of making robotics education more accessible, The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) intends to provide high school educators and robot enthusiasts with a low cost manipulator. The system should be usable by novice students. It should also be modifiable to create a sustainably increased understanding of robotics. While MEIOSIS may not fully emulate industrial manipulators, it aims to provide more students with access to robotics education.
 
+\section{Design Requirements}
+The specifications of the system are strictly based on the requirements defined previously. The requirements are divided into two primary categories, hardware and software.
+\vspace{-\baselineskip}
+\subsection{Hardware}
+The following requirements and specifications are hardware specific and dictate the physical constaints the system must adhere to.
+\vspace{-\baselineskip}
 \subsubsection{The system shall cost the end-user no more than \$1000.}
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
   \item \textit{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.}
@@ -108,12 +107,17 @@
 \subsubsection{The system shall be fully dexterous without being kinematically redundant.}
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
 \item \textit{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.} \\
-As defined \cite{robo}, “A manipulator having more than six DOF is referred to as a kinematically redundant manipulator (5).” A manipulator with less than six degrees of freedom will not be fully dexterous within it's workspace. \emph{Figure \ref{fig:zero}} (pg. \pageref{fig:zero}) shows a six degree-of-freedom rotary manipulator with it's coordinate frames in zeroed positions. \\
-~\\
+As defined \cite{robo}, “A manipulator having more than six DOF is referred to as a kinematically redundant manipulator (5).” A manipulator with less than six degrees of freedom will not be fully dexterous within it's workspace. \emph{Figure \ref{fig:zero}} (pg. \pageref{fig:zero}) shows a six degree-of-freedom rotary manipulator with it's coordinate frames in zeroed positions. The joint and link locations are seen in \emph{Figure \ref{fig:model}} below.
+\newpage
 \item \textit{The system shall have no link offsets.} \\
 Link offsets are commonly used to avoid singularities. However, having a link offset prevents the manipulator's dexterous workspace from being a complete hemispherical shell.
 \end{enumerate}
-
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame,width=.75\textwidth]{model}
+  \caption{Overview of Physical System}
+  \label{fig:model}
+\end{figure}
 \subsubsection{The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ}\) eigen angle from the base frame.}
 To ensure that the robot has educational value, the accuracy must be defined so that any desired positions and movements are achieved.
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
@@ -162,8 +166,9 @@ This creates a robot capable of performing a variety of basic tasks, which enhan
   \item \textit{The end effector shall be capable of applying a gripping force of 0.03 Newtons as to prevent slipping while writing.} \\
   The coefficient of friction between the Expo marker and paper can be approximated and given the weight of an Expo marker the approximate grip strength of the end effector can be calculated.
 \end{enumerate}
-
+\newpage
 \subsection{Software}
+The following requirements and specifications are software specific and determine the attributes of the operating system.
 \subsubsection{The system shall be open source.}
 This will create an easily obtainable, low cost method of distributing the system’s source code, which may be modified for personal use.
 \begin{enumerate}[label=\thesubsubsection.\alph*,leftmargin=3cm,font=\itshape]
