@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {1}{\ignorespaces Overview of Physical System\relax }}{2}
 \contentsline {figure}{\numberline {2}{\ignorespaces Kinematic Model Representing Zeroed Configuration}}{4}
 \contentsline {figure}{\numberline {3}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{6}
+=======
+\contentsline {figure}{\numberline {1}{\ignorespaces Overview of Physical System\relax }}{2}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Kinematic Model Representing Zeroed Configuration}}{4}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{6}% 
+>>>>>>> eb0cce5c3e20a6a30584d5acc0ac9e7e6518afda
