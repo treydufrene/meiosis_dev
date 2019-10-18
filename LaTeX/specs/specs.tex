@@ -64,12 +64,16 @@
 \section{Introduction}\label{sec:intro}
 \raggedright
 With the intention of making robotics education more accessible, The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) intends to provide high school educators and robot enthusiasts with a low cost manipulator. The system should be usable by novice students. It should also be modifiable to create a sustainably increased understanding of robotics. While MEIOSIS may not fully emulate industrial manipulators, it aims to provide more students with access to robotics education.
+\newline\newline
+The design which will be referenced throughout this document can be seen in \emph{Figure \ref{fig:model}}.
 \begin{figure}[htp]
   \centering
   \includegraphics[frame,width=.75\textwidth]{model}
   \caption{Overview of Physical System}
   \label{fig:model}
 \end{figure}
+\newline
+The design seen in \emph{Figure \ref{fig:model}} is based off of our conceptual design. This features four links and six joints for rotation which will be referenced throughout this document. The base of the manipulator and end effector can also be seen in the figure.
 \section{Design Requirements}
 The specifications of the system are strictly based on the requirements defined previously. The requirements are divided into two primary categories, hardware and software.
 \vspace{-\baselineskip}
@@ -85,7 +89,7 @@ The following requirements and specifications are hardware specific and dictate 
 \begin{enumerate}
 \item \textit{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.}
 \end{enumerate}
-As defined \cite{robo}, “A manipulator having more than six DOF is referred to as a kinematically redundant manipulator (5).” A manipulator with less than six degrees of freedom will not be fully dexterous within it's workspace. \emph{Figure \ref{fig:zero}} (see subsection \ref{sec:zero}, p. \pageref{fig:zero}) shows a six degree-of-freedom rotary manipulator with it's coordinate frames in zeroed positions. The joint and link locations are seen in \emph{Figure \ref{fig:model}} (see section \ref{sec:intro}, p. \pageref{sec:intro}).
+As defined \cite{robo}, “A manipulator having more than six DOF is referred to as a kinematically redundant manipulator (5).” A manipulator with less than six degrees of freedom (DOF) will not be fully dexterous within it's workspace. \emph{Figure \ref{fig:zero}} (see subsection \ref{sec:zero}, p. \pageref{fig:zero}) shows a six degree-of-freedom rotary manipulator with it's coordinate frames in zeroed positions. The joint and link locations are seen in \emph{Figure \ref{fig:model}} (see section \ref{sec:intro}, p. \pageref{sec:intro}).
 \begin{enumerate}[resume]
 \item \textit{The system shall have no link offsets.}
 \end{enumerate}
@@ -136,6 +140,8 @@ The angles stated are with respect to the kinematic model shown in \emph{Figure 
     \caption[Kinematic Model Representing Zeroed Configuration]{Kinematic Model Representing Zeroed Configuration \cite{robo}}
     \label{fig:zero}
   \end{figure}
+\newline
+The kinematic model in \emph{Figure \ref{fig:dex}} shows the zeroed configuration for a six degree of freedom robot with only rotational joints. This is the basis for which we determined specifications 2.1.2.a, 2.1.5.a, and 2.1.6a.
 \subsubsection{The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}
 This creates a robot capable of performing a variety of basic tasks, which enhances its educational value.
 \begin{enumerate}
@@ -182,6 +188,7 @@ The solution for the inverse kinematics requires the ability to perform high lev
   \caption{Cross Section of Dexterous Workspace Quadrant}
   \label{fig:dex}
 \end{figure}
+The plot shown in \emph{Figure \ref{fig:dex}} shows a cross-section of the dexterous workspace defined by requirement 2.1.6 and shows how specification 2.1.6.a was calculated. The program that created this plot is made to show red points where the robot is not fully dexterous and the lack of red dots shows that the robot is fully dexterous within the calculated area. This also drives specification 2.1.2.b as the workspace would have red points with a link offset.
 
 \newpage
 \bibliographystyle{plainnat}
