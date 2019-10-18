@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  15 OCT 2019 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  17 OCT 2019 20:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,19 +667,19 @@ Package Listings Info: Made | a short reference for \lstinline on input line 51.
  (./specs.aux)
 \openout1 = `specs.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 71.
 
 (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -853,37 +853,37 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count294
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 68.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 71.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 68.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 71.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 68.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 71.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 68.
+(Font)              <12> on input line 71.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 68.
+(Font)              <8> on input line 71.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 68.
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
+(Font)              <6> on input line 71.
+LaTeX Font Info:    Try loading font information for U+msa on input line 71.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 71.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 68.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 71.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 68.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 71.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./coverpage.tex
@@ -918,36 +918,239 @@ Package pdftex.def Info: images/text.png  used on input line 23.
 <images/model.png, id=24, 1331.97626pt x 802.49812pt>
 File: images/model.png Graphic file (type png)
 <use images/model.png>
-Package pdftex.def Info: images/model.png  used on input line 117.
+Package pdftex.def Info: images/model.png  used on input line 123.
 (pdftex.def)             Requested size: 1331.973pt x 802.49615pt.
  [2 <./images/model.png>]
 <images/zero.png, id=31, 1056.94875pt x 472.76625pt>
 File: images/zero.png Graphic file (type png)
 <use images/zero.png>
-Package pdftex.def Info: images/zero.png  used on input line 150.
+Package pdftex.def Info: images/zero.png  used on input line 162.
 (pdftex.def)             Requested size: 352.31625pt x 157.58595pt.
- [3] [4 <./images/zero.png>] [5] [6]
-<images/dex.pdf, id=47, 419.25134pt x 419.09534pt>
+ [3] [4 <./images/zero.png>]
+./specs.tex:192: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.192 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.192 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./specs.tex:192: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.192 \end{enumerate}
+                     
+I'm forgetting what you said and using zero instead.
+
+./specs.tex:192: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.192 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.192 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.192 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./specs.tex:192: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.192 \end{enumerate}
+                     
+I'm forgetting what you said and using zero instead.
+
+
+./specs.tex:192: LaTeX Error: \begin{document} ended by \end{enumerate}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192 \end{enumerate}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./specs.tex:192: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.192 \end{enumerate}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+[5]
+<images/dex.pdf, id=44, 419.25134pt x 419.09534pt>
 File: images/dex.pdf Graphic file (type pdf)
 <use images/dex.pdf>
-Package pdftex.def Info: images/dex.pdf  used on input line 193.
+Package pdftex.def Info: images/dex.pdf  used on input line 209.
 (pdftex.def)             Requested size: 419.25032pt x 419.0943pt.
- [7 <./images/dex.pdf>] (./specs.bbl) [8
+ [6 <./images/dex.pdf>] (./specs.bbl) [7
 
 ] (./specs.aux) ) 
 Here is how much of TeX's memory you used:
- 18419 strings out of 494091
- 356411 string characters out of 6163523
- 386903 words of memory out of 5000000
- 21858 multiletter control sequences out of 15000+600000
+ 18424 strings out of 494091
+ 356457 string characters out of 6163523
+ 387094 words of memory out of 5000000
+ 21863 multiletter control sequences out of 15000+600000
  582649 words of font info for 56 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 53i,8n,92p,10401b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,8n,92p,10401b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on specs.pdf (10 pages, 2420839 bytes).
+Output written on specs.pdf (9 pages, 2420426 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
