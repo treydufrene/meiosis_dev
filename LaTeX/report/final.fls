@@ -378,10 +378,10 @@ INPUT final.out
 INPUT final.out
 INPUT final.out
 INPUT final.out
+OUTPUT final.pdf
 INPUT ./final.out
 INPUT ./final.out
 OUTPUT final.out
-OUTPUT final.pdf
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
@@ -445,6 +445,7 @@ OUTPUT final.lof
 INPUT final.lot
 INPUT final.lot
 OUTPUT final.lot
+INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm

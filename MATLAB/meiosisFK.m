@@ -1,4 +1,7 @@
-function [o,R] = meiosisFK(gamma)
+% function [o,R] = meiosisFK(gamma)
+syms t1 t2 t3 t4 t5 t6
+gamma = [t1 t2 t3 t4 t5 t6];
+
 l1 = 8 + 14.08;
 l2 = 25;
 l3 = 20;
@@ -15,10 +18,10 @@ offset = 1;
 % euler = rotz(theta4)*roty(theta5)*rotz(theta6);
 
 % Constant manip offsets:
-qA    = [0;     0; pi/2;      0;   0;  0];
+qA    = [0;     0; sym(pi)/2;      0;   0;  0];
 d     = [  l1;     -offset;    0;     l3+l4;   0; l6];
 a     = [0; l2;    0;     0;    0; 0];
-alpha = [pi/2;     0; pi/2; -pi/2; pi/2;  0];
+alpha = [sym(pi)/2;     0; sym(pi)/2; -sym(pi)/2; sym(pi)/2;  0];
 
 for i = 1:6
     A(:,:,i) = rotzh(gamma(i) + qA(i)) * transzh(d(i)) * transxh(a(i)) * rotxh(alpha(i)); 
@@ -41,4 +44,4 @@ R = T(1:3,1:3,6);
 
 
 
-end
+% end
