@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  2 OCT 2019 10:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  30 OCT 2019 09:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1239,25 +1239,25 @@ File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
 ) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (./style.aux)
 \openout1 = `style.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 55.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1359,41 +1359,41 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 55.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 55.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 55.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 55.
+(Font)              <12> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 55.
+(Font)              <8> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 55.
-LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+(Font)              <6> on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 59.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./coverpage.tex
@@ -1431,285 +1431,285 @@ Package pdftex.def Info: images/text.png  used on input line 23.
 ] [2
 
 ] [1] [2]
-LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 133.
+LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.39996> on input line 133.
+(Font)              <8.39996> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.87994> on input line 133.
+(Font)              <5.87994> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.19998> on input line 133.
+(Font)              <4.19998> on input line 138.
  [3]
-LaTeX Font Info:    Try loading font information for U+BOONDOX-cal on input line 161.
+LaTeX Font Info:    Try loading font information for U+BOONDOX-cal on input line 166.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/boondox/uboondox-cal.fd
 File: uboondox-cal.fd 2011/04/26 Fontinst v1.933 font definitions for U/BOONDOX-cal.
 )
 LaTeX Font Info:    Font shape `U/BOONDOX-cal/m/n' will be
-(Font)              scaled to size 12.0pt on input line 161.
+(Font)              scaled to size 12.0pt on input line 166.
 LaTeX Font Info:    Font shape `U/BOONDOX-cal/m/n' will be
-(Font)              scaled to size 8.0pt on input line 161.
+(Font)              scaled to size 8.0pt on input line 166.
 LaTeX Font Info:    Font shape `U/BOONDOX-cal/m/n' will be
-(Font)              scaled to size 6.0pt on input line 161.
+(Font)              scaled to size 6.0pt on input line 166.
  [4]
 <images/spring_0-0.pdf, id=50, 402.64842pt x 174.12845pt>
 File: images/spring_0-0.pdf Graphic file (type pdf)
 <use images/spring_0-0.pdf>
-Package pdftex.def Info: images/spring_0-0.pdf  used on input line 175.
+Package pdftex.def Info: images/spring_0-0.pdf  used on input line 180.
 (pdftex.def)             Requested size: 402.64743pt x 174.128pt.
  [5 <./images/spring_0-0.pdf>]
 <images/callouts.png, id=69, 807.015pt x 572.1375pt>
 File: images/callouts.png Graphic file (type png)
 <use images/callouts.png>
-Package pdftex.def Info: images/callouts.png  used on input line 185.
+Package pdftex.def Info: images/callouts.png  used on input line 190.
 (pdftex.def)             Requested size: 352.31625pt x 249.777pt.
  [6 <./images/callouts.png>] (./style.bbl) [7
 
 ] [8]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 218.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 223.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 218.
+(Font)              scaled to size 10.20007pt on input line 223.
 <presentation.pdf, id=80, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf>
-Package pdftex.def Info: presentation.pdf  used on input line 232.
+Package pdftex.def Info: presentation.pdf  used on input line 237.
 (pdftex.def)             Requested size: 722.69823pt x 406.51775pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf>
-Package pdftex.def Info: presentation.pdf  used on input line 232.
+Package pdftex.def Info: presentation.pdf  used on input line 237.
 (pdftex.def)             Requested size: 722.69823pt x 406.51775pt.
 <presentation.pdf, id=83, page=1, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 1>
-Package pdftex.def Info: presentation.pdf , page1 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page1 used on input line 237.
 (pdftex.def)             Requested size: 722.69823pt x 406.51775pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 1>
-Package pdftex.def Info: presentation.pdf , page1 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page1 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [9]
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 1>
-Package pdftex.def Info: presentation.pdf , page1 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page1 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 1>
-Package pdftex.def Info: presentation.pdf , page1 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page1 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 1>
-Package pdftex.def Info: presentation.pdf , page1 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page1 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [10 <./presentation.pdf>]
 <presentation.pdf, id=121, page=2, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 2>
-Package pdftex.def Info: presentation.pdf , page2 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page2 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 2>
-Package pdftex.def Info: presentation.pdf , page2 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page2 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 2>
-Package pdftex.def Info: presentation.pdf , page2 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page2 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [11 <./presentation.pdf>]
 <presentation.pdf, id=126, page=3, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 3>
-Package pdftex.def Info: presentation.pdf , page3 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page3 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 3>
-Package pdftex.def Info: presentation.pdf , page3 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page3 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 3>
-Package pdftex.def Info: presentation.pdf , page3 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page3 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [12 <./presentation.pdf>]
 <presentation.pdf, id=131, page=4, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 4>
-Package pdftex.def Info: presentation.pdf , page4 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page4 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 4>
-Package pdftex.def Info: presentation.pdf , page4 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page4 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 4>
-Package pdftex.def Info: presentation.pdf , page4 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page4 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [13 <./presentation.pdf>]
 <presentation.pdf, id=136, page=5, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 5>
-Package pdftex.def Info: presentation.pdf , page5 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page5 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 5>
-Package pdftex.def Info: presentation.pdf , page5 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page5 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 5>
-Package pdftex.def Info: presentation.pdf , page5 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page5 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [14 <./presentation.pdf>]
 <presentation.pdf, id=141, page=6, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 6>
-Package pdftex.def Info: presentation.pdf , page6 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page6 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 6>
-Package pdftex.def Info: presentation.pdf , page6 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page6 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 6>
-Package pdftex.def Info: presentation.pdf , page6 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page6 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [15 <./presentation.pdf>]
 <presentation.pdf, id=147, page=7, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 7>
-Package pdftex.def Info: presentation.pdf , page7 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page7 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 7>
-Package pdftex.def Info: presentation.pdf , page7 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page7 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 7>
-Package pdftex.def Info: presentation.pdf , page7 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page7 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [16 <./presentation.pdf>]
 <presentation.pdf, id=152, page=8, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 8>
-Package pdftex.def Info: presentation.pdf , page8 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page8 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 8>
-Package pdftex.def Info: presentation.pdf , page8 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page8 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 8>
-Package pdftex.def Info: presentation.pdf , page8 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page8 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [17 <./presentation.pdf>]
 <presentation.pdf, id=157, page=9, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 9>
-Package pdftex.def Info: presentation.pdf , page9 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page9 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 9>
-Package pdftex.def Info: presentation.pdf , page9 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page9 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 9>
-Package pdftex.def Info: presentation.pdf , page9 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page9 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [18 <./presentation.pdf>]
 <presentation.pdf, id=162, page=10, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 10>
-Package pdftex.def Info: presentation.pdf , page10 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page10 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 10>
-Package pdftex.def Info: presentation.pdf , page10 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page10 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 10>
-Package pdftex.def Info: presentation.pdf , page10 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page10 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [19 <./presentation.pdf>]
 <presentation.pdf, id=167, page=11, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 11>
-Package pdftex.def Info: presentation.pdf , page11 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page11 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 11>
-Package pdftex.def Info: presentation.pdf , page11 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page11 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 11>
-Package pdftex.def Info: presentation.pdf , page11 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page11 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [20 <./presentation.pdf>]
 <presentation.pdf, id=172, page=12, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 12>
-Package pdftex.def Info: presentation.pdf , page12 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page12 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 12>
-Package pdftex.def Info: presentation.pdf , page12 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page12 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 12>
-Package pdftex.def Info: presentation.pdf , page12 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page12 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [21 <./presentation.pdf>]
 <presentation.pdf, id=178, page=13, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 13>
-Package pdftex.def Info: presentation.pdf , page13 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page13 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 13>
-Package pdftex.def Info: presentation.pdf , page13 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page13 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 13>
-Package pdftex.def Info: presentation.pdf , page13 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page13 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [22 <./presentation.pdf>]
 <presentation.pdf, id=183, page=14, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 14>
-Package pdftex.def Info: presentation.pdf , page14 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page14 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 14>
-Package pdftex.def Info: presentation.pdf , page14 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page14 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 14>
-Package pdftex.def Info: presentation.pdf , page14 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page14 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [23 <./presentation.pdf>]
 <presentation.pdf, id=189, page=15, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 15>
-Package pdftex.def Info: presentation.pdf , page15 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page15 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 15>
-Package pdftex.def Info: presentation.pdf , page15 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page15 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 15>
-Package pdftex.def Info: presentation.pdf , page15 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page15 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [24 <./presentation.pdf>]
 <presentation.pdf, id=194, page=16, 722.7pt x 406.51875pt>
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 16>
-Package pdftex.def Info: presentation.pdf , page16 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page16 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 16>
-Package pdftex.def Info: presentation.pdf , page16 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page16 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
 File: presentation.pdf Graphic file (type pdf)
 <use presentation.pdf, page 16>
-Package pdftex.def Info: presentation.pdf , page16 used on input line 232.
+Package pdftex.def Info: presentation.pdf , page16 used on input line 237.
 (pdftex.def)             Requested size: 795.73335pt x 447.6pt.
  [25 <./presentation.pdf>] (./style.aux) ) 
 Here is how much of TeX's memory you used:

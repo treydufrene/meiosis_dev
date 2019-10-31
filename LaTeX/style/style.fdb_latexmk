@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex style"] 1570038549 "style.aux" "style.bbl" "style" 1570048870
+["bibtex style"] 1572453312 "style.aux" "style.bbl" "style" 1572453315
   "/usr/local/texlive/2018basic/texmf-dist/bibtex/bst/base/plain.bst" 1480098433 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "JohnsonAL16.bib" 1565245636 592 e2e207d4e5c6ce6d1e07c39842e38ed4 ""
   "RonnebergerFB15.bib" 1565245636 599 835fa29b9fb7ae70ff5544ecada192bc ""
   "abs-1803-09820.bib" 1565245636 603 05042263474c0462f3bd481edca3e503 ""
-  "style.aux" 1570038733 2066 b3498de733f4a52b449a5b29207ca677 ""
+  "style.aux" 1572453315 2066 b3498de733f4a52b449a5b29207ca677 ""
   (generated)
   "style.bbl"
   "style.blg"
-["pdflatex"] 1570038731 "style.tex" "style.pdf" "style" 1570048870
+["pdflatex"] 1572453312 "style.tex" "style.pdf" "style" 1572453315
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1480098668 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -272,19 +272,19 @@
   "images/callouts.png" 1570035868 453009 36ca390cd935a9a0f8f5bf61e547840a ""
   "images/erau.png" 1566965613 202969 aef113bf89157c8ddf943a7c8a77402a ""
   "images/logo.png" 1567798133 708802 36ceb018e01969acc2de1e309b0d1e54 ""
-  "images/spring_0-0.pdf" 1543894295 38116 6e27e94eb5ec1254bf5e59b850fd29db ""
+  "images/spring_0-0.pdf" 1571673686 38116 6e27e94eb5ec1254bf5e59b850fd29db ""
   "images/text.png" 1567787150 117402 c36fae0c831f4c6ddab33871e43b50d6 ""
   "presentation.pdf" 1569808402 179776 ed9d9eea9eedef2796063eee50980c5d ""
-  "style.aux" 1570038733 2066 b3498de733f4a52b449a5b29207ca677 ""
-  "style.bbl" 1570038549 724 f7db1e0c8c0dbd2856a26374d704f69a "bibtex style"
-  "style.lof" 1570038733 266 f26dc20ebabef80ceea0f6c1aa6f3680 ""
-  "style.lot" 1570038733 95 be3fc2a6486e1b2fb382f6e33b5b4e94 ""
-  "style.tex" 1570038731 8357 01173dd1d9e8dbcb34eed6c6e660f907 ""
-  "style.toc" 1570038733 684 c9c554dcfae874634095a0fcc581772d ""
+  "style.aux" 1572453315 2066 b3498de733f4a52b449a5b29207ca677 ""
+  "style.bbl" 1572453312 724 f7db1e0c8c0dbd2856a26374d704f69a "bibtex style"
+  "style.lof" 1572453315 266 f26dc20ebabef80ceea0f6c1aa6f3680 ""
+  "style.lot" 1572453315 95 be3fc2a6486e1b2fb382f6e33b5b4e94 ""
+  "style.tex" 1572453309 8601 f59453a0771c86a88ae7c76938dcf7f8 ""
+  "style.toc" 1572453315 684 c9c554dcfae874634095a0fcc581772d ""
   (generated)
-  "style.toc"
-  "style.lot"
-  "style.lof"
   "style.aux"
-  "style.pdf"
+  "style.lof"
   "style.log"
+  "style.lot"
+  "style.pdf"
+  "style.toc"
