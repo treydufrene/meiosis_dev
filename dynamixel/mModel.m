@@ -11,14 +11,18 @@ title('Experimental Data')
 os = ((max(M(:,2)) - c) / c) * 100;
 % damping ratio
 damp = -log(os/100) / sqrt(pi^2 + log(os/100)^2);
-% from data cursor, 2928 ms is start peak is 3440
-start = M(find(diff(M(:,2)) > 1, 1, 'first'),1);
+% find where the motor begins responding
+start = M(find(diff(M(:,2)) > 1, 1, 'first'), 1);
 % time to peak
 Tp = 3424 - start;
-% natural freq
+% natural frequency
 wn = (pi / sqrt(1 - damp^2))/Tp;
-% transfer function
+
 G = tf(wn^2, [1 2*damp*wn wn^2])
 
+% [u,t] = gensig('square',2,10,0.1)
+% lsim(G,u,t)
+
 % figure()
-stepinfo(G)
+% step(G)
+% stepinfo(G)
