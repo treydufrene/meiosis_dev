@@ -1,6 +1,6 @@
-    % Written by Edward Pierce and Zack Johnson
-    % Me 406 Project Part 1 Animate
-    % Due 5/1/2019
+    % Open Loop Animation
+    % 11/11/2019
+    %   Adapted from code written by: Zack Johnson and Edward Pierce
 
 clear all
 close all
@@ -25,6 +25,6 @@ for ii = 1:(length(t)-1)
 end
     
 for ii = delta_t:delta_t:(length(b))
-    meiosis_draw(b(1:7,ii))
+    Meiosis_draw2(b(1:7,ii))
     pause(.001)
 end

@@ -44,7 +44,6 @@ if errorCheck == 1
     error('Joint angles cannot be determined.')
 else
     for ii = 1:10:500
-        
         meiosis_draw(gamma(:,ii))
         hold on
         plot3(xDes(1:ii),yDes(1:ii),zDes(1:ii),'r.')
