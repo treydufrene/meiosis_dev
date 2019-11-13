@@ -3,10 +3,9 @@
 close all;clear;clc
 
 % test loads mass moments of inertia
-m = [.146 .088 0.108];       % mass (kg)
-b = [.61277 .37227 0.28257];   % length (m)
-h = [.01915 0.01915 0.0299];     % height (m)
-% moment of inertia about z'
+m = [.146 .088 0.108];          % mass (kg)
+b = [.61277 .37227 0.28257];    % length (m)
+h = [.01915 0.01915 0.0299];    % height (m)
 J = (1/12)*m.*(h.^2 + b.^2);
 
 % path to csv files relative to script
@@ -14,7 +13,7 @@ datapath = 'data/AX12A/';
 files = dir(strcat(datapath,'*.csv'));
 numFiles = length(files);
 % initialize variables
-[damp, wn] = deal(zeros(numFiles,1));
+[damp, wn, Tp] = deal(zeros(numFiles,1));
 
 for ii = 1:numFiles
     % load experimental data, skip 5 header lines
@@ -23,9 +22,9 @@ for ii = 1:numFiles
         nani = (find(diff(M(:,1)) > 100));
         M(nani,:) = [];
     % show response
-%         figure();
-%         plot(M(:,1),M(:,2))
-%         title('Experimental Data')
+        figure();
+        plot(M(:,1),M(:,2))
+        title('Experimental Data')
     % find % OS
         peak = max(M(:,2));                        % peak value
         peaki = find(M(:,2)==peak, 1, 'first');    % peak value index
@@ -47,6 +46,7 @@ sol(1) = 2*mean(damp(end-2:end))*mean(wn(end-2:end));
 % no load case, omega_n^2
 sol(2) = mean(wn(end-2:end))^2;
 
+% obtain average damping ratio and natural frequencies for load cases
 zeta = [mean(damp(1:3));mean(damp(4:6));mean(damp(7:9))];
 omegan = [mean(wn(1:3));mean(wn(4:6));mean(wn(7:9))];
 
@@ -60,10 +60,7 @@ for jj = 1:3
     b(jj) = alpha(jj) + beta(jj);
 end
 
-sol(3:4,1) = A \ b;
-
-tps = [mean(Tp(1:3));mean(Tp(4:6));mean(Tp(7:9));mean(Tp(9:11))];
-
+sol(3:4) = A \ b;
 
 
 
