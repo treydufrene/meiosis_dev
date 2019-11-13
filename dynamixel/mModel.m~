@@ -47,23 +47,25 @@ sol(1) = 2*mean(damp(end-2:end))*mean(wn(end-2:end));
 % no load case, omega_n^2
 sol(2) = mean(wn(end-2:end))^2;
 
-zeta = [mean(damp(1:3));mean(damp(4:6));mean(damp(7:9))];
-omegan = [mean(wn(1:3));mean(wn(4:6));mean(wn(7:9))];
+zeta = [mean(damp(1:3));mean(damp(4:6));mean(damp(7:));mean(damp(7:9))]
+omegan = [mean(wn(1:3));mean(wn(3:5));mean(wn(5:7));mean(wn(7:9))]
 
-alpha = 2.*zeta.*omegan;
-beta = omegan.^2;
-A = zeros(3,2);
-b = zeros(3,1);
+% a = 2.*damp.*wn;
+% b = wn.^2;
+% A = zeros(3,2);
+% B = zeros(3,1);
+% 
+% for jj = 1:3
+%     A(jj,:) = [1, -(a(jj)*J(jj) + b(jj)*J(jj))];
+%     B(jj) = a(jj) + b(jj);
+% end
+% 
+% sol(1) = a;
+% sol(2) = b;
+% sol(3:4,1) = A \ B;
 
-for jj = 1:3
-    A(jj,:) = [1, -(alpha(jj)*J(jj) + beta(jj)*J(jj))];
-    b(jj) = alpha(jj) + beta(jj);
-end
-
-sol(3:4,1) = A \ b;
-
-tps = [mean(Tp(1:3));mean(Tp(4:6));mean(Tp(7:9));mean(Tp(9:11))];
-
+% transfer function
+% G = tf(wn(ii)^2, [1 2*damp(ii)*wn(ii) wn(ii)^2])
 
 
 

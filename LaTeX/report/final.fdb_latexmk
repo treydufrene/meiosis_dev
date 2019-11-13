@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1571680299 "final.tex" "final.pdf" "final" 1571680302
+["pdflatex"] 1571680299 "final.tex" "final.pdf" "final" 1573610568
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1480098668 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1480098668 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -273,10 +273,10 @@
   "images/logo.png" 1567798133 708802 36ceb018e01969acc2de1e309b0d1e54 ""
   "images/text.png" 1567787150 117402 c36fae0c831f4c6ddab33871e43b50d6 ""
   (generated)
-  "final.toc"
-  "final.pdf"
-  "final.lot"
-  "final.log"
   "final.lof"
   "final.out"
+  "final.lot"
   "final.aux"
+  "final.toc"
+  "final.pdf"
+  "final.log"
