@@ -1,1 +1,1 @@
-\contentsline {section}{\numberline {1}Forward Kinematics}{1}{section.0.1}
+\contentsline {section}{\numberline {1}Motor Dynamics}{1}{section.0.1}

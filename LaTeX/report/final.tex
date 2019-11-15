@@ -105,200 +105,88 @@
 
 \pagenumbering{arabic}
 
-\section{Forward Kinematics}
-\begin{table}[htp]
-  \center
-  \caption{DH Table for 6 DOF Manipulator}
-  \label{table:dh}
-  \begin{tabular}{C{1cm}|C{1.5cm}|C{2cm}|C{1cm}|C{1cm}}
-    DH & $d_i$ & $\theta_i$ & $a_i$ & $\alpha_i$ \\ \hline
-    1 & $\ell_1$ & $\theta_1$ & 0 & $\sfrac{\pi}{2}$ \\
-    2 & $-d$ & $\theta_2$ & $\ell_2$ & 0 \\
-    3 & 0 & $\theta_3 + \sfrac{\pi}{2}$ & 0 & $\sfrac{\pi}{2}$ \\
-    4 & $\ell_3 + \ell_4$ & $\theta_4$ & 0 & $-\sfrac{\pi}{2}$ \\
-    5 & 0 & $\theta_5$ & 0 & $\sfrac{\pi}{2}$ \\
-    6 & $\ell_6$ & $\theta_6$ & 0 & 0 \\
-  \end{tabular}
-\end{table}
-Where \(\ell_1 = 22.08\)cm, \(\ell_2 = 25\)cm, \(\ell_3 = 20\)cm, \(\ell_4 = 8\)cm, \(\ell_6 = 5.25\)cm, and \(d = 1\)cm.
+% \section{Forward Kinematics}
+% \input{fk}
+\section{Motor Dynamics}
 \begin{equation}
-A = Rot_{z,\theta}~Trans_{z,d}~Trans_{x,a}~Rot_{x,\alpha}
-\label{eq:J1}
-\end{equation}%
-Given an arbitrary homogeneous matrix $T_i^{i-1}$ (computed by matrix multiplication of $A$ matrices $\rightarrow \big[A_1A_2\cdots A_{i-1}A_i\big]$), the orientation vector $\bar{z}_i$ (with respect to $\varphi$, $\theta$ and $\psi$) and the relative joint position (displacement) vector $\bar{o}_i$ (with respect to $x$, $y$, and $z$) can be obtained via the 3$^{rd}$ and 4$^{th}$ columns of the matrix respectively,
-as shown in Equation \ref{eq:J2} (given $\beta$ as an arbitrary rotation angle about the $z$-axis).
-\begin{equation}
-  T_i^{i-1} =
-\begin{bmatrix}
-  c_{\beta} & -s_{\beta} & z_i^{\varphi} & o_i^x \\
-  s_{\beta} & c_{\beta} & z_i^{\theta} & o_i^y \\
-  0 & 0 & z_i^{\psi} & o_i^z \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\label{eq:J2}
+  H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau
+  \label{eq:rdyn}
 \end{equation}
-\begin{minipage}[b]{.5\textwidth}
-  \strut\vspace*{-\baselineskip}\newline
+
+\begin{equation}
+  \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\ddot{\theta}_a + \tau_L
+  \label{eq:pd}
+\end{equation}
+
+
 \[
-A_1 = rotz(\theta_1) ~ transz(\ell_1) ~ rotx(\sfrac{\pi}{2})
+V_a = i_aR_a + K\dot{\theta}_a
 \]
-\vspace{.25ex}
+
+\begin{center}
+\begin{tikzpicture}
+\pgfmathsetmacro{\cubex}{1}
+\pgfmathsetmacro{\cubey}{1}
+\pgfmathsetmacro{\cubez}{1}
+\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,-\cubey,0) -- ++(\cubex,0,0) -- cycle;
+\draw (0,0,0) -- ++(0,0,-\cubez) -- ++(0,-\cubey,0) -- ++(0,0,\cubez) -- cycle;
+\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,0,-\cubez) -- ++(\cubex,0,0) -- cycle;
+\draw (-2,-.5,-.5) -- ++(.8,0,0);
+\draw (0,-.5,-.5) -- ++(1,0,0);
+\end{tikzpicture}
+\end{center}
+
 \[
-A_1 =
-\begin{bmatrix}
-  \cos(\theta_1) & 0 & \sin(\theta_1) & 0 \\
-  \sin(\theta_1) & 0 & -\cos(\theta_1) & 0 \\
-  0 & 1 & 0 & 22.08 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
+Ki_a = J_aN\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
 \]
-\end{minipage}%
-\begin{minipage}[b]{.5\textwidth}
-\strut\vspace*{-\baselineskip}\newline
-\[
-A_2 = rotz(\theta_2) ~ transz(-d) ~ transx(\ell_2)
-\]
-\vspace{.25ex}
-\[
-A_2 =
-\begin{bmatrix}
-  \cos(\theta_2) & -\sin(\theta_2) & 0 & 25\cos(\theta_2) \\
-  \sin(\theta_2) & \cos(\theta_2) & 0 & 25\sin(\theta_2) \\
-  0 & 0 & 1 & -1 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\end{minipage}\\
-\begin{minipage}[c]{.5\textwidth}
-\[
-A_3 = rotz(\theta_3 + \sfrac{\pi}{2}) ~ rotx(\sfrac{\pi}{2})
-\]
-\vspace{.25ex}
-\[
-A_3 =
-\begin{bmatrix}
-  \cos(\theta_3 +  \sfrac{\pi}{2}) & 0 & \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
-  \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 & -\cos(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
-  0 & 1 & 0 & 0 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\end{minipage}%
-\begin{minipage}[c]{.5\textwidth}
-\[
-A_4 = rotz(\theta_4) ~ transz(\ell_3 + \ell_4) ~ rotx(-\sfrac{\pi}{2})
-\]
-% \vspace{.25ex}
-\[
-A_4 =
-\begin{bmatrix}
-  \cos(\theta_4) & 0 & -\sin(\theta_4) & 0 \\
-  \sin(\theta_4) & 0 & \cos(\theta_4) & 0 \\
-  0 & -1 & 0 & 28 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\vspace{.25ex}
-\end{minipage}\\
-\begin{minipage}[c]{.5\textwidth}
-\[
-A_5 = rotz(\theta_5) ~ rotx(\sfrac{\pi}{2})
-\]
-\vspace{.25ex}
-\[
-A_5 =
-\begin{bmatrix}
-  \cos(\theta_5) & 0 & \sin(\theta_5) & 0 \\
-  \sin(\theta_5) & 0 & -\cos(\theta_5) & 0 \\
-  0 & 1 & 0 & 0 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\end{minipage}%
-\begin{minipage}[c]{.5\textwidth}
-\[
-A_6 = rotz(\theta_6) ~ transz(\ell_6)
-\]
-\vspace{.5ex}
-\[
-A_6 =
-\begin{bmatrix}
-  \cos(\theta_6) & 0 & -\sin(\theta_6) & 0 \\
-  \sin(\theta_6) & 0 & \cos(\theta_6) & 0 \\
-  0 & 0 & 1 & 5.25 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\vfill\null
-\end{minipage}
+
+\begin{equation}
+  2\zeta\omega_n = \frac{b_a}{J_a} - \frac{KK_d}{R_aJ_aN} + \frac{K^2}{R_aJ_a}
+\end{equation}
+\begin{equation}
+  \omega_n^2 = \frac{-KK_p}{R_aJ_aN}
+\end{equation}
+
+\begin{equation}
+  \text{\% Overshoot} = \left( \frac{\theta_{max} - \theta_{ss}}{\theta_{ss}} \right) \cdot 100
+\end{equation}
+
+\begin{equation}
+  \zeta = \frac{-\ln(\sfrac{\%\text{OS}}{100})}{\sqrt{\pi^2 + \ln^2(\sfrac{\%\text{OS}}{100})}}
+\end{equation}
+
+\begin{equation}
+  \omega_n = \frac{\pi}{T_p\sqrt{1-\zeta^2}}
+\end{equation}
+
+\begin{equation}
+  2\zeta\omega_n = \frac{R_ab_aN^2\eta-KK_dN\eta+K^2N^2\eta}{R_aJ_aN^2\eta+R_aJ_m}
+\end{equation}
+
+\begin{equation}
+  \omega_n =-\frac{KK_pN\eta}{R_aJ_aN^2\eta+R_aJ_m}
+\end{equation}
+
+% The dynamical
 
 
 
 
-% A Level:
-% \section{}
-% B Level:
-% \subsection{B Level Heading}
-% C Level
-% \subsubsection{}
 
 % Example citations:
 % \cite{DBLP:journals/corr/JohnsonAL16}
 % \cite{DBLP:journals/corr/abs-1803-09820}
 % \cite{DBLP:journals/corr/RonnebergerFB15}
 
-% \section{A Level Heading}
-% Sample table with tabulated data and reference label
-% \begin{table}[htp]
-%   \center
-%   \caption{DH Table for 6 DOF Manipulator}
-%   \label{table:dh}
-%   \color{red} bold col headers, table times new roman, 12pt., centered, \color{black} \\
-%   \begin{tabular}{C{1cm}|C{1cm}C{2cm}C{1cm}C{1cm}}
-%     \textbf{DH} & $d_i$ & $\theta_i$ & $a_i$ & $\alpha_i$ \\ \hline
-%     1 & 280 & $q_1 - \pi$ & 0 & $\sfrac{\pi}{2}$ \\
-%     2 & 0 & $q_2 + \sfrac{\pi}{2}$ & 210 & 0 \\
-%     3 & 0 & $q_3 - \sfrac{\pi}{2}$ & 75 & -$\sfrac{\pi}{2}$ \\
-%     4 & 210 & $q_4$ & 0 & $\sfrac{\pi}{2}$ \\
-%     5 & 0 & $q_5 - \pi$ & 0 & $\sfrac{\pi}{2}$ \\
-%     6 & 70 & $q_6$ & 0 & 0 \\
-%   \end{tabular}
-% \end{table}
-% here is the table reference callout
-% \emph{Table \ref{table:dh}} shows the Denavit–Hartenberg parameters for the manipulator.
 
-% Here is a centered mathtype with no number
-% $$
-% \vec{v}_G =
-% \left[\dot{\ell}_s\sin(\theta) + \frac{\ell_b\dot{\phi}\cos(\phi)}{2} +
-% \ell_s\dot{\theta}\cos(\theta)\right]\hat{\textrm{\i}} +
-% \left[\frac{\ell_b\dot{\phi}\sin(\phi)}{2} -
-% \dot{\ell}_s\cos(\theta) + \ell_s\dot{\theta}\sin(\theta)\right]\hat{\textrm{\j}}
-% $$
 
-% Here is a centered equation with number and reference label
-% \begin{equation}
-% \ddot{\theta} = \frac{d}{dt}\left(\frac{\partial\Lag}{\partial\dot{\theta}}\right) -
-% \frac{\partial\Lag}{\partial\theta} = \big(Q_{\theta}\big)_{\text{non}}
-% \label{eq:lagtheta}
-% \end{equation}
 
-% This is some inline mathtype: $u = \frac{1}{2}mv^2$, (notice the fluidity and smaller size than the other mathtype)
-
-% \section{A Level Heading}
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=.75\textwidth]{filename}
-%   \caption{Figure with Callouts}
-%   \label{fig:figname}
-% \end{figure}
 
 % \begin{enumerate}[label=\alph*.]
 %   \item Description for callout a
 %   \item Description for callout b
 % \end{enumerate}
 
-% As seen in \emph{Figure \ref{fig:figname}}
 
 % \newpage
 % \bibliographystyle{plain}
