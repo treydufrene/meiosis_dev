@@ -38,7 +38,7 @@
 \usepackage{tocloft}
 \usepackage{url}
 \usepackage{etoolbox}
-\usepackage{hyperref}
+% \usepackage{hyperref}
 
 \setlength{\parskip}{\baselineskip}%
 \setlength{\parindent}{0pt}%
@@ -106,7 +106,7 @@
 \pagenumbering{arabic}
 
 \section{Forward Kinematics}
-% \input{fk}
+The forward kinematics of the manipulator can be found using the Denavit–Hartenberg convention. \\
 \begin{table}[htp]
   \center
   \caption{DH Table for 6 DOF Manipulator}
@@ -226,21 +226,19 @@ A_6 =
 \newpage
 
 \section{Motor Dynamics}
-Given robot dynamics described by \(H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau\), the torque, $\tau$, provided by the servo motor is necessary to solve the closed loop dynamics of the system. Assuming the servo is driven by a D.C. motor with proportional derivative control,
+Given robot dynamics described by \(H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau\), the torque, $\tau$, provided by the servo motors is necessary to solve the closed loop dynamics of the system. Assuming the servo is driven by a D.C. motor with proportional derivative control,
 \begin{equation}
   \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\dot{\theta}_a + \tau_L
-  \label{eq:pd}
+  \label{eq:motor}
 \end{equation}
-Where $\tau_a$ is the actuator torque, $K$ is the back-EMF constant, $i_a$ is the motor current, $J_a$ is the armature inertia, $\theta_a,~\dot{\theta}_a,\ddot{\theta}_a$ is the motor position and it's first and second time derivatives, respectively, $b_a$ is the viscous friction coefficient, and $\tau_L$ is the leftover torque available for the actuator to do work. The basic equation for a motor is known to be:
-
+Where $\tau_a$ is the actuator torque, $K$ is the back-EMF constant, $i_a$ is the motor current, $J_a$ is the armature inertia, $\theta_a,~\dot{\theta}_a,\ddot{\theta}_a$ is the motor position and it's first and second time derivatives, respectively, $b_a$ is the viscous friction coefficient, and $\tau_L$ is the torque available for the actuator to do work. The basic equation for a motor is known to be:
 \begin{equation}
   V_a = i_aR_a + K\dot{\theta}_a
   \label{eq:va}
 \end{equation}
-
 Where $V_a$ is the voltage applied to the actuator and $R_a$ is the armature resistance. Given a gearbox with $\sfrac{\text{in}}{\text{out}}$ ratio $N$ and efficiency $\eta$,
 \input{gearbox}
-The motor equations can be expressed in the output coordinates:
+The motor equation (\ref{eq:motor}) can be expressed in the output coordinates:
 \[
 Ki_a = J_aN\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
 \]
@@ -252,7 +250,8 @@ Substituing into equation (\ref{eq:va}) and solving for $i_a$:
   V_a = \frac{R_aJ_aN}{K}\ddot{\theta} + \frac{R_ab_aN}{K}\dot{\theta} + \frac{R_a}{KN\eta}\tau + KN\dot{\theta}
   \label{eq:newva}
 \end{equation}
-Assuming P.D. control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), setting equal to (\ref{eq:newva}), then collecting like terms:
+Assuming P.D. control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), where $\theta_d$ is the desired orientation of the actuator, the following solution is found by setting the P.D. solution equal to (\ref{eq:newva}). After collecting like terms:
+
 \begin{equation}
   \frac{R_aJ_aN}{K}\ddot{\theta} + \left( \frac{R_aJ_aN}{K} - K_d + KN \right)\dot{\theta} - K_p\theta = -K_p\theta_d - \frac{R_a}{KN\eta}\tau
   \label{eq:end1}
@@ -295,8 +294,7 @@ Performing a similar experiment as previously described, except with a known ine
 \end{bmatrix}
 \label{eq:soe}
 \end{equation}
-Finally, with multiple datasets (varying inertial loads, $J_m$) the coefficients of the second order system equation can be found using the least squares solution of (\ref{eq:soe})
-% The dynamical
+Finally, with multiple datasets (varying inertial loads, $J_m$) the coefficients of the second order system equation can be found using the least squares solution of (\ref{eq:soe}).
 
 
 
