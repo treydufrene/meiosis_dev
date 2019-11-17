@@ -529,6 +529,8 @@ INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
+INPUT gearbox.tex
+INPUT gearbox.tex
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
@@ -540,8 +542,8 @@ INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/
 INPUT final.aux
 INPUT ./final.out
 INPUT ./final.out
-INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
@@ -550,7 +552,6 @@ INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
-INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb

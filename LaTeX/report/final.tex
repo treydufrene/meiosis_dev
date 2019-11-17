@@ -226,43 +226,20 @@ A_6 =
 \newpage
 
 \section{Motor Dynamics}
+Given robot dynamics described by \(H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau\), the torque, $\tau$, provided by the servo motor is necessary to solve the closed loop dynamics of the system. Assuming the servo is driven by a D.C. motor with proportional derivative control,
 \begin{equation}
-  H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau
-  \label{eq:rdyn}
-\end{equation}
-
-\begin{equation}
-  \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\ddot{\theta}_a + \tau_L
+  \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\dot{\theta}_a + \tau_L
   \label{eq:pd}
 \end{equation}
-
+Where $\tau_a$ is the actuator torque, $K$ is the back-EMF constant, $i_a$ is the motor current, $J_a$ is the armature inertia, $\theta_a,~\dot{\theta}_a,\ddot{\theta}_a$ is the motor position and it's first and second time derivatives, respectively, $b_a$ is the viscous friction coefficient, and $\tau_L$ is the leftover torque available for the actuator to do work. The basic equation for a motor is known to be:
 
 \begin{equation}
   V_a = i_aR_a + K\dot{\theta}_a
   \label{eq:va}
 \end{equation}
 
-Given a gearbox with $\sfrac{\text{in}}{\text{out}}$ ratio $N$ and efficiency $\eta$,
-\begin{center}
-\begin{tikzpicture}
-\pgfmathsetmacro{\cubex}{1}
-\pgfmathsetmacro{\cubey}{1}
-\pgfmathsetmacro{\cubez}{1}
-\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,-\cubey,0) -- ++(\cubex,0,0) -- cycle;
-\draw (0,0,0) -- ++(0,0,-\cubez) -- ++(0,-\cubey,0) -- ++(0,0,\cubez);
-\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,0,-\cubez) -- ++(\cubex,0,0);
-\draw (-2,-.5,-.5) -- ++(.8,0,0) node(a)[midway,above]{} node(b)[midway]{} node(c)[midway,below]{};
-\pic [draw,angle radius=5,<-] {angle = a--b--c};
-\node at (-2.25,0,-.5) {\small $\theta_a$};
-\node at (-2.25,-1,-.5) {\small $\tau_{in}$};
-\draw (0,-.5,-.5) -- ++(1,0,0);
-\draw (0,-.5,-.5) -- ++(1,0,0) node(a1)[midway,above]{} node(b1)[midway]{} node(c1)[midway,below]{};
-\pic [draw,angle radius=5,<-] {angle = a1--b1--c1};
-\node at (1.5,0,-.5) {\small $\theta=\frac{\theta_a}{N}$};
-\node at (1.5,-1,-.5) {\small $\tau_{out}=\tau_{in}N\eta$};
-\node at (-.5,-.5,0) {$N$};
-\end{tikzpicture}
-\end{center}
+Where $V_a$ is the voltage applied to the actuator and $R_a$ is the armature resistance. Given a gearbox with $\sfrac{\text{in}}{\text{out}}$ ratio $N$ and efficiency $\eta$,
+\input{gearbox}
 The motor equations can be expressed in the output coordinates:
 \[
 Ki_a = J_aN\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
@@ -275,39 +252,50 @@ Substituing into equation (\ref{eq:va}) and solving for $i_a$:
   V_a = \frac{R_aJ_aN}{K}\ddot{\theta} + \frac{R_ab_aN}{K}\dot{\theta} + \frac{R_a}{KN\eta}\tau + KN\dot{\theta}
   \label{eq:newva}
 \end{equation}
-Assuming P.D. control: \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), setting equal to \ref{eq:newva}, then collecting like terms:
+Assuming P.D. control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), setting equal to (\ref{eq:newva}), then collecting like terms:
 \begin{equation}
   \frac{R_aJ_aN}{K}\ddot{\theta} + \left( \frac{R_aJ_aN}{K} - K_d + KN \right)\dot{\theta} - K_p\theta = -K_p\theta_d - \frac{R_a}{KN\eta}\tau
+  \label{eq:end1}
 \end{equation}
+\newpage
+The following parameters of the system can be obtained by applying a step input to the system with $\tau=0$ and measuring the characteristics of it's response. Denoting $\zeta$ as the damping ratio and $\omega_n$ as the natural frequency of the system,
+\[
+  \text{\% Overshoot} = \left( \frac{\theta_{max} - \theta_{ss}}{\theta_{ss}} \right) \times 100~,\quad \zeta = \frac{-\ln(\sfrac{\%\text{OS}}{100})}{\sqrt{\pi^2 + \ln^2(\sfrac{\%\text{OS}}{100})}}~,\quad \omega_n = \frac{\pi}{T_p\sqrt{1-\zeta^2}}
+\]
+
+Given $\theta_{max},~\theta_{ss},$ and $T_p$ as measured parameters of the system's max output, steady state, and time to peak, respectively.
+
+Refactoring equation (\ref{eq:end1}) and equating with the general solution for a second order system given by $\ddot{\theta} + 2\zeta\omega_n\dot{\theta} + \omega_n^2\theta = \omega_n^2\theta_d$,
 \begin{equation}
-  2\zeta\omega_n = \frac{b_a}{J_a} - \frac{KK_d}{R_aJ_aN} + \frac{K^2}{R_aJ_a}
-\end{equation}
-\begin{equation}
+  2\zeta\omega_n = \frac{b_a}{J_a} - \frac{KK_d}{R_aJ_aN} + \frac{K^2}{R_aJ_a}~,\quad
   \omega_n^2 = \frac{-KK_p}{R_aJ_aN}
 \end{equation}
-
+Performing a similar experiment as previously described, except with a known inertial load $\tau = J_m\ddot{\theta}$, the following parameters can be found:
 \begin{equation}
-  \text{\% Overshoot} = \left( \frac{\theta_{max} - \theta_{ss}}{\theta_{ss}} \right) \cdot 100
+  \alpha_m \equiv 2\zeta\omega_n = \frac{R_ab_aN^2\eta-KK_dN\eta+K^2N^2\eta}{R_aJ_aN^2\eta+R_aJ_m}~,\quad
+  \beta_m \equiv \omega_n =-\frac{KK_pN\eta}{R_aJ_aN^2\eta+R_aJ_m}
 \end{equation}
 
 \begin{equation}
-  \zeta = \frac{-\ln(\sfrac{\%\text{OS}}{100})}{\sqrt{\pi^2 + \ln^2(\sfrac{\%\text{OS}}{100})}}
+\begin{bmatrix}
+  1 & -(\alpha_1J_1+\beta_1J_1) \\
+  1 & -(\alpha_2J_2+\beta_2J_2) \\
+  \vdots & \vdots
+\end{bmatrix}
+\begin{bmatrix}
+  \dfrac{R_ab_aN^2\eta-KK_dN\eta+K^2N^2\eta-KK_pN\eta}{R_aJ_aN^2\eta} \\
+  ~\\
+  \dfrac{1}{J_aN^2\eta}
+\end{bmatrix}
+=
+\begin{bmatrix}
+  \alpha_1+\beta_1 \\
+  \alpha_2+\beta_2 \\
+  \vdots
+\end{bmatrix}
+\label{eq:soe}
 \end{equation}
-
-\begin{equation}
-  \omega_n = \frac{\pi}{T_p\sqrt{1-\zeta^2}}
-\end{equation}
-
-\begin{equation}
-  2\zeta\omega_n = \frac{R_ab_aN^2\eta-KK_dN\eta+K^2N^2\eta}{R_aJ_aN^2\eta+R_aJ_m}
-\end{equation}
-
-\begin{equation}
-  \omega_n =-\frac{KK_pN\eta}{R_aJ_aN^2\eta+R_aJ_m}
-\end{equation}
-
-
-
+Finally, with multiple datasets (varying inertial loads, $J_m$) the coefficients of the second order system equation can be found using the least squares solution of (\ref{eq:soe})
 % The dynamical
 
 
