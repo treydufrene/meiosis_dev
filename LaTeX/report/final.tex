@@ -58,7 +58,7 @@
 \setlength\linenumbersep{6mm}
 % \hbadness=99999  % or any number >=10000
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
-% \usetikzlibrary{arrows,calc,patterns,angles,quotes}
+\usetikzlibrary{arrows,calc,patterns,angles,quotes}
 % \usetikzlibrary{shapes.geometric}
 % \usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing} % for snakes!
 % \usetikzlibrary{positioning, circuits.logic.US}
@@ -105,8 +105,126 @@
 
 \pagenumbering{arabic}
 
-% \section{Forward Kinematics}
+\section{Forward Kinematics}
 % \input{fk}
+\begin{table}[htp]
+  \center
+  \caption{DH Table for 6 DOF Manipulator}
+  \label{table:dh}
+  \begin{tabular}{C{1cm}|C{1.5cm}|C{2cm}|C{1cm}|C{1cm}}
+    DH & $d_i$ & $\theta_i$ & $a_i$ & $\alpha_i$ \\ \hline
+    1 & $\ell_1$ & $\theta_1$ & 0 & $\sfrac{\pi}{2}$ \\
+    2 & $-d$ & $\theta_2$ & $\ell_2$ & 0 \\
+    3 & 0 & $\theta_3 + \sfrac{\pi}{2}$ & 0 & $\sfrac{\pi}{2}$ \\
+    4 & $\ell_3 + \ell_4$ & $\theta_4$ & 0 & $-\sfrac{\pi}{2}$ \\
+    5 & 0 & $\theta_5$ & 0 & $\sfrac{\pi}{2}$ \\
+    6 & $\ell_6$ & $\theta_6$ & 0 & 0 \\
+  \end{tabular}
+\end{table}
+Where \(\ell_1 = 22.08\)cm, \(\ell_2 = 25\)cm, \(\ell_3 = 20\)cm, \(\ell_4 = 8\)cm, \(\ell_6 = 5.25\)cm, and \(d = 1\)cm.
+\begin{equation}
+A = Rot_{z,\theta}~Trans_{z,d}~Trans_{x,a}~Rot_{x,\alpha}
+\label{eq:J1}
+\end{equation}%
+Given an arbitrary homogeneous matrix $T_i^{i-1}$ (computed by matrix multiplication of $A$ matrices $\rightarrow \big[A_1A_2\cdots A_{i-1}A_i\big]$), the orientation vector $\bar{z}_i$ (with respect to $\varphi$, $\theta$ and $\psi$) and the relative joint position (displacement) vector $\bar{o}_i$ (with respect to $x$, $y$, and $z$) can be obtained via the 3$^{rd}$ and 4$^{th}$ columns of the matrix respectively,
+as shown in Equation \ref{eq:J2} (given $\beta$ as an arbitrary rotation angle about the $z$-axis).
+\begin{equation}
+  T_i^{i-1} =
+\begin{bmatrix}
+  c_{\beta} & -s_{\beta} & z_i^{\varphi} & o_i^x \\
+  s_{\beta} & c_{\beta} & z_i^{\theta} & o_i^y \\
+  0 & 0 & z_i^{\psi} & o_i^z \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\label{eq:J2}
+\end{equation}
+
+\[
+A_1 = rotz(\theta_1) ~ transz(\ell_1) ~ rotx(\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_1 =
+\begin{bmatrix}
+  \cos(\theta_1) & 0 & \sin(\theta_1) & 0 \\
+  \sin(\theta_1) & 0 & -\cos(\theta_1) & 0 \\
+  0 & 1 & 0 & 22.08 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_2 = rotz(\theta_2) ~ transz(-d) ~ transx(\ell_2)
+\]
+\vspace{.25ex}
+\[
+A_2 =
+\begin{bmatrix}
+  \cos(\theta_2) & -\sin(\theta_2) & 0 & 25\cos(\theta_2) \\
+  \sin(\theta_2) & \cos(\theta_2) & 0 & 25\sin(\theta_2) \\
+  0 & 0 & 1 & -1 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_3 = rotz(\theta_3 + \sfrac{\pi}{2}) ~ rotx(\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_3 =
+\begin{bmatrix}
+  \cos(\theta_3 +  \sfrac{\pi}{2}) & 0 & \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
+  \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 & -\cos(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_4 = rotz(\theta_4) ~ transz(\ell_3 + \ell_4) ~ rotx(-\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_4 =
+\begin{bmatrix}
+  \cos(\theta_4) & 0 & -\sin(\theta_4) & 0 \\
+  \sin(\theta_4) & 0 & \cos(\theta_4) & 0 \\
+  0 & -1 & 0 & 28 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_5 = rotz(\theta_5) ~ rotx(\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_5 =
+\begin{bmatrix}
+  \cos(\theta_5) & 0 & \sin(\theta_5) & 0 \\
+  \sin(\theta_5) & 0 & -\cos(\theta_5) & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_6 = rotz(\theta_6) ~ transz(\ell_6)
+\]
+\vspace{.5ex}
+\[
+A_6 =
+\begin{bmatrix}
+  \cos(\theta_6) & 0 & -\sin(\theta_6) & 0 \\
+  \sin(\theta_6) & 0 & \cos(\theta_6) & 0 \\
+  0 & 0 & 1 & 5.25 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+
+\newpage
+
 \section{Motor Dynamics}
 \begin{equation}
   H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau
@@ -119,27 +237,48 @@
 \end{equation}
 
 
-\[
-V_a = i_aR_a + K\dot{\theta}_a
-\]
+\begin{equation}
+  V_a = i_aR_a + K\dot{\theta}_a
+  \label{eq:va}
+\end{equation}
 
+Given a gearbox with $\sfrac{\text{in}}{\text{out}}$ ratio $N$ and efficiency $\eta$,
 \begin{center}
 \begin{tikzpicture}
 \pgfmathsetmacro{\cubex}{1}
 \pgfmathsetmacro{\cubey}{1}
 \pgfmathsetmacro{\cubez}{1}
 \draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,-\cubey,0) -- ++(\cubex,0,0) -- cycle;
-\draw (0,0,0) -- ++(0,0,-\cubez) -- ++(0,-\cubey,0) -- ++(0,0,\cubez) -- cycle;
-\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,0,-\cubez) -- ++(\cubex,0,0) -- cycle;
-\draw (-2,-.5,-.5) -- ++(.8,0,0);
+\draw (0,0,0) -- ++(0,0,-\cubez) -- ++(0,-\cubey,0) -- ++(0,0,\cubez);
+\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,0,-\cubez) -- ++(\cubex,0,0);
+\draw (-2,-.5,-.5) -- ++(.8,0,0) node(a)[midway,above]{} node(b)[midway]{} node(c)[midway,below]{};
+\pic [draw,angle radius=5,<-] {angle = a--b--c};
+\node at (-2.25,0,-.5) {\small $\theta_a$};
+\node at (-2.25,-1,-.5) {\small $\tau_{in}$};
 \draw (0,-.5,-.5) -- ++(1,0,0);
+\draw (0,-.5,-.5) -- ++(1,0,0) node(a1)[midway,above]{} node(b1)[midway]{} node(c1)[midway,below]{};
+\pic [draw,angle radius=5,<-] {angle = a1--b1--c1};
+\node at (1.5,0,-.5) {\small $\theta=\frac{\theta_a}{N}$};
+\node at (1.5,-1,-.5) {\small $\tau_{out}=\tau_{in}N\eta$};
+\node at (-.5,-.5,0) {$N$};
 \end{tikzpicture}
 \end{center}
-
+The motor equations can be expressed in the output coordinates:
 \[
 Ki_a = J_aN\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
 \]
-
+Substituing into equation (\ref{eq:va}) and solving for $i_a$:
+\[
+  i_a = \frac{J_aN}{K}\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
+\]
+\begin{equation}
+  V_a = \frac{R_aJ_aN}{K}\ddot{\theta} + \frac{R_ab_aN}{K}\dot{\theta} + \frac{R_a}{KN\eta}\tau + KN\dot{\theta}
+  \label{eq:newva}
+\end{equation}
+Assuming P.D. control: \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), setting equal to \ref{eq:newva}, then collecting like terms:
+\begin{equation}
+  \frac{R_aJ_aN}{K}\ddot{\theta} + \left( \frac{R_aJ_aN}{K} - K_d + KN \right)\dot{\theta} - K_p\theta = -K_p\theta_d - \frac{R_a}{KN\eta}\tau
+\end{equation}
 \begin{equation}
   2\zeta\omega_n = \frac{b_a}{J_a} - \frac{KK_d}{R_aJ_aN} + \frac{K^2}{R_aJ_a}
 \end{equation}
@@ -166,6 +305,8 @@ Ki_a = J_aN\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
 \begin{equation}
   \omega_n =-\frac{KK_pN\eta}{R_aJ_aN^2\eta+R_aJ_m}
 \end{equation}
+
+
 
 % The dynamical
 
