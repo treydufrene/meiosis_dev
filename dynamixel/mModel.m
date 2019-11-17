@@ -22,9 +22,9 @@ for ii = 1:numFiles
         nani = (find(diff(M(:,1)) > 100));
         M(nani,:) = [];
     % show response
-        figure();
-        plot(M(:,1),M(:,2))
-        title('Experimental Data')
+%         figure();
+%         plot(M(:,1),M(:,2))
+%         title('Experimental Data')
     % find % OS
         peak = max(M(:,2));                        % peak value
         peaki = find(M(:,2)==peak, 1, 'first');    % peak value index
@@ -35,7 +35,7 @@ for ii = 1:numFiles
     % find where the motor begins responding
         start = M(find(diff(M(:,2)) > 1, 1, 'first'), 1);
     % time to peak
-        Tp(ii) = M(peaki,1) - start;
+        Tp(ii) = (M(peaki,1) - start) / 1000;
     % natural frequency
         wn(ii) = pi / (sqrt(1 - damp(ii)^2)*Tp(ii));
 end
