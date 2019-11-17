@@ -1,4 +1,4 @@
-function bdot = Meiosis_robot1(b,F)
+function bdot = Meiosis_robot1(b,gammad)
 
     %Preallocate variables
     bdot = zeros(12,1);
@@ -25,9 +25,15 @@ function bdot = Meiosis_robot1(b,F)
 %     Rm = diag(Ra.*n.*N./K);
 
     [H,d,G] = Meiosis_HdG(gamma,gammadot);
-
+    one = diag((1 / 82.5459264810444)*[1 1 1 1 1 1]);
+    one = 10*one;
+    two = diag((13.4787019763844 / 82.5459264810444)*[1 1 1 1 1 1]);
+    two = 10*two;
+    three = diag((88.3252169803572 / 82.5459264810444)*[1 1 1 1 1 1]);
+    three = 10*three;
+    
     bdot(1:6) = b(7:12);
-    bdot(7:12) = H\(F - d - G);
-    %bdot(8:14) = (Jm + Rm*H)\(Va - Rm*d - Cm*sign(gammadot) - Bm*gammadot - Rm*G);
+    bdot(7:12) = (H+one)\(three*(gammad - b(1:6)) - (d+two*bdot(1:6)));% - G);
+%     bdot(8:14) = (Jm + Rm*H)\(Va - Rm*d - Cm*sign(gammadot) - Bm*gammadot - Rm*G);
 
 end
