@@ -135,92 +135,59 @@
 \end{figure}
 
 
-Where \(\ell_1 = 22.08\)cm, \(\ell_2 = 25\)cm, \(\ell_3 = 20\)cm, \(\ell_4 = 8\)cm, \(\ell_6 = 5.25\)cm, and \(d = 1\)cm.
+% Where \(\ell_1 = 22.08\)cm, \(\ell_2 = 25\)cm, \(\ell_3 = 20\)cm, \(\ell_4 = 8\)cm, \(\ell_6 = 5.25\)cm, and \(d = 1\)cm.
 
 
 \[
-A_1 = rotz(\theta_1) ~ transz(\ell_1) ~ rotx(\sfrac{\pi}{2})
+\begin{aligned}
+  ^I_Br_1 = \begin{bmatrix} 0\\0\\ \ell_b\end{bmatrix} & \quad
+  ^1_1r_2 = \begin{bmatrix} 0\\0\\ \ell_1\end{bmatrix} & \quad
+  ^2_2r_3 = \begin{bmatrix} 0\\\ell_2\\ 0\end{bmatrix} & \quad
+  ^3_3r_4 = \begin{bmatrix} 0\\\ell_3\\ 0\end{bmatrix} & \quad
+  ^4_4r_5 = \begin{bmatrix} 0\\\ell_4\\ 0\end{bmatrix} & \quad
+  ^5_5r_6 = \begin{bmatrix} 0\\\ell_5\\ 0\end{bmatrix} & \quad
+\end{aligned}
 \]
-\vspace{.25ex}
+
 \[
-A_1 =
-\begin{bmatrix}
-  \cos(\theta_1) & 0 & \sin(\theta_1) & 0 \\
-  \sin(\theta_1) & 0 & -\cos(\theta_1) & 0 \\
-  0 & 1 & 0 & 22.08 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
+\begin{aligned}
+  ^I_Br_1 =&
+  \begin{bmatrix}
+    0\\ 0\\ \ell_b
+  \end{bmatrix} & \quad
+  ^I_Br_2 =
+  \begin{bmatrix}
+    0\\ 0\\ \ell_b + \ell_1
+  \end{bmatrix} & \quad
+  ^I_Br_3 =
+  \begin{bmatrix}
+    -\ell_2c_{\theta_2}s_{\theta_1}\\
+    \ell_2c_{\theta_{12}}\\
+    \ell_b+\ell_1+\ell_2s_{\theta_2}
+  \end{bmatrix} & \quad
+  ^I_Br_4 =
+  \begin{bmatrix}
+    -s_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    c_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    \ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_2s_{\theta_2}
+  \end{bmatrix} \\
+\end{aligned}
+  \]
+  \[
+  \begin{aligned}
+  ^I_Br_5 =
+  \begin{bmatrix}
+    -s_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_4c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    c_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_4c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    \ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_4s_{\theta_{23}} + \ell_2s_{\theta_2}
+  \end{bmatrix} & \quad
+  ^I_Br_6 =
+  \begin{bmatrix}
+    0\\0\\1
+  \end{bmatrix}
+\end{aligned}
 \]
-\vspace{.25ex}
-\[
-A_2 = rotz(\theta_2) ~ transz(-d) ~ transx(\ell_2)
-\]
-\vspace{.25ex}
-\[
-A_2 =
-\begin{bmatrix}
-  \cos(\theta_2) & -\sin(\theta_2) & 0 & 25\cos(\theta_2) \\
-  \sin(\theta_2) & \cos(\theta_2) & 0 & 25\sin(\theta_2) \\
-  0 & 0 & 1 & -1 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\vspace{.25ex}
-\[
-A_3 = rotz(\theta_3 + \sfrac{\pi}{2}) ~ rotx(\sfrac{\pi}{2})
-\]
-\vspace{.25ex}
-\[
-A_3 =
-\begin{bmatrix}
-  \cos(\theta_3 +  \sfrac{\pi}{2}) & 0 & \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
-  \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 & -\cos(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
-  0 & 1 & 0 & 0 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\vspace{.25ex}
-\[
-A_4 = rotz(\theta_4) ~ transz(\ell_3 + \ell_4) ~ rotx(-\sfrac{\pi}{2})
-\]
-\vspace{.25ex}
-\[
-A_4 =
-\begin{bmatrix}
-  \cos(\theta_4) & 0 & -\sin(\theta_4) & 0 \\
-  \sin(\theta_4) & 0 & \cos(\theta_4) & 0 \\
-  0 & -1 & 0 & 28 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\vspace{.25ex}
-\[
-A_5 = rotz(\theta_5) ~ rotx(\sfrac{\pi}{2})
-\]
-\vspace{.25ex}
-\[
-A_5 =
-\begin{bmatrix}
-  \cos(\theta_5) & 0 & \sin(\theta_5) & 0 \\
-  \sin(\theta_5) & 0 & -\cos(\theta_5) & 0 \\
-  0 & 1 & 0 & 0 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
-\vspace{.25ex}
-\[
-A_6 = rotz(\theta_6) ~ transz(\ell_6)
-\]
-\vspace{.5ex}
-\[
-A_6 =
-\begin{bmatrix}
-  \cos(\theta_6) & 0 & -\sin(\theta_6) & 0 \\
-  \sin(\theta_6) & 0 & \cos(\theta_6) & 0 \\
-  0 & 0 & 1 & 5.25 \\
-  0 & 0 & 0 & 1 \\
-\end{bmatrix}
-\]
+
 
 \newpage
 

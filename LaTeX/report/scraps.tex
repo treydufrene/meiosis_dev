@@ -53,3 +53,88 @@
 % \end{bmatrix}
 % \label{eq:J2}
 % \end{equation}
+
+
+\[
+A_1 = rotz(\theta_1) ~ transz(\ell_1) ~ rotx(\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_1 =
+\begin{bmatrix}
+  \cos(\theta_1) & 0 & \sin(\theta_1) & 0 \\
+  \sin(\theta_1) & 0 & -\cos(\theta_1) & 0 \\
+  0 & 1 & 0 & 22.08 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_2 = rotz(\theta_2) ~ transz(-d) ~ transx(\ell_2)
+\]
+\vspace{.25ex}
+\[
+A_2 =
+\begin{bmatrix}
+  \cos(\theta_2) & -\sin(\theta_2) & 0 & 25\cos(\theta_2) \\
+  \sin(\theta_2) & \cos(\theta_2) & 0 & 25\sin(\theta_2) \\
+  0 & 0 & 1 & -1 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_3 = rotz(\theta_3 + \sfrac{\pi}{2}) ~ rotx(\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_3 =
+\begin{bmatrix}
+  \cos(\theta_3 +  \sfrac{\pi}{2}) & 0 & \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
+  \sin(\theta_3 +  \sfrac{\pi}{2}) & 0 & -\cos(\theta_3 +  \sfrac{\pi}{2}) & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_4 = rotz(\theta_4) ~ transz(\ell_3 + \ell_4) ~ rotx(-\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_4 =
+\begin{bmatrix}
+  \cos(\theta_4) & 0 & -\sin(\theta_4) & 0 \\
+  \sin(\theta_4) & 0 & \cos(\theta_4) & 0 \\
+  0 & -1 & 0 & 28 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_5 = rotz(\theta_5) ~ rotx(\sfrac{\pi}{2})
+\]
+\vspace{.25ex}
+\[
+A_5 =
+\begin{bmatrix}
+  \cos(\theta_5) & 0 & \sin(\theta_5) & 0 \\
+  \sin(\theta_5) & 0 & -\cos(\theta_5) & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+\vspace{.25ex}
+\[
+A_6 = rotz(\theta_6) ~ transz(\ell_6)
+\]
+\vspace{.5ex}
+\[
+A_6 =
+\begin{bmatrix}
+  \cos(\theta_6) & 0 & -\sin(\theta_6) & 0 \\
+  \sin(\theta_6) & 0 & \cos(\theta_6) & 0 \\
+  0 & 0 & 1 & 5.25 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
