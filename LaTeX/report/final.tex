@@ -125,17 +125,15 @@
 \subsection{Parts List}
 
 \newpage
-
-
+%------------------------------------------------------------------------------%
+% FK
+%------------------------------------------------------------------------------%
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.9\textwidth]{zero}
   \caption{Coordinate Systems}
   \label{fig:coords}
 \end{figure}
-
-
-% Where \(\ell_1 = 22.08\)cm, \(\ell_2 = 25\)cm, \(\ell_3 = 20\)cm, \(\ell_4 = 8\)cm, \(\ell_6 = 5.25\)cm, and \(d = 1\)cm.
 
 Given the lengths of each of the manipulator links,
 \[
@@ -149,6 +147,17 @@ Given the lengths of each of the manipulator links,
 \end{aligned}
 \]
 The position of each link relative to the inertial frame is given as:
+\[
+\begin{aligned}
+^I_Br_1 &= {}_Br_1 &\quad
+^I_Br_2 &= r_1 + {}^IT_1 {}^1_1r_2 &\quad
+^I_Br_3 &= r_2 + {}^IT_2 {}^2_2r_3 \\[.5em]
+^I_Br_4 &= r_3 + {}^IT_3 {}^3_3r_4 &\quad
+^I_Br_5 &= r_4 + {}^IT_4 {}^4_4r_5 &\quad
+^I_Br_6 &= r_5 + {}^IT_5 {}^5_5r_6
+\end{aligned}
+\]
+
 \[
 \begin{aligned}
   ^I_Br_1 =&
@@ -195,7 +204,16 @@ The position of each link relative to the inertial frame is given as:
 \]
 \newpage
 The orientation of each link with respect to the inertial frame is given as:
-\[rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3)~roty(\theta_4)~rotx(\theta_5)~roty(\theta_6)\]
+\[
+\begin{aligned}
+^IT_1 &= rotz(\theta_1) \\
+^IT_2 &= rotz(\theta_1)~rotx(\theta_2)\\
+^IT_3 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3)\\
+^IT_4 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3)~roty(\theta_4)\\
+^IT_5 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3)~roty(\theta_4)~rotx(\theta_5)\\
+^IT_6 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3)~roty(\theta_4)~rotx(\theta_5)~roty(\theta_6)\\
+\end{aligned}
+\]
 \[
 \begin{aligned}
   ^IT_1 =
@@ -243,7 +261,6 @@ c_{\theta_4}s_{\theta_1} + s_{\theta_{23}}c_{\theta_1}s_{\theta_4}& s_{\theta_5}
   ^IT_{6(3,1)} & ^IT_{6(3,2)} & ^IT_{6(3,3)}\\
 \end{bmatrix}
 \]
-% \text{Where} \\
 \[
 \begin{aligned}
 ^IT_{6(1,1)} &=
@@ -268,8 +285,70 @@ c_{\theta_6}(s_{\theta_{23}}s_{\theta_5} - c_{\theta_{23}}c_{\theta_4}c_{\theta_
 \]
 
 \newpage
+%------------------------------------------------------------------------------%
+% ROBOT EOMS
+%------------------------------------------------------------------------------%
 
-% \section{Closed-Loop Simulation}
+\begin{equation}
+  H(\gamma)\ddot{\gamma}+d(\gamma,\dot{\gamma})+G(\gamma)+B(\dot{\gamma})+C\text{sgn}(\dot{\gamma}) = F
+\end{equation}
+\[
+J_B =
+\begin{bmatrix}
+  ^IT_B(:,3)^T \cdot \dfrac{\partial}{d(\gamma)}^IT_B(:,2) \\
+  ^IT_B(:,1)^T \cdot \dfrac{\partial}{d(\gamma)}^IT_B(:,3) \\
+  ^IT_B(:,2)^T \cdot \dfrac{\partial}{d(\gamma)}^IT_B(:,1) \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  ^B_B\omega_I\\
+  ^I_B\dot{r}_B
+\end{bmatrix}
+\]
+
+\[
+^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
+\]
+
+\[
+G(\gamma) \equiv \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T
+\]
+
+\[
+U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
+\]
+
+\begin{equation}
+  \renewcommand{\arraystretch}{1.5}
+  H(\gamma) = \sum_B^N J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
+    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
+  \end{bmatrix}
+  J_B(\gamma)
+\end{equation}
+
+\begin{equation}
+  \renewcommand{\arraystretch}{1.5}
+  d(\gamma,\dot{\gamma}) = \sum_B^N J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
+    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
+  \end{bmatrix}
+  \dot{J}_B(\gamma,\dot{\gamma})\dot{\gamma}+J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_B\omega_I \times ^B_BJ ^B_B\omega_I \\
+    ^IT_B\left(^B_B\omega_I\times(^B_B\omega_I\times^B_B\Gamma)\right)
+  \end{bmatrix}
+\end{equation}
+
+
+
+
+\newpage
+%------------------------------------------------------------------------------%
+% MOTOR DYNAMICS
+%------------------------------------------------------------------------------%
 Given robot dynamics described by \(H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau\), the torque, $\tau$, provided by the servo motors is necessary to solve the closed loop dynamics of the system. Assuming the servo is driven by a D.C. motor with proportional derivative control,
 \begin{equation}
   \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\dot{\theta}_a + \tau_L
@@ -360,9 +439,10 @@ Finally, with multiple datasets (varying inertial loads, $J_m$) the coefficients
 
 \newpage
 \section*{Acknowledgements \& Attributions}
-We would like to acknowledge the following people for their contibutions to creating this report?
+We would like to acknowledge the following people for their contibutions to creating this report\textbf{?}
 \begin{itemize}
   \item Dr. Isenberg
+  \item Dr. Schipper
 \end{itemize}
 
 \newpage
