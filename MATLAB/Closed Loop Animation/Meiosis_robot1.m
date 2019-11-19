@@ -1,11 +1,11 @@
-function bdot = Meiosis_robot1(b,gammad)
+function bdot = Meiosis_robot1(b,thetad)
 
     %Preallocate variables
     bdot = zeros(12,1);
     
     %Variable reassignments
-    gamma = b(1:6);
-    gammadot = b(7:12);
+    theta = b(1:6);
+    thetadot = b(7:12);
      
     %              Motor Dynamics
     %Define motor/gearbox/friction constants
@@ -24,16 +24,16 @@ function bdot = Meiosis_robot1(b,gammad)
 %     Cm = diag(Ra.*ca./K);
 %     Rm = diag(Ra.*n.*N./K);
 
-    [H,d,G] = Meiosis_HdG(gamma,gammadot);
+    [H,d,G] = Meiosis_HdG(theta,thetadot);
     one = diag((1 / 82.5459264810444)*[1 1 1 1 1 1]);
-    one = 10*one;
+    %one = 10*one;
     two = diag((13.4787019763844 / 82.5459264810444)*[1 1 1 1 1 1]);
-    two = 10*two;
+    %two = 10*two;
     three = diag((88.3252169803572 / 82.5459264810444)*[1 1 1 1 1 1]);
-    three = 10*three;
+    %three = 10*three;
     
     bdot(1:6) = b(7:12);
-    bdot(7:12) = (H+one)\(three*(gammad - b(1:6)) - (d+two*bdot(1:6)));% - G);
+    bdot(7:12) = (H+one)\(three*(thetad - b(1:6)) - (d+two*bdot(1:6)) - G);
 %     bdot(8:14) = (Jm + Rm*H)\(Va - Rm*d - Cm*sign(gammadot) - Bm*gammadot - Rm*G);
 
 end

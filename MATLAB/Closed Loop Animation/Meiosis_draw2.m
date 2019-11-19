@@ -1,10 +1,14 @@
-function Meiosis_draw2(gamma)
-    theta(1) = gamma(1);
-    theta(2) = gamma(2);
-    theta(3) = gamma(3);
-    theta(4) = gamma(4);
-    theta(5) = gamma(5);
-    theta(6) = gamma(6);
+function Meiosis_draw2(theta)
+  
+    %       Mapping between joint space and motor space 
+    N = 10;         %Gear Ratio
+    A = [ 1/(2*N), 1/(2*N),   0, 0,   0,   0;
+          1/(2*N),-1/(2*N),   0, 0,   0,   0;
+                0,       0,-1/N, 0,   0,   0;
+                0,       0,   0, 1,   0,   0;
+                0,       0,   0, 0,-1/2, 1/2;
+                0,       0,   0, 0, 1/2, 1/2];
+    gamma = A*theta;
     
     clf(gcf);
 
@@ -46,16 +50,16 @@ function Meiosis_draw2(gamma)
     
     %Orientations wrt I
     TB = eye(3);
-    T{1} = TB*rotz(theta(1));
-    T{2} = T{1}*rotx(theta(2));
-    T{3} = T{2}*rotx(theta(3));
-    T{4} = T{3}*roty(theta(4));
-    T{5} = T{4}*rotx(theta(5));
-    T{6} = T{5}*roty(theta(6));
-    T{7} = T{1}*rotx(-theta(1));           %Gear 1
-    T{8} = T{1}*rotx(theta(1));          %Gear 2
-    T{9} = T{5}*rotx(-theta(6));          %Gear 3
-    T{10} = T{5}*rotx(theta(6));          %Gear 4
+    T{1} = TB*rotz(gamma(1));
+    T{2} = T{1}*rotx(gamma(2));
+    T{3} = T{2}*rotx(gamma(3));
+    T{4} = T{3}*roty(gamma(4));
+    T{5} = T{4}*rotx(gamma(5));
+    T{6} = T{5}*roty(gamma(6));
+    T{7} = T{1}*rotx(-gamma(1));           %Gear 1
+    T{8} = T{1}*rotx(gamma(1));           %Gear 2
+    T{9} = T{5}*rotx(-gamma(6));          %Gear 3
+    T{10} = T{5}*rotx(gamma(6));          %Gear 4
 
     %Positions wrt I
     rB = rBfromI;

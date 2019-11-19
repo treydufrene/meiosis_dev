@@ -13,11 +13,11 @@ b = zeros(12,length(t));      %pre-allocate motor angles for all time
 Va = zeros(6,length(t));      %pre-allocate input torque for all time
 
 %Define Desired Joint angles
-gammad = Meiosis_HI();
-r6d = MeiosisFK(gammad(:,1));
+thetad = Meiosis_HI();
+r6d = MeiosisFK(thetad(:,1));
 
 %Define initial conditions
-b(:,1) = [gammad(:,1);0;0;0;0;0;0];     %Initial position and velocity
+b(:,1) = [thetad(:,1);0;0;0;0;0;0];     %Initial position and velocity
 %Va(1,1:100) = 24;                %Input torques in the motors
 
 %Define Control Parameters
@@ -30,6 +30,7 @@ Kd = -2*zeta*wn*eye(6);
 tolerance = .001*ones(3,1);
 
 jj = 1;
+
 for ii = 1:(length(t)-1)
 %     if (t(ii) - T_Last) >= Ts
 %         gamma = b(1:6,ii);
@@ -56,23 +57,24 @@ for ii = 1:(length(t)-1)
 %     end
  
 %     Va(:,ii) = va;
-    gamma = b(1:6,ii);
-    r6 = MeiosisFK(gamma);
+    theta = b(1:6,ii);
+    r6 = MeiosisFK(theta);
     Xe = r6 - r6d;
     if (abs(Xe) <= tolerance)
         jj = jj + 1;
         if jj > 14
+            %b(:,ii+1:end) = b(:,ii);
             break
         end
-        r6d = MeiosisFK(gammad(:,jj));
+        r6d = MeiosisFK(thetad(:,jj));
     end
-    gammadMat(:,ii) = gammad(:,jj);
+    thetadMat(:,ii) = thetad(:,jj);
     %gammad(:,jj) = 1000*ones(6,1);
     
-    k1 = Meiosis_robot1(b(:,ii),gammad(:,jj));
-    k2 = Meiosis_robot1(b(:,ii) + k1.*dt/2,gammad(:,jj));
-    k3 = Meiosis_robot1(b(:,ii) + k2.*dt/2,gammad(:,jj));
-    k4 = Meiosis_robot1(b(:,ii) + k3.*dt,gammad(:,jj));
+    k1 = Meiosis_robot1(b(:,ii),thetad(:,jj));
+    k2 = Meiosis_robot1(b(:,ii) + k1.*dt/2,thetad(:,jj));
+    k3 = Meiosis_robot1(b(:,ii) + k2.*dt/2,thetad(:,jj));
+    k4 = Meiosis_robot1(b(:,ii) + k3.*dt,thetad(:,jj));
     b(:,ii+1) = b(:,ii) + dt*(k1./6 + k2./3 + k3./3 + k4./6);
 end
     
@@ -98,4 +100,4 @@ end
 
 
 %figure('Renderer', 'painters', 'Position', [10 100 700 700])
-Meiosis_Joint_Angle_plot(b(1:6,1:ii-1),gammadMat,t(1:ii-1),'Computed Torque Trajectory Tracking Joint-Space Control')
+Meiosis_Joint_Angle_plot(b(1:6,1:length(thetadMat)),thetadMat,t(1:length(thetadMat)),'Computed Torque Trajectory Tracking Joint-Space Control')

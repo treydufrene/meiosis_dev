@@ -1,20 +1,23 @@
-function [r6,T6]= MeiosisFK(gamma)
+function [r6,T6]= MeiosisFK(theta)
 
-    theta1 = gamma(1);
-    theta2 = gamma(2);
-    theta3 = gamma(3);
-    theta4 = gamma(4);
-    theta5 = gamma(5);
-    theta6 = gamma(6);
+    %       Mapping between joint space and motor space 
+    N = 10;         %Gear Ratio
+    A = [ 1/(2*N), 1/(2*N),   0, 0,   0,   0;
+          1/(2*N),-1/(2*N),   0, 0,   0,   0;
+                0,       0,-1/N, 0,   0,   0;
+                0,       0,   0, 1,   0,   0;
+                0,       0,   0, 0,-1/2, 1/2;
+                0,       0,   0, 0, 1/2, 1/2];
+    gamma = A*theta;
 
-    %Define Constants
-    LB = 12.275;
-    L1 = 0;
-    L2 = 25;
-    L3 = 20;
-    L4 = 7.2;
-    L5 = 0;
-    L6 = 5.3;
+%     %Define Constants
+%     LB = 12.275;
+%     L1 = 0;
+%     L2 = 25;
+%     L3 = 20;
+%     L4 = 7.2;
+%     L5 = 0;
+%     L6 = 5.3;
 
     %Relative Positions
     rBfromI = [ 0.00000000; 0.00000000; 0.00000000];
@@ -27,12 +30,12 @@ function [r6,T6]= MeiosisFK(gamma)
     %r7from6 = [0;       0;       0]; % dist. from 3rd wrist coor. frame to the end effector is 5.25 cm
 
     %Orientations wrt I:     
-    T1 = rotz(theta1);
-    T2 = T1*rotx(theta2);
-    T3 = T2*rotx(theta3);
-    T4 = T3*roty(theta4);
-    T5 = T4*rotx(theta5);
-    T6 = T5*roty(theta6);
+    T1 = rotz(gamma(1));
+    T2 = T1*rotx(gamma(2));
+    T3 = T2*rotx(gamma(3));
+    T4 = T3*roty(gamma(4));
+    T5 = T4*rotx(gamma(5));
+    T6 = T5*roty(gamma(6));
 
     %Positions wrt I:
     %rB = rBfromI;

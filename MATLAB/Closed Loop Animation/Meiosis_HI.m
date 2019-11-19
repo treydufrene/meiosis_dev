@@ -1,4 +1,4 @@
-function gammad = Meiosis_HI()
+function thetad = Meiosis_HI()
 
 % %Define Desired Workspace Coordinates
 % xDes(1:100) = -50;
@@ -33,7 +33,7 @@ R = rotx(-pi/2);
 
 %Calculate Joint Angles
 for ii = 1:length(xDes)
-    [gammad(:,ii),errorCheck] = MeiosisIK([xDes(ii);yDes(ii);zDes(ii)],R);
+    [thetad(:,ii),errorCheck] = MeiosisIK([xDes(ii);yDes(ii);zDes(ii)],R);
     if errorCheck == 1
         break
     end

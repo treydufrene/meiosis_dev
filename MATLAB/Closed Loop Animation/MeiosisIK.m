@@ -1,4 +1,4 @@
-function [gamma, error] = MeiosisIK(pos,R)
+function [theta, error] = MeiosisIK(pos,R)
     
     eOff = [0;47.5;0];
     npos = pos - R*eOff;
@@ -12,7 +12,7 @@ function [gamma, error] = MeiosisIK(pos,R)
     
     % Inverse Position
     if (xc^2 + yc^2 -d^2) < 0
-        gamma = 1000*[1;1;1;1;1;1];
+        theta = 1000*[1;1;1;1;1;1];
         error = 1;
     else
         t1 = atan2(yc,xc) - atan2(d,sqrt(xc^2 + yc^2 -d^2)) - pi/2;
@@ -25,7 +25,7 @@ function [gamma, error] = MeiosisIK(pos,R)
         T = T3.'*R;
         t6 = atan2(T(2,1),-T(2,3));
         t4 = atan2(T(1,2),T(3,2));
-        t4 = atan2(sin(t4),cos(t4));
+        %t4 = atan2(sin(t4),cos(t4));
         
         if sin(t4) > -10e-6 && sin(t4) < 10e-6
             t5 = atan2(T(3,2)/cos(t4),T(2,2));
@@ -34,6 +34,23 @@ function [gamma, error] = MeiosisIK(pos,R)
         end
 
         gamma = [t1,t2,t3,t4,t5,t6].';
+        
+        %       Mapping between joint space and motor space 
+        N = 10;         %Gear Ratio
+%         B = [ N, N, 0, 0, 0, 0;
+%               N,-N, 0, 0, 0, 0;
+%               0, 0,-N, 0, 0, 0;
+%               0, 0, 0, 1, 0, 0;
+%               0, 0, 0, 0,-1, 1;
+%               0, 0, 0, 0, 1, 1];
+        A = [ 1/(2*N), 1/(2*N),   0, 0,   0,   0;
+          1/(2*N),-1/(2*N),   0, 0,   0,   0;
+                0,       0,-1/N, 0,   0,   0;
+                0,       0,   0, 1,   0,   0;
+                0,       0,   0, 0,-1/2, 1/2;
+                0,       0,   0, 0, 1/2, 1/2];
+  
+        theta = A\gamma;
         error = 0;
     end
 end
