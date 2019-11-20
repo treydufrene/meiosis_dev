@@ -1,4 +1,4 @@
-function thetad = Meiosis_HI()
+  function thetad = Meiosis_HI()
 
 % %Define Desired Workspace Coordinates
 % xDes(1:100) = -50;

@@ -71,6 +71,7 @@
 \setlist[enumerate]{wide=0pt, widest=99,
                     leftmargin=\parindent,topsep=0pt,partopsep=0pt,
                     label=\thesubsubsection.\alph*,font=\itshape}
+
 \begin{document}
 \normalem
 \input{coverpage}
@@ -106,8 +107,41 @@
 \pagenumbering{arabic}
 \section{Introduction}
 \section{Requirements}
+\begin{itemize}
+  \item The system shall cost the end-user no more than \$1000.
+  \item The system shall be fully dexterous without being kinematically redundant.
+  \item The system end-effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ}\) eigen angle from the base frame.
+  \item The system end-effector shall maintain a pose repeatability magnitude between 0.1—1.5 mm for the position and \(\pm 4^{\circ}\) eigen angle from the base frame for the orientation.
+  \item The system’s reachable workspace shall be a hemisphere with a radius of 300-700 mm.
+  \item The system’s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.
+  \item The system shall have a removable end-effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.
+  \item The system shall be able to write with a low-odor chisel tip Expo dry erase marker.
+  \item The system shall be open source.
+  \item The system shall be capable of operating given only desired end-effector cartesian coordinates specified with respect to the base frame.
+\end{itemize}
 \section{Conceptual Design}
+
+\newpage
 \section{Specifications}
+\begin{itemize}
+  \item The cost for the MEIOSIS team to develop the manipulator shall be no more than \$800.
+  \item The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.
+  \item The system shall have no link offsets.
+  \item The system shall accommodate a process in which the end user can calibrate the end-effector's position and orientation to within 0.5 mm and 1 degree of the manipulator’s precision.
+  \item Joints one and two of the system shall possess an angular error of no more than .025 degrees.
+  \item Joint three of the system shall possess an angle error of no more than .03 degrees.
+  \item Joints four, five, and six shall possess an angle error of no more than .29 degrees.
+  \item The length of link one, two, three, four, and the wrist shall be 220.8 mm, 250 mm, 200 mm, 80 mm, and 52.5 mm respectively.
+  \item The rotational limit of joint one, two, three, four, five, and six shall be \(\pm180^{\circ}\), \(-9.7^{\circ}\) to \(177.5^{\circ}\), \(-150.6^{\circ}\) to \(-19.3^{\circ}\), \(\pm180^{\circ}\), \(-180^{\circ}\) to \(-1.6^{\circ}\), and \(\pm180^{\circ}\) respectively.
+  \item The system shall use a gripper that can close to 18mm.
+  \item The end-effector shall attach to the manipulator using screws configured in a pattern that can accommodate a Dynamixel AX-12A servo.
+  \item The end-effector shall be able to support 0.004 Newton meter moments about the axes normal to its gripping surfaces.
+  \item The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.
+  \item The system shall have a user interface capable of accepting the end-effector’s desired cartesian position and Euler angle orientation as a six element row vector.
+  \item The system shall be capable of performing floating point arithmetic.
+\end{itemize}
+
+
 \newpage
 \section{Preliminary Design}
 \subsection{CAD}
@@ -214,6 +248,28 @@ The orientation of each link with respect to the inertial frame is given as:
 ^IT_6 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3)~roty(\theta_4)~rotx(\theta_5)~roty(\theta_6)\\
 \end{aligned}
 \]
+Given the direction cosine matrices,
+
+\[
+rotx(\theta) = \begin{bmatrix}
+ 1 & 0 & 0\\
+ 0 & \cos(\theta) & -\sin(\theta) \\
+ 0 & \sin(\theta) & \cos(\theta)
+\end{bmatrix}~,\quad
+roty(\theta) = \begin{bmatrix}
+ 1 & 0 & 0\\
+ 0 & \cos(\theta) & -\sin(\theta) \\
+ 0 & \sin(\theta) & \cos(\theta)
+\end{bmatrix}
+\]
+\[
+rotz(\theta) = \begin{bmatrix}
+ \cos(\theta) & 0 & \sin(\theta)\\
+  0 & 1 & 0 \\
+ -\sin(\theta) & \cos(\theta) & 0
+\end{bmatrix}
+\]
+
 \[
 \begin{aligned}
   ^IT_1 =
@@ -283,7 +339,37 @@ s_{\theta_{23}}c_{\theta_5} + c_{\theta_{23}}c_{\theta_4}s_{\theta_5}\\
 c_{\theta_6}(s_{\theta_{23}}s_{\theta_5} - c_{\theta_{23}}c_{\theta_4}c_{\theta_5}) - c_{\theta_{23}}s_{\theta_4}s_{\theta_6}
 \end{aligned}
 \]
+\newpage
+%------------------------------------------------------------------------------%
+% IK
+%------------------------------------------------------------------------------%
+The inverse kinematics can be calculated given desired position and orientation vectors, $o$ and $R$, respecitvely.
+\[
+\begin{bmatrix}x_c & y_c & z_c \end{bmatrix} = o~,\quad
+  R =
+  \begin{bmatrix}
+    r_{11} & r_{12} & r_{13} \\
+    r_{21} & r_{22} & r_{23} \\
+    r_{31} & r_{32} & r_{33}
+  \end{bmatrix}
+\]
 
+\begin{equation}
+\begin{aligned}
+\quad\text{Inverse Position}: \\
+\theta_{1}&= \text{atan2} \left(x_{c},~ y_{c}\right) - \text{atan2}\left(d,~\sqrt{x_c^2 + y_c^2 -d^2}\right) - \sfrac{\pi}{2}\\
+\theta_{2}&= \text{atan2} \left(z_c - \ell_1, ~\sqrt{x_c^2 + y_c^2 - d^2}\right) - \text{atan2}\left(\ell_3s_3,~\ell_2 + \ell_3c_3\right) \\
+\theta_{3}&= \text{atan2} (-\sqrt{1-D^{2}},~ D) \\
+& \quad \text { where } D\equiv\frac{x_{c}^{2}+y_{c}^{2}-d^{2}+\left(z_{c}-\ell_{1}\right)^{2}-\ell_{2}^{2}-\ell_{3}^{2}}{2 \ell_{2} \ell_{3}} \\
+\quad\text{Inverse Orientation}:\\
+^IT_3 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3) \\
+{}^3T_6 &= {}^IT_3^TR \\ % TODO: reference the FK orientation sec#/p.
+\theta_4 &= \text{atan2} \left({}^3T_{6(1,2)},~{}^3T_{6(3,2)}\right) \\
+\theta_5 &= \text{atan2} \left({{}^3T_{6(3,2)}} / {c_4},~{}^3T_{6(2,2)}\right) \\
+\theta_6 &= \text{atan2} \left({}^3T_{6(2,1)},~ -{}^3T_{6(2,3)}\right) \\
+\end{aligned}
+\nonumber
+\end{equation}
 \newpage
 %------------------------------------------------------------------------------%
 % ROBOT EOMS
@@ -295,9 +381,9 @@ c_{\theta_6}(s_{\theta_{23}}s_{\theta_5} - c_{\theta_{23}}c_{\theta_4}c_{\theta_
 \[
 J_B =
 \begin{bmatrix}
-  ^IT_B(:,3)^T \cdot \dfrac{\partial}{d(\gamma)}^IT_B(:,2) \\
-  ^IT_B(:,1)^T \cdot \dfrac{\partial}{d(\gamma)}^IT_B(:,3) \\
-  ^IT_B(:,2)^T \cdot \dfrac{\partial}{d(\gamma)}^IT_B(:,1) \\
+  ^IT_B(:,3)^T \cdot \dfrac{\partial}{\partial\gamma}^IT_B(:,2) \\
+  ^IT_B(:,1)^T \cdot \dfrac{\partial}{\partial\gamma}^IT_B(:,3) \\
+  ^IT_B(:,2)^T \cdot \dfrac{\partial}{\partial\gamma}^IT_B(:,1) \\
 \end{bmatrix}
 =
 \begin{bmatrix}
