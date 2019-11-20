@@ -1,8 +1,9 @@
 \documentclass[12pt]{report}
 \usepackage[margin=1in]{geometry}
+\usepackage[compact]{titlesec}
 \usepackage{setspace} % for single/doublespacing commands
 \usepackage{graphicx} % including graphics
-\usepackage{sectsty} % sexy section headings
+% \usepackage{sectsty} % sexy section headings
 \usepackage{pdfpages} % including multipage pdfs
 \usepackage[export]{adjustbox} % for graphic frames and center
 \usepackage{siunitx}
@@ -42,6 +43,7 @@
 
 \setlength{\parskip}{\baselineskip}%
 \setlength{\parindent}{0pt}%
+
 \setcounter{secnumdepth}{5}
 \renewcommand{\bibname}{References}
 \sisetup{output-exponent-marker=\ensuremath{\mathrm{e}}}
@@ -62,15 +64,24 @@
 % \usetikzlibrary{shapes.geometric}
 % \usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing} % for snakes!
 % \usetikzlibrary{positioning, circuits.logic.US}
-\setlength{\cftbeforetoctitleskip}{-2em}
 \newcommand{\Lag}{\mathcal{L}} % lagrangian L
 
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \setlength{\cftbeforetoctitleskip}{-2em}
-\allsectionsfont{\raggedright}
+% \allsectionsfont{\raggedright} % w/ secsty
 \setlist[enumerate]{wide=0pt, widest=99,
                     leftmargin=\parindent,topsep=0pt,partopsep=0pt,
                     label=\thesubsubsection.\alph*,font=\itshape}
+
+\newcommand{\hiddensubsection}[1]{
+  \stepcounter{subsection}
+  \subsection*{\arabic{section}.\arabic{subsection}\hspace{1em}{#1}}
+}
+\titlespacing{\section}{0pt}{2ex}{1ex}
+\titlespacing{\subsection}{0pt}{1ex}{0ex}
+\titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
+
+% \looseness=-1 % for one-liners bleeding off into the next page
 
 \begin{document}
 \normalem
@@ -83,47 +94,164 @@
 \clearpage
 \newpage
 
-% \section*{List Of Acronyms and Abbreviations}
+\section*{List Of Acronyms and Abbreviations}
+\begin{tabular}{rl}
+  $G$~:&Center of gravity of the bar \\
+  $\ell_0$~:& Spring unstretched length  \\
+  $\delta$~:& Spring deflection \\
+  % $k$~:& Spring constant \\
+  % $h_{b}$~:& Distance to bar ($G$) from datum \\
+  % $F_s$~:& Force onto bar due to spring\\
+  % $A_{n}$~:& Pin reaction in $\theta$ direction\\
+  % $A_{t}$~:& Pin reaction in tangential direction \\
+  % $\vec{v}_G$~:& Velocity of bar center of gravity\\
+  % $\ddot{\theta}$~:& Angular velocity of spring \\
+  % $\ddot{\phi}$~:& Angular velocity of bar\\
+  % $\ddot{\ell}_s$~:& Radial acceleration of spring \\
+\end{tabular}
 
-% \begin{tabular}{rl}
-%   $G$~:&Center of gravity of the bar \\
-%   $\ell_0$~:& Spring unstretched length  \\
-%   $\delta$~:& Spring deflection \\
-%   $k$~:& Spring constant \\
-%   $h_{b}$~:& Distance to bar ($G$) from datum \\
-%   $F_s$~:& Force onto bar due to spring\\
-%   $A_{n}$~:& Pin reaction in $\theta$ direction\\
-%   $A_{t}$~:& Pin reaction in tangential direction \\
-%   $\vec{v}_G$~:& Velocity of bar center of gravity\\
-%   $\ddot{\theta}$~:& Angular velocity of spring \\
-%   $\ddot{\phi}$~:& Angular velocity of bar\\
-%   $\ddot{\ell}_s$~:& Radial acceleration of spring \\
-% \end{tabular}
+% \large
+% \[
+% {}^I_Br_1
+% \]
 % \normalsize
-% \flushleft
-% \singlespacing
-% \newpage
+
+\newpage
 
 \pagenumbering{arabic}
 \section{Introduction}
 \section{Requirements}
-\begin{itemize}
-  \item The system shall cost the end-user no more than \$1000.
-  \item The system shall be fully dexterous without being kinematically redundant.
-  \item The system end-effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ}\) eigen angle from the base frame.
-  \item The system end-effector shall maintain a pose repeatability magnitude between 0.1 - 1.5 mm for the position and \(\pm 4^{\circ}\) eigen angle from the base frame for the orientation.
-  \item The system’s reachable workspace shall be a hemisphere with a radius of 300-700 mm.
-  \item The system’s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.
-  \item The system shall have a removable end-effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.
-  \item The system shall be able to write with a low-odor chisel tip Expo dry erase marker.
-  \item The system shall be open source.
-  \item The system shall be capable of operating given only desired end-effector cartesian coordinates specified with respect to the base frame.
-\end{itemize}
-\section{Conceptual Design}
+% \hiddensubsection{Introduction}
+Robotics is a fast growing field, yet numerous potential innovators for the discipline are never exposed to it. While many industrial style manipulators are available for commercial applications, their cost is so high that they are not practical for many educational purposes. Schools in rural areas are financially limited and cannot afford a manipulator, nor an instructor who can teach the course due to its complexity. Hence, we propose MEIOSIS robotics: The Manipulator for Educational Institutions with Open Source Integrated Systems. The goal of the project is to produce an inexpensive, rudimentary but capable manipulator that can be purchased as a kit by educators but is available to the general public.
+\hiddensubsection{Design Requirements}
+In order to create a manipulator that solves the problem stated above, the following requirements must be met.
+\hiddensubsection{Hardware}
+The following requirements are hardware specific and dictate the physical constraints the system must adhere to.
+\subsubsection{The system shall cost the end-user no more than \$1000.}
+\subsubsection{The system shall be fully dexterous without being kinematically redundant.}
+To create a system with the intention of advancing education, it must be complex enough to encourage higher level problem solving, as well as be capable enough (dexterous) in a broad spectrum of tasks — in the interest of remaining useful in addition to retaining the interest of students.
 
+\subsubsection{The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ}\) eigen angle from the base frame.}
+To ensure that the robot has educational value, the accuracy must be defined so that any desired positions and movements are achieved.
+
+\subsubsection{The system end effector shall maintain a pose repeatability magnitude between 0.1—1.5 mm for the position and \(\pm 4^{\circ}\) eigen angle from the base frame for the orientation.}
+This is to ensure a robot that can execute the same movement commands repeatedly and have the same results every time.
+
+\subsubsection{The system’s reachable workspace shall be a hemisphere with a radius of 300-700 mm.}
+This workspace will provide enough movement to manipulate objects in order to perform basic tasks.
+
+\subsubsection{The system’s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.}
+
+\subsubsection{The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}
+This creates a robot capable of performing a variety of basic tasks, which enhances its educational value.
+
+\subsubsection{The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}
+
+\hiddensubsection{Software}
+\subsubsection{The system shall be open source.}
+This will create an easily obtainable, low cost method of distributing the system’s source code, which may be modified for personal use.
+
+\subsubsection{The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}
+This simplicity makes the system of use to inexperienced users.
+
+
+% \begin{itemize}
+%   \item The system shall cost the end-user no more than \$1000.
+%   \item The system shall be fully dexterous without being kinematically redundant.
+%   \item The system end-effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ}\) eigen angle from the base frame.
+%   \item The system end-effector shall maintain a pose repeatability magnitude between 0.1 - 1.5 mm for the position and \(\pm 4^{\circ}\) eigen angle from the base frame for the orientation.
+%   \item The system’s reachable workspace shall be a hemisphere with a radius of 300-700 mm.
+%   \item The system’s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.
+%   \item The system shall have a removable end-effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.
+%   \item The system shall be able to write with a low-odor chisel tip Expo dry erase marker.
+%   \item The system shall be open source.
+%   \item The system shall be capable of operating given only desired end-effector cartesian coordinates specified with respect to the base frame.
+% \end{itemize}
 \newpage
+\section{Conceptual Design}
+The terminator T-2000 is a science-fiction spectacle of a robot -- until you see the price. Channeling the inspiration many high school students may have for robotics, MEIOSIS robotics aims to provide an affordable manipulator to educators and enthusiasts. MEIOSIS uses primarily 3-D printed components and easily accessible materials. Among these materials are a Raspberry PI, smart servos and metal tubing. These features create an open-source manipulator accessible to the public to further robotics education.
+\hiddensubsection{Physical System Overview}
+The physical design of the robotic manipulator will be shown through Figures \emph{\ref{fig:overall}, \ref{fig:base}, \ref{fig:link1},} and \emph{\ref{fig:link2}}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame, width=.75\textwidth]{overall_render}
+  \caption{Overall System Conceptual Design }
+  \label{fig:overall}
+\end{figure}
+
+The colored links in \emph{Figure \ref{fig:overall}} distinguish the different joints and links of the manipulator. The overall reach of the robot will be 582.5 mm. This length was chosen to decrease material cost and weight while still satisfying requirement 2.1.2 and 2.1.5, allowing the manipulating to pick and place objects to perform basic tasks. The base of the robot will be made to contain the Raspberry Pi and other electrical components.
+\newpage
+\subsubsection{Base}
+The base of the manipulator will house several of the electronic components, such as the computational system, power supply, and motor controller. A cross section of the base can be seen in \emph{Figure \ref{fig:base}}.
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame, width=.75\textwidth]{base_callouts}
+  \caption{Manipulator Base with Call-outs}
+  \label{fig:base}
+\end{figure}
+
+From \emph{Figure \ref{fig:base}},
+\begin{enumerate}[label=\alph*.]
+  \item \emph{Base Supports:}
+  The base supports are located at each corner of the base and will allow the base of the manipulator to be securely attached to a variety of surfaces with either standard bolt/fastener hardware or suction cups.
+  \item \emph{Computational System:}
+  The computational system will be a Raspberry Pi; it will be housed in the base, which allows the Raspberry Pi to be more easily accessible. The primary reason for this system being chosen is to fulfill the budget requirement, 2.1.1. The Raspberry Pi will compute the manipulator's kinematics and command the motors accordingly.
+  \item \emph{Airflow Cutouts:}
+  The side of the base will have cutouts to allow for airflow through the base; since the power supply is housed inside of the base as well as the computational system, the temperature must be regulated to prevent overheating.
+  \item \emph{Power Supply:}
+  The power supply will be housed in the base as well; this allows the power supply to be more accessible and therefore more modifiable, so the end-user can easily expand the system to fulfill their needs.
+\end{enumerate}
+\newpage
+\subsubsection{Links}
+\emph{Figure \ref{fig:link1}} is an image of the robot that shows the links and their key features.\\
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame,width=.63\textwidth]{link_callouts}
+  \caption{Drawing Showing Key Features of Design}
+  \label{fig:link1}
+\end{figure} \\
+\emph{Figure \ref{fig:link1}} highlights a few of the key features of our design. Call-out a shows the connection point for the end effector. The mountings are the standard used by the Sawyer manipulator. This may be adjusted to accommodate lower cost, more accessible end effectors. Call-out (b) shows the differential gearbox that will be used in the manipulator’s wrist, saving space and weight. The manipulator will have aluminum tubing as support in the links (c) and will be attached to the 3D printed portion of the robot using clamp joints (d) tightened by screws.
+
+\emph{Figure \ref{fig:link2}} is an image of the cross section of link 2 for the manipulator.
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame,width=.35\textwidth]{link_cross_section}
+  \caption{Drawing Showing Link Cross Section}
+  \label{fig:link2}
+\end{figure}
+
+The cross section seen in \emph{Figure \ref{fig:link2}} shows the internal design for links two and three. It features two clamps that hold a hollow aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed call-out (b). The proper length will be dictated by the 3D printed guides lining up at call-out (c). This allows for imprecision in the manufacturing of the aluminum tube.
+
+\hiddensubsection{System Functions}
+The system can be divided into two subsystems: the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm for the computational system.
+\subsection{Electrical}
+\emph{Figure \ref{fig:eblock}} is the block diagram for the electrical system of the manipulator.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.55\textwidth]{eblock}
+  \caption{Electrical System Block Diagram}
+  \label{fig:eblock}
+\end{figure}
+
+\emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator will be relatively simple. Power is supplied by the 120V AC from standard wall outlets. A power supply will adapt the AC voltage to the required voltages for each component. One component is the Raspberry Pi, which will perform calculations for motor control (described below in software). It will send signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first joint, between the base and the first link, will be actuated by a DC motor with an encoder to minimize cost.
+
+\hiddensubsection{Software}
+\emph{Figure \ref{fig:sblock}} shows the software flowchart for the system.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.85\textwidth]{sblock}
+  \caption{Software Flowchart}
+  \label{fig:sblock}
+\end{figure}
+
+Similar to the electrical system, the software is also simple. \emph{Figure \ref{fig:sblock}} shows that the software will receive the desired pose or poses the user would like the manipulator to reach. Then the Raspberry Pi will use inverse kinematics to calculate the necessary joint angles. The wave-forms/desired angles will be sent to the respective drivers/motors, and positional information will be sent back to the Raspberry Pi to adjust the DC motor angle. When the motors have reached their desired pose, the Raspberry Pi will actuate the end effector if it is specified by the user. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
+\newpage
+
 \section{Specifications}
-\subsection{Introduction}\label{sec:intro}
+% \hiddensubsection{Introduction}
+\label{sec:intro}
 With the intention of making robotics education more accessible, The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) intends to provide high school educators and robot enthusiasts with a low cost manipulator. The system should be usable by novice students. It should also be modifiable to create a sustainably increased understanding of robotics. While MEIOSIS may not fully emulate industrial manipulators, it aims to provide more students with access to robotics education. \\
 \begin{figure}[htp]
   \centering
@@ -133,10 +261,10 @@ With the intention of making robotics education more accessible, The Manipulator
 \end{figure}
 \newline
 The design seen in \emph{Figure \ref{fig:model}} is based on our conceptual design. It features four links and six joints for rotation and will be referenced throughout this document. The base of the manipulator and end-effector can also be seen in the figure.
-\subsection{Design Requirements}
+\hiddensubsection{Design Requirements}
 The specifications of the system are strictly based on the requirements defined previously. The requirements are divided into two primary categories, hardware and software.
 \vspace{-\baselineskip}
-\subsection{Hardware}
+\hiddensubsection{Hardware}
 The following requirements and specifications are hardware specific and dictate the physical constaints the system must adhere to.
 \vspace{-\baselineskip}
 \subsubsection{The system shall cost the end-user no more than \$1000.}
@@ -217,7 +345,7 @@ It is expected that a majority of end effector styles will have to accommodate f
   \item \textit{The end effector shall be able to support 0.004 Newton meter moments about the axes normal to its gripping surfaces.}
 \end{enumerate}
   The coefficient of friction between the Expo marker and paper can be approximated and given the weight of an Expo marker the approximate grip strength of the end effector can be calculated.
-\subsection{Software}
+\hiddensubsection{Software}
 The following requirements and specifications are software specific and determine the attributes of the operating system.
 \subsubsection{The system shall be open source.}
 This will create an easily obtainable, low cost method of distributing the system’s source code, which may be modified for personal use.
@@ -535,14 +663,8 @@ U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma
 
 \subsection{Open-Loop Simulation}
 \subsection{Control System}
-\subsection{Closed-Loop Simulation}
-\subsection{ANSYS}
-\subsection{Electrical Schematic}
-\subsection{Software Flowchart}
-\subsection{Project Status and Future}
-\subsection{Parts List}
-
 \newpage
+\subsection{Closed-Loop Simulation}
 %------------------------------------------------------------------------------%
 % MOTOR DYNAMICS
 %------------------------------------------------------------------------------%
@@ -616,7 +738,12 @@ Performing a similar experiment as previously described, except with a known ine
 \end{equation}
 Finally, with multiple datasets (varying inertial loads, $J_m$) the coefficients of the second order system equation can be found using the least squares solution of (\ref{eq:soe}).
 
-
+\newpage
+\subsection{ANSYS}
+\subsection{Electrical Schematic}
+\subsection{Software Flowchart}
+\subsection{Project Status and Future}
+\subsection{Parts List}
 
 
 
