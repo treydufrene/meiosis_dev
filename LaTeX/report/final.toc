@@ -27,6 +27,7 @@
 \contentsline {subsubsection}{\numberline {4.3.2}The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}{12}
 \contentsline {section}{\numberline {5}Preliminary Design}{13}
 \contentsline {subsection}{\numberline {5.1}CAD}{13}
+\contentsline {subsubsection}{\numberline {5.1.1}Pulleys}{13}
 \contentsline {subsection}{\numberline {5.2}Forward Kinematics}{14}
 \contentsline {subsection}{\numberline {5.3}Velocity Kinematics}{16}
 \contentsline {subsection}{\numberline {5.4}Inverse Kinematics}{16}
@@ -34,11 +35,8 @@
 \contentsline {subsection}{\numberline {5.6}Open-Loop Simulation}{18}
 \contentsline {subsection}{\numberline {5.7}Control System}{18}
 \contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{19}
-\contentsline {subsection}{\numberline {5.9}ANSYS}{21}
-\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{21}
-\contentsline {subsection}{\numberline {5.11}Software Flowchart}{21}
-\contentsline {subsection}{\numberline {5.12}Project Status and Future}{21}
-\contentsline {subsection}{\numberline {5.13}Parts List}{21}
-\contentsline {section}{\numberline {I}Appendix}{23}
-\contentsline {subsection}{\numberline {i}Drawings}{23}
-\contentsline {subsection}{\numberline {ii}Salient Code}{23}
+\contentsline {subsection}{\numberline {5.9}ANSYS}{22}
+\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{22}
+\contentsline {subsection}{\numberline {5.11}Software Flowchart}{22}
+\contentsline {subsection}{\numberline {5.12}Project Status and Future}{22}
+\contentsline {subsection}{\numberline {5.13}Parts List}{22}

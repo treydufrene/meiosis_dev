@@ -1,6 +1,6 @@
 \documentclass[12pt]{report}
 \usepackage[margin=1in]{geometry}
-\usepackage[compact]{titlesec}
+\usepackage[compact,raggedright]{titlesec}
 \usepackage{setspace} % for single/doublespacing commands
 \usepackage{graphicx} % including graphics
 % \usepackage{sectsty} % sexy section headings
@@ -39,6 +39,7 @@
 \usepackage{tocloft}
 \usepackage{url}
 \usepackage{etoolbox}
+\usepackage[usestackEOL]{stackengine}
 % \usepackage{hyperref}
 
 \setlength{\parskip}{\baselineskip}%
@@ -77,6 +78,14 @@
   \stepcounter{subsection}
   \subsection*{\arabic{section}.\arabic{subsection}\hspace{1em}{#1}}
 }
+\newcommand{\hiddenappsec}[1]{
+  \stepcounter{section}
+  \subsection*{\Roman{section}\hspace{1em}{#1}}
+}
+\newcommand{\hiddenappsub}[1]{
+  \stepcounter{subsection}
+  \subsection*{\Roman{section}.\roman{subsection}\hspace{1em}{#1}}
+}
 \titlespacing{\section}{0pt}{2ex}{1ex}
 \titlespacing{\subsection}{0pt}{1ex}{0ex}
 \titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
@@ -96,9 +105,9 @@
 
 \section*{List Of Acronyms and Abbreviations}
 \begin{tabular}{rl}
-  $G$~:&Center of gravity of the bar \\
-  $\ell_0$~:& Spring unstretched length  \\
-  $\delta$~:& Spring deflection \\
+  FK & Forward Kinematics \\
+  IK & Inverse Kinematics  \\
+  PD & Proportional Derivative \\
   % $k$~:& Spring constant \\
   % $h_{b}$~:& Distance to bar ($G$) from datum \\
   % $F_s$~:& Force onto bar due to spring\\
@@ -110,12 +119,20 @@
   % $\ddot{\ell}_s$~:& Radial acceleration of spring \\
 \end{tabular}
 
-% \large
-% \[
-% {}^I_Br_1
-% \]
-% \normalsize
-
+\section*{Notation}\vspace{-\baselineskip}
+\renewcommand{\arraystretch}{2.25}
+\begin{tabular}{rcl}
+\large%
+\(
+{}^{\text{\scriptsize Frame}}_{\text{\scriptsize From}}~{r}~_{\text{\scriptsize To}}
+\)\normalsize && Direction Vectors\\
+\(
+{}^{\text{\scriptsize From}}~{T}~_{\text{\scriptsize To}}
+\)\normalsize && Direction Cosine (Transformation) Matrices \\
+\(c_{\theta_{nm}}\)& & \( \cos(\theta_n + \theta_m)\)\\
+\(s_{\theta_{nm}}\)& & \( \sin(\theta_n + \theta_m)\) \\
+\end{tabular}
+\renewcommand{\arraystretch}{1}
 \newpage
 
 \pagenumbering{arabic}
@@ -387,6 +404,21 @@ The solution for the inverse kinematics requires the ability to perform high lev
 \newpage
 \section{Preliminary Design}
 \subsection{CAD}
+\subsubsection{Pulleys}
+A 12 tooth and 120 tooth pulleys provide a 10:1 gear ratio and use a 0.25 in wide MXL belt. The center distance between the pulleys must be at least 5.43 in to have 5 teeth meshing. Because of the high gear ratio, greater distances do not increase the number of teeth in mesh. Figure AA shows the distance between the manipulator’s first two pulleys is 235.185 mm or 9.259 in, which corresponds to a belt with 300 and pitch diameter of 24 in.\\
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.65\textwidth,frame]{pulley12}
+  \caption{Pulley 1-2 Center Distance}
+\end{figure}
+Figure BB shows the center distance between the second pulleys is 139.960 mm or 5.510 in. The corresponding belt has 208 teeth with a 16.6 in pitch diameter.
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.65\textwidth,frame]{pulley3}
+  \caption{Pulley 3 Center Distance}
+\end{figure}
+
+
 \newpage
 %------------------------------------------------------------------------------%
 % FK
@@ -609,6 +641,7 @@ The inverse kinematics can be calculated given desired position and orientation 
 %------------------------------------------------------------------------------%
 \begin{equation}
   H(\gamma)\ddot{\gamma}+d(\gamma,\dot{\gamma})+G(\gamma)+B(\dot{\gamma})+C\text{sgn}(\dot{\gamma}) = F
+  \label{eq:dynamics}
 \end{equation}
 \[
 J_B =
@@ -664,16 +697,17 @@ U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma
 \subsection{Open-Loop Simulation}
 \subsection{Control System}
 \newpage
+%------------------------------------------------------------------------------%
+% Closed Loop Simulation
+%------------------------------------------------------------------------------%
 \subsection{Closed-Loop Simulation}
-%------------------------------------------------------------------------------%
-% MOTOR DYNAMICS
-%------------------------------------------------------------------------------%
+% \subsubsection{Motor Dynamics}
 Given robot dynamics described by \(H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau\), the torque, $\tau$, provided by the servo motors is necessary to solve the closed loop dynamics of the system. Assuming the servo is driven by a D.C. motor with proportional derivative control,
 \begin{equation}
   \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\dot{\theta}_a + \tau_L
   \label{eq:motor}
 \end{equation}
-Where $\tau_a$ is the actuator torque, $K$ is the back-EMF constant, $i_a$ is the motor current, $J_a$ is the armature inertia, $\theta_a,~\dot{\theta}_a,\ddot{\theta}_a$ is the motor position and it's first and second time derivatives, respectively, $b_a$ is the viscous friction coefficient, and $\tau_L$ is the torque available for the actuator to do work. The basic equation for a motor is known to be:
+Where $\tau_a$ is the actuator torque, $K$ is the back-EMF constant, $i_a$ is the motor current, $J_a$ is the armature inertia, $\theta_a,~\dot{\theta}_a,\ddot{\theta}_a$ is the motor position and it's first and second time derivatives respectively, $b_a$ is the viscous friction coefficient, and $\tau_L$ is the torque available for the actuator to do work. The basic equation for a motor is known to be:
 \begin{equation}
   V_a = i_aR_a + K\dot{\theta}_a
   \label{eq:va}
@@ -692,7 +726,7 @@ Substituing into equation (\ref{eq:va}) and solving for $i_a$:
   V_a = \frac{R_aJ_aN}{K}\ddot{\theta} + \frac{R_ab_aN}{K}\dot{\theta} + \frac{R_a}{KN\eta}\tau + KN\dot{\theta}
   \label{eq:newva}
 \end{equation}
-Assuming P.D. control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), where $\theta_d$ is the desired orientation of the actuator, the following solution is found by setting the P.D. solution equal to (\ref{eq:newva}). After collecting like terms:
+Assuming PD control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), where $\theta_d$ is the desired orientation of the actuator, the following solution is found by setting the PD solution equal to (\ref{eq:newva}). After collecting like terms:
 
 \begin{equation}
   \frac{R_aJ_aN}{K}\ddot{\theta} + \left( \frac{R_aJ_aN}{K} - K_d + KN \right)\dot{\theta} - K_p\theta = -K_p\theta_d - \frac{R_a}{KN\eta}\tau
@@ -706,16 +740,26 @@ The following parameters of the system can be obtained by applying a step input 
 
 Given $\theta_{max},~\theta_{ss},$ and $T_p$ as measured parameters of the system's max output, steady state, and time to peak, respectively.
 
-Refactoring equation (\ref{eq:end1}) and equating with the general solution for a second order system given by $\ddot{\theta} + 2\zeta\omega_n\dot{\theta} + \omega_n^2\theta = \omega_n^2\theta_d$,
+Refactoring equation (\ref{eq:end1}) and equating with the general solution for a second order system given by $\ddot{\theta} + 2\zeta\omega_n\dot{\theta} + \omega_n^2\theta = \omega_n^2\theta_d$, the following solutions are found:
+
+\begin{minipage}[c]{.5\textwidth}
 \begin{equation}
-  2\zeta\omega_n = \frac{b_a}{J_a} - \frac{KK_d}{R_aJ_aN} + \frac{K^2}{R_aJ_a}~,\quad
-  \omega_n^2 = \frac{-KK_p}{R_aJ_aN}
+  2\zeta\omega_n = \frac{b_a}{J_a} - \frac{KK_d}{R_aJ_aN} + \frac{K^2}{R_aJ_a}
+  \label{eq:one}
 \end{equation}
-Performing a similar experiment as previously described, except with a known inertial load $\tau = J_m\ddot{\theta}$, the following parameters can be found:
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
 \begin{equation}
+  \omega_n^2 = \frac{-KK_p}{R_aJ_aN}
+  \label{eq:two}
+\end{equation}
+\end{minipage}
+
+Performing a similar experiment as previously described, except with a known inertial load $\tau = J_m\ddot{\theta}$, the following parameters can be found:
+\[
   \alpha_m \equiv 2\zeta\omega_n = \frac{R_ab_aN^2\eta-KK_dN\eta+K^2N^2\eta}{R_aJ_aN^2\eta+R_aJ_m}~,\quad
   \beta_m \equiv \omega_n =-\frac{KK_pN\eta}{R_aJ_aN^2\eta+R_aJ_m}
-\end{equation}
+\]
 
 \begin{equation}
 \begin{bmatrix}
@@ -736,7 +780,53 @@ Performing a similar experiment as previously described, except with a known ine
 \end{bmatrix}
 \label{eq:soe}
 \end{equation}
-Finally, with multiple datasets (varying inertial loads, $J_m$) the coefficients of the second order system equation can be found using the least squares solution of (\ref{eq:soe}).
+With multiple datasets (varying inertial loads, $J_m$), the solutions of (\ref{eq:soe}) can be found using the least-squares method, yeilding
+
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation}
+  \frac{R_ab_aN-KK_d+K^2N\eta-KK_p}{R_aJ_aN}
+  \label{eq:three}
+\end{equation}
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation}
+  \frac{1}{J_aN^2\eta}
+  \label{eq:four}
+\end{equation}
+\end{minipage}
+
+Finally, the coefficients of the second order system (\ref{eq:fin}) are known:
+\begin{equation}
+  \underbrace{\bigg(J_aN^2\eta\bigg)}_{\scalebox{1.25}{\sfrac{1}{(\ref{eq:four})}}}\ddot{\theta} + \underbrace{\left(\frac{R_ab_aN^2\eta - KK_dN\eta + K^2N^2\eta}{R_a}\right)}_{\quad\scalebox{1.25}{\sfrac{(\ref{eq:one})}{(\ref{eq:four})}}}
+  \dot{\theta} - \underbrace{\left(\frac{KK_pN\eta}{R_a}\right)}_{\scalebox{1.25}{\sfrac{(\ref{eq:two})}{(\ref{eq:four})}}}
+  \theta + \underbrace{\left(\frac{KK_pN\eta}{R_a}\right)}_{\scalebox{1.25}{\sfrac{(\ref{eq:two})}{(\ref{eq:four})}}}
+  \theta_d = -\tau
+  \label{eq:fin}
+\end{equation}
+
+\newpage
+The torque provided by the servo can now be solved for, given the current position ($\theta$), velocity ($\dot{\theta}$), angular acceleration ($\ddot{\theta}$), and desired position ($\theta_d$) are known.
+
+Given the complete equation for the dynamical response of the system (\ref{eq:dynamics}), substituting in the solution obtained for the motor dynamics and solving for the acceleration,
+\begin{equation}
+\left(H + J_aN^2\eta\right)^{-1} \left[\left(B - \frac{R_ab_aN^2\eta - KK_dN\eta + K^2N^2\eta}{R_a}\right)\dot{\gamma} - \left(\frac{KK_pN\eta}{R_a}\right)(\gamma_d - \gamma) - n\right]= \ddot{\gamma}
+\end{equation}
+Where
+\[
+n(\gamma,\dot{\gamma}) = d(\gamma,\dot{\gamma}) + G(\gamma) + C\text{sgn}(\dot{\gamma})
+\]
+
+The closed-loop system can now be simulated, the results are shown below in Figure (\ref{fig:jplots}).
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.95\textwidth]{jplots}
+  \caption{Joint Angles vs Time}
+  \label{fig:jplots}
+\end{figure}
+% \[
+% \delta W = \delta\gamma = \delta\theta
+% \]
+
 
 \newpage
 \subsection{ANSYS}
@@ -771,17 +861,17 @@ We would like to acknowledge the following people for their contibutions to crea
 
 \newpage
 \appendix
-\renewcommand\thesection{\Roman{section}}
-\renewcommand\thesubsection{\roman{subsection}}
-\section{Appendix}\label{sec:app}
+% \renewcommand\thesection{\Roman{section}}
+% \renewcommand\thesubsection{\roman{subsection}}
+\hiddenappsec{Appendix}\label{sec:app}
 \begin{figure}[htp]
   \centering
   \includegraphics[frame,width=.75\textwidth]{dex}
   \caption{Cross Section of Dexterous Workspace Quadrant}
   \label{fig:dex}
 \end{figure}
-\subsection{Drawings}
-\subsection{Salient Code}
+\hiddenappsub{Drawings}
+\hiddenappsub{Salient Code}
 % Code listing
 %\begin{lstlisting}[frame=lines,style=Matlab-editor,basicstyle = \mlttfamily, caption=Example Code
 % Code Here
