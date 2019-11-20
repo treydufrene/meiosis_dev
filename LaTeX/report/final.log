@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  19 NOV 2019 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  20 NOV 2019 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1512,59 +1512,76 @@ Package pdftex.def Info: images/text.png  used on input line 23.
 \tf@lof=\write5
 \openout5 = `final.lof'.
 
- (./final.lot)
-\tf@lot=\write6
-\openout6 = `final.lot'.
+ [1] [1
 
- [1]
-Overfull \hbox (0.5056pt too wide) in paragraph at lines 114--115
-[]\T1/lmr/m/n/12 The sys-tem end-effector shall main-tain a pose re-peata-bil-ity mag-ni-tude be-tween 0.1^^V1.5
- []
-
-[1
-
-] [2] [3]
-<images/zero.png, id=35, 1093.58563pt x 442.65375pt>
+]
+<images/model.png, id=28, 1927.2pt x 1084.05pt>
+File: images/model.png Graphic file (type png)
+<use images/model.png>
+Package pdftex.def Info: images/model.png  used on input line 130.
+(pdftex.def)             Requested size: 1927.19533pt x 1084.04736pt.
+ [2 <./images/model.png>]
+<images/offset.png, id=34, 512.91624pt x 854.19125pt>
+File: images/offset.png Graphic file (type png)
+<use images/offset.png>
+Package pdftex.def Info: images/offset.png  used on input line 159.
+(pdftex.def)             Requested size: 117.43875pt x 195.57355pt.
+ [3] [4 <./images/offset.png>]
+<images/zero.png, id=42, 1056.94875pt x 472.76625pt>
 File: images/zero.png Graphic file (type png)
 <use images/zero.png>
-Package pdftex.def Info: images/zero.png  used on input line 167.
+Package pdftex.def Info: images/zero.png  used on input line 199.
+(pdftex.def)             Requested size: 352.31625pt x 157.58595pt.
+ [5 <./images/zero.png>] [6] [7] [8]
+<images/zero2.png, id=58, 1093.58563pt x 442.65375pt>
+File: images/zero2.png Graphic file (type png)
+<use images/zero2.png>
+Package pdftex.def Info: images/zero2.png  used on input line 270.
 (pdftex.def)             Requested size: 422.77664pt x 171.12804pt.
- [4 <./images/zero.png>]
-Overfull \hbox (26.24602pt too wide) detected at line 311
+ [9 <./images/zero2.png>]
+Overfull \hbox (26.24602pt too wide) detected at line 413
 []\OML/lmm/m/it/12 T[] \OT1/lmr/m/n/12 = []
  []
 
-[5]
-LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 360.
+[10]
+LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 463.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.39996> on input line 360.
+(Font)              <8.39996> on input line 463.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.87994> on input line 360.
+(Font)              <5.87994> on input line 463.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.19998> on input line 360.
- [6]
-Overfull \hbox (3.31932pt too wide) detected at line 429
+(Font)              <4.19998> on input line 463.
+ [11]
+Overfull \hbox (3.31932pt too wide) detected at line 533
 \OML/lmm/m/it/12 d\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 ) = [] \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] [] [](\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 )[] + \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] []
  []
 
-[7] (./gearbox.tex
+[12] [13] (./gearbox.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 11.
-) [8] [9] [10] [11] (./final.aux) ) 
+) [14] [15] [16]
+<images/dex.pdf, id=92, 419.25134pt x 419.09534pt>
+File: images/dex.pdf Graphic file (type pdf)
+<use images/dex.pdf>
+Package pdftex.def Info: images/dex.pdf  used on input line 652.
+(pdftex.def)             Requested size: 419.25032pt x 419.0943pt.
+ [17 <./images/dex.pdf>] (./final.bbl) [18
+
+] (./final.aux) ) 
 Here is how much of TeX's memory you used:
- 41393 strings out of 494091
- 914124 string characters out of 6163523
- 1064708 words of memory out of 5000000
- 44406 multiletter control sequences out of 15000+600000
- 682828 words of font info for 137 fonts, out of 8000000 for 9000
+ 41428 strings out of 494091
+ 914729 string characters out of 6163523
+ 1064810 words of memory out of 5000000
+ 44437 multiletter control sequences out of 15000+600000
+ 687090 words of font info for 138 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  62i,17n,92p,10438b,805s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/t
-exlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on final.pdf (13 pages, 830862 bytes).
+{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/t
+exmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on final.pdf (20 pages, 1947253 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 173 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
