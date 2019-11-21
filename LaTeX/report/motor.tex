@@ -1,0 +1,114 @@
+Given robot dynamics described by \(H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau\), the torque, $\tau$, provided by the servo motors is necessary to solve the closed loop dynamics of the system. Assuming the servo is driven by a D.C. motor with proportional derivative control,
+\begin{equation}
+  \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\dot{\theta}_a + \tau_L
+  \label{eq:motor}
+\end{equation}
+Where $\tau_a$ is the actuator torque, $K$ is the back-EMF constant, $i_a$ is the motor current, $J_a$ is the armature inertia, $\theta_a,~\dot{\theta}_a,\ddot{\theta}_a$ is the motor position and it's first and second time derivatives respectively, $b_a$ is the viscous friction coefficient, and $\tau_L$ is the torque available for the actuator to do work. The basic equation for a motor is known to be:
+\begin{equation}
+  V_a = i_aR_a + K\dot{\theta}_a
+  \label{eq:va}
+\end{equation}
+Where $V_a$ is the voltage applied to the actuator and $R_a$ is the armature resistance. Given a gearbox with $\sfrac{\text{in}}{\text{out}}$ ratio $N$ and efficiency $\eta$,
+\input{gearbox}
+The motor equation (\ref{eq:motor}) can be expressed in the output coordinates:
+\[
+Ki_a = J_aN\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
+\]
+Substituing into equation (\ref{eq:va}) and solving for $i_a$:
+\[
+  i_a = \frac{J_aN}{K}\ddot{\theta} + b_aN\dot{\theta} + \frac{\tau}{N\eta}
+\]
+\begin{equation}
+  V_a = \frac{R_aJ_aN}{K}\ddot{\theta} + \frac{R_ab_aN}{K}\dot{\theta} + \frac{R_a}{KN\eta}\tau + KN\dot{\theta}
+  \label{eq:newva}
+\end{equation}
+Assuming PD control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), where $\theta_d$ is the desired orientation of the actuator, the following solution is found by setting the PD solution equal to (\ref{eq:newva}). After collecting like terms:
+
+\begin{equation}
+  \frac{R_aJ_aN}{K}\ddot{\theta} + \left( \frac{R_aJ_aN}{K} - K_d + KN \right)\dot{\theta} - K_p\theta = -K_p\theta_d - \frac{R_a}{KN\eta}\tau
+  \label{eq:end1}
+\end{equation}
+\newpage
+The following parameters of the system can be obtained by applying a step input to the system with $\tau=0$ and measuring the characteristics of it's response. Denoting $\zeta$ as the damping ratio and $\omega_n$ as the natural frequency of the system,
+\[
+  \text{\% Overshoot} = \left( \frac{\theta_{max} - \theta_{ss}}{\theta_{ss}} \right) \times 100~,\quad \zeta = \frac{-\ln(\sfrac{\%\text{OS}}{100})}{\sqrt{\pi^2 + \ln^2(\sfrac{\%\text{OS}}{100})}}~,\quad \omega_n = \frac{\pi}{T_p\sqrt{1-\zeta^2}}
+\]
+
+Given $\theta_{max},~\theta_{ss},$ and $T_p$ as measured parameters of the system's max output, steady state, and time to peak, respectively.
+
+Refactoring equation (\ref{eq:end1}) and equating with the general solution for a second order system given by $\ddot{\theta} + 2\zeta\omega_n\dot{\theta} + \omega_n^2\theta = \omega_n^2\theta_d$, the following solutions are found:
+
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation}
+  2\zeta\omega_n = \frac{b_a}{J_a} - \frac{KK_d}{R_aJ_aN} + \frac{K^2}{R_aJ_a}
+  \label{eq:one}
+\end{equation}
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation}
+  \omega_n^2 = \frac{-KK_p}{R_aJ_aN}
+  \label{eq:two}
+\end{equation}
+\end{minipage}
+
+Performing a similar experiment as previously described, except with a known inertial load $\tau = J_m\ddot{\theta}$, the following parameters can be found:
+\[
+  \alpha_m \equiv 2\zeta\omega_n = \frac{R_ab_aN^2\eta-KK_dN\eta+K^2N^2\eta}{R_aJ_aN^2\eta+R_aJ_m}~,\quad
+  \beta_m \equiv \omega_n =-\frac{KK_pN\eta}{R_aJ_aN^2\eta+R_aJ_m}
+\]
+
+\begin{equation}
+\begin{bmatrix}
+  1 & -(\alpha_1J_1+\beta_1J_1) \\
+  1 & -(\alpha_2J_2+\beta_2J_2) \\
+  \vdots & \vdots
+\end{bmatrix}
+\begin{bmatrix}
+  \dfrac{R_ab_aN^2\eta-KK_dN\eta+K^2N^2\eta-KK_pN\eta}{R_aJ_aN^2\eta} \\
+  ~\\
+  \dfrac{1}{J_aN^2\eta}
+\end{bmatrix}
+=
+\begin{bmatrix}
+  \alpha_1+\beta_1 \\
+  \alpha_2+\beta_2 \\
+  \vdots
+\end{bmatrix}
+\label{eq:soe}
+\end{equation}
+With multiple datasets (varying inertial loads, $J_m$), the solutions of (\ref{eq:soe}) can be found using the least-squares method, yeilding
+
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation}
+  \frac{R_ab_aN-KK_d+K^2N\eta-KK_p}{R_aJ_aN}
+  \label{eq:three}
+\end{equation}
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation}
+  \frac{1}{J_aN^2\eta}
+  \label{eq:four}
+\end{equation}
+\end{minipage}
+
+Finally, the coefficients of the second order system (\ref{eq:fin}) are known:
+\begin{equation}
+  \underbrace{\bigg(J_aN^2\eta\bigg)}_{\scalebox{1.25}{\sfrac{1}{(\ref{eq:four})}}}\ddot{\theta} + \underbrace{\left(\frac{R_ab_aN^2\eta - KK_dN\eta + K^2N^2\eta}{R_a}\right)}_{\quad\scalebox{1.25}{\sfrac{(\ref{eq:one})}{(\ref{eq:four})}}}
+  \dot{\theta} - \underbrace{\left(\frac{KK_pN\eta}{R_a}\right)}_{\scalebox{1.25}{\sfrac{(\ref{eq:two})}{(\ref{eq:four})}}}
+  \theta + \underbrace{\left(\frac{KK_pN\eta}{R_a}\right)}_{\scalebox{1.25}{\sfrac{(\ref{eq:two})}{(\ref{eq:four})}}}
+  \theta_d = -\tau
+  \label{eq:fin}
+\end{equation}
+The MATLAB code implementing this process can be found in the Appendix (see section \ref{sec:app}, p. \pageref{sec:app}, \emph{Listing \ref{code:mmodel}}).
+\newpage
+The torque provided by the servo can now be solved for, given the current position ($\theta$), velocity ($\dot{\theta}$), angular acceleration ($\ddot{\theta}$), and desired position ($\theta_d$) are known.
+
+Given the complete equation for the dynamical response of the system (\ref{eq:dynamics}), substituting in the solution obtained for the motor dynamics and solving for the acceleration,
+\begin{equation}
+\left(H + J_aN^2\eta\right)^{-1} \left[\left(B - \frac{R_ab_aN^2\eta - KK_dN\eta + K^2N^2\eta}{R_a}\right)\dot{\gamma} - \left(\frac{KK_pN\eta}{R_a}\right)(\gamma_d - \gamma) - n\right]= \ddot{\gamma}
+\end{equation}
+Where
+\[
+n(\gamma,\dot{\gamma}) = d(\gamma,\dot{\gamma}) + G(\gamma) + C\text{sgn}(\dot{\gamma})
+\]
+\newpage

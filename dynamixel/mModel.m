@@ -22,13 +22,13 @@ for ii = 1:numFiles
         nani = (find(diff(M(:,1)) > 100));
         M(nani,:) = [];
     % show response
-%         figure();
-%         plot(M(:,1),M(:,2))
-%         title('Experimental Data')
+         figure();
+         plot(M(:,1),M(:,2))
+         title('Experimental Data')
     % find % OS
         peak = max(M(:,2));                        % peak value
         peaki = find(M(:,2)==peak, 1, 'first');    % peak value index
-        ss = M(end,2);                             % steady state 
+        ss = M(end,2);                             % steady state
         os = ((peak - ss) / ss) * 100;             % % OS
     % damping ratio
         damp(ii) = -log(os/100) / sqrt(pi^2 + log(os/100)^2);
@@ -61,18 +61,3 @@ for jj = 1:3
 end
 
 sol(3:4) = A \ b;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

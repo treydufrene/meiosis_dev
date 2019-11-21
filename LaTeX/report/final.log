@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  20 NOV 2019 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  21 NOV 2019 09:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -7,7 +7,7 @@ entering extended mode
 (./final.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 22 language(s) loaded.
-(/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/report.cls
+(./preamble.tex (/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -1353,28 +1353,28 @@ File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
 File: tikzlibraryangles.code.tex 2013/08/28 v3.0.1a (rcs-revision 1.1)
 ) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
-) (./final.aux)
+)) (./final.aux)
 \openout1 = `final.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 95.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1476,201 +1476,444 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 95.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 95.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 95.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 95.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 95.
+(Font)              <12> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 95.
+(Font)              <8> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 95.
-LaTeX Font Info:    Try loading font information for U+msa on input line 95.
+(Font)              <6> on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 95.
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 95.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 95.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 2.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./coverpage.tex
-<images/logo.png, id=4, 685.6014pt x 682.7106pt>
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 10.
-(pdftex.def)             Requested size: 211.38832pt x 210.49219pt.
-<images/erau.png, id=6, 1853.88261pt x 428.1212pt>
-File: images/erau.png Graphic file (type png)
-<use images/erau.png>
-Package pdftex.def Info: images/erau.png  used on input line 19.
-(pdftex.def)             Requested size: 223.1329pt x 51.52257pt.
-<images/text.png, id=7, 1004.7939pt x 337.26pt>
+<images/univ.png, id=4, 408.4826pt x 427.33565pt>
+File: images/univ.png Graphic file (type png)
+<use images/univ.png>
+Package pdftex.def Info: images/univ.png  used on input line 19.
+(pdftex.def)             Requested size: 70.46037pt x 73.70895pt.
+<images/text.png, id=6, 1004.7939pt x 337.26pt>
 File: images/text.png Graphic file (type png)
 <use images/text.png>
-Package pdftex.def Info: images/text.png  used on input line 23.
-(pdftex.def)             Requested size: 187.90271pt x 63.06627pt.
+Package pdftex.def Info: images/text.png  used on input line 20.
+(pdftex.def)             Requested size: 136.2258pt x 45.72368pt.
  [1
 
-{/usr/local/texlive/2018basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png> <./images/erau.png> <./images/text.png>]) (./final.toc)
+{/usr/local/texlive/2018basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/univ.png> <./images/text.png>]) (./final.toc)
 \tf@toc=\write4
 \openout4 = `final.toc'.
 
- (./final.lof)
+ [1] (./final.lof)
 \tf@lof=\write5
 \openout5 = `final.lof'.
 
- [1]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 126.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 126.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 126.
+ (./final.lot)
+\tf@lot=\write6
+\openout6 = `final.lot'.
+
  [2
 
-] [1] [2]
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 33.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 33.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 33.
+ [3
+
+] (./requirements.tex [1]) [2] (./concept.tex
 <images/overall_render.png, id=38, 1331.97626pt x 802.49812pt>
 File: images/overall_render.png Graphic file (type png)
 <use images/overall_render.png>
-Package pdftex.def Info: images/overall_render.png  used on input line 195.
+Package pdftex.def Info: images/overall_render.png  used on input line 7.
 (pdftex.def)             Requested size: 1331.973pt x 802.49615pt.
  [3 <./images/overall_render.png>]
-<images/base_callouts.png, id=44, 1434.10782pt x 810.02625pt>
+<images/base_callouts.png, id=45, 1434.10782pt x 810.02625pt>
 File: images/base_callouts.png Graphic file (type png)
 <use images/base_callouts.png>
-Package pdftex.def Info: images/base_callouts.png  used on input line 206.
+Package pdftex.def Info: images/base_callouts.png  used on input line 18.
 (pdftex.def)             Requested size: 1434.10432pt x 810.02426pt.
  [4 <./images/base_callouts.png>]
 <images/link_callouts.jpg, id=49, 1913.1475pt x 1084.05pt>
 File: images/link_callouts.jpg Graphic file (type jpg)
 <use images/link_callouts.jpg>
-Package pdftex.def Info: images/link_callouts.jpg  used on input line 227.
+Package pdftex.def Info: images/link_callouts.jpg  used on input line 39.
 (pdftex.def)             Requested size: 1913.14285pt x 1084.04736pt.
 <images/link_cross_section.png, id=50, 508.90125pt x 467.7475pt>
 File: images/link_cross_section.png Graphic file (type png)
 <use images/link_cross_section.png>
-Package pdftex.def Info: images/link_cross_section.png  used on input line 236.
+Package pdftex.def Info: images/link_cross_section.png  used on input line 48.
 (pdftex.def)             Requested size: 508.90001pt x 467.74634pt.
  [5 <./images/link_callouts.jpg> <./images/link_cross_section.png>]
-<images/eblock.jpg, id=55, 543.02875pt x 522.95375pt>
-File: images/eblock.jpg Graphic file (type jpg)
-<use images/eblock.jpg>
-Package pdftex.def Info: images/eblock.jpg  used on input line 250.
-(pdftex.def)             Requested size: 258.36668pt x 248.82054pt.
-<images/sblock.jpg, id=56, 728.7225pt x 543.02875pt>
-File: images/sblock.jpg Graphic file (type jpg)
-<use images/sblock.jpg>
-Package pdftex.def Info: images/sblock.jpg  used on input line 261.
-(pdftex.def)             Requested size: 399.29463pt x 297.53984pt.
- [6 <./images/eblock.jpg>] [7 <./images/sblock.jpg>]
-<images/model.png, id=63, 1927.2pt x 1084.05pt>
+<images/eblock.pdf, id=55, 391.4625pt x 377.49028pt>
+File: images/eblock.pdf Graphic file (type pdf)
+<use images/eblock.pdf>
+Package pdftex.def Info: images/eblock.pdf  used on input line 62.
+(pdftex.def)             Requested size: 258.36668pt x 249.15587pt.
+<images/sblock.pdf, id=56, 532.53618pt x 399.66113pt>
+File: images/sblock.pdf Graphic file (type pdf)
+<use images/sblock.pdf>
+Package pdftex.def Info: images/sblock.pdf  used on input line 73.
+(pdftex.def)             Requested size: 399.29463pt x 299.66583pt.
+ [6 <./images/eblock.pdf
+
+pdfTeX warning: pdflatex (file ./images/eblock.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>]) [7 <./images/sblock.pdf>] (./specs.tex
+<images/model.png, id=92, 1927.2pt x 1084.05pt>
 File: images/model.png Graphic file (type png)
 <use images/model.png>
-Package pdftex.def Info: images/model.png  used on input line 275.
+Package pdftex.def Info: images/model.png  used on input line 6.
 (pdftex.def)             Requested size: 1927.19533pt x 1084.04736pt.
  [8 <./images/model.png>]
-<images/offset.png, id=68, 512.91624pt x 854.19125pt>
+<images/offset.png, id=97, 512.91624pt x 854.19125pt>
 File: images/offset.png Graphic file (type png)
 <use images/offset.png>
-Package pdftex.def Info: images/offset.png  used on input line 304.
+Package pdftex.def Info: images/offset.png  used on input line 35.
 (pdftex.def)             Requested size: 117.43875pt x 195.57355pt.
  [9 <./images/offset.png>] [10]
-<images/zero.png, id=77, 818.05624pt x 334.24875pt>
+<images/zero.png, id=106, 818.05624pt x 334.24875pt>
 File: images/zero.png Graphic file (type png)
 <use images/zero.png>
-Package pdftex.def Info: images/zero.png  used on input line 344.
+Package pdftex.def Info: images/zero.png  used on input line 75.
 (pdftex.def)             Requested size: 352.31625pt x 143.95366pt.
- [11 <./images/zero.png>] [12]
-<images/pulley12.png, id=85, 978.65625pt x 554.07pt>
+ [11 <./images/zero.png>]) [12]
+<images/callouts.png, id=114, 1425.82687pt x 796.47563pt>
+File: images/callouts.png Graphic file (type png)
+<use images/callouts.png>
+Package pdftex.def Info: images/callouts.png  used on input line 63.
+(pdftex.def)             Requested size: 399.29463pt x 223.04811pt.
+<images/linkx.jpg, id=115, 1927.2pt x 1084.05pt>
+File: images/linkx.jpg Graphic file (type jpg)
+<use images/linkx.jpg>
+Package pdftex.def Info: images/linkx.jpg  used on input line 69.
+(pdftex.def)             Requested size: 399.29463pt x 224.59709pt.
+<images/meiosis_zeroed.jpg, id=116, 1927.2pt x 1084.05pt>
+File: images/meiosis_zeroed.jpg Graphic file (type jpg)
+<use images/meiosis_zeroed.jpg>
+Package pdftex.def Info: images/meiosis_zeroed.jpg  used on input line 75.
+(pdftex.def)             Requested size: 399.29463pt x 224.59709pt.
+<images/meiosis.jpg, id=117, 1927.2pt x 1084.05pt>
+File: images/meiosis.jpg Graphic file (type jpg)
+<use images/meiosis.jpg>
+Package pdftex.def Info: images/meiosis.jpg  used on input line 81.
+(pdftex.def)             Requested size: 399.29463pt x 224.59709pt.
+ [13 <./images/callouts.png>] [14 <./images/linkx.jpg> <./images/meiosis_zeroed.jpg>] [15 <./images/meiosis.jpg>]
+<images/pulley12.png, id=129, 978.65625pt x 554.07pt>
 File: images/pulley12.png Graphic file (type png)
 <use images/pulley12.png>
-Package pdftex.def Info: images/pulley12.png  used on input line 411.
+Package pdftex.def Info: images/pulley12.png  used on input line 91.
 (pdftex.def)             Requested size: 305.33789pt x 172.86745pt.
-<images/pulley3.png, id=86, 871.75688pt x 508.14844pt>
+<images/pulley3.png, id=130, 871.75688pt x 508.14844pt>
 File: images/pulley3.png Graphic file (type png)
 <use images/pulley3.png>
-Package pdftex.def Info: images/pulley3.png  used on input line 417.
+Package pdftex.def Info: images/pulley3.png  used on input line 98.
 (pdftex.def)             Requested size: 305.33789pt x 177.97867pt.
- [13 <./images/pulley12.png> <./images/pulley3.png>]
-<images/zero2.png, id=92, 1093.58563pt x 442.65375pt>
+ [16 <./images/pulley12.png> <./images/pulley3.png>] (./fk.tex
+<images/zero2.png, id=136, 1093.58563pt x 442.65375pt>
 File: images/zero2.png Graphic file (type png)
 <use images/zero2.png>
-Package pdftex.def Info: images/zero2.png  used on input line 430.
+Package pdftex.def Info: images/zero2.png  used on input line 4.
 (pdftex.def)             Requested size: 422.77664pt x 171.12804pt.
- [14 <./images/zero2.png>]
-Overfull \hbox (26.24602pt too wide) detected at line 573
+ [17 <./images/zero2.png>]
+Overfull \hbox (26.24602pt too wide) detected at line 147
 []\OML/lmm/m/it/12 T[] \OT1/lmr/m/n/12 = []
  []
 
-[15]
-LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 639.
+) [18]
+LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 139.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.39996> on input line 639.
+(Font)              <8.39996> on input line 139.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.87994> on input line 639.
+(Font)              <5.87994> on input line 139.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.19998> on input line 639.
- [16] (./gearbox.tex
+(Font)              <4.19998> on input line 139.
+ [19] (./motor.tex (./gearbox.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 11.
-) [17]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 753.
+) [20]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 96.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [18] [19]
-Overfull \hbox (3.31932pt too wide) detected at line 811
+) [21] [22])
+Overfull \hbox (3.31932pt too wide) detected at line 196
 \OML/lmm/m/it/12 d\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 ) = [] \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] [] [](\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 )[] + \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] []
  []
 
-[20] [21]
-<images/jplots.pdf, id=126, 469.28508pt x 363.4682pt>
+[23] [24] [25]
+<images/jplots.pdf, id=173, 469.28508pt x 363.4682pt>
 File: images/jplots.pdf Graphic file (type pdf)
 <use images/jplots.pdf>
-Package pdftex.def Info: images/jplots.pdf  used on input line 827.
+Package pdftex.def Info: images/jplots.pdf  used on input line 209.
 (pdftex.def)             Requested size: 446.26582pt x 345.63669pt.
- [22 <./images/jplots.pdf>] [23] [24]
-<images/dex.pdf, id=154, 419.25134pt x 419.09534pt>
+ [26 <./images/jplots.pdf>] [27]
+<images/eschem.pdf, id=198, 421.58713pt x 193.58693pt>
+File: images/eschem.pdf Graphic file (type pdf)
+<use images/eschem.pdf>
+Package pdftex.def Info: images/eschem.pdf  used on input line 225.
+(pdftex.def)             Requested size: 446.26582pt x 204.9294pt.
+ [28 <./images/eschem.pdf>] [29] [30] [31] (./final.bbl) [32
+
+]
+<images/dex.pdf, id=235, 419.25134pt x 419.09534pt>
 File: images/dex.pdf Graphic file (type pdf)
 <use images/dex.pdf>
-Package pdftex.def Info: images/dex.pdf  used on input line 874.
+Package pdftex.def Info: images/dex.pdf  used on input line 303.
 (pdftex.def)             Requested size: 419.25032pt x 419.0943pt.
- [25 <./images/dex.pdf>] (./final.bbl) [26
-
-] (./final.aux) ) 
+<images/drawings.pdf, id=236, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf>
+Package pdftex.def Info: images/drawings.pdf  used on input line 310.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf>
+Package pdftex.def Info: images/drawings.pdf  used on input line 310.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+<images/drawings.pdf, id=239, page=1, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 1>
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 1>
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [33 <./images/dex.pdf>]
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 1>
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 1>
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 1>
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [34 <./images/drawings.pdf>]
+<images/drawings.pdf, id=287, page=2, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 2>
+Package pdftex.def Info: images/drawings.pdf , page2 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 2>
+Package pdftex.def Info: images/drawings.pdf , page2 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 2>
+Package pdftex.def Info: images/drawings.pdf , page2 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [35 <./images/drawings.pdf>]
+<images/drawings.pdf, id=291, page=3, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 3>
+Package pdftex.def Info: images/drawings.pdf , page3 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 3>
+Package pdftex.def Info: images/drawings.pdf , page3 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 3>
+Package pdftex.def Info: images/drawings.pdf , page3 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [36 <./images/drawings.pdf>]
+<images/drawings.pdf, id=295, page=4, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 4>
+Package pdftex.def Info: images/drawings.pdf , page4 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 4>
+Package pdftex.def Info: images/drawings.pdf , page4 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 4>
+Package pdftex.def Info: images/drawings.pdf , page4 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [37 <./images/drawings.pdf>]
+<images/drawings.pdf, id=299, page=5, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 5>
+Package pdftex.def Info: images/drawings.pdf , page5 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 5>
+Package pdftex.def Info: images/drawings.pdf , page5 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 5>
+Package pdftex.def Info: images/drawings.pdf , page5 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [38 <./images/drawings.pdf>]
+<images/drawings.pdf, id=303, page=6, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 6>
+Package pdftex.def Info: images/drawings.pdf , page6 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 6>
+Package pdftex.def Info: images/drawings.pdf , page6 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 6>
+Package pdftex.def Info: images/drawings.pdf , page6 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [39 <./images/drawings.pdf>]
+<images/drawings.pdf, id=308, page=7, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 7>
+Package pdftex.def Info: images/drawings.pdf , page7 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 7>
+Package pdftex.def Info: images/drawings.pdf , page7 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 7>
+Package pdftex.def Info: images/drawings.pdf , page7 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [40 <./images/drawings.pdf>]
+<images/drawings.pdf, id=312, page=8, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 8>
+Package pdftex.def Info: images/drawings.pdf , page8 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 8>
+Package pdftex.def Info: images/drawings.pdf , page8 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 8>
+Package pdftex.def Info: images/drawings.pdf , page8 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [41 <./images/drawings.pdf>]
+<images/drawings.pdf, id=316, page=9, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 9>
+Package pdftex.def Info: images/drawings.pdf , page9 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 9>
+Package pdftex.def Info: images/drawings.pdf , page9 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 9>
+Package pdftex.def Info: images/drawings.pdf , page9 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [42 <./images/drawings.pdf>]
+<images/drawings.pdf, id=320, page=10, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 10>
+Package pdftex.def Info: images/drawings.pdf , page10 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 10>
+Package pdftex.def Info: images/drawings.pdf , page10 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 10>
+Package pdftex.def Info: images/drawings.pdf , page10 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [43 <./images/drawings.pdf>]
+<images/drawings.pdf, id=324, page=11, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 11>
+Package pdftex.def Info: images/drawings.pdf , page11 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 11>
+Package pdftex.def Info: images/drawings.pdf , page11 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 11>
+Package pdftex.def Info: images/drawings.pdf , page11 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [44 <./images/drawings.pdf>]
+<images/drawings.pdf, id=328, page=12, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 12>
+Package pdftex.def Info: images/drawings.pdf , page12 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 12>
+Package pdftex.def Info: images/drawings.pdf , page12 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 12>
+Package pdftex.def Info: images/drawings.pdf , page12 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [45 <./images/drawings.pdf>]
+<images/drawings.pdf, id=333, page=13, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 13>
+Package pdftex.def Info: images/drawings.pdf , page13 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 13>
+Package pdftex.def Info: images/drawings.pdf , page13 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 13>
+Package pdftex.def Info: images/drawings.pdf , page13 used on input line 310.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [46 <./images/drawings.pdf>] (./mmodel.tex
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 1.
+ (/usr/local/texlive/2018basic/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 10.20007pt on input line 1.
+LaTeX Font Info:    Try loading font information for TS1+fvm on input line 9.
+ (/usr/local/texlive/2018basic/texmf-dist/tex/latex/bera/ts1fvm.fd
+File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
+)
+LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
+(Font)              scaled to size 10.20007pt on input line 9.
+ [47]) (./meiosisfk.tex [48]) (./meiosisik.tex [49] [50]) [51] (./final.aux) ) 
 Here is how much of TeX's memory you used:
- 42006 strings out of 494091
- 923448 string characters out of 6163523
- 1074176 words of memory out of 5000000
- 44987 multiletter control sequences out of 15000+600000
- 717594 words of font info for 163 fonts, out of 8000000 for 9000
+ 42605 strings out of 494091
+ 930861 string characters out of 6163523
+ 1206273 words of memory out of 5000000
+ 45542 multiletter control sequences out of 15000+600000
+ 715712 words of font info for 165 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 62i,17n,92p,10438b,805s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2018basic/tex
-mf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on final.pdf (29 pages, 7871406 bytes).
+ 64i,18n,120p,10455b,1858s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/t
+ype1/public/lm/lmmi6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on final.pdf (55 pages, 12676133 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
+ 415 PDF objects out of 1000 (max. 8388607)
+ 264 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
