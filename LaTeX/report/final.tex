@@ -603,6 +603,22 @@ c_{\theta_6}(s_{\theta_{23}}s_{\theta_5} - c_{\theta_{23}}c_{\theta_4}c_{\theta_
 \]
 \newpage
 \subsection{Velocity Kinematics}
+The translational and rotational velocties ($\dot{r}$ \& $\omega$) can be found given the geometric jacobian of the body and transformation matrix corresponding to it.
+\[
+\begin{bmatrix}
+  ^B_B\omega_I\\
+  ^I_B\dot{r}_B
+\end{bmatrix}
+= J_B =
+\begin{bmatrix}
+  ^IT_B(:,3)^T \cdot \dfrac{\partial}{\partial\gamma}{}^IT_B(:,2) \\
+  ^IT_B(:,1)^T \cdot \dfrac{\partial}{\partial\gamma}{}^IT_B(:,3) \\
+  ^IT_B(:,2)^T \cdot \dfrac{\partial}{\partial\gamma}{}^IT_B(:,1) \\
+\end{bmatrix}
+\]
+
+
+
 \subsection{Inverse Kinematics}
 %------------------------------------------------------------------------------%
 % IK
@@ -620,10 +636,10 @@ The inverse kinematics can be calculated given desired position and orientation 
 \begin{equation}
 \begin{aligned}
 \quad\text{Inverse Position}: \\
-\theta_{1}&= \text{atan2} \left(x_{c},~ y_{c}\right) - \text{atan2}\left(d,~\sqrt{x_c^2 + y_c^2 -d^2}\right) - \sfrac{\pi}{2}\\
-\theta_{2}&= \text{atan2} \left(z_c - \ell_1, ~\sqrt{x_c^2 + y_c^2 - d^2}\right) - \text{atan2}\left(\ell_3s_3,~\ell_2 + \ell_3c_3\right) \\
+\theta_{1}&= \text{atan2} \left(x_{c},~ y_{c}\right) - \sfrac{\pi}{2}\\
+\theta_{2}&= \text{atan2} \left(z_c - \ell_1, ~\sqrt{x_c^2 + y_c^2}\right) - \text{atan2}\left(\ell_3s_3,~\ell_2 + \ell_3c_3\right) \\
 \theta_{3}&= \text{atan2} (-\sqrt{1-D^{2}},~ D) \\
-& \quad \text { where } D\equiv\frac{x_{c}^{2}+y_{c}^{2}-d^{2}+\left(z_{c}-\ell_{1}\right)^{2}-\ell_{2}^{2}-\ell_{3}^{2}}{2 \ell_{2} \ell_{3}} \\
+& \quad \text { where } D\equiv\frac{x_{c}^{2}+y_{c}^{2}+\left(z_{c}-\ell_{1}\right)^{2}-\ell_{2}^{2}-\ell_{3}^{2}}{2 \ell_{2} \ell_{3}} \\
 \quad\text{Inverse Orientation}:\\
 ^IT_3 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3) \\
 {}^3T_6 &= {}^IT_3^TR \\ % TODO: reference the FK orientation sec#/p.
@@ -643,19 +659,6 @@ The inverse kinematics can be calculated given desired position and orientation 
   H(\gamma)\ddot{\gamma}+d(\gamma,\dot{\gamma})+G(\gamma)+B(\dot{\gamma})+C\text{sgn}(\dot{\gamma}) = F
   \label{eq:dynamics}
 \end{equation}
-\[
-J_B =
-\begin{bmatrix}
-  ^IT_B(:,3)^T \cdot \dfrac{\partial}{\partial\gamma}^IT_B(:,2) \\
-  ^IT_B(:,1)^T \cdot \dfrac{\partial}{\partial\gamma}^IT_B(:,3) \\
-  ^IT_B(:,2)^T \cdot \dfrac{\partial}{\partial\gamma}^IT_B(:,1) \\
-\end{bmatrix}
-=
-\begin{bmatrix}
-  ^B_B\omega_I\\
-  ^I_B\dot{r}_B
-\end{bmatrix}
-\]
 
 \[
 ^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
