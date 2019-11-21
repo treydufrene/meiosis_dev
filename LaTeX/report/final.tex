@@ -655,56 +655,6 @@ The inverse kinematics can be calculated given desired position and orientation 
 %------------------------------------------------------------------------------%
 % ROBOT EOMS
 %------------------------------------------------------------------------------%
-\begin{equation}
-  H(\gamma)\ddot{\gamma}+d(\gamma,\dot{\gamma})+G(\gamma)+B(\dot{\gamma})+C\text{sgn}(\dot{\gamma}) = F
-  \label{eq:dynamics}
-\end{equation}
-
-\[
-^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
-\]
-
-\[
-G(\gamma) \equiv \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T
-\]
-
-\[
-U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
-\]
-
-\begin{equation}
-  \renewcommand{\arraystretch}{1.5}
-  H(\gamma) = \sum_B^N J_B(\gamma)^T
-  \begin{bmatrix}
-    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
-    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
-  \end{bmatrix}
-  J_B(\gamma)
-\end{equation}
-
-\begin{equation}
-  \renewcommand{\arraystretch}{1.5}
-  d(\gamma,\dot{\gamma}) = \sum_B^N J_B(\gamma)^T
-  \begin{bmatrix}
-    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
-    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
-  \end{bmatrix}
-  \dot{J}_B(\gamma,\dot{\gamma})\dot{\gamma}+J_B(\gamma)^T
-  \begin{bmatrix}
-    ^B_B\omega_I \times ^B_BJ ^B_B\omega_I \\
-    ^IT_B\left(^B_B\omega_I\times(^B_B\omega_I\times^B_B\Gamma)\right)
-  \end{bmatrix}
-\end{equation}
-\newpage
-
-\subsection{Open-Loop Simulation}
-\subsection{Control System}
-\newpage
-%------------------------------------------------------------------------------%
-% Closed Loop Simulation
-%------------------------------------------------------------------------------%
-\subsection{Closed-Loop Simulation}
-% \subsubsection{Motor Dynamics}
 Given robot dynamics described by \(H(\gamma)\ddot{\gamma} + n(\gamma,\dot{\gamma}) = \tau\), the torque, $\tau$, provided by the servo motors is necessary to solve the closed loop dynamics of the system. Assuming the servo is driven by a D.C. motor with proportional derivative control,
 \begin{equation}
   \tau_a = Ki_a = J_a\ddot{\theta}_a + b_a\dot{\theta}_a + \tau_L
@@ -818,8 +768,60 @@ Where
 \[
 n(\gamma,\dot{\gamma}) = d(\gamma,\dot{\gamma}) + G(\gamma) + C\text{sgn}(\dot{\gamma})
 \]
+\newpage
+\begin{equation}
+  H(\gamma)\ddot{\gamma}+d(\gamma,\dot{\gamma})+G(\gamma)+B(\dot{\gamma})+C\text{sgn}(\dot{\gamma}) = F
+  \label{eq:dynamics}
+\end{equation}
 
-The closed-loop system can now be simulated, the results are shown below in Figure (\ref{fig:jplots}).
+\[
+^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
+\]
+
+\[
+G(\gamma) \equiv \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T
+\]
+
+\[
+U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
+\]
+
+\begin{equation}
+  \renewcommand{\arraystretch}{1.5}
+  H(\gamma) = \sum_B^N J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
+    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
+  \end{bmatrix}
+  J_B(\gamma)
+\end{equation}
+
+\begin{equation}
+  \renewcommand{\arraystretch}{1.5}
+  d(\gamma,\dot{\gamma}) = \sum_B^N J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
+    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
+  \end{bmatrix}
+  \dot{J}_B(\gamma,\dot{\gamma})\dot{\gamma}+J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_B\omega_I \times ^B_BJ ^B_B\omega_I \\
+    ^IT_B\left(^B_B\omega_I\times(^B_B\omega_I\times^B_B\Gamma)\right)
+  \end{bmatrix}
+\end{equation}
+\newpage
+
+\subsection{Open-Loop Simulation}
+\subsection{Control System}
+\newpage
+%------------------------------------------------------------------------------%
+% Closed Loop Simulation
+%------------------------------------------------------------------------------%
+\subsection{Closed-Loop Simulation}
+% \subsubsection{Motor Dynamics}
+
+
+% The closed-loop system can now be simulated, the results are shown below in Figure (\ref{fig:jplots}).
 \begin{figure}[htp]
   \center
   \includegraphics[width=.95\textwidth]{jplots}

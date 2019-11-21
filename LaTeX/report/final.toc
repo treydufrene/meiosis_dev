@@ -32,11 +32,11 @@
 \contentsline {subsection}{\numberline {5.3}Velocity Kinematics}{16}
 \contentsline {subsection}{\numberline {5.4}Inverse Kinematics}{16}
 \contentsline {subsection}{\numberline {5.5}Equations of Motion}{17}
-\contentsline {subsection}{\numberline {5.6}Open-Loop Simulation}{18}
-\contentsline {subsection}{\numberline {5.7}Control System}{18}
-\contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{19}
-\contentsline {subsection}{\numberline {5.9}ANSYS}{22}
-\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{22}
-\contentsline {subsection}{\numberline {5.11}Software Flowchart}{22}
-\contentsline {subsection}{\numberline {5.12}Project Status and Future}{22}
-\contentsline {subsection}{\numberline {5.13}Parts List}{22}
+\contentsline {subsection}{\numberline {5.6}Open-Loop Simulation}{21}
+\contentsline {subsection}{\numberline {5.7}Control System}{21}
+\contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{22}
+\contentsline {subsection}{\numberline {5.9}ANSYS}{23}
+\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{23}
+\contentsline {subsection}{\numberline {5.11}Software Flowchart}{23}
+\contentsline {subsection}{\numberline {5.12}Project Status and Future}{23}
+\contentsline {subsection}{\numberline {5.13}Parts List}{23}
