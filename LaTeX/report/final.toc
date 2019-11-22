@@ -32,15 +32,15 @@
 \contentsline {subsection}{\numberline {5.4}Inverse Kinematics}{19}
 \contentsline {subsection}{\numberline {5.5}Equations of Motion}{20}
 \contentsline {subsubsection}{\numberline {5.5.1}Actuator Dynamics}{20}
-\contentsline {subsection}{\numberline {5.6}Open-Loop Simulation}{24}
-\contentsline {subsection}{\numberline {5.7}Control System}{25}
-\contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{26}
-\contentsline {subsection}{\numberline {5.9}ANSYS}{27}
-\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{28}
-\contentsline {subsection}{\numberline {5.11}Software Flowchart}{29}
-\contentsline {subsection}{\numberline {5.12}Project Status and Future}{29}
-\contentsline {subsection}{\numberline {5.13}Parts List}{30}
-\contentsline {section}{\numberline {I}Appendix}{33}
-\contentsline {subsection}{\numberline {i}Relevant Figures and Materials}{33}
-\contentsline {subsection}{\numberline {ii}CAD Drawings}{33}
-\contentsline {subsection}{\numberline {iii}Salient Code}{47}
+\contentsline {subsection}{\numberline {5.6}Open-Loop Simulation}{22}
+\contentsline {subsection}{\numberline {5.7}Control System}{23}
+\contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{24}
+\contentsline {subsection}{\numberline {5.9}ANSYS}{26}
+\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{27}
+\contentsline {subsection}{\numberline {5.11}Software Flowchart}{28}
+\contentsline {subsection}{\numberline {5.12}Project Status and Future}{28}
+\contentsline {subsection}{\numberline {5.13}Parts List}{29}
+\contentsline {section}{\numberline {I}Appendix}{32}
+\contentsline {subsection}{\numberline {i}Relevant Figures and Materials}{32}
+\contentsline {subsection}{\numberline {ii}CAD Drawings}{32}
+\contentsline {subsection}{\numberline {iii}Salient Code}{46}

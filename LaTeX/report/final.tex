@@ -152,36 +152,24 @@ The inverse kinematics can be calculated given desired position and orientation 
 \newpage
 
 \subsection{Equations of Motion}
-\subsubsection{Actuator Dynamics}
-\input{motor}
+Given robot dynamics described by \(H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=F_{\gamma},\) the equations of motion for
+the manipulator can be determined. Solving this equation for \(\ddot{\gamma}\) gives:
 \begin{equation}
-  H(\gamma)\ddot{\gamma}+d(\gamma,\dot{\gamma})+G(\gamma)+B(\dot{\gamma})+C\text{sgn}(\dot{\gamma}) = F
-  \label{eq:dynamics}
+  \ddot{\gamma}=H(\gamma)^{-1}\left(F_{\gamma}-d(\gamma, \dot{\gamma})-G(\gamma)\right)
+  \label{eq:eoms}
 \end{equation}
-
+Where $F_{\gamma}$ is the vector of generalized forces on the joints and
 \[
-^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
-\]
-
-\[
-G(\gamma) \equiv \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T
-\]
-
-\[
-U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
-\]
-
-\begin{equation}
   \renewcommand{\arraystretch}{1.5}
   H(\gamma) = \sum_B^N J_B(\gamma)^T
   \begin{bmatrix}
     ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
     ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
   \end{bmatrix}
-  J_B(\gamma)
-\end{equation}
-
-\begin{equation}
+  J_B(\gamma)~,\quad
+  ^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
+\]
+\[
   \renewcommand{\arraystretch}{1.5}
   d(\gamma,\dot{\gamma}) = \sum_B^N J_B(\gamma)^T
   \begin{bmatrix}
@@ -193,16 +181,72 @@ U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma
     ^B_B\omega_I \times ^B_BJ ^B_B\omega_I \\
     ^IT_B\left(^B_B\omega_I\times(^B_B\omega_I\times^B_B\Gamma)\right)
   \end{bmatrix}
+\]
+\[
+G(\gamma) = \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T~,\quad U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
+\]
+% \[
+% ^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
+% \]
+\subsubsection{Actuator Dynamics}
+\input{motor}
+
+\subsection{Open-Loop Simulation}
+The equations of motion described in equation (\ref{eq:eoms}) can be integrated to simulate the motion of the system. For the open loop control, no input torque is supplied, meaning the system responds only to gravity. Due to the complexity of the equations of motion, they will be integrated numerically using a 4th Order Runge Kutta algorithm. Since so input force is supplied, the equations of motion reduce down to the relation described in equation (\ref{eq:eoms2}).
+\begin{equation}
+\ddot{\gamma}=H(\gamma)^{-1}(-d(\gamma, \dot{\gamma})-G(\gamma))
+\label{eq:eoms2}
 \end{equation}
 
 
-
-\newpage
-\subsection{Open-Loop Simulation}
 \newpage
 \subsection{Control System}
 \newpage
 \subsection{Closed-Loop Simulation}
+The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of differential drive systems means that the joint angles, $\gamma$ do not directly correspond to motor rotations, $\theta$. However, there is a linear relation between them, described in equation (\ref{eq:A}).
+\begin{equation}
+  \gamma = A\cdot\theta\quad \text{where}~~A=\left[\begin{array}{cccccc}{1 /(2 N)} & {1 /(2 N)} & {0} & {0} & {0} & {0} \\ {1 /(2 N)} & {-1 /(2 N)} & {0} & {0} & {0} & {0} \\ {0} & {0} & {-1 / N} & {0} & {0} & {0} \\ {0} & {0} & {0} & {1} & {0} & {0} \\ {0} & {0} & {0} & {0} & {-1 / 2} & {1 / 2} \\ {0} & {0} & {0} & {0} & {1 / 2} & {1 / 2}\end{array}\right]
+\label{eq:A}
+\end{equation}
+Equation (\ref{eq:A}) can be used to map the joint angles to the motor angles. The gear ratio of 1:10 is represented by the variable N. Similarly, the motor angles can be determined by multiplying both sides of equation (\ref{eq:A}) by the inverse of matrix A, giving the following relation.
+\begin{equation}
+\theta=A^{-1} \gamma
+\label{eq:Ainv}
+\end{equation}
+It is important to note that the virtual work done by the joint torques ($F_{\gamma}$) and the virtual work done by the motor torques ($F_{\theta}$) are equal. Using equation (\ref{eq:Ainv}), a linear relation between the joint torques and motor torques can be determined.
+\[
+\begin{aligned}
+  \delta W = F_{\theta}^{T} \delta \theta&=F_{\gamma}^{T} \delta \gamma, \text { where } \delta \gamma=A \delta \theta \\
+  F_{\theta}^{T} \delta \theta &= F_{\gamma}^{T}(A \delta \theta) \\
+  F_{\theta}^{T}&=F_{\gamma}^{T} A\\
+  \left(F_{\theta}^{T}\right)^{T}&=\left(F_{\gamma}^{T} A\right)^{T}\\
+  F_{\theta}=A^{T} F_{\gamma} &\Leftrightarrow F_{\gamma}=A^{-T} F_{\theta}\qquad\quad
+\end{aligned}
+\]
+Using this equation, a relation can be determined between the motor dynamics and the system dynamics given in equation (\ref{eq:fin}) and equation (\ref{eq:eoms}) respectively.
+
+\[
+H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=-A^{-T}\left(C_1A^{-1} \ddot{\gamma}+C_2 A^{-1} \dot{\gamma}+C_3 \theta_{d}- C_3A^{-1} \gamma\right)
+\]
+\begin{equation}
+\ddot{\gamma}=H(\gamma)^{-1}\left(-A^{-T}\left(C_1 A^{-1} \ddot{\gamma}+C_2 A^{-1} \dot{\gamma}+C_3 \theta_{d}-C_3A^{-1} \gamma\right)-d(\gamma, \dot{\gamma})-G(\gamma)\right)
+\label{eq:gddot}
+\end{equation}
+
+Because this equation includes the motor model, which in turn includes an internal PD controller, this equation can be integrated to solve for the system response given a desired motor angle input, $\theta_d$. However, doing so will not result in the desired system response. This control scheme does not have any compensation for the inertia of the links, and it is also lacking gravity compensation. This can be remedied by modifying the input to the motors, $\theta_d$. A new input, $u$, is defined such that gravity can be compensated. Thus, the motor input term in equation (\ref{eq:gddot}) must include both compensation for gravity and the desired motor angle.
+\[
+A^{-T} C_3  u=G(\gamma)+d(\gamma, \dot{\gamma})+A^{-T} C_3\theta_{d}
+\]
+\begin{equation}
+u=\left(A^{-T} C_3\right)^{-1} G(\gamma)+\theta_{d}
+\end{equation}
+With this new motor input, the closed loop control system equations of motion are given as:
+\begin{equation}
+\ddot{\gamma}=H(\gamma)^{-1}\left(-A^{-T}\left(C_1 A^{-1} \ddot{\gamma}+C_2 A^{-1} \dot{\gamma}+C_3 u-C_3A^{-1} \gamma\right)-d(\gamma, \dot{\gamma})-G(\gamma)\right)
+\label{eq:gddotfin}
+\end{equation}
+Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system response given desired motor angles.
+
 % The closed-loop system can now be simulated, the results are shown below in Figure (\ref{fig:jplots}).
 \begin{figure}[htp]
   \center
@@ -242,25 +286,6 @@ U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma
 \subsection{Project Status and Future}
 \newpage
 \subsection{Parts List}
-
-% \begin{tabular}{C{4cm}C{3cm}cC{3cm}C{3cm}c}
-% Item & Retailer & Quantity & Unit Cost (USD) & Total Cost (USD) & Notes \\
-% APB120MXL025B-375 & Automation Direct & 3 & 31 & 93 & 120 tooth \\
-% APB12MXL025CF-125 & Automation Direct & 3 & 8.5 & 25.5 & 12 tooth \\
-% 300MXL025NG & Automation Direct & 1 & 11.5 & 11.5 & 3 pack, 300 tooth \\
-% 208MXL025NG & Automation Direct & 1 & 9.5 & 28.5 & 3 pack, 208 tooth \\
-% RO-902-0086-000 & Trossen Robotics & 6 & 65.9 & 395.4 & MX-12W \\
-% RO-902-0132-000 & Trossen Robotics & 1 & 49.9 & 49.9 & U2D2 \\
-% CBL-BIO500 & Trossen Robotics & 2 & 3.95 & 7.9 & 500 mm, 1/2 pulleys \\
-% CBL-BIO350 & Trossen Robotics & 1 & 2.95 & 2.95 & 350 mm, 3 pulley \\
-% RASPBERRYPI3-MODB-1GB & Amazon & 1 & 37.99 & 37.99 & Pi 3 B \\
-% 6061Pipe2sched10 & Industrial Metal Sales & 1 & 2.99 & 2.99 & 2 Sch 10 12" Al tube \\
-% Automation Direct Shipping & N/A & N/A & N/A & 0 & free for orders over \$49 \\
-% Trossen Robotics Shipping & N/A & N/A & N/A & 13.15 & UPS ground \\
-% Amazon Shipping & N/A & N/A & N/A & 0 & free for orders over \$25 \\
-% Industrial Metal Sales Shipping & N/A & N/A & N/A & 26.36 & UPS ground \\
-% & & & Total & 695.14 & \\
-% \end{tabular}
 
 
 

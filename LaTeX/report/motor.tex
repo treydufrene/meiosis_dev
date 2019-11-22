@@ -28,7 +28,7 @@ Assuming PD control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), where $\t
   \frac{R_aJ_aN}{K}\ddot{\theta} + \left( \frac{R_aJ_aN}{K} - K_d + KN \right)\dot{\theta} - K_p\theta = -K_p\theta_d - \frac{R_a}{KN\eta}\tau
   \label{eq:end1}
 \end{equation}
-\newpage
+% \newpage
 The following parameters of the system can be obtained by applying a step input to the system with $\tau=0$ and measuring the characteristics of it's response. Denoting $\zeta$ as the damping ratio and $\omega_n$ as the natural frequency of the system,
 \[
   \text{\% Overshoot} = \left( \frac{\theta_{max} - \theta_{ss}}{\theta_{ss}} \right) \times 100~,\quad \zeta = \frac{-\ln(\sfrac{\%\text{OS}}{100})}{\sqrt{\pi^2 + \ln^2(\sfrac{\%\text{OS}}{100})}}~,\quad \omega_n = \frac{\pi}{T_p\sqrt{1-\zeta^2}}
@@ -100,10 +100,10 @@ Finally, the coefficients of the second order system (\ref{eq:fin}) are known:
   \label{eq:fin}
 \end{equation}
 The MATLAB code implementing this process can be found in the Appendix (see section \ref{sec:app}, p. \pageref{sec:app}, \emph{Listing \ref{code:mmodel}}).
-\newpage
+% \newpage
 The torque provided by the servo can now be solved for, given the current position ($\theta$), velocity ($\dot{\theta}$), angular acceleration ($\ddot{\theta}$), and desired position ($\theta_d$) are known.
 
-Given the complete equation for the dynamical response of the system (\ref{eq:dynamics}), substituting in the solution obtained for the motor dynamics and solving for the acceleration,
+Given the equation of motionfor the dynamical response of the system (\ref{eq:eoms}), substituting in the solution obtained for the motor dynamics and solving for the acceleration,
 \begin{equation}
 \left(H + J_aN^2\eta\right)^{-1} \left[\left(B - \frac{R_ab_aN^2\eta - KK_dN\eta + K^2N^2\eta}{R_a}\right)\dot{\gamma} - \left(\frac{KK_pN\eta}{R_a}\right)(\gamma_d - \gamma) - n\right]= \ddot{\gamma}
 \end{equation}
@@ -111,4 +111,4 @@ Where
 \[
 n(\gamma,\dot{\gamma}) = d(\gamma,\dot{\gamma}) + G(\gamma) + C\text{sgn}(\dot{\gamma})
 \]
-\newpage
+% \newpage

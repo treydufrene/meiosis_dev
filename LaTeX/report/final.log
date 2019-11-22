@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  21 NOV 2019 09:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.16)  21 NOV 2019 17:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1655,238 +1655,238 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5.87994> on input line 139.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <4.19998> on input line 139.
- [19] (./motor.tex (./gearbox.tex
+ [19]
+Overfull \hbox (3.31932pt too wide) detected at line 184
+\OML/lmm/m/it/12 d\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 ) = [] \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] [] [](\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 )[] + \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] []
+ []
+
+(./motor.tex (./gearbox.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 11.
 ) [20]
 LaTeX Font Info:    Try loading font information for TS1+lmr on input line 96.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [21] [22])
-Overfull \hbox (3.31932pt too wide) detected at line 196
-\OML/lmm/m/it/12 d\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 ) = [] \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] [] [](\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 )[] + \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] []
- []
-
-[23] [24] [25]
-<images/jplots.pdf, id=173, 469.28508pt x 363.4682pt>
+) [21]) [22] [23] [24]
+<images/jplots.pdf, id=170, 469.28508pt x 363.4682pt>
 File: images/jplots.pdf Graphic file (type pdf)
 <use images/jplots.pdf>
-Package pdftex.def Info: images/jplots.pdf  used on input line 209.
+Package pdftex.def Info: images/jplots.pdf  used on input line 253.
 (pdftex.def)             Requested size: 446.26582pt x 345.63669pt.
- [26 <./images/jplots.pdf>] [27]
-<images/eschem.pdf, id=198, 421.58713pt x 193.58693pt>
+ [25 <./images/jplots.pdf>] [26]
+<images/eschem.pdf, id=194, 421.58713pt x 193.58693pt>
 File: images/eschem.pdf Graphic file (type pdf)
 <use images/eschem.pdf>
-Package pdftex.def Info: images/eschem.pdf  used on input line 225.
+Package pdftex.def Info: images/eschem.pdf  used on input line 269.
 (pdftex.def)             Requested size: 446.26582pt x 204.9294pt.
- [28 <./images/eschem.pdf>] [29] [30] [31] (./final.bbl) [32
+ [27 <./images/eschem.pdf>] [28] [29] [30] (./final.bbl) [31
 
 ]
-<images/dex.pdf, id=235, 419.25134pt x 419.09534pt>
+<images/dex.pdf, id=232, 419.25134pt x 419.09534pt>
 File: images/dex.pdf Graphic file (type pdf)
 <use images/dex.pdf>
-Package pdftex.def Info: images/dex.pdf  used on input line 303.
+Package pdftex.def Info: images/dex.pdf  used on input line 328.
 (pdftex.def)             Requested size: 419.25032pt x 419.0943pt.
-<images/drawings.pdf, id=236, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=233, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf>
-Package pdftex.def Info: images/drawings.pdf  used on input line 310.
+Package pdftex.def Info: images/drawings.pdf  used on input line 335.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf>
-Package pdftex.def Info: images/drawings.pdf  used on input line 310.
+Package pdftex.def Info: images/drawings.pdf  used on input line 335.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-<images/drawings.pdf, id=239, page=1, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=236, page=1, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf, page 1>
-Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 335.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf, page 1>
-Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
- [33 <./images/dex.pdf>]
+ [32 <./images/dex.pdf>]
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf, page 1>
-Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
-(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
-File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 1>
-Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf, page 1>
-Package pdftex.def Info: images/drawings.pdf , page1 used on input line 310.
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 335.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 1>
+Package pdftex.def Info: images/drawings.pdf , page1 used on input line 335.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+ [33 <./images/drawings.pdf>]
+<images/drawings.pdf, id=284, page=2, 794.97pt x 614.295pt>
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 2>
+Package pdftex.def Info: images/drawings.pdf , page2 used on input line 335.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 2>
+Package pdftex.def Info: images/drawings.pdf , page2 used on input line 335.
+(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
+File: images/drawings.pdf Graphic file (type pdf)
+<use images/drawings.pdf, page 2>
+Package pdftex.def Info: images/drawings.pdf , page2 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [34 <./images/drawings.pdf>]
-<images/drawings.pdf, id=287, page=2, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=288, page=3, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 2>
-Package pdftex.def Info: images/drawings.pdf , page2 used on input line 310.
+<use images/drawings.pdf, page 3>
+Package pdftex.def Info: images/drawings.pdf , page3 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 2>
-Package pdftex.def Info: images/drawings.pdf , page2 used on input line 310.
+<use images/drawings.pdf, page 3>
+Package pdftex.def Info: images/drawings.pdf , page3 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 2>
-Package pdftex.def Info: images/drawings.pdf , page2 used on input line 310.
+<use images/drawings.pdf, page 3>
+Package pdftex.def Info: images/drawings.pdf , page3 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [35 <./images/drawings.pdf>]
-<images/drawings.pdf, id=291, page=3, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=292, page=4, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 3>
-Package pdftex.def Info: images/drawings.pdf , page3 used on input line 310.
+<use images/drawings.pdf, page 4>
+Package pdftex.def Info: images/drawings.pdf , page4 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 3>
-Package pdftex.def Info: images/drawings.pdf , page3 used on input line 310.
+<use images/drawings.pdf, page 4>
+Package pdftex.def Info: images/drawings.pdf , page4 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 3>
-Package pdftex.def Info: images/drawings.pdf , page3 used on input line 310.
+<use images/drawings.pdf, page 4>
+Package pdftex.def Info: images/drawings.pdf , page4 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [36 <./images/drawings.pdf>]
-<images/drawings.pdf, id=295, page=4, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=296, page=5, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 4>
-Package pdftex.def Info: images/drawings.pdf , page4 used on input line 310.
+<use images/drawings.pdf, page 5>
+Package pdftex.def Info: images/drawings.pdf , page5 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 4>
-Package pdftex.def Info: images/drawings.pdf , page4 used on input line 310.
+<use images/drawings.pdf, page 5>
+Package pdftex.def Info: images/drawings.pdf , page5 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 4>
-Package pdftex.def Info: images/drawings.pdf , page4 used on input line 310.
+<use images/drawings.pdf, page 5>
+Package pdftex.def Info: images/drawings.pdf , page5 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [37 <./images/drawings.pdf>]
-<images/drawings.pdf, id=299, page=5, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=300, page=6, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 5>
-Package pdftex.def Info: images/drawings.pdf , page5 used on input line 310.
+<use images/drawings.pdf, page 6>
+Package pdftex.def Info: images/drawings.pdf , page6 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 5>
-Package pdftex.def Info: images/drawings.pdf , page5 used on input line 310.
+<use images/drawings.pdf, page 6>
+Package pdftex.def Info: images/drawings.pdf , page6 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 5>
-Package pdftex.def Info: images/drawings.pdf , page5 used on input line 310.
+<use images/drawings.pdf, page 6>
+Package pdftex.def Info: images/drawings.pdf , page6 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [38 <./images/drawings.pdf>]
-<images/drawings.pdf, id=303, page=6, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=304, page=7, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 6>
-Package pdftex.def Info: images/drawings.pdf , page6 used on input line 310.
+<use images/drawings.pdf, page 7>
+Package pdftex.def Info: images/drawings.pdf , page7 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 6>
-Package pdftex.def Info: images/drawings.pdf , page6 used on input line 310.
+<use images/drawings.pdf, page 7>
+Package pdftex.def Info: images/drawings.pdf , page7 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 6>
-Package pdftex.def Info: images/drawings.pdf , page6 used on input line 310.
+<use images/drawings.pdf, page 7>
+Package pdftex.def Info: images/drawings.pdf , page7 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [39 <./images/drawings.pdf>]
-<images/drawings.pdf, id=308, page=7, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=309, page=8, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 7>
-Package pdftex.def Info: images/drawings.pdf , page7 used on input line 310.
+<use images/drawings.pdf, page 8>
+Package pdftex.def Info: images/drawings.pdf , page8 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 7>
-Package pdftex.def Info: images/drawings.pdf , page7 used on input line 310.
+<use images/drawings.pdf, page 8>
+Package pdftex.def Info: images/drawings.pdf , page8 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 7>
-Package pdftex.def Info: images/drawings.pdf , page7 used on input line 310.
+<use images/drawings.pdf, page 8>
+Package pdftex.def Info: images/drawings.pdf , page8 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [40 <./images/drawings.pdf>]
-<images/drawings.pdf, id=312, page=8, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=313, page=9, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 8>
-Package pdftex.def Info: images/drawings.pdf , page8 used on input line 310.
+<use images/drawings.pdf, page 9>
+Package pdftex.def Info: images/drawings.pdf , page9 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 8>
-Package pdftex.def Info: images/drawings.pdf , page8 used on input line 310.
+<use images/drawings.pdf, page 9>
+Package pdftex.def Info: images/drawings.pdf , page9 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 8>
-Package pdftex.def Info: images/drawings.pdf , page8 used on input line 310.
+<use images/drawings.pdf, page 9>
+Package pdftex.def Info: images/drawings.pdf , page9 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [41 <./images/drawings.pdf>]
-<images/drawings.pdf, id=316, page=9, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=317, page=10, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 9>
-Package pdftex.def Info: images/drawings.pdf , page9 used on input line 310.
+<use images/drawings.pdf, page 10>
+Package pdftex.def Info: images/drawings.pdf , page10 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 9>
-Package pdftex.def Info: images/drawings.pdf , page9 used on input line 310.
+<use images/drawings.pdf, page 10>
+Package pdftex.def Info: images/drawings.pdf , page10 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 9>
-Package pdftex.def Info: images/drawings.pdf , page9 used on input line 310.
+<use images/drawings.pdf, page 10>
+Package pdftex.def Info: images/drawings.pdf , page10 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [42 <./images/drawings.pdf>]
-<images/drawings.pdf, id=320, page=10, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=321, page=11, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 10>
-Package pdftex.def Info: images/drawings.pdf , page10 used on input line 310.
+<use images/drawings.pdf, page 11>
+Package pdftex.def Info: images/drawings.pdf , page11 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 10>
-Package pdftex.def Info: images/drawings.pdf , page10 used on input line 310.
+<use images/drawings.pdf, page 11>
+Package pdftex.def Info: images/drawings.pdf , page11 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 10>
-Package pdftex.def Info: images/drawings.pdf , page10 used on input line 310.
+<use images/drawings.pdf, page 11>
+Package pdftex.def Info: images/drawings.pdf , page11 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [43 <./images/drawings.pdf>]
-<images/drawings.pdf, id=324, page=11, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=325, page=12, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 11>
-Package pdftex.def Info: images/drawings.pdf , page11 used on input line 310.
+<use images/drawings.pdf, page 12>
+Package pdftex.def Info: images/drawings.pdf , page12 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 11>
-Package pdftex.def Info: images/drawings.pdf , page11 used on input line 310.
+<use images/drawings.pdf, page 12>
+Package pdftex.def Info: images/drawings.pdf , page12 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 11>
-Package pdftex.def Info: images/drawings.pdf , page11 used on input line 310.
+<use images/drawings.pdf, page 12>
+Package pdftex.def Info: images/drawings.pdf , page12 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
  [44 <./images/drawings.pdf>]
-<images/drawings.pdf, id=328, page=12, 794.97pt x 614.295pt>
-File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 12>
-Package pdftex.def Info: images/drawings.pdf , page12 used on input line 310.
-(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
-File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 12>
-Package pdftex.def Info: images/drawings.pdf , page12 used on input line 310.
-(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
-File: images/drawings.pdf Graphic file (type pdf)
-<use images/drawings.pdf, page 12>
-Package pdftex.def Info: images/drawings.pdf , page12 used on input line 310.
-(pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
- [45 <./images/drawings.pdf>]
-<images/drawings.pdf, id=333, page=13, 794.97pt x 614.295pt>
+<images/drawings.pdf, id=329, page=13, 794.97pt x 614.295pt>
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf, page 13>
-Package pdftex.def Info: images/drawings.pdf , page13 used on input line 310.
+Package pdftex.def Info: images/drawings.pdf , page13 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf, page 13>
-Package pdftex.def Info: images/drawings.pdf , page13 used on input line 310.
+Package pdftex.def Info: images/drawings.pdf , page13 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
 File: images/drawings.pdf Graphic file (type pdf)
 <use images/drawings.pdf, page 13>
-Package pdftex.def Info: images/drawings.pdf , page13 used on input line 310.
+Package pdftex.def Info: images/drawings.pdf , page13 used on input line 335.
 (pdftex.def)             Requested size: 795.3441pt x 614.58406pt.
- [46 <./images/drawings.pdf>] (./mmodel.tex
+ [45 <./images/drawings.pdf>] (./mmodel.tex
 LaTeX Font Info:    Try loading font information for T1+fvm on input line 1.
  (/usr/local/texlive/2018basic/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
@@ -1899,21 +1899,21 @@ File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 )
 LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
 (Font)              scaled to size 10.20007pt on input line 9.
- [47]) (./meiosisfk.tex [48]) (./meiosisik.tex [49] [50]) [51] (./final.aux) ) 
+ [46]) (./meiosisfk.tex [47]) (./meiosisik.tex [48] [49]) [50] (./final.aux) ) 
 Here is how much of TeX's memory you used:
- 42605 strings out of 494091
- 930861 string characters out of 6163523
- 1206273 words of memory out of 5000000
- 45542 multiletter control sequences out of 15000+600000
+ 42610 strings out of 494091
+ 930905 string characters out of 6163523
+ 1205323 words of memory out of 5000000
+ 45547 multiletter control sequences out of 15000+600000
  715712 words of font info for 165 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  64i,18n,120p,10455b,1858s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018basic/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/t
 ype1/public/lm/lmmi6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2018basic/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on final.pdf (55 pages, 12676133 bytes).
+Output written on final.pdf (54 pages, 12681524 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
- 264 compressed objects within 3 object streams
+ 411 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
