@@ -198,6 +198,29 @@ The equations of motion described in equation (\ref{eq:eoms}) can be integrated 
 \label{eq:eoms2}
 \end{equation}
 
+\begin{figure}[htp]
+  \center
+  \begin{subfigure}[c]{0.5\textwidth}
+  \center
+  \includegraphics[width=.6\textwidth,frame]{olsnap1}
+  \caption{Frame Snapshot near Simulation \\Initiation}
+\end{subfigure}%
+\begin{subfigure}[c]{0.5\textwidth}
+  \center
+  \includegraphics[width=.6\textwidth,frame]{olsnap2}
+  \caption{Frame Snapshot near Simulation Termination}
+\end{subfigure}
+  \caption{Open-Loop Control Simulation Animation Snapshots}
+  \label{fig:olsnaps}
+\end{figure}
+
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.95\textwidth]{oljplots}
+  \caption{Joint Angles vs Time in Open-Loop Simulation}
+  \label{fig:oljplots}
+\end{figure}
 
 \newpage
 \subsection{Control System}
@@ -247,12 +270,32 @@ With this new motor input, the closed loop control system equations of motion ar
 \end{equation}
 Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system response given desired motor angles.
 
+\begin{figure}[htp]
+  \center
+  \begin{subfigure}[c]{0.33\textwidth}
+    \center
+    \includegraphics[width=.9\textwidth,frame]{clsnap1}
+    \caption{Frame Snapshot near Simulation \\Initiation}
+  \end{subfigure}%
+  \begin{subfigure}[c]{0.33\textwidth}
+    \center
+    \includegraphics[width=.9\textwidth,frame]{clsnap2}
+    \caption{Frame Snapshot near Simulation \\Middle}
+  \end{subfigure}%
+\begin{subfigure}[c]{0.33\textwidth}
+  \center
+  \includegraphics[width=.9\textwidth,frame]{clsnap3}
+  \caption{Frame Snapshot near Simulation \\Termination}
+\end{subfigure}
+  \caption{Closed-Loop Control Simulation Animation Snapshots}
+  \label{fig:clsnaps}
+\end{figure}
 % The closed-loop system can now be simulated, the results are shown below in Figure (\ref{fig:jplots}).
 \begin{figure}[htp]
   \center
-  \includegraphics[width=.95\textwidth]{jplots}
-  \caption{Joint Angles vs Time}
-  \label{fig:jplots}
+  \includegraphics[width=.95\textwidth]{cljplots}
+  \caption{Joint Angles vs Time in Closed-Loop Simulation}
+  \label{fig:cljplots}
 \end{figure}
 
 % \[
