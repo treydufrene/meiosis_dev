@@ -18,12 +18,6 @@
   % $k$~:& Spring constant \\
   % $h_{b}$~:& Distance to bar ($G$) from datum \\
   % $F_s$~:& Force onto bar due to spring\\
-  % $A_{n}$~:& Pin reaction in $\theta$ direction\\
-  % $A_{t}$~:& Pin reaction in tangential direction \\
-  % $\vec{v}_G$~:& Velocity of bar center of gravity\\
-  % $\ddot{\theta}$~:& Angular velocity of spring \\
-  % $\ddot{\phi}$~:& Angular velocity of bar\\
-  % $\ddot{\ell}_s$~:& Radial acceleration of spring \\
 \end{tabular}
 
 \section*{Notation}\vspace{-\baselineskip}
@@ -44,7 +38,7 @@
 
 \pagenumbering{arabic}
 \section{Introduction}
-% TODO: Introduce the problem
+The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to increase the accessibility of robotics education to high school students and hobbyists. Contained within this document is the design of a manipulator to fulfil this end. It will address the manipulator’s conceptual design with requirements defining specification therefrom. A detailed design with motor descriptions introduces the manipulator’s kinematics and simulations, concluding with a description of the system's operation and plans for implementation.
 \section{Requirements}
 The requirements of the system concisely define the capabilities the system must possess in order to solve the stated problem.
 \input{requirements}
@@ -257,9 +251,21 @@ The resulting simulation shows the manipulator assembly starting in the zeroed c
 
 \begin{figure}[htp]
   \center
-  \includegraphics[width=.95\textwidth]{oljplots}
+  \includegraphics[width=.95\textwidth]{oljplots1}
   \caption{Joint Angles vs Time in Open-Loop Simulation}
-  \label{fig:oljplots}
+  \label{fig:oljplots1}
+\end{figure}
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.95\textwidth]{oljplots2}
+  \caption{Joint Angles vs Time in Open-Loop Simulation}
+  \label{fig:oljplots2}
+\end{figure}
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.95\textwidth]{oljplots3}
+  \caption{Joint Angles vs Time in Open-Loop Simulation}
+  \label{fig:oljplots3}
 \end{figure}
 
 \newpage
@@ -330,12 +336,25 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
   \caption{Closed-Loop Control Simulation Animation Snapshots}
   \label{fig:clsnaps}
 \end{figure}
+
 % The closed-loop system can now be simulated, the results are shown below in Figure (\ref{fig:jplots}).
 \begin{figure}[htp]
   \center
-  \includegraphics[width=.95\textwidth]{cljplots}
+  \includegraphics[width=.95\textwidth]{cljplots1}
   \caption{Joint Angles vs Time in Closed-Loop Simulation}
-  \label{fig:cljplots}
+  \label{fig:cljplots1}
+\end{figure}
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.95\textwidth]{cljplots2}
+  \caption{Joint Angles vs Time in Closed-Loop Simulation}
+  \label{fig:cljplots2}
+\end{figure}
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.95\textwidth]{cljplots3}
+  \caption{Joint Angles vs Time in Closed-Loop Simulation}
+  \label{fig:cljplots3}
 \end{figure}
 
 % \[
@@ -344,6 +363,17 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
 
 \newpage
 \subsection{ANSYS}
+With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 14 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
+
+Further ANSYS simulations on repetitive loadings are in progress.
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.99\textwidth, frame]{tbar}
+  \caption{T-Bar ANSYS FEA}
+  \label{fig:tbar}
+\end{figure}
+
 \newpage
 \subsection{Electrical Schematic}
 The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a power supply that receives 120V AC that is standardly supplied from wall outlets. The Power supply has two outputs, a 5V terminal that has a max current output of 3A, and a 12V terminal that has a max output of 7A. The Raspberry Pi 3B is powered by the 5V terminal, and since the max current draw from the Pi is 1.2A the maximum current draw from the terminal is not surpassed. The six MX-12W servos used in the manipulator, as well as the AX-12A servo used in the end effector, are connected in parallel across the 12V terminal from the power supply. Since the MX-12W has a stall current of .6A and the AX-12A has a stall current of 1.5A, the maximum current to be pulled from the 12V terminal would be 5.1A, less than the 7A the supply can output. In order to communicate to the servos, a U2D2 communication converter is connected to the Raspberry Pi which creates a serial connection used by the servos, allowing the servos to be daisy-chained together. The Raspberry Pi also connects to an external PC so that the user can communicate with the Pi using a mouse, keyboard, and monitor.
@@ -361,7 +391,23 @@ The software the system will need will take in a row vector of position, orienta
 \includepdf[landscape,pages=-]{sflow}
 
 \subsection{Project Status and Future}
-\newpage
+\begin{itemize}[label=---]
+  \item Print Differential
+  \item Cut Aluminum Supports
+  \item Print Base
+  \item Print Link 1
+  \item Test Link 1 and Differential
+  \item Print Differential Support
+  \item Test Differential
+  \item Test Link 1 Pulleys
+  \item Test Link 1 with Motors
+  \item Test Motor Control of Differential
+  \item Test Link 1 With Load
+  \item Implement Kinematics in Python
+  \item Test Kinemtics with Motors
+\end{itemize}
+The Gantt chart can be seen on the following page.
+\includepdf[landscape,pages=-]{gantt}
 \subsection{Parts List}
 
 \renewcommand{\arraystretch}{1.25}
@@ -410,7 +456,7 @@ Digi-Key &  & &  & 8.99 \\%\cline{4-5}
 
 \newpage
 \section*{Acknowledgements \& Attributions}
-We would like to acknowledge the following people for their contibutions in creating this report\textbf{?}
+We would like to acknowledge the following people for their contibutions in creating this report.
 \begin{itemize}
   \item Dr. Isenberg
   \item Dr. Schipper
