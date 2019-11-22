@@ -7,21 +7,19 @@
 \contentsline {figure}{\numberline {7}{\ignorespaces Overview of Physical System\relax }}{8}
 \contentsline {figure}{\numberline {8}{\ignorespaces Elbow Manipulator Configuration with Link Offset}}{9}
 \contentsline {figure}{\numberline {9}{\ignorespaces Kinematic Model Representing Zeroed Configuration}}{11}
-\contentsline {figure}{\numberline {10}{\ignorespaces Overall Model Render with Callouts\relax }}{13}
+\contentsline {figure}{\numberline {10}{\ignorespaces Manipulator in Zeroed Configuration with Callouts\relax }}{13}
 \contentsline {figure}{\numberline {11}{\ignorespaces Link Cross Section\relax }}{14}
-\contentsline {figure}{\numberline {12}{\ignorespaces meiosis\_zeroed\relax }}{14}
-\contentsline {figure}{\numberline {13}{\ignorespaces meiosis\relax }}{15}
-\contentsline {figure}{\numberline {14}{\ignorespaces Pulley 1-2 Center Distance\relax }}{16}
-\contentsline {figure}{\numberline {15}{\ignorespaces Pulley 3 Center Distance\relax }}{16}
-\contentsline {figure}{\numberline {16}{\ignorespaces Coordinate Systems\relax }}{17}
-\contentsline {figure}{\numberline {17}{\ignorespaces Open-Loop Control Simulation Animation Snapshots\relax }}{23}
-\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{23}
-\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{23}
-\contentsline {figure}{\numberline {18}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{23}
-\contentsline {figure}{\numberline {19}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{26}
-\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{26}
-\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Middle\relax }}{26}
-\contentsline {subfigure}{\numberline {c}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{26}
-\contentsline {figure}{\numberline {20}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{27}
-\contentsline {figure}{\numberline {21}{\ignorespaces Electrical Schematic\relax }}{29}
-\contentsline {figure}{\numberline {22}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{34}
+\contentsline {figure}{\numberline {12}{\ignorespaces Pulley 1-2 Center Distance\relax }}{15}
+\contentsline {figure}{\numberline {13}{\ignorespaces Pulley 3 Center Distance\relax }}{15}
+\contentsline {figure}{\numberline {14}{\ignorespaces Coordinate Systems\relax }}{18}
+\contentsline {figure}{\numberline {15}{\ignorespaces Open-Loop Control Simulation Animation Snapshots\relax }}{24}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{24}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{24}
+\contentsline {figure}{\numberline {16}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{24}
+\contentsline {figure}{\numberline {17}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{27}
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{27}
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Middle\relax }}{27}
+\contentsline {subfigure}{\numberline {c}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{27}
+\contentsline {figure}{\numberline {18}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{28}
+\contentsline {figure}{\numberline {19}{\ignorespaces Electrical Schematic\relax }}{30}
+\contentsline {figure}{\numberline {20}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{35}
