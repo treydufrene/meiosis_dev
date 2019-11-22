@@ -27,21 +27,20 @@
 \contentsline {section}{\numberline {5}Preliminary Design}{13}
 \contentsline {subsection}{\numberline {5.1}Computer Aided Design}{13}
 \contentsline {subsubsection}{\numberline {5.1.1}Pulleys}{14}
-\contentsline {subsection}{\numberline {5.2}Actuator Analysis}{16}
-\contentsline {subsection}{\numberline {5.3}Forward Kinematics}{18}
-\contentsline {subsection}{\numberline {5.4}Velocity Kinematics}{20}
-\contentsline {subsection}{\numberline {5.5}Inverse Kinematics}{20}
-\contentsline {subsection}{\numberline {5.6}Equations of Motion}{21}
-\contentsline {subsubsection}{\numberline {5.6.1}Actuator Dynamics}{21}
-\contentsline {subsection}{\numberline {5.7}Open-Loop Simulation}{23}
-\contentsline {subsection}{\numberline {5.8}Control System}{25}
-\contentsline {subsection}{\numberline {5.9}Closed-Loop Simulation}{26}
-\contentsline {subsection}{\numberline {5.10}ANSYS}{29}
-\contentsline {subsection}{\numberline {5.11}Electrical Schematic}{30}
-\contentsline {subsection}{\numberline {5.12}Software Flowchart}{31}
-\contentsline {subsection}{\numberline {5.13}Project Status and Future}{31}
-\contentsline {subsection}{\numberline {5.14}Parts List}{32}
-\contentsline {section}{\numberline {I}Appendix}{35}
-\contentsline {subsection}{\numberline {i}Relevant Figures and Materials}{35}
-\contentsline {subsection}{\numberline {ii}CAD Drawings}{35}
-\contentsline {subsection}{\numberline {iii}Salient Code}{49}
+\contentsline {subsection}{\numberline {5.2}Actuator Analysis}{15}
+\contentsline {subsection}{\numberline {5.3}Forward Kinematics}{17}
+\contentsline {subsection}{\numberline {5.4}Velocity Kinematics}{19}
+\contentsline {subsection}{\numberline {5.5}Inverse Kinematics}{19}
+\contentsline {subsection}{\numberline {5.6}Equations of Motion}{20}
+\contentsline {subsubsection}{\numberline {5.6.1}Actuator Dynamics}{20}
+\contentsline {subsection}{\numberline {5.7}Open-Loop Simulation}{22}
+\contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{25}
+\contentsline {subsection}{\numberline {5.9}ANSYS}{28}
+\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{29}
+\contentsline {subsection}{\numberline {5.11}Software Flowchart}{29}
+\contentsline {subsection}{\numberline {5.12}Project Status and Future}{32}
+\contentsline {subsection}{\numberline {5.13}Parts List}{33}
+\contentsline {section}{\numberline {I}Appendix}{36}
+\contentsline {subsection}{\numberline {i}Relevant Figures and Materials}{36}
+\contentsline {subsection}{\numberline {ii}CAD Drawings}{36}
+\contentsline {subsection}{\numberline {iii}Salient Code}{50}

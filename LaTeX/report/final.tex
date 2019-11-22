@@ -94,7 +94,6 @@ A 12 tooth and 120 tooth pulleys provide a 10:1 gear ratio and use a 0.25 in wid
   \caption{Pulley 3 Center Distance}
   \label{fig:pulley3}
 \end{figure}
-\newpage
 \subsection{Actuator Analysis}
 Dynamixel does not provide a stall torque for the MX-12W servo, however it does provide stall torque data for two similar servos. The MX-12W’s stall torque can be found from the stall torque data since the motor are the same. The stall torque of the MX-12W should be comparable to the AX-12W’s stall torque. The MX-12W and AX-12W operate at the same 12 V voltage, 32:1 gear ratio, and 470 rpm no load output speed. The AX-12A also operates at 12 V, but at with a 254:1 gear ratio and 59 rpm no load output speed. Torque and current are inversely related. If the AX-12A’s and AX-12W’s motors are the same, then when operating at the same voltage, the output speed of the AX-12W should equal to the output speed of the AX-12A multiplied by the ratio of the servos’ gear ratios and the torque of the AX-12W should be the AX-12A’s torque multiplied by the inverse of the gear ratios ratio:
 \[ 59\cdot\frac{254}{32}=468 \cong 470 \]
@@ -103,7 +102,6 @@ The AX-12A’s and MX-12W’s stall torques are 1.5Nm and 0.21Nm, respectively:
 Therefore, the AX-12A and MX-12W use the same motor. Additionally, if operating at the same voltage, the stall torque is defined by the no load output speed and gear ratio. Since the MX-12W and AX-12A operate at the same 12 V voltage with the same 32:1 gear ratio and 470 rpm no load output speed, their stall torques should be the same. More specifically, it is between the AX-12W’s and the gear reduced AX-12A’s stall torques of 0.21Nm and 0.189Nm, respectively. Therefore, the stall MX-12W’s stall torque is within 0.01Nm of 0.2Nm. The manipulator is designed for the worst case scenario: 0.19 Nm.
 
 The first differential has its greatest torque when the manipulator is in the zeroed configuration. In the zeroed configuration, the arm is outstretched with gravity acting perpendicular to the arm’s length. Since the manipulator must only support a chisel tip dry erase Expo marker, the maximum torque may be approximated as the manipulator’s arm’s mass acting acting near the centroid. More mass from the servos and longer aluminum support in link 3 place the center of mass closer to the end-effector than the base. Therefore, the point at which the arm’s mass acts is assumed to be 273 mm from the base. These calculations will be further revised with mass parameters from the STL files generating the open and closed loop simulations. \emph{Table \ref{tab:arm1}} estimates the manipulator’s arm’s mass.
-
 \begin{table}[htp]
   \center
   \caption{Manipulator Link 1 Mass Tabulations}
@@ -112,7 +110,7 @@ The first differential has its greatest torque when the manipulator is in the ze
   \textbf{Item} & \textbf{Specifications} & \textbf{Weight (g)} & \textbf{Notes} \\\hline
   3-D Printed Materials & 30\% infill & 353 & 100\% infill: 1177g \\
   Servos & 7 low torque & 385 & 55 $\sfrac{\text{g}}{\text{servo}}$ \\
-  Aluminum Support & .75" OD .125" thick 1' long & 287 & 44.23 $\sfrac{\text{g}}{\text{in}}^3$ \\
+  Aluminum Support & .75$''$  OD .125$''$  thick 1$'$ long & 287 & 44.23 $\sfrac{\text{g}}{\text{in}}^3$ \\
   Bearings & 5 bearings & 60 & 12 $\sfrac{\text{g}}{\text{bearing}}$ \\
   End Effector & & 50 & Approx. \\
   Safety Factor & & 205 & \\
@@ -132,7 +130,7 @@ The third joint’s torque requirements can be approximated in the same manner. 
 \textbf{Item} & \textbf{Specifications} & \textbf{Weight (g)} & \textbf{Notes} \\\hline
 3-D Printed Materials & 30\% infill & 180 & 100\% infill: 1177g \\
 Servos & 4 low torque & 220 & 55 $\sfrac{\text{g}}{\text{servo}}$ \\
-Aluminum Support & .75" OD .125" thick 1' long & 140 & 44.23 $\sfrac{\text{g}}{\text{in}}^3$ \\
+Aluminum Support & .75$''$ OD .125$''$ thick 1$'$ long & 140 & 44.23 $\sfrac{\text{g}}{\text{in}}^3$ \\
 Bearings & 5 bearings & 36 & 12 $\sfrac{\text{g}}{\text{bearing}}$ \\
 End Effector & & 50 & Approx. \\
 Safety & & 205 & \\
@@ -141,10 +139,10 @@ Safety & & 205 & \\
 \end{table}
 
 The resulting moment is 1.630 Nm, which can be satisfied by the same motor and gear ratio used on the base.
-\newpage
+% \newpage
 \subsection{Forward Kinematics}
 \input{fk}
-\newpage
+% \newpage
 \subsection{Velocity Kinematics}
 The translational and rotational velocties ($\dot{r}$ \& $\omega$) can be found given the geometric jacobian of the body and transformation matrix corresponding to it.
 \[
@@ -159,8 +157,6 @@ The translational and rotational velocties ($\dot{r}$ \& $\omega$) can be found 
   ^IT_B(:,2)^T \cdot \dfrac{\partial}{\partial\gamma}{}^IT_B(:,1) \\
 \end{bmatrix}
 \]
-
-
 
 \subsection{Inverse Kinematics}
 The inverse kinematics can be calculated given desired position and orientation vectors, $o$ and $R$, respecitvely.
@@ -189,7 +185,7 @@ The inverse kinematics can be calculated given desired position and orientation 
 \end{aligned}
 \nonumber
 \end{equation}
-\newpage
+% \newpage
 
 \subsection{Equations of Motion}
 Given robot dynamics described by \(H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=F_{\gamma},\) the equations of motion for
@@ -230,30 +226,34 @@ G(\gamma) = \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T~,\quad
 % \]
 \subsubsection{Actuator Dynamics}
 \input{motor}
-
 \subsection{Open-Loop Simulation}
-The equations of motion described in equation (\ref{eq:eoms}) can be integrated to simulate the motion of the system. For the open loop control, no input torque is supplied, meaning the system responds only to gravity. Due to the complexity of the equations of motion, they will be integrated numerically using a 4th Order Runge Kutta algorithm. Since so input force is supplied, the equations of motion reduce down to the relation described in equation (\ref{eq:eoms2}).
+The equations of motion described in equation (\ref{eq:eoms}) can be integrated to simulate the motion of the system. For the open loop control, no input torque is supplied, meaning the system responds only to gravity. Due to the complexity of the equations of motion, they will be integrated numerically using a 4th Order Runge Kutta algorithm. Since no input force is supplied, the equations of motion reduce down to the relation described in equation (\ref{eq:eoms2}).
+
 \begin{equation}
 \ddot{\gamma}=H(\gamma)^{-1}(-d(\gamma, \dot{\gamma})-G(\gamma))
 \label{eq:eoms2}
 \end{equation}
 
+The resulting simulation shows the manipulator assembly starting in the zeroed configuration, (\emph{Figure \ref{fig:olsnap1}}) then "falling" due to the forces of gravity acting on the links (\emph{Figure \ref{fig:olsnap2}}). The manipulator continues to oscillate analogous to a simple pendulum, being that there are no frictional forces accounted for.
+
 \begin{figure}[htp]
   \center
   \begin{subfigure}[c]{0.5\textwidth}
   \center
-  \includegraphics[width=.6\textwidth,frame]{olsnap1}
+  \includegraphics[width=.55\textwidth,frame]{olsnap1}
   \caption{Frame Snapshot near Simulation \\Initiation}
+  \label{fig:olsnap1}
 \end{subfigure}%
 \begin{subfigure}[c]{0.5\textwidth}
   \center
-  \includegraphics[width=.6\textwidth,frame]{olsnap2}
+  \includegraphics[width=.55\textwidth,frame]{olsnap2}
   \caption{Frame Snapshot near Simulation Termination}
+  \label{fig:olsnap2}
 \end{subfigure}
   \caption{Open-Loop Control Simulation Animation Snapshots}
   \label{fig:olsnaps}
 \end{figure}
-
+\looseness=-1
 
 \begin{figure}[htp]
   \center
@@ -263,8 +263,8 @@ The equations of motion described in equation (\ref{eq:eoms}) can be integrated 
 \end{figure}
 
 \newpage
-\subsection{Control System}
-\newpage
+% \subsection{Control System}
+% \newpage
 \subsection{Closed-Loop Simulation}
 The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of differential drive systems means that the joint angles, $\gamma$ do not directly correspond to motor rotations, $\theta$. However, there is a linear relation between them, described in equation (\ref{eq:A}).
 \begin{equation}
@@ -346,25 +346,19 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
 \subsection{ANSYS}
 \newpage
 \subsection{Electrical Schematic}
+The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a power supply that receives 120V AC that is standardly supplied from wall outlets. The Power supply has two outputs, a 5V terminal that has a max current output of 3A, and a 12V terminal that has a max output of 7A. The Raspberry Pi 3B is powered by the 5V terminal, and since the max current draw from the Pi is 1.2A the maximum current draw from the terminal is not surpassed. The six MX-12W servos used in the manipulator, as well as the AX-12A servo used in the end effector, are connected in parallel across the 12V terminal from the power supply. Since the MX-12W has a stall current of .6A and the AX-12A has a stall current of 1.5A, the maximum current to be pulled from the 12V terminal would be 5.1A, less than the 7A the supply can output. In order to communicate to the servos, a U2D2 communication converter is connected to the Raspberry Pi which creates a serial connection used by the servos, allowing the servos to be daisy-chained together. The Raspberry Pi also connects to an external PC so that the user can communicate with the Pi using a mouse, keyboard, and monitor.
 
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.95\textwidth]{eschem}
   \caption{Electrical Schematic}
+  \label{fig:eschem}
 \end{figure}
 
-% \begin{table}[htp]
-%   \caption{Power Supply Analysis}
-% \begin{tabular}{lc}
-%   Motor 1 &
-% \end{tabular}
-% \end{table}
-
-\newpage
 \subsection{Software Flowchart}
+The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
 
-
-% \includepdf[landscape,pages=-]{sflow}
+\includepdf[landscape,pages=-]{sflow}
 
 \subsection{Project Status and Future}
 \newpage
@@ -387,7 +381,7 @@ U2D2 &  & 1 & 49.9 & 49.9 \\
 350 mm, 3 pulley &  & 1 & 2.95 & 2.95 \\\cline{2-2}
 Pi 3 B & \multirow{2}{*}{Amazon} & 1 & 37.99 & 37.99 \\
 Bearings &  & 1 & 8.99 & 8.99 \\\cline{2-2}
-\multirow{2}{*}{2 Sch 10 12" Al tube} & Industrial Metal Sales & 1 & 2.99 & 2.99 \\
+\multirow{2}{*}{2 Sch 10 12" Al tube} & Industrial Metal Sales & 1 & 2.99 & 2.99 \\\cline{2-2}
 12 V, 5 V power supply & Digi-Key Electronics & 1 & 43.21 & 43.21 \\\cline{2-2}
 Automation Direct & \multirow{5}{*}{Shipping} & \multirow{5}{*}{N/A} & \multirow{5}{*}{N/A} & 0 \\
 Trossen Robotics &  &  & & 13.15 \\
