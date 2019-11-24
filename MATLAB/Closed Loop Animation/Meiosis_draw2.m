@@ -1,16 +1,6 @@
-function Meiosis_draw2(theta)
-  
-    %       Mapping between joint space and motor space 
-    N = 10;         %Gear Ratio
-    A = [ 1/(2*N), 1/(2*N),   0, 0,   0,   0;
-          1/(2*N),-1/(2*N),   0, 0,   0,   0;
-                0,       0,-1/N, 0,   0,   0;
-                0,       0,   0, 1,   0,   0;
-                0,       0,   0, 0,-1/2, 1/2;
-                0,       0,   0, 0, 1/2, 1/2];
-    gamma = A*theta;
+function Meiosis_draw2(gamma)
     
-    clf(gcf);
+    %clf(gcf);
 
     Floor_v = [-10  10 0;...
                 10  10 0;...
@@ -18,35 +8,35 @@ function Meiosis_draw2(theta)
                 10 -10 0];
     Floor_f = [1 2 4 3];
 
-    patch('Faces',Floor_f,'Vertices',Floor_v,'EdgeColor','None','FaceColor',[0 0 .8],'FaceAlpha',.5);
+%     patch('Faces',Floor_f,'Vertices',Floor_v,'EdgeColor','None','FaceColor',[0 0 .8],'FaceAlpha',.5);
     hold on
     set(gcf, 'Position', [50, 50, 950, 900])
 
-    [Base,  Base_f]    = stlread('STL2/Base.stl');
-    [Link1, Link1_f]   = stlread('STL2/Link1.stl');
-    [Link2, Link2_f]   = stlread('STL2/Link2.stl');
-    [Link3, Link3_f]   = stlread('STL2/Link3.stl');
-    [Link4, Link4_f]   = stlread('STL2/Link4.stl');
-    [Link5, Link5_f]   = stlread('STL2/Link5.stl');
-    [Link6, Link6_f]   = stlread('STL2/Link6.stl');
-    [Gear1, Gear1_f]   = stlread('STL2/Gear1.stl');
-    [Gear2, Gear2_f]   = stlread('STL2/Gear2.stl');
-    [Gear3, Gear3_f]   = stlread('STL2/Gear3.stl');
-    [Gear4, Gear4_f]   = stlread('STL2/Gear4.stl');
+    [Base,  Base_f]    = stlread('STL/Base.stl');
+    [Link1, Link1_f]   = stlread('STL/Link1.stl');
+    [Link2, Link2_f]   = stlread('STL/Link2.stl');
+    [Link3, Link3_f]   = stlread('STL/Link3.stl');
+    [Link4, Link4_f]   = stlread('STL/Link4.stl');
+    [Link5, Link5_f]   = stlread('STL/Link5.stl');
+    [Link6, Link6_f]   = stlread('STL/Link6.stl');
+    [Gear1, Gear1_f]   = stlread('STL/Gear1.stl');
+    [Gear2, Gear2_f]   = stlread('STL/Gear2.stl');
+    [Gear3, Gear3_f]   = stlread('STL/Gear3.stl');
+    [Gear4, Gear4_f]   = stlread('STL/Gear4.stl');
     
     %          Forward kinematics
     %Relative Positions
-    rBfromI = [ 0.00000000; 0.00000000; 0.00000000];
-    r1fromB = [ 0.00000000; 0.00000000; 0.12275000];
-    r2from1 = [ 0.00000000; 0.00000000; 0.00000000];
-    r3from2 = [ 0.00000000; 0.25000000; 0.00000000];
-    r4from3 = [ 0.00000000; 0.20000000; 0.00000000];
-    r5from4 = [ 0.00000000; 0.07000000; 0.00000000];
-    r6from5 = [ 0.00000000; 0.04750000; 0.00000000];
-    rG1from1 = [ 0.03590000; 0.00000000;  0.00000000];
-    rG2from1 = [-0.03590000; 0.00000000; 0.00000000];
-    rG3from5 = [ 0.04750000; 0.00000000; 0.00000000];
-    rG4from5 = [-0.04750000; 0.00000000; 0.00000000];
+    rBfromI =  [ 0.00000000; 0.00000000; 0.00000000];
+    r1fromB =  [ 0.00000000; 0.00000000; 0.12275000];
+    r2from1 =  [ 0.00000000; 0.00000000; 0.00000000];
+    r3from2 =  [ 0.00000000; 0.26000000; 0.00000000];
+    r4from3 =  [ 0.00000000; 0.20000000; 0.00000000];
+    r5from4 =  [ 0.00000000; 0.07000000; 0.00000000];
+    r6from5 =  [ 0.00000000; 0.09600000; 0.00000000];
+    rG1from1 = [ 0.09055000; 0.00000000; 0.00000000];
+    rG2from1 = [-0.09055000; 0.00000000; 0.00000000];
+    rG3from5 = [ 0.04700000; 0.00000000; 0.00000000];
+    rG4from5 = [-0.04700000; 0.00000000; 0.00000000];
     
     %Orientations wrt I
     TB = eye(3);
@@ -100,10 +90,12 @@ function Meiosis_draw2(theta)
     patch('Faces',Gear4_f,'Vertices',Gear4_v','EdgeColor','None','FaceColor',[0 0.082353 1]);
     
     axis equal
+    set(gca,'xtick',[])
+    set(gca,'xticklabel',[])
     camlight left
     set(gca,'projection','perspective')
-    view(3)
-    axis([-0.6 0.6 -0.6 0.6 -0.6 0.6])
+    view(-180,33)
+    axis([-0.4 0.4 -0.4 0.4 -0.4 0.4])
 
     hold off
 end

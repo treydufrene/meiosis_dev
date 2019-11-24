@@ -1,13 +1,13 @@
-function [theta, error] = MeiosisIK(pos,R)
+function [gamma, error] = MeiosisIK(pos,R)
     
-    eOff = [0;47.5;0];
+    eOff = [0;96;0];
     npos = pos - R*eOff;
     xc = npos(1);
     yc = npos(2);
     zc = npos(3);
     L1 = 122.75;
     d = 0;
-    L2 = 250;
+    L2 = 260;
     L3 = 270;
     
     % Inverse Position
@@ -25,6 +25,12 @@ function [theta, error] = MeiosisIK(pos,R)
         T = T3.'*R;
         t6 = atan2(T(2,1),-T(2,3));
         t4 = atan2(T(1,2),T(3,2));
+        if t4 < 0
+            t4 = t4 + 2*pi;
+        end
+        if t6 < 0
+            t6 = t6 + 2*pi;
+        end
         %t4 = atan2(sin(t4),cos(t4));
         
         if sin(t4) > -10e-6 && sin(t4) < 10e-6
@@ -35,22 +41,22 @@ function [theta, error] = MeiosisIK(pos,R)
 
         gamma = [t1,t2,t3,t4,t5,t6].';
         
-        %       Mapping between joint space and motor space 
-        N = 10;         %Gear Ratio
-%         B = [ N, N, 0, 0, 0, 0;
-%               N,-N, 0, 0, 0, 0;
-%               0, 0,-N, 0, 0, 0;
-%               0, 0, 0, 1, 0, 0;
-%               0, 0, 0, 0,-1, 1;
-%               0, 0, 0, 0, 1, 1];
-        A = [ 1/(2*N), 1/(2*N),   0, 0,   0,   0;
-          1/(2*N),-1/(2*N),   0, 0,   0,   0;
-                0,       0,-1/N, 0,   0,   0;
-                0,       0,   0, 1,   0,   0;
-                0,       0,   0, 0,-1/2, 1/2;
-                0,       0,   0, 0, 1/2, 1/2];
-  
-        theta = A\gamma;
+%         %       Mapping between joint space and motor space 
+%         N = 10;         %Gear Ratio
+% %         B = [ N, N, 0, 0, 0, 0;
+% %               N,-N, 0, 0, 0, 0;
+% %               0, 0,-N, 0, 0, 0;
+% %               0, 0, 0, 1, 0, 0;
+% %               0, 0, 0, 0,-1, 1;
+% %               0, 0, 0, 0, 1, 1];
+%         A = [ 1/(2*N), 1/(2*N),   0, 0,   0,   0;
+%           1/(2*N),-1/(2*N),   0, 0,   0,   0;
+%                 0,       0,-1/N, 0,   0,   0;
+%                 0,       0,   0, 1,   0,   0;
+%                 0,       0,   0, 0,-1/2, 1/2;
+%                 0,       0,   0, 0, 1/2, 1/2];
+%   
+%         theta = A\gamma;
         error = 0;
     end
 end
