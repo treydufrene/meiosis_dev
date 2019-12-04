@@ -1,0 +1,96 @@
+function [xDes,yDes,zDes,thetad] = Meiosis_Name()
+
+    %Define Desired Workspace Coordinates
+    [xM,yM,zM] = LetterM();
+    [xE,yE,zE] = LetterE();
+    [xI1,yI1,zI1] = LetterI1();
+    [xO,yO,zO] = LetterO();
+    [xS1,yS1,zS1] = LetterS1();
+    [xI2,yI2,zI2] = LetterI2();
+    [xS2,yS2,zS2] = LetterS2();
+    
+    xEnd = -300;
+    yEnd = 0;
+    zEnd = 20;
+    
+    
+    xDes = [xM,xE,xI1,xO,xS1,xI2,xS2,xEnd] - 50;
+    yDes = [yM,yE,yI1,yO,yS1,yI2,yS2,yEnd];
+    zDes = [zM,zE,zI1,zO,zS1,zI2,zS2,zEnd];
+    %t = linspace(0,30,length(xDes));
+    
+    R = rotx(-pi/2);
+
+    %[thetad,thetaddot] = Meiosis_pathgen(xDes,yDes,zDes,t,R);
+    
+    %Calculate Joint Angles
+    for ii = 1:length(xDes)
+        [thetad(:,ii),errorCheck] = MeiosisIK([xDes(ii);yDes(ii);zDes(ii)],R);
+        if errorCheck == 1
+            break
+        end
+    end
+    
+end
+
+function [x,y,z] = LetterM()
+
+    %Define Desired Workspace Coordinates
+    x = [290, 290, 290, 280, 280, 260, 240, 240, 230, 230, 240, 260, 280, 290, 290];
+    y = [260, 260, 340, 340, 280, 310, 280, 340, 340, 260, 260, 290, 260, 260, 260];
+    z = [ 10,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  10];
+    
+end
+
+function [x,y,z] = LetterE()
+
+    %Define Desired Workspace Coordinates
+    x = [210, 210, 210, 150, 150, 200, 200, 170, 170, 200, 200, 150, 150, 210, 210];
+    y = [260, 260, 340, 340, 330, 330, 300, 300, 290, 290, 270, 270, 260, 260, 260];
+    z = [ 10,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  10];
+    
+end
+
+function [x,y,z] = LetterI1()
+
+    %Define Desired Workspace Coordinates
+    x = [130, 130, 130, 110, 110, 130, 130,  80,  80, 100, 100,  80,  80, 130, 130];
+    y = [260, 260, 270, 270, 330, 330, 340, 340, 330, 330, 270, 270, 260, 260, 260];
+    z = [ 10,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  10];
+    
+end
+
+function [x,y,z] = LetterO()
+
+    %Define Desired Workspace Coordinates
+    x = [ 60,  60,  60,   0,   0,  60,  60,  50,  50,  50,  10,  10,  50,  50];
+    y = [260, 260, 340, 340, 260, 260, 260, 270, 270, 330, 330, 270, 270, 270];
+    z = [ 10,   0,   0,   0,   0,   0,  10,  10,   0,   0,   0,   0,   0,  10];
+    
+end
+
+function [x,y,z] = LetterS1()
+
+    %Define Desired Workspace Coordinates
+    x = [-20, -20, -20, -50, -50, -20, -20, -60, -60, -30, -30, -60, -60, -20, -20];
+    y = [260, 260, 300, 300, 330, 330, 340, 340, 290, 290, 270, 270, 260, 260, 260];
+    z = [ 10,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  10];
+    
+end
+
+function [x,y,z] = LetterI2()
+
+    %Define Desired Workspace Coordinates
+    [x,y,z] = LetterI1();
+    x = x - 210;
+    
+end
+
+function [x,y,z] = LetterS2()
+
+    %Define Desired Workspace Coordinates
+    [x,y,z] = LetterS1();
+    x = x - 130;
+    
+end
+

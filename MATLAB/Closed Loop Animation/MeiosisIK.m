@@ -16,6 +16,12 @@ function [gamma, error] = MeiosisIK(pos,R)
         error = 1;
     else
         t1 = atan2(yc,xc) - atan2(d,sqrt(xc^2 + yc^2 -d^2)) - pi/2;
+        if t1 < -pi
+            t1 = t1 + 2*pi;
+        end
+        if t1 > pi
+            t1 = t1 - 2*pi;
+        end
         D = (xc^2 + yc^2 - d^2 + (zc - L1)^2 - L2^2 - L3^2)/(2*L2*L3);
         t3 = atan2(-sqrt(1-D^2),D);
         t2 = atan2(zc - L1,sqrt(xc^2 + yc^2 - d^2)) - atan2(L3*sin(t3),L2 + L3*cos(t3));
