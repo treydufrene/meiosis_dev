@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 DEC 2019 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  4 DEC 2019 19:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -653,26 +653,55 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip107
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count304
+\calc@Bcount=\count305
+\calc@Adimen=\dimen272
+\calc@Bdimen=\dimen273
+\calc@Askip=\skip108
+\calc@Bskip=\skip109
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count306
+\calc@Cskip=\skip110
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 )
-Package Listings Info: Made | a short reference for \lstinline on input line 39.
+\AM@pagewidth=\dimen274
+\AM@pageheight=\dimen275
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box63
+\AM@global@opts=\toks25
+\AM@toc@title=\toks26
+\c@AM@survey=\count307
+\AM@templatesizebox=\box64
+)
+Package Listings Info: Made | a short reference for \lstinline on input line 40.
  (./handout.aux)
 \openout1 = `handout.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 55.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -712,17 +741,17 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen272
-\scratchbox=\box63
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen273
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count308
+\scratchdimen=\dimen276
+\scratchbox=\box65
+\nofMPsegments=\count309
+\nofMParguments=\count310
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count311
+\MPscratchDim=\dimen277
+\MPnumerator=\count312
+\makeMPintoPDFobject=\count313
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -818,107 +847,145 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count310
-\AtBeginShipoutBox=\box64
-Package hyperref Info: Link coloring OFF on input line 54.
+\c@lstlisting=\count314
+\AtBeginShipoutBox=\box66
+Package hyperref Info: Link coloring OFF on input line 55.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count311
+\c@section@level=\count315
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 55.
+LaTeX Info: Redefining \pageref on input line 55.
+LaTeX Info: Redefining \nameref on input line 55.
  (./handout.out) (./handout.out)
 \@outlinefile=\write3
 \openout3 = `handout.out'.
 
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 54.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 55.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 54.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 55.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 54.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 55.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 54.
+(Font)              <12> on input line 55.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 54.
+(Font)              <8> on input line 55.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 54.
-LaTeX Font Info:    Try loading font information for U+msa on input line 54.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+(Font)              <6> on input line 55.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 54.
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 55.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 54.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 55.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<images/model.png, id=20, 1927.2pt x 1084.05pt>
-File: images/model.png Graphic file (type png)
-<use images/model.png>
-Package pdftex.def Info: images/model.png  used on input line 83.
-(pdftex.def)             Requested size: 1927.19533pt x 1084.04736pt.
-<images/offset.png, id=23, 512.91624pt x 854.19125pt>
-File: images/offset.png Graphic file (type png)
-<use images/offset.png>
-Package pdftex.def Info: images/offset.png  used on input line 93.
-(pdftex.def)             Requested size: 117.43875pt x 195.57355pt.
+<images/poster.pdf, id=16, 614.295pt x 794.97pt>
+File: images/poster.pdf Graphic file (type pdf)
+<use images/poster.pdf>
+Package pdftex.def Info: images/poster.pdf  used on input line 57.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: images/poster.pdf Graphic file (type pdf)
+<use images/poster.pdf>
+Package pdftex.def Info: images/poster.pdf  used on input line 57.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<images/poster.pdf, id=19, page=1, 614.295pt x 794.97pt>
+File: images/poster.pdf Graphic file (type pdf)
+<use images/poster.pdf, page 1>
+Package pdftex.def Info: images/poster.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: images/poster.pdf Graphic file (type pdf)
+<use images/poster.pdf, page 1>
+Package pdftex.def Info: images/poster.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: images/poster.pdf Graphic file (type pdf)
+<use images/poster.pdf, page 1>
+Package pdftex.def Info: images/poster.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: images/poster.pdf Graphic file (type pdf)
+<use images/poster.pdf, page 1>
+Package pdftex.def Info: images/poster.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: images/poster.pdf Graphic file (type pdf)
+<use images/poster.pdf, page 1>
+Package pdftex.def Info: images/poster.pdf , page1 used on input line 57.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/model.png>] [2 <./images/offset.png>]
-<images/zero.png, id=62, 1056.94875pt x 472.76625pt>
+ <./images/poster.pdf>]
+<images/model.png, id=74, 1927.2pt x 1084.05pt>
+File: images/model.png Graphic file (type png)
+<use images/model.png>
+Package pdftex.def Info: images/model.png  used on input line 84.
+(pdftex.def)             Requested size: 1927.19533pt x 1084.04736pt.
+<images/offset.png, id=77, 512.91624pt x 854.19125pt>
+File: images/offset.png Graphic file (type png)
+<use images/offset.png>
+Package pdftex.def Info: images/offset.png  used on input line 94.
+(pdftex.def)             Requested size: 117.43875pt x 195.57355pt.
+ [2{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/model.png>] [3 <./images/offset.png>]
+<images/zero.png, id=115, 1056.94875pt x 472.76625pt>
 File: images/zero.png Graphic file (type png)
 <use images/zero.png>
-Package pdftex.def Info: images/zero.png  used on input line 134.
+Package pdftex.def Info: images/zero.png  used on input line 135.
 (pdftex.def)             Requested size: 352.31625pt x 157.58595pt.
- [3 <./images/zero.png>] [4]
-<images/dex.pdf, id=92, 419.25134pt x 419.09534pt>
+ [4 <./images/zero.png>] [5]
+<images/dex.pdf, id=145, 419.25134pt x 419.09534pt>
 File: images/dex.pdf Graphic file (type pdf)
 <use images/dex.pdf>
-Package pdftex.def Info: images/dex.pdf  used on input line 182.
+Package pdftex.def Info: images/dex.pdf  used on input line 183.
 (pdftex.def)             Requested size: 419.25032pt x 419.0943pt.
- (./handout.bbl [5 <./images/dex.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 192.
- [6
+ (./handout.bbl [6 <./images/dex.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+ [7
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (./handout.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 192.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 192.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `handout.out' has not changed.
 (rerunfilecheck)             Checksum: 0CAB34CFEEDABCAE0AE04ED5F4DB2881;191.
  ) 
 Here is how much of TeX's memory you used:
- 23281 strings out of 492616
- 426399 string characters out of 6129482
- 480761 words of memory out of 5000000
- 26918 multiletter control sequences out of 15000+600000
+ 24018 strings out of 492616
+ 438162 string characters out of 6129482
+ 495383 words of memory out of 5000000
+ 27629 multiletter control sequences out of 15000+600000
  581967 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,9n,92p,793b,827s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,18n,92p,793b,876s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on handout.pdf (6 pages, 1188329 bytes).
+Output written on handout.pdf (7 pages, 16073002 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
