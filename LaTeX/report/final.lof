@@ -26,7 +26,12 @@
 \contentsline {figure}{\numberline {21}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{26}% 
 \contentsline {figure}{\numberline {22}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{27}% 
 \contentsline {figure}{\numberline {23}{\ignorespaces T-Bar ANSYS FEA\relax }}{27}% 
-\contentsline {figure}{\numberline {24}{\ignorespaces Electrical Schematic\relax }}{28}% 
-\contentsline {figure}{\numberline {25}{\ignorespaces General Software Algorithm Overview\relax }}{29}% 
-\contentsline {figure}{\numberline {26}{\ignorespaces Software Flowchart Subsections}}{29}% 
-\contentsline {figure}{\numberline {32}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{38}% 
+\contentsline {figure}{\numberline {24}{\ignorespaces ANSYS Simulated Forces Image Capture\relax }}{28}% 
+\contentsline {figure}{\numberline {25}{\ignorespaces ANSYS FEA of Dynamical Loading Scenario\relax }}{28}% 
+\contentsline {subfigure}{\numberline {a}{\ignorespaces ANSYS Full View of Maximum Shear\relax }}{28}% 
+\contentsline {subfigure}{\numberline {b}{\ignorespaces ANSYS Bearing Shear Stress Close-up\relax }}{28}% 
+\contentsline {figure}{\numberline {26}{\ignorespaces ANSYS Fatigue Test\relax }}{29}% 
+\contentsline {figure}{\numberline {27}{\ignorespaces Electrical Schematic\relax }}{30}% 
+\contentsline {figure}{\numberline {28}{\ignorespaces General Software Algorithm Overview\relax }}{30}% 
+\contentsline {figure}{\numberline {29}{\ignorespaces Software Flowchart Subsections}}{31}% 
+\contentsline {figure}{\numberline {35}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{40}% 

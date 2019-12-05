@@ -183,12 +183,12 @@ The inverse kinematics can be calculated given desired position and orientation 
 
 \subsection{Equations of Motion}
 Given robot dynamics described by \(H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=F_{\gamma},\) the equations of motion for
-the manipulator can be determined. Solving this equation for \(\ddot{\gamma}\) gives:
+the manipulator can be determined. Solving this equation for the acceleration, \(\ddot{\gamma}\), gives:
 \begin{equation}
   \ddot{\gamma}=H(\gamma)^{-1}\left(F_{\gamma}-d(\gamma, \dot{\gamma})-G(\gamma)\right)
   \label{eq:eoms}
 \end{equation}
-Where $F_{\gamma}$ is the vector of generalized forces on the joints and
+Where $H$ is the system mass matrix, $F_{\gamma}$ is the vector of generalized forces, $d$ is the vector of centripital and coriolis effects, and $G$ is gravitational effects.
 \[
   \renewcommand{\arraystretch}{1.5}
   H(\gamma) = \sum_B^N J_B(\gamma)^T
@@ -215,13 +215,11 @@ Where $F_{\gamma}$ is the vector of generalized forces on the joints and
 \[
 G(\gamma) = \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T~,\quad U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
 \]
-% \[
-% ^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
-% \]
+Where $J_B$ is the jacobian of the body, $\Gamma$ is the vector of first mass moments, $m_B$ is the mass of the body, and $^B_B\omega_I$ is the rotational velocity of the body relative to the inertial frame.
 \subsubsection{Actuator Dynamics}
 \input{motor}
 \subsection{Open-Loop Simulation}
-The equations of motion described in equation (\ref{eq:eoms}) can be integrated to simulate the motion of the system. For the open loop control, no input torque is supplied, meaning the system responds only to gravity. Due to the complexity of the equations of motion, they will be integrated numerically using a 4th Order Runge Kutta algorithm. Since no input force is supplied, the equations of motion reduce down to the relation described in equation (\ref{eq:eoms2}).
+The equations of motion described in equation (\ref{eq:eoms}) can be integrated to simulate the motion of the system. For the open loop control, no input torque is supplied, meaning the system responds only to gravity. Due to the complexity of the equations of motion, they will be integrated numerically using a 4th Order Runge-Kutta method algorithm \cite{mit}. Since no input force is supplied, the equations of motion reduce down to the relation described in equation (\ref{eq:eoms2}).
 
 \begin{equation}
 \ddot{\gamma}=H(\gamma)^{-1}(-d(\gamma, \dot{\gamma})-G(\gamma))
@@ -365,14 +363,51 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
 \subsection{ANSYS}
 With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 14 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
 
-Further ANSYS simulations on repetitive loadings are in progress.
-
 \begin{figure}[htp]
   \center
   \includegraphics[width=.99\textwidth, frame]{tbar}
   \caption{T-Bar ANSYS FEA}
   \label{fig:tbar}
 \end{figure}
+
+To simulate a dynamical loading situation where the manipulator would be in the highest loading scenario, gravitational forces and an outward force (parallel to the arm direction in it's zeroed configuration) was applied to the structure. This situation represents the worst-case loading scenario, such as the manipulator swinging while outstretched. The supports and simulated forces can be seen in the ANSYS image capture shown in \emph{Figure \ref{fig:ansys_forces}}.
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.99\textwidth, frame]{ansys_forces}
+  \caption{ANSYS Simulated Forces Image Capture}
+  \label{fig:ansys_forces}
+\end{figure}
+As shown in \emph{Figure \ref{fig:ansys_forces}}, the red arrow is the outward force, the yellow arrow represents gravity acting at the manipulator's center of mass, and the yellow highlighted faces show the fixed support at the base.
+
+The dynamical loadings resulted in a maximum shear stress at the shoulder differential bearing, as seen in \emph{Figure \ref{fig:ansys_full}}; a close-up image of the bearing analysis can be seen in \emph{Figure \ref{fig:ansys_bearing}}.
+
+\begin{figure}[htp]
+  \center
+  \begin{subfigure}[t]{0.6\textwidth}
+  \center
+  \includegraphics[width=.9\textwidth,frame]{ansys_full}
+  \caption{ANSYS Full View of Maximum Shear}
+  \label{fig:ansys_full}
+\end{subfigure}%
+\begin{subfigure}[t]{0.4\textwidth}
+  \center
+  \includegraphics[width=.8\textwidth,frame]{ansys_bearing}
+  \caption{ANSYS Bearing Shear Stress Close-up}
+  \label{fig:ansys_bearing}
+\end{subfigure}
+  \caption{ANSYS FEA of Dynamical Loading Scenario}
+\end{figure}
+
+To further validate that the structure is capable of handling the load cases, a fatigue test was also performed and the life of the manipulator exceeds 10e8 cycles, as seen in \emph{Figure \ref{ansys_life}}, showing it is unlikely to fail due to material yeilding.
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.99\textwidth, frame]{ansys_life}
+  \caption{ANSYS Fatigue Test}
+  \label{fig:ansys_life}
+\end{figure}
+
 
 \newpage
 \subsection{Electrical Schematic}
