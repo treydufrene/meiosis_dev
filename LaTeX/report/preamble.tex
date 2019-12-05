@@ -69,6 +69,7 @@
 
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \setlength{\cftbeforetoctitleskip}{-2em}
+\setlength{\cftbeforeloftitleskip}{-2em}
 % \allsectionsfont{\raggedright} % w/ secsty
 \setlist[enumerate]{wide=0pt, widest=99,
                     leftmargin=\parindent,topsep=0pt,partopsep=0pt,
@@ -86,8 +87,9 @@
   \stepcounter{subsection}
   \subsection*{\Alph{section}.\Roman{subsection}\hspace{1em}{#1}}
 }
-\titlespacing{\section}{0pt}{2ex}{1ex}
-\titlespacing{\subsection}{0pt}{1ex}{0ex}
-\titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
+
+\titlespacing\section{0pt}{0pt}{-5pt}
+\titlespacing\subsection{0pt}{0pt}{-5pt}
+\titlespacing\subsubsection{0pt}{0pt}{-5pt}
 
 % \looseness=-1 % for one-liners bleeding off into the next page

@@ -11,10 +11,10 @@
 \clearpage
 \newpage
 \section*{List Of Acronyms and Abbreviations}
-\begin{tabular}{rl}
-  FK & Forward Kinematics \\
-  IK & Inverse Kinematics  \\
-  PD & Proportional Derivative \\
+\begin{tabular}{rcl}
+  FK &:& Forward Kinematics \\
+  IK &:& Inverse Kinematics  \\
+  PD &:& Proportional Derivative \\
   % $k$~:& Spring constant \\
   % $h_{b}$~:& Distance to bar ($G$) from datum \\
   % $F_s$~:& Force onto bar due to spring\\
@@ -26,12 +26,12 @@
 \large%
 \(
 {}^{\text{\scriptsize Frame}}_{\text{\scriptsize From}}~{r}~_{\text{\scriptsize To}}
-\)\normalsize && Direction Vectors\\
+\)\normalsize &:& Direction Vectors\\
 \(
 {}^{\text{\scriptsize From}}~{T}~_{\text{\scriptsize To}}
-\)\normalsize && Direction Cosine (Transformation) Matrices \\
-\(c_{\theta_{nm}}\)& & \( \cos(\theta_n + \theta_m)\)\\
-\(s_{\theta_{nm}}\)& & \( \sin(\theta_n + \theta_m)\) \\
+\)\normalsize &:& Direction Cosine (Transformation) Matrices \\
+\(c_{\theta_{nm}}\)&:& \( \cos(\theta_n + \theta_m)\)\\
+\(s_{\theta_{nm}}\)&:& \( \sin(\theta_n + \theta_m)\) \\
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 \newpage
@@ -61,7 +61,7 @@ The manipulator will be six degrees of freedom and will feature a spherical wris
   \label{fig:meiosis_zeroed}
 \end{figure}
 
-\emph{Figure \ref{fig:meiosis_zeroed}} shows the zeroed configuration for the manipulator with callouts showing the link locations. Point (a) shows the base of the manipulator. This is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections.Point (b) shows the first link of the robot and is the location of the first differential drive gearbox. Point (c) shows the second link of the robot, the servos located at the end of the link control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts.Point (d) shows the third link of the robot, there are two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom which is the first degree of freedom for the wrist. Point (e) shows the fourth link of the manipulator which houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox. Point (f) shows the fifth and final link of the robot. This link is support for the wrist’s differential drive gearbox. Finally, point (g) shows the end effector which features connection points to hold a Dynamixel AX-12A smart servo. The next figure shows key features that are unique to links two and three.
+\emph{Figure \ref{fig:meiosis_zeroed}} shows the zeroed configuration for the manipulator with callouts showing the link locations. Point (a) shows the base of the manipulator. This is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections. Point (b) shows the first link of the robot and is the location of the first differential drive gearbox. Point (c) shows the second link of the robot, the servos located at the end of the link control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts.Point (d) shows the third link of the robot, there are two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom which is the first degree of freedom for the wrist. Point (e) shows the fourth link of the manipulator which houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox. Point (f) shows the fifth and final link of the robot. This link is support for the wrist’s differential drive gearbox. Finally, point (g) shows the end effector which features connection points to hold a Dynamixel AX-12A smart servo. The next figure shows key features that are unique to links two and three.
 
 \begin{figure}[htp]
   \center
@@ -91,7 +91,7 @@ A 12 tooth and 120 tooth pulleys provide a 10:1 gear ratio and use a 0.25 in wid
 \subsection{Actuator Analysis}
 Dynamixel does not provide a stall torque for the MX-12W servo, however it does provide stall torque data for two similar servos. The MX-12W’s stall torque can be found from the stall torque data since the motor are the same. The stall torque of the MX-12W should be comparable to the AX-12W’s stall torque. The MX-12W and AX-12W operate at the same 12 V voltage, 32:1 gear ratio, and 470 rpm no load output speed. The AX-12A also operates at 12 V, but at with a 254:1 gear ratio and 59 rpm no load output speed. Torque and current are inversely related. If the AX-12A’s and AX-12W’s motors are the same, then when operating at the same voltage, the output speed of the AX-12W should equal to the output speed of the AX-12A multiplied by the ratio of the servos’ gear ratios and the torque of the AX-12W should be the AX-12A’s torque multiplied by the inverse of the gear ratios ratio:
 \[ 59\cdot\frac{254}{32}=468 \cong 470 \]
-The AX-12A’s and MX-12W’s stall torques are 1.5Nm and 0.21Nm, respectively:
+The AX-12A’s and MX-12W’s stall torques are 1.5Nm and 0.21Nm, respectively \cite{dyna}:
 \[ 1.5\cdot\frac{32}{254}=0.189\cong0.21\text{Nm} \]
 Therefore, the AX-12A and MX-12W use the same motor. Additionally, if operating at the same voltage, the stall torque is defined by the no load output speed and gear ratio. Since the MX-12W and AX-12A operate at the same 12 V voltage with the same 32:1 gear ratio and 470 rpm no load output speed, their stall torques should be the same. More specifically, it is between the AX-12W’s and the gear reduced AX-12A’s stall torques of 0.21Nm and 0.189Nm, respectively. Therefore, the stall MX-12W’s stall torque is within 0.01Nm of 0.2Nm. The manipulator is designed for the worst case scenario: 0.19 Nm.
 
@@ -165,12 +165,12 @@ The inverse kinematics can be calculated given desired position and orientation 
 \]
 \begin{equation}
 \begin{aligned}
-\quad\text{Inverse Position}: \\
+\text{Inverse Position:}\qquad\qquad&\\
 \theta_{1}&= \text{atan2} \left(x_{c},~ y_{c}\right) - \sfrac{\pi}{2}\\
 \theta_{2}&= \text{atan2} \left(z_c - \ell_1, ~\sqrt{x_c^2 + y_c^2}\right) - \text{atan2}\left(\ell_3s_3,~\ell_2 + \ell_3c_3\right) \\
 \theta_{3}&= \text{atan2} (-\sqrt{1-D^{2}},~ D) \\
 & \quad \text { where } D\equiv\frac{x_{c}^{2}+y_{c}^{2}+\left(z_{c}-\ell_{1}\right)^{2}-\ell_{2}^{2}-\ell_{3}^{2}}{2 \ell_{2} \ell_{3}} \\
-\quad\text{Inverse Orientation}:\\
+\text{Inverse Orientation}:\qquad\qquad&\\
 ^IT_3 &= rotz(\theta_1)~rotx(\theta_2)~rotx(\theta_3) \\
 {}^3T_6 &= {}^IT_3^TR \\ % TODO: reference the FK orientation sec#/p.
 \theta_4 &= \text{atan2} \left({}^3T_{6(1,2)},~{}^3T_{6(3,2)}\right) \\
@@ -384,12 +384,76 @@ The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a p
   \caption{Electrical Schematic}
   \label{fig:eschem}
 \end{figure}
-
+\newpage
 \subsection{Software Flowchart}
-The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
+% The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
 
-\includepdf[landscape,pages=-]{sflow}
+The software the system uses takes in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and runs the manipulator through the desired points following the specified paths requested. The general overview of the code is shown in \emph{Figure \ref{fig:soverall}}.
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{soverall}
+  \caption{General Software Algorithm Overview}
+  \label{fig:soverall}
+\end{figure}
+\emph{Figure \ref{fig:soverall}} shows that the software for the manipulator is broken up into six subsections, two sections that receive data, three that do calculations, and one that runs the specified task.
 
+The first subsection of the software works to receive the number of points the user is inputting as well as the general task the user is completing, shown in \emph{Figure \ref{fig:sf1}}.
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{sf1}
+  \caption[Software Flowchart Subsections]{Software Flowchart Subsection 1}
+  \label{fig:sf1}
+\end{figure}
+\emph{Figure \ref{fig:sf1}} specifies that the software prompts the user for the number of points that the manipulator will travel through and stores the input as a variable, in this case ‘x’. The ‘x’ variable is only used to help preallocate data vectors so that the size of the vector does not change with each input. The software also receives the task specification as either a 0 for cartesian straight line pathing or a 1 for a straight line in the joint space and stores this value in the variable ‘c’.
+
+The second general block in the software flowchart works to receive and store the necessary data for the points the user is inputting depending on the path type as seen in \emph{Figure \ref{fig:sf2}}.
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{sf2}
+  \caption[]{Software Flowchart Subsection 2}
+  \label{fig:sf2}
+\end{figure}
+\emph{Figure \ref{fig:sf2}} shows that the path type variable ‘c’ is used to determine what information is necessary to collect. If the user is doing a writing task, the software only collects the x, y, and z distances for the point and assumes that the end effector orientation will be facing down so that the marker is vertical. If the user is doing pick and place, the software prompts the user for the x, y, z, phi, theta, psi, path type, and end effector data. The software loops until all the points have been input.
+
+The next block in the software flowchart calculates the total points necessary to complete the task. The overview for this section can be seen in \emph{Figure \ref{fig:sf3}}.
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{sf3}
+  \caption[]{Software Flowchart Subsection 3}
+  \label{fig:sf3}
+\end{figure}
+As seen in \emph{Figure \ref{fig:sf3}}, the section of software calculates the distance between the current point and the previous point if the path type is cartesian straight line and divides the distance by ten to find the number of centimeters between the two points. This value is stored as the necessary number of intermediate points, and the software will loop through until every point has been checked. The section of code also stores the total number of points that will be used as the variable level for later use.
+
+The fourth code block in the flowchart creates and stores the necessary intermediate points along the desired path, shown in \emph{Figure \ref{fig:sf4}}.
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{sf4}
+  \caption[]{Software Flowchart Subsection 4}
+  \label{fig:sf4}
+\end{figure}
+The code shown in \emph{Figure \ref{fig:sf4}} creates points every centimeter if the path type is cartesian straight line using the number of path points stored for each point from the previous block of software. This ensures that a straight line will be followed between the two user input points. If the path type is a straight line in the joint space, the software does not add any intermediate points since the path seen in the cartesian space does not matter.
+
+The fifth code block in the flowchart calculates inverse kinematics of the points defined in the previous block of code and stores the angles as counts that can be used by the servos. The overview of this section can be seen in \emph{Figure \ref{fig:sf5}}.
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{sf5}
+  \caption[]{Software Flowchart Subsection 5}
+  \label{fig:sf5}
+\end{figure}
+\emph{Figure \ref{fig:sf5}} shows that the new points found in the prior section of code are run through an inverse kinematics function that will output the necessary counts the servos can utilize. The code iterates through each point until the inverse kinematics have been calculated for all points.
+
+The final block in the software diagram runs the manipulator through the desired task, with this section of code requiring user input at certain stages depending on the path type, seen in \emph{Figure \ref{fig:sf6}}.
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{sf6}
+  \caption[]{Software Flowchart Subsection 6}
+  \label{fig:sf6}
+\end{figure}
+The code in \emph{Figure \ref{fig:sf6}} prompts the user to press space to close the end effector and grab the marker if drawing was the specified task, otherwise the software jumps straight into prompting the user to begin the task, and when the user begins the task the counts for each position are sent to the servos one at a time. The counts for the next position are not sent to the servos until the servos have reached the desired positions and the end effector function has been completed if there is one.
+
+% \includepdf[landscape,pages=-]{sflow}
+\newpage
 \subsection{Project Status and Future}
 \begin{itemize}[label=---]
   \item Print Differential
@@ -450,9 +514,6 @@ Digi-Key &  & &  & 8.99 \\%\cline{4-5}
 % \cite{DBLP:journals/corr/abs-1803-09820}
 % \cite{DBLP:journals/corr/RonnebergerFB15}
 
-% \newpage
-% \bibliographystyle{plain}
-% \bibliography{JohnsonAL16,abs-1803-09820,RonnebergerFB15}
 
 \newpage
 \section*{Acknowledgements \& Attributions}
@@ -461,30 +522,31 @@ We would like to acknowledge the following people for their contibutions in crea
   \item Dr. Isenberg
   \item Dr. Schipper
 \end{itemize}
-\newpage
-\bibliographystyle{plainnat}
-\bibliography{robo}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibs}
 
 \newpage
 \appendix
 \renewcommand\thesection{\Roman{section}}
 \renewcommand\thesubsection{\roman{subsection}}
-% \hiddenappsec{Appendix}\label{sec:app}
-\section{Appendix}\label{sec:app}
-% \hiddenappsub{Relevant Figures and Materials}
-\subsection{Relevant Figures and Materials}
+\hiddenappsec{Appendix}\label{sec:app}
+% \section{Appendix}\label{sec:app}
+\hiddenappsub{Relevant Figures and Materials}
+% \subsection{Relevant Figures and Materials}
 \begin{figure}[htp]
   \centering
   \includegraphics[frame,width=.75\textwidth]{dex}
   \caption{Cross Section of Dexterous Workspace Quadrant}
   \label{fig:dex}
 \end{figure}
-% \hiddenappsub{CAD Drawings}
-\subsection{CAD Drawings}
+\hiddenappsub{CAD Drawings}
+% \subsection{CAD Drawings}
 The complete drawing package is attached.
 \includepdf[landscape,pages=-]{drawings}
-% \hiddenappsub{Salient Code}
-\subsection{Salient Code}
+\hiddenappsub{Salient Code}
+% \subsection{Salient Code}
 \input{mmodel}
 \vspace{10ex}
 

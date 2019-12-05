@@ -1,30 +1,32 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Overall System Conceptual Design \relax }}{3}
-\contentsline {figure}{\numberline {2}{\ignorespaces Manipulator Base with Call-outs\relax }}{4}
-\contentsline {figure}{\numberline {3}{\ignorespaces Drawing Showing Key Features of Design\relax }}{5}
-\contentsline {figure}{\numberline {4}{\ignorespaces Drawing Showing Link Cross Section\relax }}{5}
-\contentsline {figure}{\numberline {5}{\ignorespaces Electrical System Block Diagram\relax }}{6}
-\contentsline {figure}{\numberline {6}{\ignorespaces Software Flowchart\relax }}{7}
-\contentsline {figure}{\numberline {7}{\ignorespaces Overview of Physical System\relax }}{8}
-\contentsline {figure}{\numberline {8}{\ignorespaces Elbow Manipulator Configuration with Link Offset}}{9}
-\contentsline {figure}{\numberline {9}{\ignorespaces Kinematic Model Representing Zeroed Configuration}}{11}
-\contentsline {figure}{\numberline {10}{\ignorespaces Manipulator in Zeroed Configuration with Callouts\relax }}{13}
-\contentsline {figure}{\numberline {11}{\ignorespaces Link Cross Section\relax }}{14}
-\contentsline {figure}{\numberline {12}{\ignorespaces Pulley 1-2 Center Distance\relax }}{15}
-\contentsline {figure}{\numberline {13}{\ignorespaces Pulley 3 Center Distance\relax }}{15}
-\contentsline {figure}{\numberline {14}{\ignorespaces Coordinate Systems\relax }}{17}
-\contentsline {figure}{\numberline {15}{\ignorespaces Open-Loop Control Simulation Animation Snapshots\relax }}{23}
-\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{23}
-\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{23}
-\contentsline {figure}{\numberline {16}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{23}
-\contentsline {figure}{\numberline {17}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{24}
-\contentsline {figure}{\numberline {18}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{24}
-\contentsline {figure}{\numberline {19}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{26}
-\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{26}
-\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Middle\relax }}{26}
-\contentsline {subfigure}{\numberline {c}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{26}
-\contentsline {figure}{\numberline {20}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{26}
-\contentsline {figure}{\numberline {21}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{26}
-\contentsline {figure}{\numberline {22}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{27}
-\contentsline {figure}{\numberline {23}{\ignorespaces T-Bar ANSYS FEA\relax }}{27}
-\contentsline {figure}{\numberline {24}{\ignorespaces Electrical Schematic\relax }}{28}
-\contentsline {figure}{\numberline {25}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{36}
+\contentsline {figure}{\numberline {1}{\ignorespaces Overall System Conceptual Design \relax }}{3}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Manipulator Base with Call-outs\relax }}{4}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Drawing Showing Key Features of Design\relax }}{5}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Drawing Showing Link Cross Section\relax }}{5}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Electrical System Block Diagram\relax }}{6}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Software Flowchart\relax }}{7}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Overview of Physical System\relax }}{8}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Elbow Manipulator Configuration with Link Offset}}{9}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Kinematic Model Representing Zeroed Configuration}}{11}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Manipulator in Zeroed Configuration with Callouts\relax }}{13}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Link Cross Section\relax }}{14}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Pulley 1-2 Center Distance\relax }}{15}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Pulley 3 Center Distance\relax }}{15}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Coordinate Systems\relax }}{17}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Open-Loop Control Simulation Animation Snapshots\relax }}{23}% 
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{23}% 
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{23}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{23}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{24}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{24}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{26}% 
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{26}% 
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Middle\relax }}{26}% 
+\contentsline {subfigure}{\numberline {c}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{26}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{26}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{26}% 
+\contentsline {figure}{\numberline {22}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{27}% 
+\contentsline {figure}{\numberline {23}{\ignorespaces T-Bar ANSYS FEA\relax }}{27}% 
+\contentsline {figure}{\numberline {24}{\ignorespaces Electrical Schematic\relax }}{28}% 
+\contentsline {figure}{\numberline {25}{\ignorespaces General Software Algorithm Overview\relax }}{29}% 
+\contentsline {figure}{\numberline {26}{\ignorespaces Software Flowchart Subsections}}{29}% 
+\contentsline {figure}{\numberline {32}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{38}% 
