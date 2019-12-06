@@ -1,16 +1,42 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{mit}
+\bibitem[cc()]{cc}
+Trossen robotics.
+\newblock URL \url{https://www.trossenrobotics.com/}.
+
+\bibitem[ff()]{ff}
+Embry-riddle aeronautical university-prescott.
+\newblock URL
+  \url{https://www.collegetuitioncompare.com/edu/104586/embry-riddle-aeronautical-university-prescott/}.
+
+\bibitem[gg()]{gg}
+Range of robot cost -- robot system cost series.
+\newblock URL \url{https://motioncontrolsrobotics.com/range-robot-cost/}.
+
+\bibitem[rr()]{rr}
+Sawyer: Rethink robotics unveils new robot.
+\newblock URL
+  \url{https://spectrum.ieee.org/automaton/robotics/industrial-robots/sawyer-rethink-robotics-new-robot}.
+
+\bibitem[1(1998)]{mit}
 Michael~Zeltkevic 1.
 \newblock Runge-kutta methods, 04 1998.
+\newblock URL
+  \url{http://web.mit.edu/10.001/Web/Course_Notes/Differential_Equations_Notes/node5.html}.
 
-\bibitem{robo}
+\bibitem[M.~Spong and Vidyasager(2006)]{robo}
 S.~Hutchinson M.~Spong and M.~Vidyasager.
-\newblock {\em Robot Modeling and Control}.
+\newblock \emph{Robot Modeling and Control}.
 \newblock 2006.
 
-\bibitem{dyna}
+\bibitem[ROBOTIS(2019)]{dyna}
 ROBOTIS.
 \newblock Ax-12a e-manual, 2019.
+\newblock URL \url{http://emanual.robotis.com/docs/en/dxl/ax/ax-12a/}.
 
 \end{thebibliography}

@@ -15,7 +15,8 @@
 \usepackage[justification=centering]{caption} % figure captions (force centering)
 \usepackage{amsmath} % more math symbols and shit
 \usepackage{enumitem} % add arguments for enumerate to change style
-\usepackage[list=true]{subcaption} % subfigures with list of figure support
+\usepackage{subcaption} % subfigures with list of figure support
+% \usepackage{subfigure}
 \usepackage{multirow}
 \usepackage{mathtools}
 \usepackage{booktabs}
@@ -40,6 +41,7 @@
 \usepackage{url}
 \usepackage{etoolbox}
 \usepackage[usestackEOL]{stackengine}
+\usepackage{caption}
 % \usepackage{hyperref}
 
 \setlength{\parskip}{\baselineskip}%
@@ -70,6 +72,7 @@
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \setlength{\cftbeforetoctitleskip}{-2em}
 \setlength{\cftbeforeloftitleskip}{-2em}
+\setlength{\cftbeforelottitleskip}{-2em}
 % \allsectionsfont{\raggedright} % w/ secsty
 \setlist[enumerate]{wide=0pt, widest=99,
                     leftmargin=\parindent,topsep=0pt,partopsep=0pt,
@@ -92,4 +95,15 @@
 \titlespacing\subsection{0pt}{0pt}{-5pt}
 \titlespacing\subsubsection{0pt}{0pt}{-5pt}
 
+\AtBeginEnvironment{thebibliography}{\def\UrlFont{\normalfont\itshape}}
+
+\DeclareCaptionFormat{cont}{#1 (cont.)#2#3\par}
+
+\DeclareCaptionLabelFormat{r-parens}{Figure \thefigure#2:} %Define our custom label
+
+% \captionsetup{font=footnotesize} % The general caption settings
+\captionsetup[sub]{              % The subcaption settings
+    labelformat=r-parens}        % Use our custom label format
+
+% \renewcommand{\thesubfigure}{\thefigure\alph{subfigure}}
 % \looseness=-1 % for one-liners bleeding off into the next page

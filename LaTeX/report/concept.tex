@@ -76,3 +76,79 @@ The system can be divided into two subsystems: the electrical and software syste
 \end{figure}
 
 Similar to the electrical system, the software is also simple. \emph{Figure \ref{fig:sblock}} shows that the software will receive the desired pose or poses the user would like the manipulator to reach. Then the Raspberry Pi will use inverse kinematics to calculate the necessary joint angles. The wave-forms/desired angles will be sent to the respective drivers/motors, and positional information will be sent back to the Raspberry Pi to adjust the DC motor angle. When the motors have reached their desired pose, the Raspberry Pi will actuate the end effector if it is specified by the user. The system will then check to see if there are any more poses to reach and either repeat the motor control section given the desired angles of the new pose or end program if the last pose has been reached.
+
+\hiddensubsection{Decision Matrices}
+
+Each team member’s conceptual design provides a variety of different options for select issues, and in order to narrow down the options into the best choice decision matrices are used to make unobjective decisions about each individual topic. The weights of each criteria are defined by the average of our votes on how important the criteria is on a scale of one to ten. The same method is used to rate the different options on each criteria. The most important decision that needs to be made is what configuration the manipulator will have as the configuration has an affect on almost all the design choices. There are five potential configurations, and the scores of each option can be seen in \emph{Table \ref{table:manip}}.
+
+\begin{table}[htp]
+  \center
+  \caption{Configuration Decision Matrix}
+  \label{table:manip}
+\begin{tabular}{C{3cm}|c@{\hskip 3pt}C{2.5cm}C{2cm}@{\hskip 3pt}C{2cm}@{\hskip 3pt}C{3cm}@{\hskip 3pt}c@{\hskip 3pt}}
+\multirow{2}{*}{\textbf{Configuration}} & \multirow{2}{*}{\textbf{Cost}} & \textbf{Educational Value} & \textbf{Ease of Use} &
+\textbf{Ease to Program} & \textbf{Ease of Manufacture} & \multirow{2}{*}{\textbf{Total}} \\
+\textbf{Weighting} & 10 & 8 & 7 & 2 & 6 & \\\hline
+Cartesian w/ Spherical Wrist & \multirow{2}{*}{5} & \multirow{2}{*}{9} & \multirow{2}{*}{10} & \multirow{2}{*}{8} & \multirow{2}{*}{4} & \multirow{2}{*}{232} \\
+RRR w/ Spherical Wrist & \multirow{2}{*}{8} & \multirow{2}{*}{9} & \multirow{2}{*}{7} & \multirow{2}{*}{7} & \multirow{2}{*}{8} & \multirow{2}{*}{\textbf{263}} \\
+Cylindrical & 7 & 10 & 7 & 8 & 7 & 257 \\
+SCARA & 6 & 9 & 8 & 8 & 6 & 240 \\
+Spherical & 7 & 10 & 7 & 7 & 6 & 249 \\
+\end{tabular}
+\end{table}
+
+The results from \emph{Table \ref{table:manip}} show that the solely rotational configuration is the best option, followed closely by the cylindrical. Having translational joints is too be problematic for manufacturing and more expensive, and that is enough of an issue that the rotational manipulator has the advantage over the rest of the options.
+
+Another design choice that needs to be made is what material the manipulator will be constructed out of. The main choices are to 3D print everything, manufacture the manipulator out of aluminum, or use a combination of the two. Cost and accessibility are the two highest weighted criteria as we deem them to be the most important aspects, followed by weight and manufacturability. Durability has the lowest weight because the manipulator should not have enough forces acting on it so that the strength of PLA compared to aluminum should not necessarily affect the manipulator. The grades of each material are shown in \emph{Table \ref{table:mat}}.
+
+\begin{table}[htp]
+  \center
+  \caption{Material Choice Decision Matrix}
+  \label{table:mat}
+\small\begin{tabular}{c|cccccc}
+\textbf{Material} & \textbf{Cost} & \textbf{Weight} & \textbf{Accessibility} & \textbf{Manufacturability} & \textbf{Durability} & \textbf{Total} \\\normalsize
+Weighting & 9.2 & 6.6 & 8 & 6.4 & 5.4 & \\\hline
+3D Printed & 8 & 9 & 8 & 9.4 & 5 & 284.16 \\
+Aluminum & 4 & 5.8 & 5.8 & 6.6 & 9.2 & 213.4 \\
+Combination & 8 & 7.8 & 7 & 9 & 9.2 & \textbf{288.36} \\
+\end{tabular}
+\end{table}
+
+As seen in \emph{Table \ref{table:mat}}, the winning material is a combination of 3D printing and aluminum. The combination allows the manipulator to have 3D printed parts that would be hard to manufacture out of aluminum or that would not necessarily need to be extremely durable, and allows the use of aluminum for the aspects of the manipulator that need to be strong and durable. This option allows for the best aspects of both materials to be utilized.
+
+The internal computing system for the manipulator is another decision that needs to be made, so another decision matrix is used to decide from the six options available. Because the manipulator is intended to be low cost and used by primary education institutions, cost and ease of use are the two highest weighted criteria. Having a lot of capabilities and being able to function independently are factored in, but are deemed of secondary importance which can be seen in \emph{Table \ref{table:comp}}.
+
+\begin{table}[htp]
+  \center
+  \caption{Computing Choice Decision Matrix}
+  \label{table:comp}
+\begin{tabular}{c|ccccc}
+\textbf{Computing System} & \textbf{Cost} & \textbf{Capabilities} & \textbf{Ease of Use} & \textbf{Independence} & \textbf{Total} \\
+Weights & 10 & 4.2 & 7.6 & 4.2 & \\ \hline
+RPi & 7.9 & 6 & 9 & 10 & \textbf{214.6} \\
+Jetson & 1 & 7 & 7 & 9 & 130.4 \\
+RPi + Arduino & 4.8 & 7 & 8 & 10 & 180.2 \\
+Arduino & 9 & 4 & 9 & 3 & 187.8 \\
+B Black & 1.2 & 7 & 7 & 10 & 136.6 \\
+B Green & 5 & 7 & 6 & 9 & 162.8 \\
+\end{tabular}
+\end{table}
+
+\emph{Table \ref{table:comp}} shows that the Raspberry Pi is the winner by a significant margin, with only the Arduino coming close to it. While the Pi is not the most capable, its cost is very good and its ease of use and ability to independant functionality edge it over the other more capable competition. The arduino is the most cost effective, but its lack of functionality and low independence are detrimental to its score.
+
+One of the other designs that needs to be selected was the way that the end effectors are attached to the end of the manipulator, and the different categories that are used to grade each option are ease of use, manufacturability, and durability, as seen in \emph{Table \ref{table:ee}}.
+
+\begin{table}[htp]
+  \center
+  \caption{End Effector Attachment Design Decision Matrix}
+  \label{table:ee}
+\begin{tabular}{C{3.5cm}|cccc}
+\textbf{EE Attachment} & \textbf{Ease of Use} & \textbf{Manufacturability} & \textbf{Durability} & \textbf{Total} \\
+Weighting & 3.6 & 5 & 7 & \\\hline
+Screw Connections & 6.8 & 8.8 & 9.8 & \textbf{137.08} \\
+Snap Fit Joint & 8.6 & 5 & 2.2 & 71.36 \\
+Threaded End Effector & 6.3 & 5.4 & 7.3 & 100.78 \\
+\end{tabular}
+\end{table}
+
+From \emph{Table \ref{table:ee}}, the optimal design turns out to be screw connections in the end effector. The snap fit joint would be easier to use, but to create a functional snap fit connection would be difficult and would likely not be too durable. The threaded end effector is difficult to manufacture and not durable as well, so having connections for screw on the end effector is the clear choice.

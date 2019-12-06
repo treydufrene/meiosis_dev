@@ -1,42 +1,42 @@
 \contentsline {section}{\numberline {1}Introduction}{1}% 
 \contentsline {section}{\numberline {2}Requirements}{1}% 
-\contentsline {subsubsection}{\numberline {2.1.1}The system shall cost the end-user no more than \$1000.}{1}% 
-\contentsline {subsubsection}{\numberline {2.1.2}The system shall be fully dexterous without being kinematically redundant.}{1}% 
-\contentsline {subsubsection}{\numberline {2.1.3}The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ }\) eigen angle from the base frame.}{1}% 
-\contentsline {subsubsection}{\numberline {2.1.4}The system end effector shall maintain a pose repeatability magnitude between 0.1\IeC {\textemdash }1.5 mm for the position and \(\pm 4^{\circ }\) eigen angle from the base frame for the orientation.}{1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}The system shall cost the end-user no more than \$1000.}{2}% 
+\contentsline {subsubsection}{\numberline {2.1.2}The system shall be fully dexterous without being kinematically redundant.}{2}% 
+\contentsline {subsubsection}{\numberline {2.1.3}The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ }\) eigen angle from the base frame.}{2}% 
+\contentsline {subsubsection}{\numberline {2.1.4}The system end effector shall maintain a pose repeatability magnitude between 0.1\IeC {\textemdash }1.5 mm for the position and \(\pm 4^{\circ }\) eigen angle from the base frame for the orientation.}{2}% 
 \contentsline {subsubsection}{\numberline {2.1.5}The system\IeC {\textquoteright }s reachable workspace shall be a hemisphere with a radius of 300-700 mm.}{2}% 
 \contentsline {subsubsection}{\numberline {2.1.6}The system\IeC {\textquoteright }s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.}{2}% 
 \contentsline {subsubsection}{\numberline {2.1.7}The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}{2}% 
 \contentsline {subsubsection}{\numberline {2.1.8}The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}{2}% 
 \contentsline {subsubsection}{\numberline {2.2.1}The system shall be open source.}{2}% 
-\contentsline {subsubsection}{\numberline {2.2.2}The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}{2}% 
-\contentsline {section}{\numberline {3}Conceptual Design}{3}% 
-\contentsline {subsubsection}{\numberline {3.1.1}Base}{4}% 
-\contentsline {subsubsection}{\numberline {3.1.2}Links}{5}% 
-\contentsline {section}{\numberline {4}Specifications}{8}% 
-\contentsline {subsubsection}{\numberline {4.2.1}The system shall cost the end-user no more than \$1000.}{8}% 
-\contentsline {subsubsection}{\numberline {4.2.2}The system shall be fully dexterous without being kinematically redundant.}{9}% 
-\contentsline {subsubsection}{\numberline {4.2.3}The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ }\) eigen angle from the base frame.}{9}% 
-\contentsline {subsubsection}{\numberline {4.2.4}The system end effector shall maintain a pose repeatability magnitude between 0.1\IeC {\textemdash }1.5 mm for the position and \(\pm 4^{\circ }\) eigen angle from the base frame for the orientation.}{10}% 
-\contentsline {subsubsection}{\numberline {4.2.5}The system\IeC {\textquoteright }s reachable workspace shall be a hemisphere with a radius of 300-700 mm.}{10}% 
-\contentsline {subsubsection}{\numberline {4.2.6}The system\IeC {\textquoteright }s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.}{10}% 
-\contentsline {subsubsection}{\numberline {4.2.7}The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}{11}% 
-\contentsline {subsubsection}{\numberline {4.2.8}The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}{11}% 
-\contentsline {subsubsection}{\numberline {4.3.1}The system shall be open source.}{12}% 
-\contentsline {subsubsection}{\numberline {4.3.2}The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}{12}% 
-\contentsline {section}{\numberline {5}Preliminary Design}{13}% 
-\contentsline {subsection}{\numberline {5.1}Computer Aided Design}{13}% 
-\contentsline {subsubsection}{\numberline {5.1.1}Pulleys}{15}% 
-\contentsline {subsection}{\numberline {5.2}Actuator Analysis}{16}% 
-\contentsline {subsection}{\numberline {5.3}Forward Kinematics}{18}% 
-\contentsline {subsection}{\numberline {5.4}Velocity Kinematics}{20}% 
-\contentsline {subsection}{\numberline {5.5}Inverse Kinematics}{20}% 
-\contentsline {subsection}{\numberline {5.6}Equations of Motion}{20}% 
-\contentsline {subsubsection}{\numberline {5.6.1}Actuator Dynamics}{21}% 
-\contentsline {subsection}{\numberline {5.7}Open-Loop Simulation}{23}% 
-\contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{25}% 
-\contentsline {subsection}{\numberline {5.9}ANSYS}{28}% 
-\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{31}% 
-\contentsline {subsection}{\numberline {5.11}Software Flowchart}{31}% 
-\contentsline {subsection}{\numberline {5.12}Project Status and Future}{35}% 
-\contentsline {subsection}{\numberline {5.13}Parts List}{36}% 
+\contentsline {subsubsection}{\numberline {2.2.2}The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}{3}% 
+\contentsline {section}{\numberline {3}Conceptual Design}{4}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Base}{5}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Links}{6}% 
+\contentsline {section}{\numberline {4}Specifications}{11}% 
+\contentsline {subsubsection}{\numberline {4.2.1}The system shall cost the end-user no more than \$1000.}{11}% 
+\contentsline {subsubsection}{\numberline {4.2.2}The system shall be fully dexterous without being kinematically redundant.}{12}% 
+\contentsline {subsubsection}{\numberline {4.2.3}The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ }\) eigen angle from the base frame.}{12}% 
+\contentsline {subsubsection}{\numberline {4.2.4}The system end effector shall maintain a pose repeatability magnitude between 0.1\IeC {\textemdash }1.5 mm for the position and \(\pm 4^{\circ }\) eigen angle from the base frame for the orientation.}{13}% 
+\contentsline {subsubsection}{\numberline {4.2.5}The system\IeC {\textquoteright }s reachable workspace shall be a hemisphere with a radius of 300-700 mm.}{13}% 
+\contentsline {subsubsection}{\numberline {4.2.6}The system\IeC {\textquoteright }s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.}{13}% 
+\contentsline {subsubsection}{\numberline {4.2.7}The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}{14}% 
+\contentsline {subsubsection}{\numberline {4.2.8}The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}{14}% 
+\contentsline {subsubsection}{\numberline {4.3.1}The system shall be open source.}{15}% 
+\contentsline {subsubsection}{\numberline {4.3.2}The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}{15}% 
+\contentsline {section}{\numberline {5}Preliminary Design}{16}% 
+\contentsline {subsection}{\numberline {5.1}Computer Aided Design}{16}% 
+\contentsline {subsubsection}{\numberline {5.1.1}Pulleys}{18}% 
+\contentsline {subsection}{\numberline {5.2}Actuator Analysis}{19}% 
+\contentsline {subsection}{\numberline {5.3}Forward Kinematics}{21}% 
+\contentsline {subsection}{\numberline {5.4}Velocity Kinematics}{23}% 
+\contentsline {subsection}{\numberline {5.5}Inverse Kinematics}{23}% 
+\contentsline {subsection}{\numberline {5.6}Equations of Motion}{23}% 
+\contentsline {subsubsection}{\numberline {5.6.1}Actuator Dynamics}{24}% 
+\contentsline {subsection}{\numberline {5.7}Open-Loop Simulation}{26}% 
+\contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{28}% 
+\contentsline {subsection}{\numberline {5.9}ANSYS}{31}% 
+\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{34}% 
+\contentsline {subsection}{\numberline {5.11}Software Flowchart}{35}% 
+\contentsline {subsection}{\numberline {5.12}Project Status and Future}{39}% 
+\contentsline {subsection}{\numberline {5.13}Parts List}{40}% 
