@@ -521,6 +521,9 @@ INPUT ./images/meiosis_zeroed.png
 INPUT images/linkx.png
 INPUT ./images/linkx.png
 INPUT ./images/linkx.png
+INPUT images/assy_mech.png
+INPUT ./images/assy_mech.png
+INPUT ./images/assy_mech.png
 INPUT images/pulley12.png
 INPUT ./images/pulley12.png
 INPUT ./images/pulley12.png

@@ -9,29 +9,30 @@
 \contentsline {figure}{\numberline {9}{\ignorespaces Kinematic Model Representing Zeroed Configuration}}{11}% 
 \contentsline {figure}{\numberline {10}{\ignorespaces Manipulator in Zeroed Configuration with Callouts\relax }}{13}% 
 \contentsline {figure}{\numberline {11}{\ignorespaces Link Cross Section\relax }}{14}% 
-\contentsline {figure}{\numberline {12}{\ignorespaces Pulley 1-2 Center Distance\relax }}{15}% 
-\contentsline {figure}{\numberline {13}{\ignorespaces Pulley 3 Center Distance\relax }}{15}% 
-\contentsline {figure}{\numberline {14}{\ignorespaces Coordinate Systems\relax }}{17}% 
-\contentsline {figure}{\numberline {15}{\ignorespaces Open-Loop Control Simulation Animation Snapshots\relax }}{23}% 
-\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{23}% 
-\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{23}% 
-\contentsline {figure}{\numberline {16}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{23}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Link 4 Assembly Mechanism\relax }}{15}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Pulley 1-2 Center Distance\relax }}{15}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Pulley 3 Center Distance\relax }}{16}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Coordinate Systems\relax }}{18}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Open-Loop Control Simulation Animation Snapshots\relax }}{24}% 
+\contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{24}% 
+\contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{24}% 
 \contentsline {figure}{\numberline {17}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{24}% 
 \contentsline {figure}{\numberline {18}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{24}% 
-\contentsline {figure}{\numberline {19}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{26}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Joint Angles vs Time in Open-Loop Simulation\relax }}{25}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{26}% 
 \contentsline {subfigure}{\numberline {a}{\ignorespaces Frame Snapshot near Simulation Initiation\relax }}{26}% 
 \contentsline {subfigure}{\numberline {b}{\ignorespaces Frame Snapshot near Simulation Middle\relax }}{26}% 
 \contentsline {subfigure}{\numberline {c}{\ignorespaces Frame Snapshot near Simulation Termination\relax }}{26}% 
-\contentsline {figure}{\numberline {20}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{26}% 
-\contentsline {figure}{\numberline {21}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{26}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{27}% 
 \contentsline {figure}{\numberline {22}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{27}% 
-\contentsline {figure}{\numberline {23}{\ignorespaces T-Bar ANSYS FEA\relax }}{27}% 
-\contentsline {figure}{\numberline {24}{\ignorespaces ANSYS Simulated Forces Image Capture\relax }}{28}% 
-\contentsline {figure}{\numberline {25}{\ignorespaces ANSYS FEA of Dynamical Loading Scenario\relax }}{28}% 
-\contentsline {subfigure}{\numberline {a}{\ignorespaces ANSYS Full View of Maximum Shear\relax }}{28}% 
-\contentsline {subfigure}{\numberline {b}{\ignorespaces ANSYS Bearing Shear Stress Close-up\relax }}{28}% 
-\contentsline {figure}{\numberline {26}{\ignorespaces ANSYS Fatigue Test\relax }}{29}% 
-\contentsline {figure}{\numberline {27}{\ignorespaces Electrical Schematic\relax }}{30}% 
-\contentsline {figure}{\numberline {28}{\ignorespaces General Software Algorithm Overview\relax }}{31}% 
-\contentsline {figure}{\numberline {29}{\ignorespaces Software Flowchart Subsections}}{31}% 
-\contentsline {figure}{\numberline {35}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{39}% 
+\contentsline {figure}{\numberline {23}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{27}% 
+\contentsline {figure}{\numberline {24}{\ignorespaces T-Bar ANSYS FEA\relax }}{28}% 
+\contentsline {figure}{\numberline {25}{\ignorespaces ANSYS Simulated Forces Image Capture\relax }}{29}% 
+\contentsline {figure}{\numberline {26}{\ignorespaces ANSYS FEA of Dynamical Loading Scenario\relax }}{29}% 
+\contentsline {subfigure}{\numberline {a}{\ignorespaces ANSYS Full View of Maximum Shear\relax }}{29}% 
+\contentsline {subfigure}{\numberline {b}{\ignorespaces ANSYS Bearing Shear Stress Close-up\relax }}{29}% 
+\contentsline {figure}{\numberline {27}{\ignorespaces ANSYS Fatigue Test\relax }}{30}% 
+\contentsline {figure}{\numberline {28}{\ignorespaces Electrical Schematic\relax }}{31}% 
+\contentsline {figure}{\numberline {29}{\ignorespaces General Software Algorithm Overview\relax }}{32}% 
+\contentsline {figure}{\numberline {30}{\ignorespaces Software Flowchart Subsections}}{32}% 
+\contentsline {figure}{\numberline {36}{\ignorespaces Cross Section of Dexterous Workspace Quadrant\relax }}{40}% 
