@@ -123,6 +123,9 @@ The AX-12A’s and MX-12W’s stall torques are 1.5Nm and 0.21Nm, respectively \
 \[ 1.5\cdot\frac{32}{254}=0.189\cong0.21\text{Nm} \]
 Therefore, the AX-12A and MX-12W use the same motor. Additionally, if operating at the same voltage, the stall torque is defined by the no load output speed and gear ratio. Since the MX-12W and AX-12A operate at the same 12 V voltage with the same 32:1 gear ratio and 470 rpm no load output speed, their stall torques should be the same. More specifically, it is between the AX-12W’s and the gear reduced AX-12A’s stall torques of 0.21Nm and 0.189Nm, respectively. Therefore, the stall MX-12W’s stall torque is within 0.01Nm of 0.2Nm. The manipulator is designed for the worst case scenario: 0.19 Nm.
 
+The following describes how the manipulator’s joints’ torques are computed. First, estimations based on the conceptual design are presented. Second, a revised calculation based on masses assigned to the pulley CAD model in Solidworks are presented. The revised torque calculations require an increase in the torques of motors 1, 2, and 3.
+
+
 The first differential faces its greatest torque when the manipulator is in the zeroed configuration. In the zeroed configuration, the arm is outstretched with gravity acting perpendicular to the arm’s length. Since the manipulator must only support a chisel tip dry erase Expo marker, the maximum torque may be approximated as the manipulator’s arm’s mass acting acting near the centroid. More mass from the servos and longer aluminum support in link 3 place the center of mass closer to the end-effector than the base. Therefore, the point at which the arm’s mass acts is assumed to be 273 mm from the base. These calculations will be further revised with mass parameters from the STL files used to generate the open and closed loop simulations. \emph{Table \ref{tab:arm1}} estimates the mass of the manipulator's arms.
 \begin{table}[htp]
   \center
@@ -161,6 +164,22 @@ Safety & & 205 & \\
 \end{table}
 
 The resulting moment is 1.630 Nm, which can be satisfied by the same motor and gear ratio used on the base.
+
+\emph{Table \ref{tab:rtor}} shows the estimated torque requirements at each joint based on Solidworks masses and centers of masses.
+
+\begin{table}[htp]
+  \center
+  \caption{Revised Motor Torque Calculations}
+  \label{tab:rtor}
+\begin{tabular}{c|C{2.5cm}@{\hskip 3pt}C{2.5cm}@{\hskip 3pt}C{2.5cm}@{\hskip 3pt}C{2.5cm}@{\hskip 3pt}C{2.5cm}@{\hskip 3pt}}
+&\multirow{3}{*}{\textbf{Mass (kg)}}& \textbf{CM from Rotaion (m)} &\textbf{Max Torque (Nm)}& \textbf{Required Servo Torque (Nm)} & \textbf{MX-12W Delivered Torque (Nm)}  \\ \hline
+Joint 1/2 & 1.679 & 0.319 & 5.25424581 & 13.13561453 & 37.8 \\
+Joint 3 & 1.2 & 0.14 & 1.64808 & 8.2404 & 18.9\\
+Joint 4/5 & 0.183 & 0.033 & 0.05924259 & 0.148106475 & 0.189  \\
+\end{tabular}
+\end{table}
+
+PLA has a density of 1.24 g/cm$^3$ \cite{tt}. Accounting for 30\% infill and wall thickness, the manipulator’s 3D printed material is assumed to have a density of 0.60 g/cm$^3$. The torque required for each motor can again be approximated by the moment caused by the links’ masses at their center’s of masses. The motors on Joint 4/5 directly wrotate the wrist differential while operating below one fifth of the MX-12W’s stall torque. Increasing the gear ratio for Joint 1/2 and Joint 3 from 10:1 and 100:1 allows use of six pulley sets consisting of only two pulley types. Further, one servo on joint 1 could lift the arm if a redesign without the differential base is required to increase the manipulator's precision.
 
 \subsection{Forward Kinematics}
 \input{fk}
@@ -271,7 +290,8 @@ The resulting simulation shows the manipulator assembly starting in the zeroed c
   \caption{Open-Loop Control Simulation Animation Snapshots}
   \label{fig:olsnaps}
 \end{figure}
-\looseness=-1
+
+The plots shown in \emph{Figure \ref{fig:oljplots1}} depict the joint angles vs. time for the open loop simulation. As mentioned previously, the system started in the zeroed configuration, then accelerated due to the effects of gravity. The gravitational effects cause the system to behave chaotically, which is to be expected of an asymmetrical double-pendulum system. This chaotic motion is represented by the irregular behavior shown in the plots.
 
 \begin{figure}[htp]
   \center
@@ -363,7 +383,6 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
   \label{fig:clsnaps}
 \end{figure}
 
-% The closed-loop system can now be simulated, the results are shown below in Figure (\ref{fig:jplots}).
 \begin{figure}[htp]
   \center
   \includegraphics[width=.95\textwidth]{cljplots1}
@@ -387,7 +406,7 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
   \label{fig:cljplots3}
 \end{figure}
 
-\newpage\null\newpage
+\newpage
 \subsection{ANSYS}
 With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 0.014 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
 
