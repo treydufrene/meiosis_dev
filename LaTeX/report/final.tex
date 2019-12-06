@@ -7,7 +7,7 @@
 The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to increase the accessibility of robotics to secondary educational institutions and hobbyists. Accordantly, the manipulator is 3D printed in PLA with aluminum tube supports and costs the end-user less than \$1000. The manipulator has six links and a base. The base houses a Raspberry Pi 3B and power supply. The Raspberry Pi controls seven Dynamixel smart servos with position feedback and proportional derivative control. Six MX-12W servos actuate six rotational joints, while one AX-12A servo actuates the removable end-effector. They provide the manipulator a position repeatability within 2mm of the previous pose. The manipulator can draw as well as perform pick and place operations within its dexterous workspace which is a hemispherical sub-shell of the reachable workspace of 280 mm thickness. The manipulator’s operation is controlled by open-source software.
 \end{abstract}
 % {\tableofcontents\let\clearpage\relax\listoffigures\let\clearpage\relax}
-{\tableofcontents\clearpage\listoffigures\clearpage\listoftables}
+{\tableofcontents\clearpage\listoffigures\listoftables}
 \clearpage
 \newpage
 \section*{List Of Acronyms and Abbreviations}
@@ -38,13 +38,7 @@ The Manipulator for Educational Institutions with Open Source Integrated Systems
 
 \pagenumbering{arabic}
 \section{Introduction}
-The Rethink Robotics Sawyer manipulator retails for \$29,000 \cite{rr}. The Prescott Embry-Riddle robotics lab has 1 and the University's average student pays \$35,654 annually -- after financial aid \cite{ff}. Further, \$25,000 to \$35,000 is a common price for manipulators with a reach of approximately 1 meter and payload capacity below 1 kg \cite{gg}. While Trossen Robotics offers low cost manipulators between one sixth and one sixtieth of Sawyer’s cost, for accuracy of 1mm, the cost is still around \$2,000. For secondary education institutions, robotics is cost prohibitive. Consequently, students have less opportunities in high school to learn about robotics. The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to increase the accessibility of robotics education to secondary education institutions and hobbyists.
-
-In biology, meiosis is a process of cell division similar to mitosis. However, unlike mitosis, the resulting daughter cells are used to create new life during sexual recombination. Meiosis occurs in two sets of cell division: meiosis I and meiosis II. Analogously, MEIOSIS has a Preliminary and Detail semester. During meiosis I, chromosomes pair up and swap genetic material (DNA) in preparation for cell division. Then, during meiosis II, the parent cell splits into two haploids, which each split into two gametes. The gamete cells have half the number of chromosomes compared to a cell produced by mitosis and are not identical to their parent cell. When combined with another gamete, a new, unique cell emerges. MEIOSIS does not change the DNA of robotics. However, in combining with user needs and incorporating innovative design elements, MEIOSIS brings new life to robotics education.
-
-This document outlines MEIOSIS’s solution for increasing the accessibility of robotics education, current project status, and plans for the Detail semester. Specifically, it is subdivided into four sections: Requirements, Conceptual Design, Specifications, and Preliminary Design. The Preliminary Design comprises the majority of the document. It explains the evolution of MEIOSIS’s manipulator, noting design decisions and changes made from simulations, tested parts, and motor calculations. Finally, an appendix contains simulation code and drawings for all parts.
-
-
+\input{intro}
 \section{Requirements}
 The requirements of the system concisely define the capabilities the system must possess in order to solve the stated problem.
 \input{requirements}
@@ -103,8 +97,6 @@ The manipulator will be six degrees of freedom and will feature a spherical wris
 \end{figure}
 
 \emph{Figure \ref{fig:assy_mech}}  shows the link in the wrist that utilizes a special design to ensure proper assembly. The link itself is two parts which connect together on both sides of the link at point (a), this allows for the differential gearbox to be assembled and inserted into the wrist without interference from link 4. Once assembled, the link will attach to the smart servo at point (b).
-
-
 
 \subsubsection{Pulleys}
 A 12 tooth and 120 tooth pulleys provide a 10:1 gear ratio and use a 0.25 in wide MXL belt. The center distance between the pulleys must be at least 5.43 in to have 5 teeth meshing. Because of the high gear ratio, greater distances do not increase the number of teeth in mesh. \emph{Figure \ref{fig:pulley12}} shows the distance between the manipulator’s first two pulleys is 235.185 mm or 9.259 in, which corresponds to a belt with 300 and pitch diameter of 24 in.
@@ -211,7 +203,6 @@ The inverse kinematics can be calculated given desired position and orientation 
 \end{aligned}
 \nonumber
 \end{equation}
-% \newpage
 
 \subsection{Equations of Motion}
 Given robot dynamics described by \(H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=F_{\gamma},\) the equations of motion for
@@ -399,19 +390,19 @@ With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The m
 
 \begin{figure}[htp]
   \center
-  \includegraphics[width=.99\textwidth, frame]{tbar}
+  \includegraphics[width=.5\textwidth, frame]{tbar}
   \caption{T-Bar ANSYS FEA}
   \label{fig:tbar}
 \end{figure}
 
-To simulate a dynamical loading situation where the manipulator would be under the largest amount of stress, gravitational forces and an outward force (parallel to the arm direction in it's zeroed configuration) were applied to the structure. This situation represents the worst-case loading scenario, such as the manipulator swinging while outstretched. The supports and simulated forces can be seen in the ANSYS image capture shown in \emph{Figure \ref{fig:ansys_forces}}. \\
-
+To simulate a dynamical loading situation where the manipulator would be under the largest amount of stress, gravitational forces and an outward force (parallel to the arm direction in it's zeroed configuration) were applied to the structure. This situation represents the worst-case loading scenario, such as the manipulator swinging while outstretched. The supports and simulated forces can be seen in the ANSYS image capture shown in \emph{Figure \ref{fig:ansys_forces}}.
 \begin{figure}[htp]
   \center
-  \includegraphics[width=.99\textwidth, frame]{ansys_forces}
+  \includegraphics[width=.55\textwidth, frame]{ansys_forces}
   \caption{ANSYS Simulated Forces Image Capture}
   \label{fig:ansys_forces}
 \end{figure}
+\newpage
 As shown in \emph{Figure \ref{fig:ansys_forces}}, the red arrow is the outward force simulating centrifugal forces, the yellow arrow represents gravity acting at the manipulator's center of mass, and the yellow highlighted faces show the fixed support at the base.
 
 The dynamical loadings resulted in a maximum shear stress at the shoulder differential bearing, as seen in \emph{Figure \ref{fig:ansys_full}}; a close-up image of the bearing analysis can be seen in \emph{Figure \ref{fig:ansys_bearing}}.
@@ -434,11 +425,10 @@ The dynamical loadings resulted in a maximum shear stress at the shoulder differ
 \end{figure}
 
 To further validate that the structure is capable of handling alternating stresses, a fatigue test was also performed showing the life of the manipulator handles a minimum of 1e6 cycles, as seen in \emph{Figure \ref{fig:ansys_life}}, showing it is unlikely to fail due to material yeilding.
-\newpage
 
 \begin{figure}[htp]
   \center
-  \includegraphics[width=.99\textwidth, frame]{ansys_life}
+  \includegraphics[width=.6\textwidth, frame]{ansys_life}
   \caption{ANSYS Fatigue Test}
   \label{fig:ansys_life}
 \end{figure}
@@ -458,7 +448,8 @@ The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a p
 \newpage
 \subsection{Software Flowchart}
 % The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
-
+\captionsetup[sub]{
+    labelformat=r-parens} 
 The software the system uses takes in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and runs the manipulator through the desired points following the specified paths requested. The general overview of the code is shown in \emph{Figure \ref{fig:soverall}}.
 
 \begin{figure}[htp]
@@ -508,7 +499,7 @@ The next block in the software flowchart calculates the total points necessary t
 \end{figure}
 
 As seen in \emph{Figure \ref{fig:sf3}}, the section of software calculates the distance between the current point and the previous point if the path type is cartesian straight line and divides the distance by ten to find the number of centimeters between the two points. This value is stored as the necessary number of intermediate points, and the software will loop through until every point has been checked. The section of code also stores the total number of points that will be used as the variable level for later use.
-
+\newpage
 The fourth code block in the flowchart creates and stores the necessary intermediate points along the desired path, shown in \emph{Figure \ref{fig:sf4}}.
 
 \begin{figure}[htp] \ContinuedFloat
