@@ -38,5 +38,5 @@
 \contentsline {subsection}{\numberline {5.9}ANSYS}{32}% 
 \contentsline {subsection}{\numberline {5.10}Electrical Schematic}{34}% 
 \contentsline {subsection}{\numberline {5.11}Software Flowchart}{35}% 
-\contentsline {subsection}{\numberline {5.12}Project Status and Future}{39}% 
-\contentsline {subsection}{\numberline {5.13}Parts List}{40}% 
+\contentsline {subsection}{\numberline {5.12}Project Status and Future}{40}% 
+\contentsline {subsection}{\numberline {5.13}Parts List}{42}% 

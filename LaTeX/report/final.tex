@@ -318,7 +318,19 @@ The plots shown in \emph{Figure \ref{fig:oljplots1}} depict the joint angles vs.
 
 \newpage
 \subsection{Closed-Loop Simulation}
-The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of differential drive systems means that the joint angles, $\gamma$ do not directly correspond to motor rotations, $\theta$. However, there is a linear relation between them, described in equation (\ref{eq:A}).
+The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of differential drive systems means that the joint angles, $\gamma$, do not directly correspond to motor rotations, $\theta$, as shown in \emph{Figure \ref{fig:motorloc}}.
+
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.75\textwidth,frame]{motorloc}
+  \caption{Motor Locations and Orientations}
+  \label{fig:motorloc}
+\end{figure}
+
+\emph{Figure \ref{fig:motorloc}} shows the motor positions and relative orientations.
+This layout was used to define a linear relation between the joint angles and the motor rotations, described in equation (\ref{eq:A}).
+
 \begin{equation}
   \gamma = A\theta\quad \text{where}~~A=\left[\begin{array}{cccccc}{1 /(2 N)} & {1 /(2 N)} & {0} & {0} & {0} & {0} \\ {1 /(2 N)} & {-1 /(2 N)} & {0} & {0} & {0} & {0} \\ {0} & {0} & {-1 / N} & {0} & {0} & {0} \\ {0} & {0} & {0} & {1} & {0} & {0} \\ {0} & {0} & {0} & {0} & {-1 / 2} & {1 / 2} \\ {0} & {0} & {0} & {0} & {1 / 2} & {1 / 2}\end{array}\right]
 \label{eq:A}
@@ -564,29 +576,48 @@ The code in \emph{Figure \ref{fig:sf6}} prompts the user to press space to close
 % \includepdf[landscape,pages=-]{sflow}
 \newpage
 \subsection{Project Status and Future}
-\begin{itemize}[label=---]
-  \item Print Differential
-  \item Cut Aluminum Supports
-  \item Print Base
-  \item Print Link 1
-  \item Test Link 1 and Differential
-  \item Print Differential Support
-  \item Test Differential
-  \item Test Link 1 Pulleys
-  \item Test Link 1 with Motors
-  \item Test Motor Control of Differential
-  \item Test Link 1 With Load
-  \item Implement Kinematics in Python
-  \item Test Kinemtics with Motors
-\end{itemize}
-% The Gantt chart can be seen on the following page.
-% \includepdf[landscape,pages=-]{gantt}
+The manipulator has a reachable workspace of 588.25 mm. This workspace is within the specified workspace of 300-700 mm. Within the reachable workspace, the manipulator has the specified 280 mm thick reachable hemispherical subshell 190 mm from the base. Using 100:1 geared MX-12W smart servos, the precion from the first three links is 0.0008 degrees, far less than the minimum specified joint angle precision of 0.025 degrees. Increased angular precision allows for greater imprecision in other physical features of the design. With the 100:1 gear ratio provided by the double pulley system, the manipulator can lift itself. The double pulley system is shown in \emph{Figure \ref{fig:drawn}} on Link 3. It does the aforementioned within the end-user’s budget of \$1000 and MEIOSIS’s budget of \$800.
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=.9\textwidth,frame]{drawn}
+  \caption{Double Pulley Design Revision Drawing}
+  \label{fig:drawn}
+\end{figure}
+\newpage
+\emph{Figure \ref{fig:gantt}} shows a high-level Gantt chart for the Detail semester.
+
+\begin{figure}[htp]
+  \center
+  \includegraphics[width=\textwidth]{gantt}
+  \caption{Gantt Chart}
+  \label{fig:gantt}
+\end{figure}
+
+After spring break, 13 March, the Gantt chart allots one month for improvements to the design. While not specified features, adding object detection and 3D printable end-effector patterns would increase the manipulator’s educational value without increasing its cost. Alternatively, this month permits for several iterations of the manipulator to be printed either for design optimisation or to remediate unanticipated issues with meeting specifications.Since the pulleys are 3D printed several days are allocated to refining their tolerances to mesh with timing belts. Rather than printing in PLA, they may be printed in resin for increased tolerance precision. Further, the shafts will be 3D printed and may require an additional support to avoid the shear stress of a cantilever beam near joint 3 and the wrist differential. The remaining physical system is printed and tested concurrently with the software implementation.
+
+% \begin{itemize}[label=---]
+%   \item Print Differential
+%   \item Cut Aluminum Supports
+%   \item Print Base
+%   \item Print Link 1
+%   \item Test Link 1 and Differential
+%   \item Print Differential Support
+%   \item Test Differential
+%   \item Test Link 1 Pulleys
+%   \item Test Link 1 with Motors
+%   \item Test Motor Control of Differential
+%   \item Test Link 1 With Load
+%   \item Implement Kinematics in Python
+%   \item Test Kinemtics with Motors
+% \end{itemize}
+
+
 \newpage
 \subsection{Parts List}
-\emph{Table \ref{tab:bom1}} lists the parts MEIOSIS will require to build the manipulator. The total cost is \$629.22 including shipping. Specification 1.1b required MEIOSOS’s cost to develop the manipulator be less than \$800. In addition to pulley belts for the current configuration, \emph{Table \ref{tab:bom1}} allocates \$20 for two additional belt sizes to increase joint 1/2’s and joint 3’s torque by a factor of 10. One belt size and the belt must be purchased in packs of 3 from Automation Direct. \emph{Table \ref{tab:bom1}}  accounts for increased cable lengths of 500 mm to communication bus signals from motor 2 to 3 and motor 3 to 4 and 350 mm to communication bus signals from motor 5 to 6. Motors are identified in [ZACK’S FIGURE]. Aside from electronic hardware, Figure ZZ accounts for physical hardware: To 100 threaded press-fit inserts. The manipulator will require between 21 and 46 inserts. The majority of inserts attach MX-12W servos to the manipulator. Mounting hardware accompanies each servo.
-%TODO: [ZACK’S FIGURE] ^
-
-\renewcommand{\arraystretch}{1.25}
+\emph{Table \ref{tab:bom1}} lists the parts MEIOSIS will require to build the manipulator. The total cost is \$629.22, including shipping. Specification 1.1b requires MEIOSOS’s cost to develop the manipulator be less than \$800. In addition to pulley belts for the current configuration, \emph{Table \ref{tab:bom1}} allocates \$20 for two additional belt sizes to increase joint 1/2’s and joint 3’s torque by a factor of 10. The belts must be purchased in packs of 3 from Automation Direct and two more belt sizes may be required for the two pulley design to allow the servos to be mounted without interfering with the base. \emph{Table \ref{tab:bom1}} also accounts for increased cable lengths of 500 mm to communication bus signals from motor 2 to 3 and motor 3 to 4. And cable lengths of 350 mm to communication bus signals from motor 5 to 6. Motors are identified in [MOTOR ORIENTATION FIGURE]. Aside from electronic hardware, \emph{Table \ref{tab:bom2}} for physical hardware.
+To allow screw mounting in plastic with metal threads, \emph{Table \ref{tab:bom2}} accounts for 100 threaded press-fit inserts. The manipulator will require between 21 and 46 inserts.The majority of inserts attach MX-12W servos to the manipulator. Mounting hardware accompanies each servo. Since purchasing six sets of pulleys would put MEIOSIS over the \$800 budget, they are printed.
+\renewcommand{\arraystretch}{1.15}
 \begin{table}[htp]
   \center
   \caption{MEIOSIS Bill of Materials with Costs}
@@ -614,7 +645,10 @@ Digi-Key &  & &  & 8.99 \\
 \end{tabular}
 \end{table}
 
-In addition to the costs listed in \emph{Table \ref{tab:bom1}}, \emph{Table \ref{tab:bom2}} shows all further costs for the end-user. Since the Embry-Riddle robotics lab has 3D printing available without affecting MEIOSIS’s \$800 budget, \emph{Table \ref{tab:bom2}} accounts for outsourced 3D printing costs sufficient to print the entire manipulator with six sets of pulleys. If the end-user owns a 3D printer, the 3D printing cost would effectively reduce to filament cost. Additionally, \emph{Table \ref{tab:bom2}} assumes the end-user does not already possess an AX-12A servo to be used with the end-effector. Further, \emph{Table \ref{tab:bom2}} assumes the manipulator would be more accessible to end-users by using a proprietary U2D2 communication module in lieu of a soldered or bread-board circuit. The robotics lab has an AX-12A servo and U2D2 communication module MEIOSIS will use. With the aforementioned additional costs, the MEIOSIS manipulator costs the end-user \$1,007.98 including shipping costs. While \$1,007.98 is slightly above the maximum cost of \$1000 from specification 1.1a, it provides greater accessibility, which may be diminished by assuming end-users posess 3D printers.
+In addition to the costs listed in \emph{Table \ref{tab:bom1}}, \emph{Table \ref{tab:bom2}} shows further costs for the end-user highlighted in blue. Since the Embry Riddle robotics lab has 3D printing available without affecting MEIOSIS’s \$800 budget, \emph{Table \ref{tab:bom2}} accounts for outsourced 3D printing costs sufficient to print the entire manipulator with six sets of pulleys. If the end-user owns a 3D printer, the 3D printing cost would effectively reduce to filament cost. Additionally, \emph{Table \ref{tab:bom2}} assumes the end-user does not already possess an AX-12A servo to be used with the end-effector. Further, \emph{Table \ref{tab:bom2}} assumes the manipulator would be more accessible to end-users by using a proprietary U2D2 communication module in lieu of a soldered or bread-board circuit.
+The robotics lab has an AX-12A servo and U2D2 communication module MEIOSIS will use. With the aforementioned additional costs, the MEIOSIS manipulator costs the end-user  \$1,007.98 including shipping costs. While \$1,007.98 is slightly above the maximum cost of \$1000 from specification 1.1a, it provides greater accessibility, which may be diminished by assuming end-users poses 3D printers.
+
+% In addition to the costs listed in \emph{Table \ref{tab:bom1}}, \emph{Table \ref{tab:bom2}} shows all further costs for the end-user. Since the Embry-Riddle robotics lab has 3D printing available without affecting MEIOSIS’s \$800 budget, \emph{Table \ref{tab:bom2}} accounts for outsourced 3D printing costs sufficient to print the entire manipulator with six sets of pulleys. If the end-user owns a 3D printer, the 3D printing cost would effectively reduce to filament cost. Additionally, \emph{Table \ref{tab:bom2}} assumes the end-user does not already possess an AX-12A servo to be used with the end-effector. Further, \emph{Table \ref{tab:bom2}} assumes the manipulator would be more accessible to end-users by using a proprietary U2D2 communication module in lieu of a soldered or bread-board circuit. The robotics lab has an AX-12A servo and U2D2 communication module MEIOSIS will use. With the aforementioned additional costs, the MEIOSIS manipulator costs the end-user \$1,007.98 including shipping costs. While \$1,007.98 is slightly above the maximum cost of \$1000 from specification 1.1a, it provides greater accessibility, which may be diminished by assuming end-users posess 3D printers.
 
 \renewcommand{\arraystretch}{1.25}
 \begin{table}[htp]
@@ -673,6 +707,7 @@ We would like to acknowledge the following people for their contibutions in crea
 % \subsection{CAD Drawings}
 The complete drawing package is attached.
 \includepdf[landscape,pages=-]{drawings}
+\includepdf[landscape,pages=-]{pulleys}
 \hiddenappsub{Salient Code}
 % \subsection{Salient Code}
 \input{mmodel}
