@@ -50,9 +50,9 @@ The requirements of the system concisely define the capabilities the system must
 \input{specs}
 \newpage
 \section{Preliminary Design}
-The preliminary design section represents the most up-to-date status of the project and also encompasses information pertaining to several different specific design choices that had to be considered. The computer aided design section contains information regarding the physical design of the manipulator as well as noting key design features; the actuator analysis section contains information regarding actuator considerations and calculations being that the servo motors play an essential role in the functionality of the final system.
+The preliminary design section represents the most up-to-date status of the project and also encompasses information pertaining to several different specific design choices that had to be considered. The computer aided design section contains information regarding the physical design of the manipulator as well as noting key design features; the actuator analysis section contains information regarding actuator considerations and calculations since the servo motors play an essential role in the functionality of the final system.
 \subsection{Computer Aided Design}
-The manipulator will be six degrees of freedom and will feature a spherical wrist. This design incorporates two different differential drive gearboxes that each control two degrees of freedom. This is to reduce the amount of required torques from the motors on the shoulder joint and reduce size in the wrist. In order to achieve accuracy requirements, timing belts are incorporated into the design in order to control the first three degrees of freedom. The following figure shows the join configuration used in the design of the manipulator.
+The manipulator has six degrees of freedom and features a spherical wrist. This design incorporates two different differential drive gearboxes that each control two degrees of freedom. This is to reduce the amount of torque required from the motors on the shoulder joint and reduce the size of the wrist. In order to achieve accuracy requirements, timing belts are incorporated into the design in order to control the first three degrees of freedom. The following figure shows the joint configuration used in the design of the manipulator.
 
 \begin{figure}[htp]
   \center
@@ -62,13 +62,13 @@ The manipulator will be six degrees of freedom and will feature a spherical wris
 \end{figure}
 \emph{Figure \ref{fig:meiosis_zeroed}} shows the zeroed configuration for the manipulator with callouts showing the link locations.
 \begin{enumerate}[label=\alph*.]
-  \item The \emph{Manipulator Base} is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections.
-  \item \emph{Link 1 \& Differential Drive} have three bevel gears to create the first differential drive rotational joint of the manipulator.
-  \item \emph{Link 2} has servos located at the end of the link to control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts.
-  \item \emph{Link 3} contains two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom which is the first degree of freedom for the wrist.
-  \item \emph{Link 4 }houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox.
-  \item \emph{Link 5} provides support for the wrist’s differential drive gearbox.
-  \item The \emph{End Effector} features connection points to hold a Dynamixel AX-12A smart servo.
+  \item The {Manipulator Base} is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections.
+  \item {Link 1 \& Differential Drive} have three bevel gears to create the first differential drive rotational joint of the manipulator.
+  \item {Link 2} has servos located at the end of the link to control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts.
+  \item {Link 3} contains two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom, which is the first degree of freedom in the wrist.
+  \item {Link 4 }houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox.
+  \item {Link 5} provides support for the wrist’s differential drive gearbox.
+  \item The {End Effector} features connection points to hold a Dynamixel AX-12A smart servo.
 \end{enumerate}
 % \emph{Figure \ref{fig:meiosis_zeroed}} shows the zeroed configuration for the manipulator with callouts showing the link locations. Point (a) shows the base of the manipulator. This is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections. Point (b) shows the first link of the robot and is the location of the first differential drive gearbox. Point (c) shows the second link of the robot, the servos located at the end of the link control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts. Point (d) shows the third link of the robot, there are two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom which is the first degree of freedom for the wrist. Point (e) shows the fourth link of the manipulator which houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox. Point (f) shows the fifth and final link of the robot. This link is support for the wrist’s differential drive gearbox. Finally, point (g) shows the end effector which features connection points to hold a Dynamixel AX-12A smart servo. The next figure shows key features that are unique to links two and three.
 
@@ -81,9 +81,9 @@ The manipulator will be six degrees of freedom and will feature a spherical wris
 
 \emph{Figure \ref{fig:linkx}} shows the cross-section for link two with callouts for key features in the design.
 \begin{enumerate}[label=\alph*.]
-  \item \emph{Clamping mechanisms} connect the aluminum pipe to the 3-D printed parts. This will allow for an easy way to assemble the manipulator while allowing for a large amount of tolerance in the length of the pipe when manufacturing the part.
+  \item {Clamping mechanisms} connect the aluminum pipe to the 3-D printed parts. This allows for an easy way to assemble the manipulator while allowing for error in the length of the pipe when manufacturing the part.
   \item Shows an example of the gaps between the aluminum pipe and the 3-D printed parts.
-  \item Shows where the 3-D printed parts will line up to ensure that the link is the correct length and orientation.
+  \item Shows where the 3-D printed parts line up to ensure that the link is the correct length and orientation.
 \end{enumerate}
 % Point (a) shows two clamping mechanisms that will be used to connect the aluminum pipe to the 3-D printed parts. This will allow for an easy way to assemble the manipulator while allowing for a large amount of tolerance in the length of the pipe when manufacturing the part. Point (b) shows an example of the gaps between the aluminum pipe and the 3-D printed parts. Point (c) shows where the 3-D printed parts will line up to ensure that the link is the correct length and orientation.
 \emph{Figure \ref{fig:assy_mech}} contains an image of the design utilized to keep the assembly of the robot easy and practical.
@@ -96,31 +96,34 @@ The manipulator will be six degrees of freedom and will feature a spherical wris
   \label{fig:assy_mech}
 \end{figure}
 
-\emph{Figure \ref{fig:assy_mech}}  shows the link in the wrist that utilizes a special design to ensure proper assembly. The link itself is two parts which connect together on both sides of the link at point (a), this allows for the differential gearbox to be assembled and inserted into the wrist without interference from link 4. Once assembled, the link will attach to the smart servo at point (b).
+\emph{Figure \ref{fig:assy_mech}}  shows the link in the wrist that utilizes a special design to ensure proper assembly. The link itself is two parts which connect together on both sides of the link at point (a), this allows for the differential gearbox to be assembled and inserted into the wrist without interference from link 4. Once assembled, the link attaches to the smart servo at point (b).
 
 \subsubsection{Pulleys}
-A 12 tooth and 120 tooth pulleys provide a 10:1 gear ratio and use a 0.25 in wide MXL belt. The center distance between the pulleys must be at least 5.43 in to have 5 teeth meshing. Because of the high gear ratio, greater distances do not increase the number of teeth in mesh. \emph{Figure \ref{fig:pulley12}} shows the distance between the manipulator’s first two pulleys is 235.185 mm or 9.259 in, which corresponds to a belt with 300 and pitch diameter of 24 in.
+A 12 tooth and 120 tooth pulleys provide a 10:1 gear ratio and use a 0.25 in wide MXL belt. The center distance between the pulleys must be at least 5.43 in to have 5 teeth meshing, which is the minimum for reliable operation. Because of the high gear ratio, greater distances do not increase the number of teeth in mesh. The pulley and belt system for link 2 are represented in \emph{Figure \ref{fig:pulley12}}.
+
 \begin{figure}[htp]
   \center
   \includegraphics[width=.65\textwidth,frame]{pulley12}
   \caption{Pulley 1-2 Center Distance}
   \label{fig:pulley12}
 \end{figure}
-\emph{Figure \ref{fig:pulley3}} shows the center distance between the second pulleys is 139.960 mm or 5.510 in. The corresponding belt has 208 teeth with a 16.6 in pitch diameter.
+\emph{Figure \ref{fig:pulley12}} shows the distance between the manipulator’s first two pulleys is 235.185 mm, or 9.259 in, which corresponds to a belt with 300 teeth and a pitch diameter of 24 in. The pulley and belt system for link 3 are represented in \emph{Figure \ref{fig:pulley3}}.
+
 \begin{figure}[htp]
   \center
   \includegraphics[width=.65\textwidth,frame]{pulley3}
   \caption{Pulley 3 Center Distance}
   \label{fig:pulley3}
 \end{figure}
+\emph{Figure \ref{fig:pulley3}} shows the center distance between the second pulleys is 139.960 mm or 5.510 in. The corresponding belt has 208 teeth with a 16.6 in pitch diameter.
 \subsection{Actuator Analysis}
-Dynamixel does not provide a stall torque for the MX-12W servo, however it does provide stall torque data for two similar servos. The MX-12W’s stall torque can be found from the stall torque data since the motor are the same. The stall torque of the MX-12W should be comparable to the AX-12W’s stall torque. The MX-12W and AX-12W operate at the same 12 V voltage, 32:1 gear ratio, and 470 rpm no load output speed. The AX-12A also operates at 12 V, but at with a 254:1 gear ratio and 59 rpm no load output speed. Torque and current are inversely related. If the AX-12A’s and AX-12W’s motors are the same, then when operating at the same voltage, the output speed of the AX-12W should equal to the output speed of the AX-12A multiplied by the ratio of the servos’ gear ratios and the torque of the AX-12W should be the AX-12A’s torque multiplied by the inverse of the gear ratios ratio:
+Dynamixel does not provide a stall torque for the MX-12W servo, however it does provide stall torque data for two similar servos. The MX-12W’s stall torque can be found from the stall torque data since the motors are the same. The stall torque of the MX-12W should be comparable to the AX-12W’s stall torque. The MX-12W and AX-12W operate at the same 12 V voltage, 32:1 gear ratio, and 470 rpm no load output speed. The AX-12A also operates at 12 V, but with a 254:1 gear ratio and 59 rpm no load output speed. Since torque and current are inversely related, and if the AX-12A’s and AX-12W’s motors are the same, then when operating at the same voltage, the output speed of the AX-12W should equal to the output speed of the AX-12A multiplied by the ratio of the servos’ gear ratios and the torque of the AX-12W should be the AX-12A’s torque multiplied by the inverse of the gear ratios ratio:
 \[ 59\cdot\frac{254}{32}=468 \cong 470 \]
 The AX-12A’s and MX-12W’s stall torques are 1.5Nm and 0.21Nm, respectively \cite{dyna}:
 \[ 1.5\cdot\frac{32}{254}=0.189\cong0.21\text{Nm} \]
 Therefore, the AX-12A and MX-12W use the same motor. Additionally, if operating at the same voltage, the stall torque is defined by the no load output speed and gear ratio. Since the MX-12W and AX-12A operate at the same 12 V voltage with the same 32:1 gear ratio and 470 rpm no load output speed, their stall torques should be the same. More specifically, it is between the AX-12W’s and the gear reduced AX-12A’s stall torques of 0.21Nm and 0.189Nm, respectively. Therefore, the stall MX-12W’s stall torque is within 0.01Nm of 0.2Nm. The manipulator is designed for the worst case scenario: 0.19 Nm.
 
-The first differential has its greatest torque when the manipulator is in the zeroed configuration. In the zeroed configuration, the arm is outstretched with gravity acting perpendicular to the arm’s length. Since the manipulator must only support a chisel tip dry erase Expo marker, the maximum torque may be approximated as the manipulator’s arm’s mass acting acting near the centroid. More mass from the servos and longer aluminum support in link 3 place the center of mass closer to the end-effector than the base. Therefore, the point at which the arm’s mass acts is assumed to be 273 mm from the base. These calculations will be further revised with mass parameters from the STL files generating the open and closed loop simulations. \emph{Table \ref{tab:arm1}} estimates the manipulator’s arm’s mass.
+The first differential faces its greatest torque when the manipulator is in the zeroed configuration. In the zeroed configuration, the arm is outstretched with gravity acting perpendicular to the arm’s length. Since the manipulator must only support a chisel tip dry erase Expo marker, the maximum torque may be approximated as the manipulator’s arm’s mass acting acting near the centroid. More mass from the servos and longer aluminum support in link 3 place the center of mass closer to the end-effector than the base. Therefore, the point at which the arm’s mass acts is assumed to be 273 mm from the base. These calculations will be further revised with mass parameters from the STL files used to generate the open and closed loop simulations. \emph{Table \ref{tab:arm1}} estimates the mass of the manipulator's arms.
 \begin{table}[htp]
   \center
   \caption{Manipulator Link 1 Mass Tabulations}
@@ -137,9 +140,9 @@ The first differential has its greatest torque when the manipulator is in the ze
 \end{tabular}
 \end{table}
 
-The total mass of 1340g as seen in \emph{Table \ref{tab:arm1}} yields a moment of 0.361 Nm or 3.685 kgm. To generate smooth motions, Dynamixel recommends operating at one fifth of the stall torque. Therefore, the actual maximum required torque is 1.805 Nm. An MX-12W provides 0.19 Nm of torque, necessitating a 10:1 gear ratio. While the AX-12A provides a greater torque of 1.5 Nm, it would also require gearing. It is only precise to 0.8 degrees, while the specifications require at least 0.29 degrees of precision for joints one and two. Further, the AX-12A only receives position feedback for 300 degrees of its rotation and cannot track multiple rotations, making it untenable for the base motor, which must rotate more than 360 degrees.
+The total mass of 1340g as seen in \emph{Table \ref{tab:arm1}}, yields a moment of 0.361 Nm or 3.685 kgm. To generate smooth motions, Dynamixel recommends operating at one fifth of the stall torque. Therefore, the actual maximum required torque is 1.805 Nm. An MX-12W provides 0.19 Nm of torque, necessitating a 10:1 gear ratio. While the AX-12A provides a greater torque of 1.5 Nm, it would also require gearing, The AX-12A is also only precise to 0.8 degrees, while the specifications require at least 0.29 degrees of precision for joints one and two. Further, the AX-12A only receives position feedback for 300 degrees of its rotation and cannot track multiple rotations, making it untenable for the base motor, which must rotate more than 360 degrees.
 
-The third joint’s torque requirements can be approximated in the same manner. However, links three, four, and five’s masses are assumed to act 200 mm from the third joint 3. \emph{Table \ref{tab:arm2}} estimates the links’ masses.
+The third joint’s torque requirements can be approximated in the same manner. However, links three, four, and five’s masses are assumed to act 200 mm from the third joint. \emph{Table \ref{tab:arm2}} estimates the links’ masses.
 
 \begin{table}[htp]
   \center
@@ -177,7 +180,7 @@ The translational and rotational velocties ($\dot{r}$ \& $\omega$) can be found 
 \]
 
 \subsection{Inverse Kinematics}
-The inverse kinematics can be calculated given desired position and orientation vectors, $o$ and $R$, respecitvely.
+The inverse kinematics can be calculated given desired position and orientation vectors, $o$ and $R$ respectively.
 \[
 \begin{bmatrix}x_c & y_c & z_c \end{bmatrix} = o~,\quad
   R =
@@ -384,7 +387,7 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
   \label{fig:cljplots3}
 \end{figure}
 
-\newpage
+\newpage\null\newpage
 \subsection{ANSYS}
 With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 0.014 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
 
@@ -436,7 +439,7 @@ To further validate that the structure is capable of handling alternating stress
 As seen in \emph{Figure \ref{fig:ansys_life}}, the lower bearing of the differential drive on the shoulder of the manipulator would be the most likely component to fail under repeating loadings.
 \newpage
 \subsection{Electrical Schematic}
-The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a power supply that receives 120V AC that is standardly supplied from wall outlets. The Power supply has two outputs, a 5V terminal that has a max current output of 3A, and a 12V terminal that has a max output of 7A. The Raspberry Pi 3B is powered by the 5V terminal, and since the max current draw from the Pi is 1.2A the maximum current draw from the terminal is not surpassed. The six MX-12W servos used in the manipulator, as well as the AX-12A servo used in the end effector, are connected in parallel across the 12V terminal from the power supply. Since the MX-12W has a stall current of .6A and the AX-12A has a stall current of 1.5A, the maximum current to be pulled from the 12V terminal would be 5.1A, less than the 7A the supply can output. In order to communicate to the servos, a U2D2 communication converter is connected to the Raspberry Pi which creates a serial connection used by the servos, allowing the servos to be daisy-chained together. The Raspberry Pi also connects to an external PC so that the user can communicate with the Pi using a mouse, keyboard, and monitor.
+The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a power supply that receives 120V AC that is standardly supplied from wall outlets. The power supply has two outputs, a 5V terminal that has a max current output of 3A, and a 12V terminal that has a max output of 7A. The Raspberry Pi 3B is powered by the 5V terminal, and since the max current draw from the Pi is 1.2A the maximum current draw from the terminal is not surpassed. The six MX-12W servos used in the manipulator, as well as the AX-12A servo used in the end effector, are connected in parallel across the 12V terminal from the power supply. Since the MX-12W has a stall current of .6A and the AX-12A has a stall current of 1.5A, the maximum current to be pulled from the 12V terminal would be 5.1A, less than the 7A the supply can output. In order to communicate to the servos, a U2D2 communication converter is connected to the Raspberry Pi which creates a serial connection used by the servos, allowing the servos to be daisy-chained together. The Raspberry Pi also connects to an external PC so that the user can communicate with the Pi using a mouse, keyboard, and monitor.
 \vfill
 \begin{figure}[htp]
   \centering
@@ -449,7 +452,7 @@ The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a p
 \subsection{Software Flowchart}
 % The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
 \captionsetup[sub]{
-    labelformat=r-parens} 
+    labelformat=r-parens}
 The software the system uses takes in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and runs the manipulator through the desired points following the specified paths requested. The general overview of the code is shown in \emph{Figure \ref{fig:soverall}}.
 
 \begin{figure}[htp]

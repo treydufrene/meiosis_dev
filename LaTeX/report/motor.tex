@@ -22,7 +22,7 @@ Substituing into equation (\ref{eq:va}) and solving for $i_a$:
   V_a = \frac{R_aJ_aN}{K}\ddot{\theta} + \frac{R_ab_aN}{K}\dot{\theta} + \frac{R_a}{KN\eta}\tau + KN\dot{\theta}
   \label{eq:newva}
 \end{equation}
-Assuming PD control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), where $\theta_d$ is the desired orientation of the actuator, the following solution is found by setting the PD solution equal to (\ref{eq:newva}). After collecting like terms:
+Assuming PD control, \(V_a = K_p(\theta-\theta_d) + K_d\dot{\theta}\), where $\theta_d$ is the desired orientation of the actuator, the following solution is found by setting the PD solution equal to equation (\ref{eq:newva}). After collecting like terms:
 
 \begin{equation}
   \frac{R_aJ_aN}{K}\ddot{\theta} + \left( \frac{R_aJ_aN}{K} - K_d + KN \right)\dot{\theta} - K_p\theta = -K_p\theta_d - \frac{R_a}{KN\eta}\tau
@@ -76,7 +76,7 @@ Performing a similar experiment as previously described, except with a known ine
 \end{bmatrix}
 \label{eq:soe}
 \end{equation}
-With multiple datasets (varying inertial loads, $J_m$), the solutions of (\ref{eq:soe}) can be found using the least-squares method, yeilding
+With multiple datasets (varying inertial loads, $J_m$), the solutions of equation (\ref{eq:soe}) can be found using the least-squares method, yeilding
 
 \begin{minipage}[c]{.5\textwidth}
 \begin{equation}
@@ -104,7 +104,7 @@ The MATLAB code implementing this process can be found in the Appendix (see sect
 % \newpage
 The torque provided by the servo can now be solved for, given the current position ($\theta$), velocity ($\dot{\theta}$), angular acceleration ($\ddot{\theta}$), and desired position ($\theta_d$) are known.
 
-Given the equation of motionfor the dynamical response of the system (\ref{eq:eoms}), substituting in the solution obtained for the motor dynamics and solving for the acceleration,
+Given the equation of motion for the dynamical response of the system (\ref{eq:eoms}), substituting in the solution obtained for the motor dynamics and solving for the acceleration,
 \[
 \left(H + J_aN^2\eta\right)^{-1} \left[\left(B - \frac{R_ab_aN^2\eta - KK_dN\eta + K^2N^2\eta}{R_a}\right)\dot{\gamma} - \left(\frac{KK_pN\eta}{R_a}\right)(\gamma_d - \gamma) - n\right]= \ddot{\gamma}
 \]
