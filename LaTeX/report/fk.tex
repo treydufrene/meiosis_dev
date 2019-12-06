@@ -6,74 +6,6 @@ The forward kinematics of the manipulator are described by the equations below, 
   \label{fig:coords}
 \end{figure}
 
-Given the lengths of each of the manipulator links,
-\[
-\begin{aligned}
-  ^I_Br_1 = \begin{bmatrix} 0\\0\\ \ell_b\end{bmatrix} & \quad
-  ^1_1r_2 = \begin{bmatrix} 0\\0\\ \ell_1\end{bmatrix} & \quad
-  ^2_2r_3 = \begin{bmatrix} 0\\\ell_2\\ 0\end{bmatrix} & \quad
-  ^3_3r_4 = \begin{bmatrix} 0\\\ell_3\\ 0\end{bmatrix} & \quad
-  ^4_4r_5 = \begin{bmatrix} 0\\\ell_4\\ 0\end{bmatrix} & \quad
-  ^5_5r_6 = \begin{bmatrix} 0\\\ell_5\\ 0\end{bmatrix} & \quad
-\end{aligned}
-\]
-The position of each link relative to the inertial frame is given as:
-\[
-\begin{aligned}
-^I_Br_1 &= {}_Br_1 &\quad
-^I_Br_2 &= r_1 + {}^IT_1 {}^1_1r_2 &\quad
-^I_Br_3 &= r_2 + {}^IT_2 {}^2_2r_3 \\
-^I_Br_4 &= r_3 + {}^IT_3 {}^3_3r_4 &\quad
-^I_Br_5 &= r_4 + {}^IT_4 {}^4_4r_5 &\quad
-^I_Br_6 &= r_5 + {}^IT_5 {}^5_5r_6
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-  ^I_Br_1 =&
-  \begin{bmatrix}
-    0\\ 0\\ \ell_b
-  \end{bmatrix} & \quad
-  ^I_Br_2 =
-  \begin{bmatrix}
-    0\\ 0\\ \ell_b + \ell_1
-  \end{bmatrix} & \quad
-  ^I_Br_3 =
-  \begin{bmatrix}
-    -\ell_2c_{\theta_2}s_{\theta_1}\\
-    \ell_2c_{\theta_{12}}\\
-    \ell_b+\ell_1+\ell_2s_{\theta_2}
-  \end{bmatrix} & \quad
-  ^I_Br_4 =
-  \begin{bmatrix}
-    -s_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
-    c_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
-    \ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_2s_{\theta_2}
-  \end{bmatrix} \\
-\end{aligned}
-  \]
-  \[
-  ^I_Br_5 =
-  \begin{bmatrix}
-    -s_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_4c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
-    c_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_4c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
-    \ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_4s_{\theta_{23}} + \ell_2s_{\theta_2}
-  \end{bmatrix}
-  \]
-  \[
-  ^I_Br_6 =
-  \begin{bmatrix}
-  \begin{aligned}
-      &\ell_5c_{\theta_1}s_{\theta_4}s_{\theta_5} - \ell_4c_{\theta_{23}}s_{\theta_1} - \ell_2c_{\theta_2}s_{\theta_1} - \ell_5c_{\theta_{23}}c_{\theta_5}s_{\theta_1} - \ell_3c_{\theta_{23}}s_{\theta_1} \\
-      &\qquad\qquad+ \ell_5c_{\theta_2}c_{\theta_4}s_{\theta_1}s_{\theta_3}s_{\theta_5} + \ell_5c_{\theta_3}c_{\theta_4}s_{\theta_1}s_{\theta_2}s_{\theta_5} \\
-      &\ell_5(s_{\theta_5}(s_{\theta_1}s_{\theta_4} - c_{\theta_4}(c_{\theta_1}c_{\theta_2}s_{\theta_3} + c_{\theta_1}c_{\theta_3}s_{\theta_2})) - c_{\theta_5}(c_{\theta_1}s_{\theta_2}s_{\theta_3} - c_{\theta_1}c_{\theta_2}c_{\theta_3})) \\
-      &\qquad\qquad -\ell_3(c_{\theta_1}s_{\theta_2}s_{\theta_3} - c_{\theta_1}c_{\theta_2}c_{\theta_3}) -\ell_4(c_{\theta_1}s_{\theta_2}s_{\theta_3} - c_{\theta_1}c_{\theta_2}c_{\theta_3}) + \ell_2c_{\theta_1}c_{\theta_2} \\
-      &\ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_4s_{\theta_{23}} + \ell_2s_{\theta_2} + \dfrac{\ell_5c_{\theta_{23}}s_{\theta_{45}}}{2} + \ell_5s_{\theta_{23}}c_{\theta_5} - \dfrac{\ell_5s_{\theta_4 - \theta_5}c_{\theta_{23}}}{2}
-    \end{aligned}
-  \end{bmatrix}
-\]
-% \newpage
 Given the direction cosine matrices,
 \[
 rotx(\theta) = \begin{bmatrix}
@@ -173,4 +105,72 @@ s_{\theta_{23}}c_{\theta_5} + c_{\theta_{23}}c_{\theta_4}s_{\theta_5}\\
 ^IT_{6(3,3)} &=
 c_{\theta_6}(s_{\theta_{23}}s_{\theta_5} - c_{\theta_{23}}c_{\theta_4}c_{\theta_5}) - c_{\theta_{23}}s_{\theta_4}s_{\theta_6}
 \end{aligned}
+\]
+
+Given the lengths of each of the manipulator links,
+\[
+\begin{aligned}
+  ^I_Br_1 = \begin{bmatrix} 0\\0\\ \ell_b\end{bmatrix} & \quad
+  ^1_1r_2 = \begin{bmatrix} 0\\0\\ \ell_1\end{bmatrix} & \quad
+  ^2_2r_3 = \begin{bmatrix} 0\\\ell_2\\ 0\end{bmatrix} & \quad
+  ^3_3r_4 = \begin{bmatrix} 0\\\ell_3\\ 0\end{bmatrix} & \quad
+  ^4_4r_5 = \begin{bmatrix} 0\\\ell_4\\ 0\end{bmatrix} & \quad
+  ^5_5r_6 = \begin{bmatrix} 0\\\ell_5\\ 0\end{bmatrix} & \quad
+\end{aligned}
+\]
+The position of each link relative to the inertial frame is given as:
+\[
+\begin{aligned}
+^I_Br_1 &= {}_Br_1 &\quad
+^I_Br_2 &= r_1 + {}^IT_1 {}^1_1r_2 &\quad
+^I_Br_3 &= r_2 + {}^IT_2 {}^2_2r_3 \\
+^I_Br_4 &= r_3 + {}^IT_3 {}^3_3r_4 &\quad
+^I_Br_5 &= r_4 + {}^IT_4 {}^4_4r_5 &\quad
+^I_Br_6 &= r_5 + {}^IT_5 {}^5_5r_6
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+  ^I_Br_1 =&
+  \begin{bmatrix}
+    0\\ 0\\ \ell_b
+  \end{bmatrix} & \quad
+  ^I_Br_2 =
+  \begin{bmatrix}
+    0\\ 0\\ \ell_b + \ell_1
+  \end{bmatrix} & \quad
+  ^I_Br_3 =
+  \begin{bmatrix}
+    -\ell_2c_{\theta_2}s_{\theta_1}\\
+    \ell_2c_{\theta_{12}}\\
+    \ell_b+\ell_1+\ell_2s_{\theta_2}
+  \end{bmatrix} & \quad
+  ^I_Br_4 =
+  \begin{bmatrix}
+    -s_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    c_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    \ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_2s_{\theta_2}
+  \end{bmatrix} \\
+\end{aligned}
+  \]
+  \[
+  ^I_Br_5 =
+  \begin{bmatrix}
+    -s_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_4c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    c_{\theta_1}(\ell_3c_{\theta_{23}} + \ell_4c_{\theta_{23}} + \ell_2c_{\theta_2}) \\
+    \ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_4s_{\theta_{23}} + \ell_2s_{\theta_2}
+  \end{bmatrix}
+  \]
+  \[
+  ^I_Br_6 =
+  \begin{bmatrix}
+  \begin{aligned}
+      &\ell_5c_{\theta_1}s_{\theta_4}s_{\theta_5} - \ell_4c_{\theta_{23}}s_{\theta_1} - \ell_2c_{\theta_2}s_{\theta_1} - \ell_5c_{\theta_{23}}c_{\theta_5}s_{\theta_1} - \ell_3c_{\theta_{23}}s_{\theta_1} \\
+      &\qquad\qquad+ \ell_5c_{\theta_2}c_{\theta_4}s_{\theta_1}s_{\theta_3}s_{\theta_5} + \ell_5c_{\theta_3}c_{\theta_4}s_{\theta_1}s_{\theta_2}s_{\theta_5} \\
+      &\ell_5(s_{\theta_5}(s_{\theta_1}s_{\theta_4} - c_{\theta_4}(c_{\theta_1}c_{\theta_2}s_{\theta_3} + c_{\theta_1}c_{\theta_3}s_{\theta_2})) - c_{\theta_5}(c_{\theta_1}s_{\theta_2}s_{\theta_3} - c_{\theta_1}c_{\theta_2}c_{\theta_3})) \\
+      &\qquad\qquad -\ell_3(c_{\theta_1}s_{\theta_2}s_{\theta_3} - c_{\theta_1}c_{\theta_2}c_{\theta_3}) -\ell_4(c_{\theta_1}s_{\theta_2}s_{\theta_3} - c_{\theta_1}c_{\theta_2}c_{\theta_3}) + \ell_2c_{\theta_1}c_{\theta_2} \\
+      &\ell_1 + \ell_b + \ell_3s_{\theta_{23}} + \ell_4s_{\theta_{23}} + \ell_2s_{\theta_2} + \dfrac{\ell_5c_{\theta_{23}}s_{\theta_{45}}}{2} + \ell_5s_{\theta_{23}}c_{\theta_5} - \dfrac{\ell_5s_{\theta_4 - \theta_5}c_{\theta_{23}}}{2}
+    \end{aligned}
+  \end{bmatrix}
 \]

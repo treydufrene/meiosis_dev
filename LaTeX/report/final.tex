@@ -3,9 +3,9 @@
 \normalem
 \input{coverpage}
 \pagenumbering{roman}
-% \begin{abstract}
-%   Wordy words
-% \end{abstract}
+\begin{abstract}
+The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to increase the accessibility of robotics to secondary educational institutions and hobbyists. Accordantly, the manipulator is 3D printed in PLA with aluminum tube supports and costs the end-user less than \$1000. The manipulator has six links and a base. The base houses a Raspberry Pi 3B and power supply. The Raspberry Pi controls seven Dynamixel smart servos with position feedback and proportional derivative control. Six MX-12W servos actuate six rotational joints, while one AX-12A servo actuates the removable end-effector. They provide the manipulator a position repeatability within 2mm of the previous pose. The manipulator can draw as well as perform pick and place operations within its dexterous workspace which is a hemispherical sub-shell of the reachable workspace of 280 mm thickness. The manipulator’s operation is controlled by open-source software.
+\end{abstract}
 % {\tableofcontents\let\clearpage\relax\listoffigures\let\clearpage\relax}
 {\tableofcontents\clearpage\listoffigures\listoftables}
 \clearpage
@@ -60,8 +60,17 @@ The manipulator will be six degrees of freedom and will feature a spherical wris
   \caption{Manipulator in Zeroed Configuration with Callouts}
   \label{fig:meiosis_zeroed}
 \end{figure}
-
-\emph{Figure \ref{fig:meiosis_zeroed}} shows the zeroed configuration for the manipulator with callouts showing the link locations. Point (a) shows the base of the manipulator. This is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections. Point (b) shows the first link of the robot and is the location of the first differential drive gearbox. Point (c) shows the second link of the robot, the servos located at the end of the link control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts.Point (d) shows the third link of the robot, there are two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom which is the first degree of freedom for the wrist. Point (e) shows the fourth link of the manipulator which houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox. Point (f) shows the fifth and final link of the robot. This link is support for the wrist’s differential drive gearbox. Finally, point (g) shows the end effector which features connection points to hold a Dynamixel AX-12A smart servo. The next figure shows key features that are unique to links two and three.
+\emph{Figure \ref{fig:meiosis_zeroed}} shows the zeroed configuration for the manipulator with callouts showing the link locations.
+\begin{enumerate}[label=\alph*.]
+  \item The \emph{Manipulator Base} is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections.
+  \item \emph{Link 1 \& Differential Drive} have three bevel gears to create the first differential drive rotational joint of the manipulator.
+  \item \emph{Link 2} has servos located at the end of the link to control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts.
+  \item \emph{Link 3} contains two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom which is the first degree of freedom for the wrist.
+  \item \emph{Link 4 }houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox.
+  \item \emph{Link 5} provides support for the wrist’s differential drive gearbox.
+  \item The \emph{End Effector} features connection points to hold a Dynamixel AX-12A smart servo.
+\end{enumerate}
+% \emph{Figure \ref{fig:meiosis_zeroed}} shows the zeroed configuration for the manipulator with callouts showing the link locations. Point (a) shows the base of the manipulator. This is designed to hold the Raspberry Pi and power supply. The base features holes for airflow and I/O connections. Point (b) shows the first link of the robot and is the location of the first differential drive gearbox. Point (c) shows the second link of the robot, the servos located at the end of the link control the movement for the first two degrees of freedom at the shoulder and are connected to link 1 using timing belts. Point (d) shows the third link of the robot, there are two servos attached to the link that control the third degree of freedom (the elbow) and the fourth degree of freedom which is the first degree of freedom for the wrist. Point (e) shows the fourth link of the manipulator which houses the servos used to control the fifth and sixth degree of freedom, which are both in the wrist’s differential drive gearbox. Point (f) shows the fifth and final link of the robot. This link is support for the wrist’s differential drive gearbox. Finally, point (g) shows the end effector which features connection points to hold a Dynamixel AX-12A smart servo. The next figure shows key features that are unique to links two and three.
 
 \begin{figure}[htp]
   \center
@@ -70,11 +79,16 @@ The manipulator will be six degrees of freedom and will feature a spherical wris
   \label{fig:linkx}
 \end{figure}
 
-\emph{Figure \ref{fig:linkx}} shows the cross-section for link two with callouts for key features in the design. Point (a) shows two clamping mechanisms that will be used to connect the aluminum pipe to the 3-D printed parts. This will allow for an easy way to assemble the manipulator while allowing for a large amount of tolerance in the length of the pipe when manufacturing the part. Point (b) shows an example of the gaps between the aluminum pipe and the 3-D printed parts. Point (c) shows where the 3-D printed parts will line up to ensure that the link is the correct length and orientation.
+\emph{Figure \ref{fig:linkx}} shows the cross-section for link two with callouts for key features in the design.
+\begin{enumerate}[label=\alph*.]
+  \item \emph{Clamping mechanisms} connect the aluminum pipe to the 3-D printed parts. This will allow for an easy way to assemble the manipulator while allowing for a large amount of tolerance in the length of the pipe when manufacturing the part.
+  \item Shows an example of the gaps between the aluminum pipe and the 3-D printed parts.
+  \item Shows where the 3-D printed parts will line up to ensure that the link is the correct length and orientation.
+\end{enumerate}
+% Point (a) shows two clamping mechanisms that will be used to connect the aluminum pipe to the 3-D printed parts. This will allow for an easy way to assemble the manipulator while allowing for a large amount of tolerance in the length of the pipe when manufacturing the part. Point (b) shows an example of the gaps between the aluminum pipe and the 3-D printed parts. Point (c) shows where the 3-D printed parts will line up to ensure that the link is the correct length and orientation.
 
 \subsubsection{Pulleys}
 A 12 tooth and 120 tooth pulleys provide a 10:1 gear ratio and use a 0.25 in wide MXL belt. The center distance between the pulleys must be at least 5.43 in to have 5 teeth meshing. Because of the high gear ratio, greater distances do not increase the number of teeth in mesh. \emph{Figure \ref{fig:pulley12}} shows the distance between the manipulator’s first two pulleys is 235.185 mm or 9.259 in, which corresponds to a belt with 300 and pitch diameter of 24 in.
-\newpage
 \begin{figure}[htp]
   \center
   \includegraphics[width=.65\textwidth,frame]{pulley12}
@@ -133,10 +147,9 @@ Safety & & 205 & \\
 \end{table}
 
 The resulting moment is 1.630 Nm, which can be satisfied by the same motor and gear ratio used on the base.
-% \newpage
+
 \subsection{Forward Kinematics}
 \input{fk}
-% \newpage
 \subsection{Velocity Kinematics}
 The translational and rotational velocties ($\dot{r}$ \& $\omega$) can be found given the geometric jacobian of the body and transformation matrix corresponding to it.
 \[
@@ -267,8 +280,6 @@ The resulting simulation shows the manipulator assembly starting in the zeroed c
 \end{figure}
 
 \newpage
-% \subsection{Control System}
-% \newpage
 \subsection{Closed-Loop Simulation}
 The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of differential drive systems means that the joint angles, $\gamma$ do not directly correspond to motor rotations, $\theta$. However, there is a linear relation between them, described in equation (\ref{eq:A}).
 \begin{equation}
@@ -355,13 +366,9 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
   \label{fig:cljplots3}
 \end{figure}
 
-% \[
-% \delta W = \delta\gamma = \delta\theta
-% \]
-
 \newpage
 \subsection{ANSYS}
-With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 14 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
+With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 0.014 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
 
 \begin{figure}[htp]
   \center
@@ -370,7 +377,7 @@ With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The m
   \label{fig:tbar}
 \end{figure}
 
-To simulate a dynamical loading situation where the manipulator would be in the highest loading scenario, gravitational forces and an outward force (parallel to the arm direction in it's zeroed configuration) was applied to the structure. This situation represents the worst-case loading scenario, such as the manipulator swinging while outstretched. The supports and simulated forces can be seen in the ANSYS image capture shown in \emph{Figure \ref{fig:ansys_forces}}.
+To simulate a dynamical loading situation where the manipulator would be under the largest amount of stress, gravitational forces and an outward force (parallel to the arm direction in it's zeroed configuration) were applied to the structure. This situation represents the worst-case loading scenario, such as the manipulator swinging while outstretched. The supports and simulated forces can be seen in the ANSYS image capture shown in \emph{Figure \ref{fig:ansys_forces}}. \\
 
 \begin{figure}[htp]
   \center
@@ -378,28 +385,29 @@ To simulate a dynamical loading situation where the manipulator would be in the 
   \caption{ANSYS Simulated Forces Image Capture}
   \label{fig:ansys_forces}
 \end{figure}
-As shown in \emph{Figure \ref{fig:ansys_forces}}, the red arrow is the outward force, the yellow arrow represents gravity acting at the manipulator's center of mass, and the yellow highlighted faces show the fixed support at the base.
+As shown in \emph{Figure \ref{fig:ansys_forces}}, the red arrow is the outward force simulating centrifugal forces, the yellow arrow represents gravity acting at the manipulator's center of mass, and the yellow highlighted faces show the fixed support at the base.
 
 The dynamical loadings resulted in a maximum shear stress at the shoulder differential bearing, as seen in \emph{Figure \ref{fig:ansys_full}}; a close-up image of the bearing analysis can be seen in \emph{Figure \ref{fig:ansys_bearing}}.
 
 \begin{figure}[htp]
   \center
-  \begin{subfigure}[t]{0.6\textwidth}
+  \begin{subfigure}[t]{0.5\textwidth}
   \center
   \includegraphics[width=.9\textwidth,frame]{ansys_full}
   \caption{ANSYS Full View of Maximum Shear}
   \label{fig:ansys_full}
 \end{subfigure}%
-\begin{subfigure}[t]{0.4\textwidth}
+\begin{subfigure}[t]{0.5\textwidth}
   \center
-  \includegraphics[width=.8\textwidth,frame]{ansys_bearing}
+  \includegraphics[width=.75\textwidth,frame]{ansys_bearing}
   \caption{ANSYS Bearing Shear Stress Close-up}
   \label{fig:ansys_bearing}
 \end{subfigure}
   \caption{ANSYS FEA of Dynamical Loading Scenario}
 \end{figure}
 
-To further validate that the structure is capable of handling the load cases, a fatigue test was also performed and the life of the manipulator exceeds 10e8 cycles, as seen in \emph{Figure \ref{ansys_life}}, showing it is unlikely to fail due to material yeilding.
+To further validate that the structure is capable of handling alternating stresses, a fatigue test was also performed showing the life of the manipulator handles a minimum of 1e6 cycles, as seen in \emph{Figure \ref{fig:ansys_life}}, showing it is unlikely to fail due to material yeilding.
+\newpage
 
 \begin{figure}[htp]
   \center
@@ -408,7 +416,7 @@ To further validate that the structure is capable of handling the load cases, a 
   \label{fig:ansys_life}
 \end{figure}
 
-
+As seen in \emph{Figure \ref{fig:ansys_life}}, the lower bearing of the differential drive on the shoulder of the manipulator would be the most likely component to fail under repeating loadings.
 \newpage
 \subsection{Electrical Schematic}
 The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a power supply that receives 120V AC that is standardly supplied from wall outlets. The Power supply has two outputs, a 5V terminal that has a max current output of 3A, and a 12V terminal that has a max output of 7A. The Raspberry Pi 3B is powered by the 5V terminal, and since the max current draw from the Pi is 1.2A the maximum current draw from the terminal is not surpassed. The six MX-12W servos used in the manipulator, as well as the AX-12A servo used in the end effector, are connected in parallel across the 12V terminal from the power supply. Since the MX-12W has a stall current of .6A and the AX-12A has a stall current of 1.5A, the maximum current to be pulled from the 12V terminal would be 5.1A, less than the 7A the supply can output. In order to communicate to the servos, a U2D2 communication converter is connected to the Raspberry Pi which creates a serial connection used by the servos, allowing the servos to be daisy-chained together. The Raspberry Pi also connects to an external PC so that the user can communicate with the Pi using a mouse, keyboard, and monitor.
@@ -419,7 +427,7 @@ The electrical schematic shown in \emph{Figure \ref{fig:eschem}} consists of a p
   \caption{Electrical Schematic}
   \label{fig:eschem}
 \end{figure}
-\newpage
+
 \subsection{Software Flowchart}
 % The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
 
@@ -449,33 +457,41 @@ The second general block in the software flowchart works to receive and store th
   \caption[]{Software Flowchart Subsection 2}
   \label{fig:sf2}
 \end{figure}
+
 \emph{Figure \ref{fig:sf2}} shows that the path type variable ‘c’ is used to determine what information is necessary to collect. If the user is doing a writing task, the software only collects the x, y, and z distances for the point and assumes that the end effector orientation will be facing down so that the marker is vertical. If the user is doing pick and place, the software prompts the user for the x, y, z, phi, theta, psi, path type, and end effector data. The software loops until all the points have been input.
 
 The next block in the software flowchart calculates the total points necessary to complete the task. The overview for this section can be seen in \emph{Figure \ref{fig:sf3}}.
+
 \begin{figure}[htp]
   \center
   \includegraphics[width=\textwidth]{sf3}
   \caption[]{Software Flowchart Subsection 3}
   \label{fig:sf3}
 \end{figure}
+
 As seen in \emph{Figure \ref{fig:sf3}}, the section of software calculates the distance between the current point and the previous point if the path type is cartesian straight line and divides the distance by ten to find the number of centimeters between the two points. This value is stored as the necessary number of intermediate points, and the software will loop through until every point has been checked. The section of code also stores the total number of points that will be used as the variable level for later use.
 
 The fourth code block in the flowchart creates and stores the necessary intermediate points along the desired path, shown in \emph{Figure \ref{fig:sf4}}.
+
 \begin{figure}[htp]
   \center
-  \includegraphics[width=\textwidth]{sf4}
+  \includegraphics[width=.99\textwidth]{sf4}
   \caption[]{Software Flowchart Subsection 4}
   \label{fig:sf4}
 \end{figure}
+\looseness=-1
+
 The code shown in \emph{Figure \ref{fig:sf4}} creates points every centimeter if the path type is cartesian straight line using the number of path points stored for each point from the previous block of software. This ensures that a straight line will be followed between the two user input points. If the path type is a straight line in the joint space, the software does not add any intermediate points since the path seen in the cartesian space does not matter.
 
 The fifth code block in the flowchart calculates inverse kinematics of the points defined in the previous block of code and stores the angles as counts that can be used by the servos. The overview of this section can be seen in \emph{Figure \ref{fig:sf5}}.
+
 \begin{figure}[htp]
   \center
   \includegraphics[width=\textwidth]{sf5}
   \caption[]{Software Flowchart Subsection 5}
   \label{fig:sf5}
 \end{figure}
+
 \emph{Figure \ref{fig:sf5}} shows that the new points found in the prior section of code are run through an inverse kinematics function that will output the necessary counts the servos can utilize. The code iterates through each point until the inverse kinematics have been calculated for all points.
 
 The final block in the software diagram runs the manipulator through the desired task, with this section of code requiring user input at certain stages depending on the path type, seen in \emph{Figure \ref{fig:sf6}}.
@@ -485,6 +501,7 @@ The final block in the software diagram runs the manipulator through the desired
   \caption[]{Software Flowchart Subsection 6}
   \label{fig:sf6}
 \end{figure}
+
 The code in \emph{Figure \ref{fig:sf6}} prompts the user to press space to close the end effector and grab the marker if drawing was the specified task, otherwise the software jumps straight into prompting the user to begin the task, and when the user begins the task the counts for each position are sent to the servos one at a time. The counts for the next position are not sent to the servos until the servos have reached the desired positions and the end effector function has been completed if there is one.
 
 % \includepdf[landscape,pages=-]{sflow}
@@ -505,40 +522,58 @@ The code in \emph{Figure \ref{fig:sf6}} prompts the user to press space to close
   \item Implement Kinematics in Python
   \item Test Kinemtics with Motors
 \end{itemize}
-The Gantt chart can be seen on the following page.
-\includepdf[landscape,pages=-]{gantt}
+% The Gantt chart can be seen on the following page.
+% \includepdf[landscape,pages=-]{gantt}
+\newpage
 \subsection{Parts List}
+\emph{Table \ref{tab:bom1}} lists the parts MEIOSIS will require to build the manipulator. The total cost is \$629.22 including shipping. Specification 1.1b required MEIOSOS’s cost to develop the manipulator be less than \$800. In addition to pulley belts for the current configuration, \emph{Table \ref{tab:bom1}} allocates \$20 for two additional belt sizes to increase joint 1/2’s and joint 3’s torque by a factor of 10. One belt size and the belt must be purchased in packs of 3 from Automation Direct. \emph{Table \ref{tab:bom1}}  accounts for increased cable lengths of 500 mm to communication bus signals from motor 2 to 3 and motor 3 to 4 and 350 mm to communication bus signals from motor 5 to 6. Motors are identified in [ZACK’S FIGURE]. Aside from electronic hardware, Figure ZZ accounts for physical hardware: To 100 threaded press-fit inserts. The manipulator will require between 21 and 46 inserts. The majority of inserts attach MX-12W servos to the manipulator. Mounting hardware accompanies each servo.
+%TODO: [ZACK’S FIGURE] ^
 
 \renewcommand{\arraystretch}{1.25}
 \begin{table}[htp]
   \center
-  \caption{Bill of Materials with Costs}
-  \label{tab:bom}
+  \caption{MEIOSIS Bill of Materials with Costs}
+  \label{tab:bom1}
 \begin{tabular}{cC{3cm}@{\hskip 3pt}c@{\hskip 3pt}C{3cm}@{\hskip 3pt}|C{3cm}}
-\textbf{Notes} & \textbf{Retailer} & \textbf{Quantity} & \textbf{Unit Cost (USD)} & \textbf{Total Cost (USD)} \\\hline
-120 tooth & \multirow{4}{*}{\shortstack[c]{Automation \\Direct}} & 3 & 31 & 93 \\
-12 tooth &  & 3 & 8.5 & 25.5 \\
-3 pack, 300 tooth &  & 1 & 11.5 & 11.5 \\
-3 pack, 208 tooth &  & 1 & 9.5 & 28.5 \\ \cline{2-2}
+\multirow{2}{*}{\textbf{Part}} & \multirow{2}{*}{\textbf{Retailer}} & \multirow{2}{*}{\textbf{Quantity}} & \textbf{Unit Cost (USD)} & \textbf{Total Cost (USD)} \\\hline
+3 pack, 300 tooth & \multirow{4}{*}{\shortstack[c]{Automation \\Direct}} & 1 & 11.5 & 11.5 \\
+3 pack, 208 tooth &  & 1 & 9.5 & 28.5 \\
+Base second belts &   & 1 & 10 & 10 \\
+Link 3 second belts & & 1 & 10 & 10 \\\arrayrulecolor{gray}\hline
 MX-12W & \multirow{4}{*}{\shortstack[c]{Trossen \\Robotics}} & 6 & 65.9 & 395.4 \\
-U2D2 &  & 1 & 49.9 & 49.9 \\
 500 mm, 1/2 pulleys &  & 2 & 3.95 & 7.9 \\
-350 mm, 3 pulley &  & 1 & 2.95 & 2.95 \\\cline{2-2}
+350 mm, 3 pulley &  & 1 & 2.95 & 2.95 \\
+EE &  & 1 & 24.95 & 24.95 \\\arrayrulecolor{gray}\hline
 Pi 3 B & \multirow{2}{*}{Amazon} & 1 & 37.99 & 37.99 \\
-Bearings &  & 1 & 8.99 & 8.99 \\\cline{2-2}
-\multirow{2}{*}{2 Sch 10 12" Al tube} & Industrial Metal Sales & 1 & 2.99 & 2.99 \\\cline{2-2}
-12 V, 5 V power supply & Digi-Key Electronics & 1 & 43.21 & 43.21 \\\cline{2-2}
-Automation Direct & \multirow{5}{*}{Shipping} & \multirow{5}{*}{N/A} & \multirow{5}{*}{N/A} & 0 \\
+Bearings &  & 1 & 8.99 & 8.99 \\\arrayrulecolor{gray}\hline
+\multirow{2}{*}{2 Sch 10 12" Al tube} & Industrial Metal Sales & 1 & 2.99 & 2.99 \\\arrayrulecolor{gray}\hline
+\multirow{2}{*}{12 V, 5 V power supply} & Digi-Key Electronics & 1 & 43.21 & 43.21 \\\arrayrulecolor{gray}\hline
+Automation Direct & \multirow{5}{*}{Shipping} & \multirow{5}{*}{---} & \multirow{5}{*}{---} & 0 \\
 Trossen Robotics &  &  & & 13.15 \\
 Amazon & &  & & 0 \\
 Industrial Metal Sales &  & &  & 26.36 \\
-Digi-Key &  & &  & 8.99 \\%\cline{4-5}
-& & & \textbf{Total} & 756.33 \\
+Digi-Key &  & &  & 8.99 \\
+& & & \textbf{Total} & 629.22 \\
 \end{tabular}
 \end{table}
+
+In addition to the costs listed in \emph{Table \ref{tab:bom1}}, \emph{Table \ref{tab:bom2}} shows all further costs for the end-user. Since the Embry-Riddle robotics lab has 3D printing available without affecting MEIOSIS’s \$800 budget, \emph{Table \ref{tab:bom2}} accounts for outsourced 3D printing costs sufficient to print the entire manipulator with six sets of pulleys. If the end-user owns a 3D printer, the 3D printing cost would effectively reduce to filament cost. Additionally, \emph{Table \ref{tab:bom2}} assumes the end-user does not already possess an AX-12A servo to be used with the end-effector. Further, \emph{Table \ref{tab:bom2}} assumes the manipulator would be more accessible to end-users by using a proprietary U2D2 communication module in lieu of a soldered or bread-board circuit. The robotics lab has an AX-12A servo and U2D2 communication module MEIOSIS will use. With the aforementioned additional costs, the MEIOSIS manipulator costs the end-user \$1,007.98 including shipping costs. While \$1,007.98 is slightly above the maximum cost of \$1000 from specification 1.1a, it provides greater accessibility, which may be diminished by assuming end-users posess 3D printers.
+
+\renewcommand{\arraystretch}{1.25}
+\begin{table}[htp]
+  \center
+  \caption{End-User Bill of Materials with Costs}
+  \label{tab:bom2}
+  \begin{tabular}{C{3cm}C{3cm}@{\hskip 3pt}c@{\hskip 3pt}C{3cm}@{\hskip 3pt}|C{3cm}}
+  \multirow{2}{*}{\textbf{Part}} & \multirow{2}{*}{\textbf{Retailer}} & \multirow{2}{*}{\textbf{Quantity}} & \textbf{Unit Cost (USD)} & \textbf{Total Cost (USD)} \\\hline
+  Aforementioned Costs & \multirow{2}{*}{\emph{Table \ref{tab:bom1}}} & \multirow{2}{*}{---} & \multirow{2}{*}{---} & 629.22 \\
+  \multirow{2}{*}{U2D2} & Trossen Robotics & \multirow{2}{*}{1} & \multirow{2}{*}{49.9} & \multirow{2}{*}{49.9}\\
+  \multirow{2}{*}{EE with servo} & Trossen Robotics & \multirow{2}{*}{1} & \multirow{2}{*}{64.95} & \multirow{2}{*}{64.95} \\
+  3D PLA outsourcing (incl. shipping) & \multirow{2}{*}{Craft Cloud} & \multirow{2}{*}{1} & \multirow{2}{*}{288.86} & \multirow{2}{*}{288.86} \\
+  & & & \textbf{Total} & 1007.98 \\
+  \end{tabular}
+\end{table}
 \renewcommand{\arraystretch}{1}
-
-
 % \begin{enumerate}[label=\alph*.]
 %   \item Description for callout a
 %   \item Description for callout b

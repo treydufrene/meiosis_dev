@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {5.7}Open-Loop Simulation}{23}% 
 \contentsline {subsection}{\numberline {5.8}Closed-Loop Simulation}{24}% 
 \contentsline {subsection}{\numberline {5.9}ANSYS}{27}% 
-\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{29}% 
+\contentsline {subsection}{\numberline {5.10}Electrical Schematic}{30}% 
 \contentsline {subsection}{\numberline {5.11}Software Flowchart}{30}% 
-\contentsline {subsection}{\numberline {5.12}Project Status and Future}{35}% 
-\contentsline {subsection}{\numberline {5.13}Parts List}{37}% 
+\contentsline {subsection}{\numberline {5.12}Project Status and Future}{34}% 
+\contentsline {subsection}{\numberline {5.13}Parts List}{35}% 
