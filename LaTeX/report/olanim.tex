@@ -1,0 +1,51 @@
+\begin{lstlisting}[frame=lines,style=Matlab-editor,basicstyle = \mlttfamily, caption=Open-Loop Animation Code]
+% Open Loop Animation
+% 11/11/2019
+%   Adapted from code written by: Zack Johnson and Edward Pierce
+
+clear all
+close all
+clc
+
+dt = 0.001;                     %Integration timestep
+fr = 24;                        %Animation Framerate
+delta_t = round(1/(dt*fr));     %Animation timestep
+t = 0:dt:30;                    %simulation time array
+b = zeros(12,length(t));        %pre-allocate motor angles for all time
+Va = zeros(6,length(t));        %pre-allocate input torque for all time
+
+%Define initial conditions
+b(:,1) = [0;0;0;0;0;0;0;0;0;0;0;0];     %Initial position and velocity
+
+for ii = 1:(length(t)-1)
+k1 = Meiosis_robot1(b(:,ii),Va(:,ii));
+k2 = Meiosis_robot1(b(:,ii) + k1.*dt/2,Va(:,ii));
+k3 = Meiosis_robot1(b(:,ii) + k2.*dt/2,Va(:,ii));
+k4 = Meiosis_robot1(b(:,ii) + k3.*dt,Va(:,ii));
+b(:,ii+1) = b(:,ii) + dt*(k1./6 + k2./3 + k3./3 + k4./6);
+ii/length(t)
+end
+
+% for ii = delta_t:delta_t:(length(b))
+jj = 1;
+for ii = 1:delta_t:length(b)
+Meiosis_draw2(b(1:7,ii),'clear',t(ii))
+F(jj) = getframe(gcf);
+jj = jj + 1;
+end
+
+ % Uncomment the following section to store the animation as a video
+writerObj = VideoWriter('OpenLoopAnimation.avi');
+writerObj.FrameRate = fr;
+open(writerObj);
+
+% write the frames to the video
+for i=1:length(F)
+writeVideo(writerObj, F(i));
+end
+close(writerObj);
+
+figure('Renderer', 'painters', 'Position', [10 100 700 700],'Name','Joint Angles vs. Time','NumberTitle','off')
+Meiosis_Joint_Angle_plot(b(1:6,:),t(1:length(b)),'Joint Angles vs. Time')
+print('JointAnglePlot.pdf','-dpdf')
+\end{lstlisting}
