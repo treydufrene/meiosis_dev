@@ -7,7 +7,7 @@
 The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to increase the accessibility of robotics to secondary educational institutions and hobbyists. Accordantly, the manipulator is 3D printed in PLA with aluminum tube supports and costs the end-user less than \$1000. The manipulator has six links and a base. The base houses a Raspberry Pi 3B and power supply. The Raspberry Pi controls seven Dynamixel smart servos with position feedback and proportional derivative control. Six MX-12W servos actuate six rotational joints, while one AX-12A servo actuates the removable end-effector. They provide the manipulator a position repeatability within 2mm of the previous pose. The manipulator can draw as well as perform pick and place operations within its dexterous workspace which is a hemispherical sub-shell of the reachable workspace of 280 mm thickness. The manipulator’s operation is controlled by open-source software.
 \end{abstract}
 % {\tableofcontents\let\clearpage\relax\listoffigures\let\clearpage\relax}
-{\tableofcontents\clearpage\listoffigures\listoftables}
+{\tableofcontents\clearpage\listoffigures\clearpage\listoftables}
 \clearpage
 \newpage
 \section*{List Of Acronyms and Abbreviations}
@@ -42,7 +42,7 @@ The Manipulator for Educational Institutions with Open Source Integrated Systems
 \section{Requirements}
 The requirements of the system concisely define the capabilities the system must possess in order to solve the stated problem.
 \input{requirements}
-\newpage
+% \newpage
 \section{Conceptual Design}
 \input{concept}
 \newpage
@@ -418,7 +418,7 @@ Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system resp
   \label{fig:cljplots3}
 \end{figure}
 
-\newpage
+\newpage\null\newpage
 \subsection{ANSYS}
 With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 0.014 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
 
@@ -678,7 +678,7 @@ The robotics lab has an AX-12A servo and U2D2 communication module MEIOSIS will 
 
 \newpage
 \section*{Acknowledgements \& Attributions}
-We would like to acknowledge the following people for their contibutions in creating this report.
+We would like to acknowledge the following people for their contributions in creating this report.
 \begin{itemize}
   \item Dr. Isenberg
   \item Dr. Schipper
