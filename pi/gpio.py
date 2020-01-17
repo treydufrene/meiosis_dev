@@ -4,13 +4,24 @@ from gpiozero import DigitalInputDevice as DID
 import gpiozero as gpio
 
 a = DID('GPIO17')
+z = DID('GPIO18')
 total = 0
-
+counting = True
+def reset():
+    counting = False
+z.when_activated = reset()
 while(1):
-    a.wait_for_active()
-    total = total + 1
-    a.wait_for_inactive()
-    print(total)
+    while(counting):
+        a.wait_for_active()
+        total = total + 1
+        a.wait_for_inactive()
+    total = 0
+    counting = True
+
+
+#z.when_deactivated = count()
+#print(total)
+
 
 '''
 prev = 0
