@@ -1,6 +1,4 @@
 ### Utility Functions
-- Inverse
-- Transpose? Real?
 - Servo commands, from C.L. to "servo-space"
 - Encoder
 
