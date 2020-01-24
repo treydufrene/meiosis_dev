@@ -1,6 +1,7 @@
 import numpy as np
 import math as m
-import MatrixFunctions as mf
+from meiosis_utils import matrixOp as mf
+
 
 r1 = np.matrix([[0.00000],[0.00000],[0.12275]])
 r2 = np.matrix([[0.00000],[0.00000],[0.00000]])
