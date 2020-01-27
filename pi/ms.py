@@ -27,9 +27,9 @@ packetHandler = PacketHandler(PROTOCOL_VERSION)
 class Servo:
     def __init__(self):
         self.data = []
-        self.initialize()
+#        self.initialize()
 
-    def initialize():
+    def initialize(self):
         # Open port
         if portHandler.openPort():
             print("Succeeded to open the port")
@@ -53,7 +53,7 @@ class Servo:
             else:
                 print("Dynamixel ID " + str(i) + " Torque has been enabled.")
 
-    def close():
+    def close(self):
         # Disable Dynamixel Torque
         for i in range(0,numdxl):
             dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, 0)
@@ -66,8 +66,8 @@ class Servo:
         # Close port
         portHandler.closePort()
 
-    def getPos(ID):
+    def getPos(self, ID):
         return packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)
 
-    def goTo(ID, pos):
+    def goTo(self, ID, pos):
         dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
