@@ -14,9 +14,9 @@ ADDR_MX_PRESENT_POSITION   = 36
 PROTOCOL_VERSION            = 1.0
 
 # Default setting
-numdxl                      = 2;
+numdxl                      = 1;
 BAUDRATE                    = 115200
-DEVICENAME                  = '/dev/ttyUSB0'
+DEVICENAME                  = '/dev/ttyUSB1'
 
 # Initialize PortHandler instance
 portHandler = PortHandler(DEVICENAME)
@@ -70,3 +70,9 @@ class Servo:
 
     def goTo(self, ID, pos):
         dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
+
+    def setVel(self, ID, vel):
+        dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, 32, vel)
+
+
+
