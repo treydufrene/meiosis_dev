@@ -3,7 +3,6 @@
 
 """basic readable servo commands"""
 
-
 from dynamixel_sdk import *
 
 # Control table addresses

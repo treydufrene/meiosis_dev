@@ -6,17 +6,16 @@ import meiosis_encoder as ME
 
 Enc = ME.Encoder()
 enc = Enc.initEnc('GPIO17')
-
 ser = MS.Servo()
 ser.initialize()
-#ser.goTo(1,500)
 
-while 1:
-    print(ser.getPos(1))
-    print(Enc.inc(enc))
+#ser.goTo(1,500)
+Enc.inc(enc)
+
+
 
 ser.close()
-#Enc.inc(enc)
+
 
 
 
