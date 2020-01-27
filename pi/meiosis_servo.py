@@ -27,7 +27,7 @@ packetHandler = PacketHandler(PROTOCOL_VERSION)
 class Servo:
     def __init__(self):
         self.data = []
-#        self.initialize()
+        #self.initialize()
 
     def initialize(self):
         # Open port
@@ -44,7 +44,7 @@ class Servo:
             quit()
 
         # Enable Dynamixel Torque
-        for i in range(0,numdxl):
+        for i in range(0, numdxl):
             dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, 1)
             if dxl_comm_result != COMM_SUCCESS:
                 print("%s" % packetHandler.getTxRxResult(dxl_comm_result))
@@ -67,7 +67,7 @@ class Servo:
         portHandler.closePort()
 
     def getPos(self, ID):
-        return packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)
+        return packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
 
     def goTo(self, ID, pos):
         dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
