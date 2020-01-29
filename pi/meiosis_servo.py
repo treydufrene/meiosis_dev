@@ -16,7 +16,7 @@ PROTOCOL_VERSION            = 1.0
 # Default setting
 numdxl                      = 1;
 BAUDRATE                    = 115200
-DEVICENAME                  = '/dev/ttyUSB1'
+DEVICENAME                  = '/dev/ttyUSB0'
 
 # Initialize PortHandler instance
 portHandler = PortHandler(DEVICENAME)

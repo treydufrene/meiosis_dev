@@ -11,6 +11,7 @@ ser = MS.Servo()
 ser.initialize()
 
 ser.goTo(0,600)
+
 #ser.setVel(0, 500)
 #time.sleep(2)
 #ser.close()
