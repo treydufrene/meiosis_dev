@@ -69,10 +69,10 @@ class Servo:
         return packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
 
     def goTo(self, ID, pos):
-        dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
+        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
 
     def setVel(self, ID, vel):
-        dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, 32, vel)
+        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 32, vel)
 
 
 

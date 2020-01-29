@@ -1,20 +1,61 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import meiosis_servo as MS
+"""messy script to test differential"""
+
 import meiosis_encoder as ME
-import time 
+import RPi.GPIO as GPIO 
+import sys
 
-#Enc = ME.Encoder()
-#enc = Enc.initEnc('GPIO17')
-ser = MS.Servo()
-ser.initialize()
+angle = 0
+#counting = True
 
-ser.goTo(0,600)
+def countA(self):
+    global angle
+    if GPIO.input(17):
+        angle = angle + 1
+    else:
+        angle = angle - 1
 
-#ser.setVel(0, 500)
-#time.sleep(2)
-#ser.close()
+def countB(self):
+    global angle
+    if not GPIO.input(18):
+        angle = angle + 1
+    else:
+        angle = angle - 1
 
-#Enc.inc(enc)
+
+'''
+def reset(self):
+    global total
+    global counting
+    global turnOver
+    turnOver = turnOver + 1
+    if turnOver == 2:
+        counting = False
+    else: 
+        total = 0
+'''
+
+def main():
+    #pinA = 17
+    #pinB = 18
+    global angle
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(17, GPIO.IN)
+    GPIO.setup(18, GPIO.IN)
+    
+    GPIO.add_event_detect(17, GPIO.RISING)
+    GPIO.add_event_callback(17, countA)
+    GPIO.add_event_detect(18, GPIO.RISING)
+    GPIO.add_event_callback(18, countB)
+    
+    while True:
+        print(angle)
+        
+    GPIO.cleanup()
+
+if __name__=="__main__":
+    main()
+
 
