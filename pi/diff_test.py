@@ -5,7 +5,10 @@
 
 import meiosis_encoder as ME
 import RPi.GPIO as GPIO 
-import sys
+import meiosis_servo as MS
+
+ser = MS.Servo()
+ser.initialize()
 
 angle = 0
 
@@ -20,34 +23,11 @@ def encoderCallback(self):
         direction = state[key]
         last = current
         angle += direction
-        
-'''
-def countB(self):
-    global angle
-    if not GPIO.input(18):
-        angle = angle + 1
-    else:
-        angle = angle - 1
-'''
-
-'''
-def reset(self):
-    global total
-    global counting
-    global turnOver
-    turnOver = turnOver + 1
-    if turnOver == 2:
-        counting = False
-    else: 
-        total = 0
-'''
 
 def main():
     #pinA = 17
     #pinB = 18
     global angle
-
-    #state = {"0010":1, "1011":1, "1101":1, "0100":1, "0001":-1, "0111":-1, "1110":-1, "1000":-1}
 
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(17, GPIO.IN)
@@ -59,7 +39,9 @@ def main():
     GPIO.add_event_callback(18, encoderCallback)
     
     while True:
-        print(angle)
+        rev = float(360)/float(10000) * angle
+        #print(rev)
+        #print(angle)
         
     GPIO.cleanup()
 
