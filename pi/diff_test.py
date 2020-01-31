@@ -6,6 +6,7 @@
 import meiosis_encoder as ME
 import RPi.GPIO as GPIO 
 import meiosis_servo as MS
+import time
 
 ser = MS.Servo()
 ser.initialize()
@@ -25,8 +26,6 @@ def encoderCallback(self):
         angle += direction
 
 def main():
-    #pinA = 17
-    #pinB = 18
     global angle
 
     GPIO.setmode(GPIO.BCM)
@@ -38,14 +37,48 @@ def main():
     GPIO.add_event_detect(18, GPIO.BOTH)
     GPIO.add_event_callback(18, encoderCallback)
     
-    while True:
-        rev = float(360)/float(10000) * angle
-        #print(rev)
-        #print(angle)
-        
-    GPIO.cleanup()
+    try:
+        print("Entering Loop, press Ctrl-C to escape!")
+        time.sleep(2)
+        while True:
+            rev = float(360)/float(10000) * angle
+            print("Encoder Position:", rev)
+            print('Zeroing Servos')
+            ser.goTo(0,0)
+            ser.goTo(1,0)
+            time.sleep(5)
+            print("The servos are here:")
+            print(ser.getPos(0))
+            print(ser.getPos(1))
+            print("Resetting encoder")
+            angle = 0
+            rev = float(360)/float(10000) * angle
+            print(rev)
+            print('Setting Velocities')
+            ser.setVel(0,100)
+            ser.setVel(1,100)
+            print('Going to 2000')
+            ser.goTo(0,2000)
+            ser.goTo(1,2000)
+            time.sleep(5)
+            print("The servos are here:")
+            print((float(ser.getPos(0))/float(4096)) * 360)
+            print((float(ser.getPos(0))/float(4096)) * 360) 
+            print("The encoder is here:")
+            rev = float(360)/float(10000) * angle
+            print(rev)
+            time.sleep(10)
 
+
+    except KeyboardInterrupt:
+        print("\nInterrupted!")
+
+    print("Cleaning GPIO...")
+    GPIO.cleanup()
+    print("Disabling Servo Interface...")
+    ser.close()
 if __name__=="__main__":
     main()
+
 
 

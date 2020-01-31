@@ -14,7 +14,7 @@ ADDR_MX_PRESENT_POSITION   = 36
 PROTOCOL_VERSION            = 1.0
 
 # Default setting
-numdxl                      = 1;
+numdxl                      = 2;
 BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
