@@ -4,7 +4,7 @@
 """messy script to test differential"""
 
 import meiosis_encoder as ME
-import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO
 import meiosis_servo as MS
 import time
 
@@ -31,12 +31,12 @@ def main():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(17, GPIO.IN)
     GPIO.setup(18, GPIO.IN)
-    
+
     GPIO.add_event_detect(17, GPIO.BOTH)
     GPIO.add_event_callback(17, encoderCallback)
     GPIO.add_event_detect(18, GPIO.BOTH)
     GPIO.add_event_callback(18, encoderCallback)
-    
+
     try:
         print("Entering Loop, press Ctrl-C to escape!")
         time.sleep(2)
@@ -63,7 +63,7 @@ def main():
             time.sleep(5)
             print("The servos are here:")
             print((float(ser.getPos(0))/float(4096)) * 360)
-            print((float(ser.getPos(0))/float(4096)) * 360) 
+            print((float(ser.getPos(0))/float(4096)) * 360)
             print("The encoder is here:")
             rev = float(360)/float(10000) * angle
             print(rev)
@@ -79,6 +79,3 @@ def main():
     ser.close()
 if __name__=="__main__":
     main()
-
-
-
