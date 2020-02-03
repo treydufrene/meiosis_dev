@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 #changes
 """messy script to test differential"""
-#github test
 
 import meiosis_encoder as ME
 import RPi.GPIO as GPIO
