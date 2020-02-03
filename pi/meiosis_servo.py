@@ -4,7 +4,6 @@
 """basic readable servo commands"""
 
 from dynamixel_sdk import *
-
 # Control table addresses
 ADDR_MX_TORQUE_ENABLE      = 24
 ADDR_MX_GOAL_POSITION      = 30
@@ -66,13 +65,41 @@ class Servo:
         portHandler.closePort()
 
     def getPos(self, ID):
+        while(packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]>28673 or 
+                packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]<-28673):
+            pass
         return packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
 
-    def goTo(self, ID, pos):
+    def setPos(self, ID, pos):
         dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
 
     def setVel(self, ID, vel):
         dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 32, vel)
+    
+    def moving(self, ID):
+        return packetHandler.read1ByteTxRx(portHandler, ID, 46)[0]
+
+    def setRes(self, ID, res):
+        dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, ID, 22, res)
+
+    def readRes(self, ID):
+        return packetHandler.read1ByteTxRx(portHandler, ID, 22)[0]
+
+    def disableTorque(self, ID):
+        dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, ID, ADDR_MX_TORQUE_ENABLE, 0)
+    
+    def enableTorque(self, ID):
+        dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, ID, ADDR_MX_TORQUE_ENABLE, 1)
+
+    def setMultiturn(self, ID, on):
+        if(on):
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 6, 4095)
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 8, 4095)
+        else:
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 6, 0)
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 8, 4095)
+
+        
 
 
 
