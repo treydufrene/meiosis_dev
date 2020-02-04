@@ -17,6 +17,9 @@ numdxl                      = 2;
 BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
+
+gearidx = [(-39.0)*(128.0/45.0), (1.0)*(128.0/45.0)]
+
 # Initialize PortHandler instance
 portHandler = PortHandler(DEVICENAME)
 # Initialize PacketHandler instance
@@ -99,7 +102,13 @@ class Servo:
             dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 6, 0)
             dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 8, 4095)
 
-        
+    def setJA(self, IDLIST, angle):
+        if(type(IDLIST) == int):
+            IDLIST = [IDLIST]
+        if(type(angle) == int):
+            angle = [angle]
+        for i in range(0,len(IDLIST)):
+            self.setPos(IDLIST[i], int(angle[i] * gearidx[i]))
 
 
 
