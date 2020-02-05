@@ -68,9 +68,6 @@ class Servo:
         portHandler.closePort()
 
     def getPos(self, ID):
-        while(packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]>28673 or 
-                packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]<-28673):
-            pass
         return packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
 
     def setPos(self, ID, pos):
@@ -108,7 +105,8 @@ class Servo:
         if(type(angle) == int):
             angle = [angle]
         for i in range(0,len(IDLIST)):
-            self.setPos(IDLIST[i], int(angle[i] * gearidx[i]))
+            self.setPos(IDLIST[i], int(round(angle[i] * gearidx[i])))
+            print(int(angle[i] * gearidx[i]))
 
 
 

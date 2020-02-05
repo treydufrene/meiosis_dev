@@ -28,7 +28,7 @@ def twoLinkIK(x,y):
 try:
     print("Entering Loop, press Ctrl-C to escape!")
     time.sleep(1)
-    gamma = twoLinkIK(0,430)
+    gamma = twoLinkIK(0.0,430.0)
     print(gamma)
     ser.setJA([0,1], gamma)
     while ser.moving(1) or ser.moving(0):
@@ -36,7 +36,7 @@ try:
     time.sleep(1)
     print(ser.getPos(0))
     print(ser.getPos(1))
-    time.sleep(1)
+    #time.sleep(1)
     ser.setJA([0,1],[0,0])
     while ser.moving(1) or ser.moving(0):
         pass
