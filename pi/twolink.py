@@ -31,6 +31,7 @@ try:
     gamma = twoLinkIK(0.0,430.0)
     print(gamma)
     ser.setJA([0,1], gamma)
+    #ser.setPos(0,4095)
     while ser.moving(1) or ser.moving(0):
         pass
     time.sleep(1)

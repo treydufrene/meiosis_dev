@@ -4,6 +4,7 @@
 """basic readable servo commands"""
 
 from dynamixel_sdk import *
+
 # Control table addresses
 ADDR_MX_TORQUE_ENABLE      = 24
 ADDR_MX_GOAL_POSITION      = 30
@@ -17,8 +18,7 @@ numdxl                      = 2;
 BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
-
-gearidx = [(-39.0)*(128.0/45.0), (1.0)*(128.0/45.0)]
+gearidx = [(39.0)*(128.0/45.0), (1.0)*(128.0/45.0)]
 
 # Initialize PortHandler instance
 portHandler = PortHandler(DEVICENAME)
@@ -68,10 +68,12 @@ class Servo:
         portHandler.closePort()
 
     def getPos(self, ID):
-        return packetHandler.read4ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
+        print(packetHandler.getLastTxRxResult(portHandler, PROTOCOL_VERSION))
+        return packetHandler.read2ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
 
     def setPos(self, ID, pos):
         dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
+        print(dxl_comm_result, dxl_error)
 
     def setVel(self, ID, vel):
         dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 32, vel)
