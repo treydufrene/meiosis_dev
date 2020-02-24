@@ -14,7 +14,7 @@ ADDR_MX_PRESENT_POSITION   = 36
 PROTOCOL_VERSION            = 1.0
 
 # Default setting
-numdxl                      = 2;
+numdxl                      = 1;
 BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
@@ -68,7 +68,6 @@ class Servo:
         portHandler.closePort()
 
     def getPos(self, ID):
-        print(packetHandler.getLastTxRxResult(portHandler, PROTOCOL_VERSION))
         return packetHandler.read2ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
 
     def setPos(self, ID, pos):
@@ -80,6 +79,11 @@ class Servo:
     
     def moving(self, ID):
         return packetHandler.read1ByteTxRx(portHandler, ID, 46)[0]
+
+    def anyMoving(self, IDLIST):
+        for i in range(0,len(IDLIST)):
+            statusidx[i] = self.moving(IDLIST[0])
+        return any(statusidx)
 
     def setRes(self, ID, res):
         dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, ID, 22, res)

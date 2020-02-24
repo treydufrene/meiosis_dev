@@ -17,6 +17,8 @@ ser.setRes(1,4)
 ser.setMultiturn(0, True)
 ser.setMultiturn(1, True)
 
+global IDs = [0,1]
+
 def twoLinkIK(x,y):
     l1 = 265.0 
     l2 = 165.0
@@ -25,20 +27,34 @@ def twoLinkIK(x,y):
     theta1 = atan2(y,x) - atan2(l2*sin(theta2),l1+l2*cos(theta2))
     return [degrees(theta1),degrees(theta2)]
 
+def moveArm(gamma):
+    global IDs
+    ser.setJA(IDs, gamma);
+    while ser.anyMoving(IDs)
+        pass
+    return True
+
+def pick(x,y):
+    global xoff, yoff
+    moveArm(twoLinkIK(x-xoff,y-yoff))
+
+def place(x,y):
+    moveArm(twoLinkIK(x,y))
+
 try:
     print("Entering Loop, press Ctrl-C to escape!")
     time.sleep(1)
     gamma = twoLinkIK(0.0,430.0)
     print(gamma)
-    ser.setJA([0,1], gamma)
-    #ser.setPos(0,4095)
+    #ser.setJA([0,1], gamma)
+    ser.setPos(0,0)
     while ser.moving(1) or ser.moving(0):
         pass
     time.sleep(1)
     print(ser.getPos(0))
     print(ser.getPos(1))
     #time.sleep(1)
-    ser.setJA([0,1],[0,0])
+    #ser.setJA([0,1],[0,0])
     while ser.moving(1) or ser.moving(0):
         pass
     time.sleep(1)
