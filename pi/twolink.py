@@ -17,7 +17,10 @@ ser.setRes(1,4)
 ser.setMultiturn(0, True)
 ser.setMultiturn(1, True)
 
-global IDs = [0,1]
+global IDs, xoff, yoff
+IDs = [0,1]
+xoff = 0
+yoff = 0
 
 def twoLinkIK(x,y):
     l1 = 265.0 
@@ -30,7 +33,7 @@ def twoLinkIK(x,y):
 def moveArm(gamma):
     global IDs
     ser.setJA(IDs, gamma);
-    while ser.anyMoving(IDs)
+    while (ser.anyMoving(IDs)):
         pass
     return True
 
@@ -43,23 +46,25 @@ def place(x,y):
 
 try:
     print("Entering Loop, press Ctrl-C to escape!")
-    time.sleep(1)
-    gamma = twoLinkIK(0.0,430.0)
-    print(gamma)
+    x = input("x:")
+    y = input("y:")
+    print(twoLinkIK(x,y))
+    #gamma = twoLinkIK(0.0,430.0)
+    #print(gamma)
     #ser.setJA([0,1], gamma)
-    ser.setPos(0,0)
-    while ser.moving(1) or ser.moving(0):
-        pass
-    time.sleep(1)
-    print(ser.getPos(0))
-    print(ser.getPos(1))
+    #ser.setPos(0,0)
+    #while ser.moving(1) or ser.moving(0):
+        #pass
+    #time.sleep(1)
+    #print(ser.getPos(0))
+    #print(ser.getPos(1))
     #time.sleep(1)
     #ser.setJA([0,1],[0,0])
-    while ser.moving(1) or ser.moving(0):
-        pass
-    time.sleep(1)
-    print(ser.getPos(0))
-    print(ser.getPos(1))
+    #while ser.moving(1) or ser.moving(0):
+        #pass
+    #time.sleep(1)
+    #print(ser.getPos(0))
+    #print(ser.getPos(1))
 
 except KeyboardInterrupt:
     print("\nInterrupted!")
