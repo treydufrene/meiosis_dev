@@ -18,7 +18,7 @@ numdxl                      = 2;
 BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
-gearidx = [(-39.0)*(128.0/45.0), (-39.0)*(128.0/45.0)]
+gearidx = [(39.0)*(128.0/45.0), (39.0)*(128.0/45.0)]
 offset = [0,0]
 
 # Initialize PortHandler instance
