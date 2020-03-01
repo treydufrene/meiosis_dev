@@ -17,3 +17,5 @@ class matrixOp:
 
     def skew(r):
         return np.matrix([[0,-r[2],r[1]],[r[2],0,-r[0]],[r[1],r[0],0]])
+
+

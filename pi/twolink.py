@@ -30,6 +30,14 @@ def twoLinkIK(x,y):
     theta1 = atan2(y,x) - atan2(l2*sin(theta2),l1+l2*cos(theta2))
     return [degrees(theta1),degrees(theta2)]
 
+def zeroArm():
+    print("Init:")
+    print(ser.getPos(0),ser.getPos(1))
+    ser.setOffset(0,ser.getPos(0))
+    ser.setOffset(1,ser.getPos(1))
+    print("New:")
+    print(ser.getPos(0),ser.getPos(1))
+
 def moveArm(gamma):
     global IDs
     ser.setJA(IDs, gamma);
@@ -46,33 +54,21 @@ def place(x,y):
 
 try:
     print("Entering Loop, press Ctrl-C to escape!")
+    zero = raw_input("Would you like to zero the arm? (Y/N): ")
+    if zero == str("Y") or zero == str("y"):
+        print("Zeroing Arm!")
+        zeroArm()
+    #print("Enter Desired Position: ")
     #x = input("x:")
     #y = input("y:")
+    #place(x,y)
     #print(twoLinkIK(x,y))
-    #gamma = twoLinkIK(430.0,0.0)
     #print(gamma)
-    #time.sleep(5)
     #ser.setJA([0,1], gamma)
     print(ser.getPos(0))
     print(ser.getPos(1))
-    #ser.setOffset(0,ser.getPos(0))
-    #ser.setOffset(1,ser.getPos(1))
-    #print(ser.getPos(0))
-    #print(ser.getPos(1))
-    #ser.setPos(0,0)
-    #ser.setPos(1,0)
     #while ser.moving(1) or ser.moving(0):
         #pass
-    #time.sleep(1)
-    #print(ser.getPos(0))
-    #print(ser.getPos(1))
-    #time.sleep(1)
-    #ser.setJA([0,1],[0,0])
-    #while ser.moving(1) or ser.moving(0):
-        #pass
-    #time.sleep(1)
-    #print(ser.getPos(0))
-    #print(ser.getPos(1))
 
 except KeyboardInterrupt:
     print("\nInterrupted!")

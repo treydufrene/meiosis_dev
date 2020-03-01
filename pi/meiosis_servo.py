@@ -72,7 +72,7 @@ class Servo:
 
     def setPos(self, ID, pos):
         dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
-        print(dxl_comm_result, dxl_error)
+        #print(dxl_comm_result, dxl_error)
 
     def setVel(self, ID, vel):
         dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 32, vel)
@@ -81,6 +81,7 @@ class Servo:
         return packetHandler.read1ByteTxRx(portHandler, ID, 46)[0]
 
     def anyMoving(self, IDLIST):
+        statusidx = [0,0]
         for i in range(0,len(IDLIST)):
             statusidx[i] = self.moving(IDLIST[0])
         return any(statusidx)
