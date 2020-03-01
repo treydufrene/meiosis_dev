@@ -14,11 +14,11 @@ ADDR_MX_PRESENT_POSITION   = 36
 PROTOCOL_VERSION            = 1.0
 
 # Default setting
-numdxl                      = 1;
+numdxl                      = 2;
 BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
-gearidx = [(39.0)*(128.0/45.0), (1.0)*(128.0/45.0)]
+gearidx = [(-39.0)*(128.0/45.0), (-39.0)*(128.0/45.0)]
 
 # Initialize PortHandler instance
 portHandler = PortHandler(DEVICENAME)
@@ -114,5 +114,7 @@ class Servo:
             self.setPos(IDLIST[i], int(round(angle[i] * gearidx[i])))
             print(int(angle[i] * gearidx[i]))
 
+    def setOffset(self, ID, offset):
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 20, offset)
 
 

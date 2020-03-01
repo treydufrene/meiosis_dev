@@ -46,13 +46,21 @@ def place(x,y):
 
 try:
     print("Entering Loop, press Ctrl-C to escape!")
-    x = input("x:")
-    y = input("y:")
-    print(twoLinkIK(x,y))
-    #gamma = twoLinkIK(0.0,430.0)
+    #x = input("x:")
+    #y = input("y:")
+    #print(twoLinkIK(x,y))
+    #gamma = twoLinkIK(430.0,0.0)
     #print(gamma)
+    #time.sleep(5)
     #ser.setJA([0,1], gamma)
+    print(ser.getPos(0))
+    print(ser.getPos(1))
+    #ser.setOffset(0,ser.getPos(0))
+    #ser.setOffset(1,ser.getPos(1))
+    #print(ser.getPos(0))
+    #print(ser.getPos(1))
     #ser.setPos(0,0)
+    #ser.setPos(1,0)
     #while ser.moving(1) or ser.moving(0):
         #pass
     #time.sleep(1)
