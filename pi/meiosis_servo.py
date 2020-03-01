@@ -19,6 +19,7 @@ BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
 gearidx = [(-39.0)*(128.0/45.0), (-39.0)*(128.0/45.0)]
+offset = [0,0]
 
 # Initialize PortHandler instance
 portHandler = PortHandler(DEVICENAME)
@@ -112,10 +113,12 @@ class Servo:
         if(type(angle) == int):
             angle = [angle]
         for i in range(0,len(IDLIST)):
-            self.setPos(IDLIST[i], int(round(angle[i] * gearidx[i])))
-            print(int(angle[i] * gearidx[i]))
+            self.setPos(IDLIST[i], int(round(angle[i] * gearidx[i] + offset[i])))
+            print(int(round(angle[i] * gearidx[i] + offset[i])))
 
-    def setOffset(self, ID, offset):
-            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 20, offset)
+    def setOffset(self, ID, amount):
+        offset[ID] = amount
+        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 20, amount)
+        return offset[ID]
 
 

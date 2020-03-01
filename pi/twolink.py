@@ -33,14 +33,16 @@ def twoLinkIK(x,y):
 def zeroArm():
     print("Init:")
     print(ser.getPos(0),ser.getPos(1))
-    ser.setOffset(0,ser.getPos(0))
-    ser.setOffset(1,ser.getPos(1))
+    print("servo 0 offset: ")
+    print(ser.setOffset(0,ser.getPos(0)))
+    print("servo 1 offset: ")
+    print(ser.setOffset(1,ser.getPos(1)))
     print("New:")
     print(ser.getPos(0),ser.getPos(1))
 
 def moveArm(gamma):
     global IDs
-    ser.setJA(IDs, gamma);
+    ser.setJA(IDs, gamma)
     while (ser.anyMoving(IDs)):
         pass
     return True
@@ -55,18 +57,23 @@ def place(x,y):
 try:
     print("Entering Loop, press Ctrl-C to escape!")
     zero = raw_input("Would you like to zero the arm? (Y/N): ")
-    if zero == str("Y") or zero == str("y"):
+    if zero == "Y" or zero == "y":
         print("Zeroing Arm!")
         zeroArm()
-    #print("Enter Desired Position: ")
-    #x = input("x:")
-    #y = input("y:")
+    print("Enter Desired Position: ")
+    x = input("x:")
+    y = input("y:")
+    print("gamma = ")
+    gamma = twoLinkIK(x,y)
+    print(gamma)
+    print("servo commands: ")
+    print(ser.setJA(IDs, gamma))
     #place(x,y)
     #print(twoLinkIK(x,y))
     #print(gamma)
     #ser.setJA([0,1], gamma)
-    print(ser.getPos(0))
-    print(ser.getPos(1))
+    #print(ser.getPos(0))
+    #print(ser.getPos(1))
     #while ser.moving(1) or ser.moving(0):
         #pass
 
