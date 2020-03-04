@@ -19,7 +19,7 @@ BAUDRATE                    = 115200
 DEVICENAME                  = '/dev/ttyUSB0'
 
 gearidx = [(39.0)*(128.0/45.0), (39.0)*(128.0/45.0)]
-offset = [0,0]
+offset = [0,13700]
 
 # Initialize PortHandler instance
 portHandler = PortHandler(DEVICENAME)
@@ -72,7 +72,7 @@ class Servo:
         return packetHandler.read2ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
 
     def setPos(self, ID, pos):
-        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
+        dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
         #print(dxl_comm_result, dxl_error)
 
     def setVel(self, ID, vel):
@@ -84,7 +84,7 @@ class Servo:
     def anyMoving(self, IDLIST):
         statusidx = [0,0]
         for i in range(0,len(IDLIST)):
-            statusidx[i] = self.moving(IDLIST[0])
+            statusidx[i] = self.moving(IDLIST[i])
         return any(statusidx)
 
     def setRes(self, ID, res):

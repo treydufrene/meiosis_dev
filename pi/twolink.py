@@ -12,12 +12,11 @@ from math import *
 ser = MS.Servo()
 ser.initialize()
 
-ser.setRes(0,4)
-ser.setRes(1,4)
-ser.setMultiturn(0, True)
-ser.setMultiturn(1, True)
+#ser.setRes(0,4)
+#ser.setRes(1,4)
+#ser.setMultiturn(0, True)
+#ser.setMultiturn(1, True)
 
-global IDs, xoff, yoff
 IDs = [0,1]
 xoff = 0
 yoff = 0
@@ -28,6 +27,7 @@ def twoLinkIK(x,y):
     D = (x**2 + y**2 - l1**2 - l2**2)/(2*l1*l2)
     theta2 = atan2(sqrt(1.0 - D**2),D)
     theta1 = atan2(y,x) - atan2(l2*sin(theta2),l1+l2*cos(theta2))
+    print(degrees(theta1),degrees(theta2))
     return [degrees(theta1),degrees(theta2)]
 
 def zeroArm():
@@ -41,14 +41,14 @@ def zeroArm():
     print(ser.getPos(0),ser.getPos(1))
 
 def moveArm(gamma):
-    global IDs
+    #global IDs
     ser.setJA(IDs, gamma)
     while (ser.anyMoving(IDs)):
         pass
     return True
 
 def pick(x,y):
-    global xoff, yoff
+    #global xoff, yoff
     moveArm(twoLinkIK(x-xoff,y-yoff))
 
 def place(x,y):
@@ -56,27 +56,15 @@ def place(x,y):
 
 try:
     print("Entering Loop, press Ctrl-C to escape!")
-    zero = raw_input("Would you like to zero the arm? (Y/N): ")
-    if zero == "Y" or zero == "y":
-        print("Zeroing Arm!")
-        zeroArm()
-    print("Enter Desired Position: ")
-    x = input("x:")
-    y = input("y:")
-    print("gamma = ")
-    gamma = twoLinkIK(x,y)
-    print(gamma)
-    moveArm(gamma)
-    #print("servo commands: ")
-    #print(ser.setJA(IDs, gamma))
-    #place(x,y)
-    #print(twoLinkIK(x,y))
-    #print(gamma)
-    #ser.setJA([0,1], gamma)
-    #print(ser.getPos(0))
-    #print(ser.getPos(1))
-    #while ser.moving(1) or ser.moving(0):
-        #pass
+    print(ser.getPos(0))
+    print(ser.getPos(1))
+    #moveArm([0,0])
+    ser.setPos(0,0)
+    ser.setPos(1,0)
+    while (ser.anyMoving(IDs)):
+        pass
+    #pick(250,50)
+    #place(-250,50)
 
 except KeyboardInterrupt:
     print("\nInterrupted!")
