@@ -57,24 +57,34 @@ def place(x,y):
 try:
     print("Entering Loop, press Ctrl-C to escape!")
     pos = ser.getPos(0)*ser.readRes(0)
+    print(ser.getPos(0))
     try:
-        dir = raw_input('Enter Direction (U/D):')
-        while True:
-            while dir == 'U':
+        dir = raw_input('Enter Direction (u/d), or (f) for Finished:')
+        zeroing = True
+        while zeroing:
+            while dir == 'u':
                 userInput = raw_input()
-                if userInput == 'D':
-                    dir = 'D'
+                if userInput == 'f':
+                    zeroing = False
+                    break
+                elif userInput == 'd':
+                    dir = 'd'
                 else:
                     pos += 50
                     ser.setPos(0,pos)
-            while dir == 'D':
+                    print(ser.getPos(0))
+            while dir == 'd':
                 userInput = raw_input()
-                if userInput == 'U':
-                    dir = 'U'
+                if userInput == 'f':
+                    zeroing = False
+                    break
+                elif userInput == 'u':
+                    dir = 'u'
                 else:
                     pos -= 50
                     ser.setPos(0,pos)
-
+                    print(ser.getPos(0))
+        print(ser.getPos(0))
 
     except KeyboardInterrupt:
         print("interrupted")
