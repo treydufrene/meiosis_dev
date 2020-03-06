@@ -58,10 +58,23 @@ try:
     print("Entering Loop, press Ctrl-C to escape!")
     pos = ser.getPos(0)*ser.readRes(0)
     try:
+        dir = raw_input('Enter Direction (U/D):')
         while True:
-            raw_input()
-            ser.setPos(0,pos)
-            pos += 50
+            while dir == 'U':
+                userInput = raw_input()
+                if userInput == 'D':
+                    dir = 'D'
+                else:
+                    pos += 50
+                    ser.setPos(0,pos)
+            while dir == 'D':
+                userInput = raw_input()
+                if userInput == 'U':
+                    dir = 'U'
+                else:
+                    pos -= 50
+                    ser.setPos(0,pos)
+
 
     except KeyboardInterrupt:
         print("interrupted")
