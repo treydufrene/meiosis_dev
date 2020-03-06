@@ -56,16 +56,26 @@ def place(x,y):
 
 try:
     print("Entering Loop, press Ctrl-C to escape!")
+    pos = ser.getPos(0)*ser.readRes(0)
+    try:
+        while True:
+            raw_input()
+            ser.setPos(0,pos)
+            pos += 50
+
+    except KeyboardInterrupt:
+        print("interrupted")
+    
+    
+    '''
     print(ser.getPos(0))
-    print(ser.getPos(1))
-    #moveArm([0,0])
-    ser.setPos(0,0)
-    ser.setPos(1,0)
-    while (ser.anyMoving(IDs)):
+    ser.setPos(0,10000)
+    while ser.moving(0):
         pass
+    print(ser.getPos(0))
     #pick(250,50)
     #place(-250,50)
-
+'''
 except KeyboardInterrupt:
     print("\nInterrupted!")
 
