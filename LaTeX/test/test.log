@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 APR 2020 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 APR 2020 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1255,25 +1255,25 @@ File: tikzlibraryquotes.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )) (./test.aux)
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 55.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1370,41 +1370,41 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 55.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 55.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 55.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 55.
+(Font)              <12> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 55.
+(Font)              <8> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 55.
-LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+(Font)              <6> on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 2.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./coverpage.tex
@@ -1437,7 +1437,7 @@ Package pdftex.def Info: images/text.png  used on input line 23.
 <images/manip.png, id=22, 1240.635pt x 697.60625pt>
 File: images/manip.png Graphic file (type png)
 <use images/manip.png>
-Package pdftex.def Info: images/manip.png  used on input line 87.
+Package pdftex.def Info: images/manip.png  used on input line 34.
 (pdftex.def)             Requested size: 352.31625pt x 198.10666pt.
  [1
 
@@ -1445,47 +1445,81 @@ Package pdftex.def Info: images/manip.png  used on input line 87.
 <images/loff.png, id=27, 1894.07625pt x 891.33pt>
 File: images/loff.png Graphic file (type png)
 <use images/loff.png>
-Package pdftex.def Info: images/loff.png  used on input line 98.
+Package pdftex.def Info: images/loff.png  used on input line 45.
 (pdftex.def)             Requested size: 352.31625pt x 165.7911pt.
 <images/zero.png, id=28, 462.528pt x 260.172pt>
 File: images/zero.png Graphic file (type png)
 <use images/zero.png>
-Package pdftex.def Info: images/zero.png  used on input line 110.
+Package pdftex.def Info: images/zero.png  used on input line 56.
 (pdftex.def)             Requested size: 352.31625pt x 198.18929pt.
- [2 <./images/loff.png>]
-<images/gui.jpg, id=33, 1505.625pt x 2006.49625pt>
+ [2 <./images/loff.png>] [3 <./images/zero.png>]
+<images/image8.png, id=37, 1634.105pt x 891.33pt>
+File: images/image8.png Graphic file (type png)
+<use images/image8.png>
+Package pdftex.def Info: images/image8.png  used on input line 73.
+(pdftex.def)             Requested size: 352.31625pt x 192.16263pt.
+ [4 <./images/image8.png>]
+<images/image11.png, id=42, 1894.07625pt x 891.33pt>
+File: images/image11.png Graphic file (type png)
+<use images/image11.png>
+Package pdftex.def Info: images/image11.png  used on input line 84.
+(pdftex.def)             Requested size: 352.31625pt x 165.7911pt.
+ [5 <./images/image11.png>]
+<images/workspace.png, id=48, 438.63875pt x 418.56375pt>
+File: images/workspace.png Graphic file (type png)
+<use images/workspace.png>
+Package pdftex.def Info: images/workspace.png  used on input line 111.
+(pdftex.def)             Requested size: 352.31625pt x 336.19905pt.
+<images/image4.png, id=49, 413.545pt x 417.56pt>
+File: images/image4.png Graphic file (type png)
+<use images/image4.png>
+Package pdftex.def Info: images/image4.png  used on input line 120.
+(pdftex.def)             Requested size: 352.31625pt x 355.7432pt.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 127.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [6 <./images/workspace.png>] [7 <./images/image4.png>]
+<images/image10.png, id=59, 243.91125pt x 243.91125pt>
+File: images/image10.png Graphic file (type png)
+<use images/image10.png>
+Package pdftex.def Info: images/image10.png  used on input line 150.
+(pdftex.def)             Requested size: 352.31625pt x 352.3224pt.
+<images/image9.png, id=60, 602.25pt x 602.25pt>
+File: images/image9.png Graphic file (type png)
+<use images/image9.png>
+Package pdftex.def Info: images/image9.png  used on input line 159.
+(pdftex.def)             Requested size: 352.31625pt x 352.32861pt.
+<images/image3.png, id=61, 321.2pt x 240.9pt>
+File: images/image3.png Graphic file (type png)
+<use images/image3.png>
+Package pdftex.def Info: images/image3.png  used on input line 168.
+(pdftex.def)             Requested size: 352.31625pt x 264.24461pt.
+ [8] [9 <./images/image10.png>] [10 <./images/image9.png (PNG copy)>] [11 <./images/image3.png>]
+<images/gui.jpg, id=79, 1505.625pt x 2006.49625pt>
 File: images/gui.jpg Graphic file (type jpg)
 <use images/gui.jpg>
-Package pdftex.def Info: images/gui.jpg  used on input line 134.
-(pdftex.def)             Requested size: 469.75502pt x 626.0182pt.
-
-Overfull \hbox (0.79999pt too wide) in paragraph at lines 134--135
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 0.88817pt on input line 137.
-
-[3 <./images/zero.png>] [4 <./images/gui.jpg>] [5] [6] (./test.bbl
+Package pdftex.def Info: images/gui.jpg  used on input line 185.
+(pdftex.def)             Requested size: 352.31625pt x 469.506pt.
+ [12 <./images/gui.jpg>] [13] [14] (./test.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [7
+) [15
 
 ] (./test.aux) ) 
 Here is how much of TeX's memory you used:
- 43495 strings out of 492616
- 940992 string characters out of 6129482
- 1084477 words of memory out of 5000000
- 46740 multiletter control sequences out of 15000+600000
- 575692 words of font info for 56 fonts, out of 8000000 for 9000
+ 43573 strings out of 492616
+ 942678 string characters out of 6129482
+ 1086557 words of memory out of 5000000
+ 46806 multiletter control sequences out of 15000+600000
+ 576443 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,11n,92p,823b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on test.pdf (9 pages, 4362680 bytes).
+ 64i,11n,92p,1358b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on test.pdf (17 pages, 5475494 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

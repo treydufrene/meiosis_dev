@@ -49,7 +49,6 @@ Specification \textbf{1.2.b} states: \textbf{The system shall have no link offse
 
 Figure \ref{fig:loff} shows a screen capture of a measurement taken and as can be seen by the blue line, the link only extends across one axis. If there were a link offset present, there would be multiple multi-colored lines to show displacement in multiple directions. These tests were done in simulation on each link of the manipulator and none contained any offset direction. Through this test, it is observed that \textbf{the manipulator meets specification 1.2.b}.
 
-
 Specification \textbf{1.3.a} states: \textbf{The system shall accommodate a process in which the end user can calibrate the end effector position and orientation to within 0.5 mm and 1 degree of the manipulator’s precision.} In order to fulfill specification 1.3a, an algorithm was developed for calibration. This algorithm must allow the user to manually move the links into a desired zeroed configuration, then accurately retain that zeroed configuration as a reference position during use. Figure \ref{fig:zero} depicts the manipulator in a zeroed configuration.
 
 \begin{figure}[htp]
@@ -59,36 +58,138 @@ Specification \textbf{1.3.a} states: \textbf{The system shall accommodate a proc
   \label{fig:zero}
 \end{figure}
 
+The configuration shown in Figure \ref{fig:zero} is what we have defined to be the zeroed configuration. The purpose of the calibration algorithm is to force the software to consider every joint angle to be zero when the manipulator is in this configuration, even if the servos return non-zero angular values. The algorithm developed allows the users to move the joints one by one until the robot is in the desired “zeroed” position. The program then reads the servos positions and stores those values as offset variables. These offsets are subtracted off of the desired joint angle values when commanding the servo positions.
+
+In order to measure the calibration accuracy, the PhaseSpace Motion Capture system will be required. The calibration algorithm itself is accurate to the same value as the manipulator, however inaccuracies can arise due to the user not being able to manually put the manipulator into the correct configuration.  The testing procedure will be performed as follows. The motion capture system will be fully set up, including placing the tracking markers on the manipulator’s base and end-effector. Once the motion capture system is fully set up, the manipulator will be placed in an arbitrary configuration, at least 30 degrees away from zero in each joint. The manipulator will then be restarted, which will erase the system’s memory of it’s configuration. At this point, the motion capture system will start recording data. Using the calibration software, the manipulator will then be manually zeroed to the best of the operator’s abilities. Once this is completed, error terms can be determined by comparing the tracking data to the known values of the end-effector’s position and orientation in the zeroed state. Due to circumstances beyond our control, we are not able to perform this test. Because of this, adherence to specification 1.3a, and by extension \textbf{adherence to specification 1.3.a cannot be determined.}
+
+Specification \textbf{1.4.a} states: \textbf{Joint one and two of the system shall possess an angle error of no more than 0.025 degrees.} Specification \textbf{1.4.b} states: \textbf{Joint three of the system shall possess an angle error of no more than .03 degrees.} Specification \textbf{1.4.c} states: \textbf{Joints four, five, and six shall possess an angle error of no more than .29 degrees.} In order to verify specifications 1.4.a-1.4.c, the angle accuracy of the system must be measured. To determine the accuracy, the PhaseSpace Motion Capture System is required. Three LED indicators will be placed at the end of each gearbox that is farthest from the previous gearbox in the line to indicate the farthest point directly controlled by the previous gearbox. The three LEDs will be placed at 120 degree increments around each link/gearbox so that one or more of the LEDs are visible to the motion capture system at a time. To attain accurate results, small divots will be placed on the manipulator where the LEDs will be located in order to allow precise application of the LEDs to the system. Accurate LED placement will allow for more accurate kinematic/angle calculations.
+
+To test the system, the manipulator will be placed in the zeroed configuration and each joint will be tested individually. First, joint 1 will be tested by running from zero to 90 degrees, and then back to zero, and repeat for a total of 10 times. Each time joint 1 has reached the desired angle, the motion capture system will collect the location data of the LEDs and store it for error calculation. When the test has completed, the data can be used to calculate the angle the link actually achieved, and can be compared to the desired angle. Any error in zeroing can also be seen from the collected data. After the joint 1 has been tested, joint 2 will be tested following the same procedure, after which joints 3 through 6 will be tested in order. The worst angle error achieved by each joint will be compared to the value defined in the specifications. This test is unable to be performed and thus \textbf{the manipulator’s adherence to specifications 1.4a-1.4c cannot be determined.}
+
+Specification \textbf{1.5.a} states: \textbf{The manipulator shall have a maximum reach between 300 and 700 mm.} In order to satisfy this specification, the robot’s links must have a sum length of between 300 mm and 700 mm. Using Solidworks, the total reachable workspace can be measured using the “Measure” tool. This measurement can be seen in Figure \ref{fig:meas}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.75\textwidth,frame]{image8}
+  \caption{Solidworks Measurement of Reachable Workspace}
+  \label{fig:meas}
+\end{figure}
+
+As can be seen in Figure \ref{fig:meas}, the total reachable workspace is 643 mm. This measurement is between 300 and 700 millimeters and therefore \textbf{the manipulator meets specification 1.5a.}
+
+Specification \textbf{1.5.b} states: \textbf{The length of link one, two, three, and the wrist shall be 161.5 mm, 250 mm, 250 mm, and 143 mm respectively.} For the manipulator to meet specification 1.5.a, each link and the wrist simply need to match the lengths provided in the specification. Testing this specification requires the SolidWorks measurement tool. An example of the measurement tool being used to test this specification can be seen in Figure \ref{fig:llength}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.75\textwidth,frame]{image11}
+  \caption{Test of Link Length for Specification 1.5.a.}
+  \label{fig:llength}
+\end{figure}
+
+Once the measurement tool in SolidWorks is selected, a measurement from the first joint in a link to the last joint in a link should be taken. Figure \ref{fig:llength} shows a measurement between joints 3 and 5, these joints make up Link 3 or the “elbow” link of the manipulator. The center distance measurement came out to be 250 mm. Once a measurement is done for each link, the center distance values are to be recorded. The variable factors in these measurements are the dimensions of the parts used to make up the link lengths. The lengths of the individual links can be seen in Table \ref{tab:linklengths}. These dimensions are simulated in SolidWorks.
 
 
+\begin{table}[htp]
+  \centering
+  \caption{Measurements of Manipulator Link Lengths}
+  \label{tab:linklengths}
+  \begin{tabular}{c|c}
+    Portion of manipulator measured & Measurement Value \\\hline
+    Link 1 (Base to Joint 2) & 161.5 mm \\
+    Link 2 (Joint 2 to Joint 3) & 250 mm \\
+    Link 3 (Joint 3 to Joint 5) & 250 mm \\
+    Wrist (Joint 5 to End Effector) & 143 mm \\
+  \end{tabular}
+\end{table}
 
+As can be seen by Table \ref{tab:linklengths}, the link measurements obtained in SolidWorks match the measurements provided by specification 1.5.a and the \textbf{manipulator meets the specification. }
 
+Specification \textbf{1.6.a} states: \textbf{The system’s workspace must contain a hemispherical shell which has a thickness of 280 mm where the robot is theoretically fully dexterous.} In order to test the dexterity of the manipulator and ensure that it fulfills specification 1.6.a, a program was created which tests a series of points for dexterity. These points are 1 millimeter apart to match the manipulator’s precision and can be rotated around the z-axis to create a hemispherical shell. It does this by calculating the inverse kinematics for the manipulator, given its dimensions, and if any point is outside of the manipulator’s workspace it is marked on a MATLAB plot, as can be seen in Figure \ref{fig:plot1}.
 
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.75\textwidth,frame]{workspace}
+  \caption{Matlab Plot of Invalid Dexterity Check}
+  \label{fig:plot1}
+\end{figure}
 
+Figure \ref{fig:plot1} shows a failed configuration for our dexterity check. After around 35 cm away from the robot it is no longer fully dexterous in this configuration. In order to fix this, changes to the design need to be made, specifically the length of the links. Another fix would be moving the dexterous workspace closer to the base of the robot, however it cannot be moved too close since the base of the robot would be in the way. Figure \ref{fig:plot2} shows a successful dexterity check.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.75\textwidth,frame]{image4}
+  \caption{Matlab Plot of Successful Dexterity Check}
+  \label{fig:plot2}
+\end{figure}
+
+As can be seen in Figure \ref{fig:plot2}, a successful dexterity check was achieved and the requirement is met. The dexterous workspace spans from 70 mm away from the base to 350 mm away from the base and thus creates a hemispherical workspace with a thickness of 280 mm, thus \textbf{the manipulator fulfills specification 1.6.a.}
+
+Specification \textbf{1.6.b} states: \textbf{The rotational limit of joint one, two, three, four, five, and six shall be -165° to 180°, 13.7° to 179.8°, -179.6° to -19.2°, ±180°, -180° to 0°, and ±180° respectively.} This specification is met if the links can rotate to the maximum and minimum angles provided by the specification. These angles were tested in SolidWorks using the measurement tool. The links to be measured are moved until they collide with one another and then the measurement tool is selected. Once the measurement tool is selected, the two links that form the angled are selected and the “create sensor” button is pressed. SolidWorks then provides the angle in degrees on the left sidebar. The angles for each joint are then recorded and the results of the measurements can be seen in Table \ref{tab:table2}.
+
+\begin{table}[htp]
+  \centering
+  \caption{Results of Angle Measurement Test for Specification 2.1.6.a}
+  \label{tab:table2}
+  \begin{tabular}{c|c|c|c}
+    Joint Number & Minimum Angle & Maximum Angle & Specification Met? \\\hline
+    1 & -180° & 180° & \checkmark \\
+    2 & -21° & 201° & \checkmark \\
+    3 & -126° & 126° & $\times$ \\
+    4 & -180° & 180° & \checkmark \\
+    5 & -75° & 115° & $\times$ \\
+    6 & -180° & 180° & \checkmark \\
+  \end{tabular}
+\end{table}
+
+Table \ref{tab:table2} shows that the measurements for joints 3 and 5 do not meet the specification’s individual requirements for them, therefore \textbf{the manipulator does not meet specification 1.6.b.}
+
+Specification \textbf{1.7a} states: \textbf{The system shall use a parallel gripper that can close to 18 mm.} To meet specification 1.7.a, a parallel gripper must be designed or purchased that can close to a minimum distance of at most 18 mm. Dynamixel offers a parallel gripper actuated by an AX-12A servo as shown in Figure \ref{fig:gripper1}. This can be utilized since the manipulator’s end effector is designed to attach an AX-12A smart servo.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.75\textwidth,frame]{image10}
+  \caption{Dynamixel Parallel Gripper with Servo Modified from [1]}
+  \label{fig:gripper1}
+\end{figure}
+
+As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest extent. However, the gripper’s fingers have removable foam pads. The foam pads allow adjustments in the gripping plasticity and the maximum opening/closure. Figure \ref{fig:gripper2} shows the gripper in various configurations.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.75\textwidth,frame]{image9}
+  \caption{Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening [1]}
+  \label{fig:gripper2}
+\end{figure}
+
+The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are maximally closed and the bottom three are maximally open.  From left to right, the fingers have no, one, and two pieces of foam. The maximum opening is 32 mm and the minimum amount of closure is 0mm. However, these extremes require different numbers of foam pads. So, the gripper could not open to 32 mm, then, close to 0 mm solely by the servo’s actuation. While none of these configurations has 18 mm between the fingers and, consequently, cannot close to 18 mm, the distance between the fingers can be adjusted as shown in Figure \ref{fig:gripper3}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.75\textwidth,frame]{image3}
+  \caption{Dynamixel Gripper Rotational to Linear Motion Mechanism [2]}
+  \label{fig:gripper3}
+\end{figure}
+
+By sending the servo a position, the two highlighted red half-circular bars seen in Figure 8 pivot about the servo face’s edges, translating the fingers either inward or outward. Clockwise rotation would decrease the distance between the fingers, while counterclockwise rotation would increase the distance. The closure’s precision would be dictated by the AX-12A’s resolution. Since the precision of the 18mm closing distance is not specified, it can be assumed the precion need only be sufficient to prevent the marker from being dislodged during writing, which is addressed in 1.8a. Therefore, with any number of foam pads, the gripper could close to 18 mm. With this gripper being used as an end effector attachment, \textbf{the manipulator meets specification 1.7.a.}
 
 Specification \textbf{2.1.a} states: \textbf{The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.}
 
-
 Specification \textbf{2.2.a} states: \textbf{The system shall have a user interface capable of accepting the end-effector’s desired cartesian position and Euler angle orientation as a six element row vector.} In order to satisfy specification 2.2.a, python scripts have been methodically developed to allow for user input of desired end effector position. These scripts could potentially be used as a backend for a graphical user interface (GUI) to further simplify the process of controlling the manipulator.
 
-
 In lieu of a python based GUI directly controlling the manipulator, a GUI could be created to instead control an animated simulation of the manipulator. The simulation is currently generated by a MATLAB script which draws the robot STL files into a figure window— the possibilities of controlling the simulation consist of several options, the most efficient would likely be to develop a user interface entirely with MATLAB. This avoids possible incompatibilities on systems without Python installed and avoids any communication issues that could incur with attempting to create the GUI in another language.
-
 
 The best option is to have a MATLAB GUI control the MATLAB simulation, therefore a basic interface shall be created in which the user can select which control scheme is desired as well as goal positions for the end effector. A sample GUI can be seen in Figure \ref{fig:gui}.
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=1\textwidth,frame]{gui}
+  \includegraphics[width=0.75\textwidth,frame]{gui}
   \caption{GUI Template}
   \label{fig:gui}
 \end{figure}
 
 As shown in Figure \ref{fig:gui}, the GUI will have desired cartesian end effector positions, such as an X, Y, and Z for the end effector position, as well as an end effector orientation input, i.e., phi, theta, and psi. The input will closely resemble the input of a 6 element row vector. The interface will also have user selectable direct joint controls, rather than the system performing the inverse kinematic calculations for the user. The interface will also display status indicators showing whether the robot is calibrated as well as the current manipulator configuration.
 
-
 In order to test this specification, several points within the workspace will be selected as well as a couple points outside of the workspace for the purpose of error checking. The points (in cartesian XYZ and Euler angles) are given as. The
-
 
 Specification \textbf{2.2.b} states: \textbf{The system shall be capable of performing floating point arithmetic.} In order to fulfill specification 2.2.b, a computational system must be selected that can perform floating point arithmetic. The Raspberry Pi 3b+ includes an ARM Cortex A-53 [4], which is capable of performing high-speed floating point arithmetic [5]. Based on this fact, \textbf{the manipulator meets specification 2.2b.}
 

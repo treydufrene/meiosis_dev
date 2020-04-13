@@ -1,4 +1,11 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Labeled Image of Manipulator Render\relax }}{1}% 
 \contentsline {figure}{\numberline {2}{\ignorespaces Measurement Test for Link Offset\relax }}{2}% 
 \contentsline {figure}{\numberline {3}{\ignorespaces Manipulator in its Zeroed Configuration\relax }}{3}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces GUI Template\relax }}{4}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Solidworks Measurement of Reachable Workspace\relax }}{4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Test of Link Length for Specification 1.5.a.\relax }}{5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Matlab Plot of Invalid Dexterity Check\relax }}{6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Matlab Plot of Successful Dexterity Check\relax }}{7}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Dynamixel Parallel Gripper with Servo Modified from [1]\relax }}{9}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening [1]\relax }}{10}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Dynamixel Gripper Rotational to Linear Motion Mechanism [2]\relax }}{11}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces GUI Template\relax }}{12}% 
