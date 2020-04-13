@@ -65,6 +65,7 @@
 \pagenumbering{arabic}
 \raggedright
 \section{Introduction}\label{sec:intro}
+\section{Specifications and Tests}\label{sec:tests}
 Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.} This is met if the cost for the MEIOSIS team to develop the manipulator does not exceed \$800. This can be tested by looking at the parts list provided in the parts list seen in Table \ref{tab:bom}.
 
 \begin{table}[htp]
@@ -88,10 +89,21 @@ Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rot
   \label{fig:manip}
 \end{figure}
 
-
 As can be seen labeled in Figure 1, the robot consists of six rotational joints. Joint 1 controls the rotation about the base,  joints 2-3 control the “shoulder” and “elbow” of the robot, and joints 4-6 control the  spherical wrist. The rotational axis of joint 4 intersects with joint 5’s and joint 5’s also intersects with joint 6’s rotational axis. To perform this test, the assembly file containing the manipulator was opened and the joints were counted. Using the move tool, each joint can be observed to be purely rotational. The data obtained is purely simulated due to the fact that the robot has not been fully fabricated. \textbf{This manipulator meets specification 1.2.a}.
 
-\section{Specifications and Tests}\label{sec:tests}
+Specification \textbf{1.2.b} states: \textbf{The system shall have no link offsets.} For this specification to be satisfied, there must be no link offsets present in the design of the robotic manipulator. This means that the link should connect two joints by translating in only one direction and the axes of the joints attached to the link should be collinear with one another. Testing this specification requires SolidWorks’ measurement tool. Using the measurement tool, measure each joint to ensure that there is only displacement along one axis. Figure \ref{fig:loff} shows an example of a measurement done on the elbow link of the manipulator.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.75\textwidth,frame]{loff}
+  \caption{Measurement Test for Link Offset}
+  \label{fig:loff}
+\end{figure}
+
+Figure \ref{fig:loff} shows a screen capture of a measurement taken and as can be seen by the blue line, the link only extends across one axis. If there were a link offset present, there would be multiple multi-colored lines to show displacement in multiple directions. These tests were done in simulation on each link of the manipulator and none contained any offset direction. Through this test, it is observed that \textbf{the manipulator meets specification 1.2.b}.
+
+Specification 1.3.a states: The system shall accommodate a process in which the end user can calibrate the end effector position and orientation to within 0.5 mm and 1 degree of the manipulator’s precision. In order to fulfill specification 1.3a, an algorithm was developed for calibration. This algorithm must allow the user to manually move the links into a desired zeroed configuration, then accurately retain that zeroed configuration as a reference position during use. Figure 3 depicts the manipulator in a zeroed configuration.
+
 \section{Conclusion}\label{sec:conc}
 
 \begin{table}[htp]

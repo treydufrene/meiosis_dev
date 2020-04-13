@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex test"] 1586809982 "test.aux" "test.bbl" "test" 1586809988
+["bibtex test"] 1586810191 "test.aux" "test.bbl" "test" 1586810194
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
   "robo.bib" 1586808827 1380 92156335cfeabcc18e6b8beadcec2587 ""
-  "test.aux" 1586809988 2109 2d87d714b45f0eab39435ea68ee2622e "pdflatex"
+  "test.aux" 1586810194 2356 877dce6d821b2b2cc85f7cb4dccc6e8a "pdflatex"
   (generated)
   "test.bbl"
   "test.blg"
-["pdflatex"] 1586809985 "test.tex" "test.pdf" "test" 1586809988
-  "/dev/null" 1586809961 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1586810191 "test.tex" "test.pdf" "test" 1586810194
+  "/dev/null" 1586810181 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc" 1202520719 2355 3e74b90173fc699673a5163cee277702 ""
@@ -197,19 +197,20 @@
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
   "coverpage.tex" 1586807985 567 98512a0a66562ce36377efde77b11ee7 ""
   "images/erau.png" 1566965613 202969 aef113bf89157c8ddf943a7c8a77402a ""
+  "images/loff.png" 1586809750 609946 4a4d6895d5895581f224a9c01978fc7b ""
   "images/logo.png" 1567798133 708802 36ceb018e01969acc2de1e309b0d1e54 ""
   "images/manip.png" 1586809750 738628 a336d716cdd7a0b67ad295a2d14fb6ce ""
   "images/text.png" 1567787150 117402 c36fae0c831f4c6ddab33871e43b50d6 ""
-  "test.aux" 1586809988 2109 2d87d714b45f0eab39435ea68ee2622e "pdflatex"
-  "test.bbl" 1586809982 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex test"
-  "test.lof" 1586809988 121 c1c306ced3379c5d91a3d6f1137a3344 "pdflatex"
-  "test.out" 1586809988 157 faeb956e1b2512659ced006f0244ea26 "pdflatex"
-  "test.tex" 1586809979 5285 032e1e19df10cb47156b80353537f7c2 ""
-  "test.toc" 1586809988 223 c7de387f9fdd4ddf101022230c69412d "pdflatex"
+  "test.aux" 1586810194 2356 877dce6d821b2b2cc85f7cb4dccc6e8a "pdflatex"
+  "test.bbl" 1586810191 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex test"
+  "test.lof" 1586810194 239 8b8cadf5c04d54c1c240cbc766de285d "pdflatex"
+  "test.out" 1586810194 157 faeb956e1b2512659ced006f0244ea26 "pdflatex"
+  "test.tex" 1586810188 7108 39b6d2c8d47d16ed7f4ab64b3b7ffea6 ""
+  "test.toc" 1586810194 223 bd03880c51b9001d9e807039e5aa8fc3 "pdflatex"
   (generated)
+  "test.pdf"
+  "test.lof"
+  "test.out"
+  "test.aux"
   "test.log"
   "test.toc"
-  "test.lof"
-  "test.aux"
-  "test.pdf"
-  "test.out"

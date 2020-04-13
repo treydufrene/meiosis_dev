@@ -348,6 +348,9 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT images/manip.png
 INPUT ./images/manip.png
 INPUT ./images/manip.png
+INPUT images/loff.png
+INPUT ./images/loff.png
+INPUT ./images/loff.png
 INPUT test.bbl
 INPUT test.bbl
 INPUT test.aux
