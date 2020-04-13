@@ -108,7 +108,7 @@ Specification \textbf{1.6.a} states: \textbf{The system’s workspace must conta
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.75\textwidth,frame]{workspace}
+  \includegraphics[width=0.6\textwidth,frame]{workspace}
   \caption{Matlab Plot of Invalid Dexterity Check}
   \label{fig:plot1}
 \end{figure}
@@ -117,7 +117,7 @@ Figure \ref{fig:plot1} shows a failed configuration for our dexterity check. Aft
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.75\textwidth,frame]{image4}
+  \includegraphics[width=0.6\textwidth,frame]{image4}
   \caption{Matlab Plot of Successful Dexterity Check}
   \label{fig:plot2}
 \end{figure}
@@ -147,16 +147,17 @@ Specification \textbf{1.7a} states: \textbf{The system shall use a parallel grip
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.75\textwidth,frame]{image10}
+  \includegraphics[width=0.5\textwidth,frame]{image10}
   \caption{Dynamixel Parallel Gripper with Servo Modified from [1]}
   \label{fig:gripper1}
 \end{figure}
 
 As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest extent. However, the gripper’s fingers have removable foam pads. The foam pads allow adjustments in the gripping plasticity and the maximum opening/closure. Figure \ref{fig:gripper2} shows the gripper in various configurations.
+% \let\clearpage\relax
 
-\begin{figure}[htp]
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=0.75\textwidth,frame]{image9}
+  \includegraphics[width=0.6\textwidth,frame]{image9}
   \caption{Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening [1]}
   \label{fig:gripper2}
 \end{figure}
@@ -165,14 +166,14 @@ The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are ma
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.75\textwidth,frame]{image3}
+  \includegraphics[width=0.6\textwidth,frame]{image3}
   \caption{Dynamixel Gripper Rotational to Linear Motion Mechanism [2]}
   \label{fig:gripper3}
 \end{figure}
 
 By sending the servo a position, the two highlighted red half-circular bars seen in Figure 8 pivot about the servo face’s edges, translating the fingers either inward or outward. Clockwise rotation would decrease the distance between the fingers, while counterclockwise rotation would increase the distance. The closure’s precision would be dictated by the AX-12A’s resolution. Since the precision of the 18mm closing distance is not specified, it can be assumed the precion need only be sufficient to prevent the marker from being dislodged during writing, which is addressed in 1.8a. Therefore, with any number of foam pads, the gripper could close to 18 mm. With this gripper being used as an end effector attachment, \textbf{the manipulator meets specification 1.7.a.}
 
-Specification \textbf{2.1.a} states: \textbf{The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.}
+Specification \textbf{2.1.a} states: \textbf{The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.} To satisfy this requirement, the software used to control the robot must be open source and publicly accessible; the use of the code repository GitHub allows for the former easily; by using the MIT licensing, the latter is accomplished, and possible legal implications due to misuse can be avoided. The license allows the end-user to modify, redistribute, or do with the code basically however they please: “...without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software...”\cite{mit} This makes it such that any end-user that makes a system with the manipulator, i.e. repurposes the given system for a task, has no limitations with how they wish to redistribute, share, or even sell the system. To implement the use of the license, all that must be done is the source code must contain the proper header including, shown by MIT \cite{mit}, which was completed, as well as the code is hosted in a public GitHub repository. Therefore \textbf{the system fulfills specification 2.1.a.}
 
 Specification \textbf{2.2.a} states: \textbf{The system shall have a user interface capable of accepting the end-effector’s desired cartesian position and Euler angle orientation as a six element row vector.} In order to satisfy specification 2.2.a, python scripts have been methodically developed to allow for user input of desired end effector position. These scripts could potentially be used as a backend for a graphical user interface (GUI) to further simplify the process of controlling the manipulator.
 
@@ -182,7 +183,7 @@ The best option is to have a MATLAB GUI control the MATLAB simulation, therefore
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.75\textwidth,frame]{gui}
+  \includegraphics[width=0.5\textwidth,frame]{gui}
   \caption{GUI Template}
   \label{fig:gui}
 \end{figure}
@@ -193,9 +194,9 @@ In order to test this specification, several points within the workspace will be
 
 Specification \textbf{2.2.b} states: \textbf{The system shall be capable of performing floating point arithmetic.} In order to fulfill specification 2.2.b, a computational system must be selected that can perform floating point arithmetic. The Raspberry Pi 3b+ includes an ARM Cortex A-53 [4], which is capable of performing high-speed floating point arithmetic [5]. Based on this fact, \textbf{the manipulator meets specification 2.2b.}
 
-
+% \newpage
 \section{Conclusion}\label{sec:conc}
-
+Table \ref{tab:results} summarizes the results of the tests performed throughout the course of this semester.
 \begin{table}[htp]
   \centering
   \caption{Summary of Test Results}
