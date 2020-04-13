@@ -345,6 +345,9 @@ INPUT test.lof
 OUTPUT test.lof
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT images/manip.png
+INPUT ./images/manip.png
+INPUT ./images/manip.png
 INPUT test.bbl
 INPUT test.bbl
 INPUT test.aux

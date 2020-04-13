@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex test"] 1586809040 "test.aux" "test.bbl" "test" 1586809263
+["bibtex test"] 1586809982 "test.aux" "test.bbl" "test" 1586809988
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
   "robo.bib" 1586808827 1380 92156335cfeabcc18e6b8beadcec2587 ""
-  "test.aux" 1586809262 1855 35e909aa906091e4bf9c2ccac8ed086f "pdflatex"
+  "test.aux" 1586809988 2109 2d87d714b45f0eab39435ea68ee2622e "pdflatex"
   (generated)
   "test.bbl"
   "test.blg"
-["pdflatex"] 1586809260 "test.tex" "test.pdf" "test" 1586809263
-  "/dev/null" 1586809249 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1586809985 "test.tex" "test.pdf" "test" 1586809988
+  "/dev/null" 1586809961 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc" 1202520719 2355 3e74b90173fc699673a5163cee277702 ""
@@ -198,17 +198,18 @@
   "coverpage.tex" 1586807985 567 98512a0a66562ce36377efde77b11ee7 ""
   "images/erau.png" 1566965613 202969 aef113bf89157c8ddf943a7c8a77402a ""
   "images/logo.png" 1567798133 708802 36ceb018e01969acc2de1e309b0d1e54 ""
+  "images/manip.png" 1586809750 738628 a336d716cdd7a0b67ad295a2d14fb6ce ""
   "images/text.png" 1567787150 117402 c36fae0c831f4c6ddab33871e43b50d6 ""
-  "test.aux" 1586809262 1855 35e909aa906091e4bf9c2ccac8ed086f "pdflatex"
-  "test.bbl" 1586809041 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex test"
-  "test.lof" 1586809262 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "test.out" 1586809262 157 faeb956e1b2512659ced006f0244ea26 "pdflatex"
-  "test.tex" 1586809260 4401 da018b782592534bea9078be7108128e ""
-  "test.toc" 1586809262 223 0b8624cee6c927d989d94b22eb8867fa "pdflatex"
+  "test.aux" 1586809988 2109 2d87d714b45f0eab39435ea68ee2622e "pdflatex"
+  "test.bbl" 1586809982 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex test"
+  "test.lof" 1586809988 121 c1c306ced3379c5d91a3d6f1137a3344 "pdflatex"
+  "test.out" 1586809988 157 faeb956e1b2512659ced006f0244ea26 "pdflatex"
+  "test.tex" 1586809979 5285 032e1e19df10cb47156b80353537f7c2 ""
+  "test.toc" 1586809988 223 c7de387f9fdd4ddf101022230c69412d "pdflatex"
   (generated)
-  "test.out"
-  "test.aux"
   "test.log"
   "test.toc"
   "test.lof"
+  "test.aux"
   "test.pdf"
+  "test.out"

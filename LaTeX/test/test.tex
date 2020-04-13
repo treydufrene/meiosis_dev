@@ -63,7 +63,7 @@
 \clearpage
 \newpage
 \pagenumbering{arabic}
-
+\raggedright
 \section{Introduction}\label{sec:intro}
 Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.} This is met if the cost for the MEIOSIS team to develop the manipulator does not exceed \$800. This can be tested by looking at the parts list provided in the parts list seen in Table \ref{tab:bom}.
 
@@ -78,8 +78,19 @@ Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to de
 
 As can be seen in Table \ref{tab:bom}, the manipulator will cost XX and the manipulator meets specification 1.1.a.
 
-Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.} For this specification to be met, the robot must have six rotational joints and 4 links. The last three joints must create a spherical wrist where the axis of revolution for the last three joints are intersecting with one another. To perform a test to check for six rotational joints, SolidWorks is required. A render of the manipulator with labeled joints can be seen in Figure 1.
-\raggedright
+Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.} For this specification to be met, the robot must have six rotational joints and 4 links. The last three joints must create a spherical wrist where the axis of revolution for the last three joints are intersecting with one another. To perform a test to check for six rotational joints, SolidWorks is required. A render of the manipulator with labeled joints can be seen in Figure \ref{fig:manip}.
+
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.75\textwidth,frame]{manip}
+  \caption{Labeled Image of Manipulator Render}
+  \label{fig:manip}
+\end{figure}
+
+
+As can be seen labeled in Figure 1, the robot consists of six rotational joints. Joint 1 controls the rotation about the base,  joints 2-3 control the “shoulder” and “elbow” of the robot, and joints 4-6 control the  spherical wrist. The rotational axis of joint 4 intersects with joint 5’s and joint 5’s also intersects with joint 6’s rotational axis. To perform this test, the assembly file containing the manipulator was opened and the joints were counted. Using the move tool, each joint can be observed to be purely rotational. The data obtained is purely simulated due to the fact that the robot has not been fully fabricated. \textbf{This manipulator meets specification 1.2.a}.
+
 \section{Specifications and Tests}\label{sec:tests}
 \section{Conclusion}\label{sec:conc}
 
