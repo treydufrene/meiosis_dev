@@ -458,6 +458,9 @@ INPUT ./images/loff.png
 INPUT images/zero.png
 INPUT ./images/zero.png
 INPUT ./images/zero.png
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
 INPUT images/image8.png
 INPUT ./images/image8.png
 INPUT ./images/image8.png
@@ -470,10 +473,7 @@ INPUT ./images/workspace.png
 INPUT images/image4.png
 INPUT ./images/image4.png
 INPUT ./images/image4.png
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ts1-lmbx12.tfm
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
 INPUT images/image10.png
 INPUT ./images/image10.png
 INPUT ./images/image10.png
