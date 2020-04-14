@@ -16,18 +16,31 @@
 With the intention of making robotics education more accessible, The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) intended to provide robotics classes with an accurate and precise manipulator for a lower cost. The system is designed to be 3D printed by the end-user to reduce overall cost and will be modifiable to create a sustainably increased understanding of robotics. This document details the tests performed by the MEIOSIS team and the specific results obtained by each test. This is done in order to ensure that the design requirements are properly met by the finished product.
 
 \section{Specifications and Tests}\label{sec:tests}
-Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.} This is met if the cost for the MEIOSIS team to develop the manipulator does not exceed \$800. This can be tested by looking at the parts list provided in the parts list seen in Table \ref{tab:bom}.
+Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.} This is met if the cost for the MEIOSIS team to develop the manipulator does not exceed \$800. This can be tested by adding together the total cost of all parts ordered. This process can be seen in Table \ref{tab:bom}.
 
 \begin{table}[htp]
   \centering
   \caption{MEIOSIS Bill of Materials with Costs}
   \label{tab:bom}
-  \begin{tabular}{c|c}
-      money & money\\
+  \begin{tabular}{c|c|c|c}
+  Part & Quantity & Individual price & Transaction Cost \\\hline
+  M3x30mm Screws & 2 & \$5.99 & \$11.98 \\
+  M3 Locking nuts & 1 & \$7.99 & \$7.99 \\
+  TRiREAK AC Bearing & 7 & \$9.00 & \$63.00 \\
+  Dynamixel MX-12W & 3 & \$65.90 & \$197.70 \\
+  Thrust Bearing & 1 & \$7.99 & \$7.99 \\
+  Skateboard Bearings & 1 & \$5.29 & \$5.29 \\
+  Pi 3 B & 1 & \$34.95 & \$34.95 \\
+  Power Supply & 1 & \$9.95 & \$9.95 \\
+  SD Card & 1 & \$12.95 & \$12.95 \\
+  Shipping/Tax & 1 & N/A & \$7.95 \\
+  Discounts & 1 & N/A & -\$8.17 \\
+  &&&\\
+  & & \textbf{Total Cost} & \$351.58 \\
   \end{tabular}
 \end{table}
 
-As can be seen in Table \ref{tab:bom}, the manipulator will cost XX and the manipulator meets specification 1.1.a.
+In Table 1, the “Shipping/Tax” row shows the listed shipping fees for the Pi 3 B and associated parts, and the “Discounts” row shows the sum total of all the small discounts that were applied to the bulk purchases of multiple items. Table 1 also demonstrates that the total cost to develop the manipulator was \$351.58, well under the \$800 allocated for this project, signifying that \textbf{Specification 1.1a was met by the product.}
 
 Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.} For this specification to be met, the robot must have six rotational joints and 4 links. The last three joints must create a spherical wrist where the axis of revolution for the last three joints are intersecting with one another. To perform a test to check for six rotational joints, SolidWorks is required. A render of the manipulator with labeled joints can be seen in Figure \ref{fig:manip}.
 
@@ -158,7 +171,7 @@ Specification \textbf{1.7a} states: \textbf{The system shall use a parallel grip
 As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest extent. However, the gripper’s fingers have removable foam pads. The foam pads allow adjustments in the gripping plasticity and the maximum opening/closure. Figure \ref{fig:gripper2} shows the gripper in various configurations.
 % \let\clearpage\relax
 
-\begin{figure}[h!]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.6\textwidth,frame]{image9}
   \caption{Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening \cite{gripper1}}
@@ -235,9 +248,10 @@ Table \ref{tab:results} summarizes the results of the tests performed throughout
 \section*{Appendix}\label{sec:app}
 
 
-\newpage
+% \null\newpage\null
 \bibliographystyle{plainnat}
-\bibliography{robo}
+\null\newpage\bibliography{robo}\null\newpage
+% \bibliography{robo}
 
 
 \end{document}
