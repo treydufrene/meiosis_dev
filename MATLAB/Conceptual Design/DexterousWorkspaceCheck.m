@@ -6,11 +6,10 @@ close all
 clc
 
 %define resolutions and constants
-xres = 5;                  %Cartesion resolution in x direction
-tres = 15;                   %Rotational resolution
-eOff = [0;0;5.25];          %End effector offset in cm
-rInner = 19;                %Inner radius of dexterous workspace
-rOuter = 47;                %Outer radius of dexterous workspace
+xres = 28/15;                   %Cartesion resolution in x direction
+tres = 15;                  %Rotational resolution
+rInner = 7;                %Inner radius of dexterous workspace
+rOuter = rInner + 28;                %Outer radius of dexterous workspace
 theta = linspace(0,90,91);  %Elevation angle
 L = rInner:xres:rOuter;     %Line of points to check
 errorPos = zeros(3,length(L),length(theta));
@@ -20,7 +19,7 @@ for jj = 1:length(theta)
     %Define desired cartesion end effector positions
     desX = cosd(theta(jj)).*L;
     desY = zeros(1,length(desX));
-    desZ = sind(theta(jj)).*L + 22.08;
+    desZ = sind(theta(jj)).*L + 16.15;
 
     %Iterate through all positions and orientations
     count = 1;
