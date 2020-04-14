@@ -157,7 +157,7 @@ Specification \textbf{1.6.b} states: \textbf{The rotational limit of joint one, 
   \end{tabular}
 \end{table}
 
-Table \ref{tab:table2} shows that the measurements for joints 3 and 5 do not meet the specification’s individual requirements for them, therefore \textbf{the manipulator does not meet specification 1.6.b.}
+Table \ref{tab:table2} shows that the measurements for joints 3 and 5 do not meet the specification’s individual requirements for them, therefore \textbf{the manipulator does not meet specification 1.6.b.} This specification could be met following a major redesign of the system’s link and joint system.
 
 Specification \textbf{1.7a} states: \textbf{The system shall use a parallel gripper that can close to 18 mm.} To meet specification 1.7.a, a parallel gripper must be designed or purchased that can close to a minimum distance of at most 18 mm. Dynamixel offers a parallel gripper actuated by an AX-12A servo as shown in Figure \ref{fig:gripper1}. This can be utilized since the manipulator’s end effector is designed to attach an AX-12A smart servo.
 
@@ -169,7 +169,6 @@ Specification \textbf{1.7a} states: \textbf{The system shall use a parallel grip
 \end{figure}
 
 As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest extent. However, the gripper’s fingers have removable foam pads. The foam pads allow adjustments in the gripping plasticity and the maximum opening/closure. Figure \ref{fig:gripper2} shows the gripper in various configurations.
-% \let\clearpage\relax
 
 \begin{figure}[ht]
   \centering
@@ -188,6 +187,8 @@ The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are ma
 \end{figure}
 
 By sending the servo a position, the two highlighted red half-circular bars seen in Figure 8 pivot about the servo face’s edges, translating the fingers either inward or outward. Clockwise rotation would decrease the distance between the fingers, while counterclockwise rotation would increase the distance. The closure’s precision would be dictated by the AX-12A’s resolution. Since the precision of the 18mm closing distance is not specified, it can be assumed the precion need only be sufficient to prevent the marker from being dislodged during writing, which is addressed in 1.8a. Therefore, with any number of foam pads, the gripper could close to 18 mm. With this gripper being used as an end effector attachment, \textbf{the manipulator meets specification 1.7.a.}
+
+Specification \textbf{1.7.b states: The end effector shall attach to the manipulator using screws configured in a pattern that can accommodate a Dynamixel AX-12A servo. In order to meet this specification, a dynamixel AX-12A smart servo must be compatible with the end effector’s screw configuration. This can simply be tested using screws and a screwdriver. If the smart servo can successfully be screwed onto the end effector, then this specification is met. The design matches measurements acquired in the lab and parts to accommodate an AX-12A were fabricated and assembled in the lab. This is enough to say that the manipulator meets specification 1.7.b.
 
 Specification \textbf{2.1.a} states: \textbf{The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.} To satisfy this requirement, the software used to control the robot must be open source and publicly accessible; the use of the code repository GitHub allows for the former easily; by using the MIT licensing, the latter is accomplished, and possible legal implications due to misuse can be avoided. The license allows the end-user to modify, redistribute, or do with the code basically however they please: “...without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software...”\cite{mit} This makes it such that any end-user that makes a system with the manipulator, i.e. repurposes the given system for a task, has no limitations with how they wish to redistribute, share, or even sell the system. To implement the use of the license, all that must be done is the source code must contain the proper header including, shown by MIT \cite{mit}, which was completed, as well as the code is hosted in a public GitHub repository. Therefore \textbf{the system fulfills specification 2.1.a.}
 
