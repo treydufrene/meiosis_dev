@@ -15,6 +15,7 @@
 
 With the intention of making robotics education more accessible, The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) intended to provide robotics classes with an accurate and precise manipulator for a lower cost. The system is designed to be 3D printed by the end-user to reduce overall cost and will be modifiable to create a sustainably increased understanding of robotics. This document details the tests performed by the MEIOSIS team and the specific results obtained by each test. This is done in order to ensure that the design requirements are properly met by the finished product.
 
+
 \section{Specifications and Tests}\label{sec:tests}
 Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.} This is met if the cost for the MEIOSIS team to develop the manipulator does not exceed \$800. This can be tested by adding together the total cost of all parts ordered. This process can be seen in Table \ref{tab:bom}.
 
@@ -42,6 +43,7 @@ Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to de
 
 In Table 1, the “Shipping/Tax” row shows the listed shipping fees for the Pi 3 B and associated parts, and the “Discounts” row shows the sum total of all the small discounts that were applied to the bulk purchases of multiple items. Table 1 also demonstrates that the total cost to develop the manipulator was \$351.58, well under the \$800 allocated for this project, signifying that \textbf{Specification 1.1a was met by the product.}
 
+
 Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rotational joints connected by four links. The last three joints will create a spherical wrist.} For this specification to be met, the robot must have six rotational joints and 4 links. The last three joints must create a spherical wrist where the axis of revolution for the last three joints are intersecting with one another. To perform a test to check for six rotational joints, SolidWorks is required. A render of the manipulator with labeled joints can be seen in Figure \ref{fig:manip}.
 
 
@@ -53,6 +55,7 @@ Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rot
 \end{figure}
 
 As can be seen labeled in Figure 1, the robot consists of six rotational joints. Joint 1 controls the rotation about the base,  joints 2-3 control the “shoulder” and “elbow” of the robot, and joints 4-6 control the  spherical wrist. The rotational axis of joint 4 intersects with joint 5’s and joint 5’s also intersects with joint 6’s rotational axis. To perform this test, the assembly file containing the manipulator was opened and the joints were counted. Using the move tool, each joint can be observed to be purely rotational. The data obtained is purely simulated due to the fact that the robot has not been fully fabricated. \textbf{This manipulator meets specification 1.2.a}.
+
 
 Specification \textbf{1.2.b} states: \textbf{The system shall have no link offsets.} For this specification to be satisfied, there must be no link offsets present in the design of the robotic manipulator. This means that the link should connect two joints by translating in only one direction and the axes of the joints attached to the link should be collinear with one another. Testing this specification requires SolidWorks’ measurement tool. Using the measurement tool, measure each joint to ensure that there is only displacement along one axis. Figure \ref{fig:loff} shows an example of a measurement done on the elbow link of the manipulator.
 
@@ -78,9 +81,11 @@ The configuration shown in Figure \ref{fig:zero} is what we have defined to be t
 
 In order to measure the calibration accuracy, the PhaseSpace Motion Capture system will be required. The calibration algorithm itself is accurate to the same value as the manipulator, however inaccuracies can arise due to the user not being able to manually put the manipulator into the correct configuration.  The testing procedure will be performed as follows. The motion capture system will be fully set up, including placing the tracking markers on the manipulator’s base and end-effector. Once the motion capture system is fully set up, the manipulator will be placed in an arbitrary configuration, at least 30 degrees away from zero in each joint. The manipulator will then be restarted, which will erase the system’s memory of it’s configuration. At this point, the motion capture system will start recording data. Using the calibration software, the manipulator will then be manually zeroed to the best of the operator’s abilities. Once this is completed, error terms can be determined by comparing the tracking data to the known values of the end-effector’s position and orientation in the zeroed state. Due to circumstances beyond our control, we are not able to perform this test. Because of this, adherence to specification 1.3a, and by extension \textbf{adherence to specification 1.3.a cannot be determined.}
 
+
 Specification \textbf{1.4.a} states: \textbf{Joint one and two of the system shall possess an angle error of no more than 0.025 degrees.} Specification \textbf{1.4.b} states: \textbf{Joint three of the system shall possess an angle error of no more than .03 degrees.} Specification \textbf{1.4.c} states: \textbf{Joints four, five, and six shall possess an angle error of no more than .29 degrees.} In order to verify specifications 1.4.a-1.4.c, the angle accuracy of the system must be measured. To determine the accuracy, the PhaseSpace Motion Capture System is required. Three LED indicators will be placed at the end of each gearbox that is farthest from the previous gearbox in the line to indicate the farthest point directly controlled by the previous gearbox. The three LEDs will be placed at 120 degree increments around each link/gearbox so that one or more of the LEDs are visible to the motion capture system at a time. To attain accurate results, small divots will be placed on the manipulator where the LEDs will be located in order to allow precise application of the LEDs to the system. Accurate LED placement will allow for more accurate kinematic/angle calculations.
 
 To test the system, the manipulator will be placed in the zeroed configuration and each joint will be tested individually. First, joint 1 will be tested by running from zero to 90 degrees, and then back to zero, and repeat for a total of 10 times. Each time joint 1 has reached the desired angle, the motion capture system will collect the location data of the LEDs and store it for error calculation. When the test has completed, the data can be used to calculate the angle the link actually achieved, and can be compared to the desired angle. Any error in zeroing can also be seen from the collected data. After the joint 1 has been tested, joint 2 will be tested following the same procedure, after which joints 3 through 6 will be tested in order. The worst angle error achieved by each joint will be compared to the value defined in the specifications. This test is unable to be performed and thus \textbf{the manipulator’s adherence to specifications 1.4a-1.4c cannot be determined.}
+
 
 Specification \textbf{1.5.a} states: \textbf{The manipulator shall have a maximum reach between 300 and 700 mm.} In order to satisfy this specification, the robot’s links must have a sum length of between 300 mm and 700 mm. Using Solidworks, the total reachable workspace can be measured using the “Measure” tool. This measurement can be seen in Figure \ref{fig:meas}.
 
@@ -120,11 +125,12 @@ Once the measurement tool in SolidWorks is selected, a measurement from the firs
 
 As can be seen by Table \ref{tab:linklengths}, the link measurements obtained in SolidWorks match the measurements provided by specification 1.5.a and the \textbf{manipulator meets the specification. }
 
-Specification \textbf{1.6.a} states: \textbf{The system’s workspace must contain a hemispherical shell which has a thickness of 280 mm where the robot is theoretically fully dexterous.} In order to test the dexterity of the manipulator and ensure that it fulfills specification 1.6.a, a program was created which tests a series of points for dexterity. These points are 1 millimeter apart to match the manipulator’s precision and can be rotated around the z-axis to create a hemispherical shell. It does this by calculating the inverse kinematics for the manipulator, given its dimensions, and if any point is outside of the manipulator’s workspace it is marked on a MATLAB plot, as can be seen in Figure \ref{fig:plot1}.
 
+Specification \textbf{1.6.a} states: \textbf{The system’s workspace must contain a hemispherical shell which has a thickness of 280 mm where the robot is theoretically fully dexterous.} In order to test the dexterity of the manipulator and ensure that it fulfills specification 1.6.a, a program was created which tests a series of points for dexterity. These points are 1 millimeter apart to match the manipulator’s precision and can be rotated around the z-axis to create a hemispherical shell. It does this by calculating the inverse kinematics for the manipulator, given its dimensions, and if any point is outside of the manipulator’s workspace it is marked on a MATLAB plot, as can be seen in Figure \ref{fig:plot1}.
+\let\clearpage\relax
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.6\textwidth,frame]{workspace}
+  \includegraphics[width=0.5\textwidth,frame]{workspace}
   \caption{Matlab Plot of Invalid Dexterity Check}
   \label{fig:plot1}
 \end{figure}
@@ -133,12 +139,13 @@ Figure \ref{fig:plot1} shows a failed configuration for our dexterity check. Aft
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.6\textwidth,frame]{image4}
+  \includegraphics[width=0.5\textwidth,frame]{image4}
   \caption{Matlab Plot of Successful Dexterity Check}
   \label{fig:plot2}
 \end{figure}
 
 As can be seen in Figure \ref{fig:plot2}, a successful dexterity check was achieved and the requirement is met. The dexterous workspace spans from 70 mm away from the base to 350 mm away from the base and thus creates a hemispherical workspace with a thickness of 280 mm, thus \textbf{the manipulator fulfills specification 1.6.a.}
+
 
 Specification \textbf{1.6.b} states: \textbf{The rotational limit of joint one, two, three, four, five, and six shall be -165° to 180°, 13.7° to 179.8°, -179.6° to -19.2°, ±180°, -180° to 0°, and ±180° respectively.} This specification is met if the links can rotate to the maximum and minimum angles provided by the specification. These angles were tested in SolidWorks using the measurement tool. The links to be measured are moved until they collide with one another and then the measurement tool is selected. Once the measurement tool is selected, the two links that form the angled are selected and the “create sensor” button is pressed. SolidWorks then provides the angle in degrees on the left sidebar. The angles for each joint are then recorded and the results of the measurements can be seen in Table \ref{tab:table2}.
 
@@ -158,6 +165,7 @@ Specification \textbf{1.6.b} states: \textbf{The rotational limit of joint one, 
 \end{table}
 
 Table \ref{tab:table2} shows that the measurements for joints 3 and 5 do not meet the specification’s individual requirements for them, therefore \textbf{the manipulator does not meet specification 1.6.b.} This specification could be met following a major redesign of the system’s link and joint system.
+
 
 Specification \textbf{1.7a} states: \textbf{The system shall use a parallel gripper that can close to 18 mm.} To meet specification 1.7.a, a parallel gripper must be designed or purchased that can close to a minimum distance of at most 18 mm. Dynamixel offers a parallel gripper actuated by an AX-12A servo as shown in Figure \ref{fig:gripper1}. This can be utilized since the manipulator’s end effector is designed to attach an AX-12A smart servo.
 
@@ -188,9 +196,25 @@ The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are ma
 
 By sending the servo a position, the two highlighted red half-circular bars seen in Figure 8 pivot about the servo face’s edges, translating the fingers either inward or outward. Clockwise rotation would decrease the distance between the fingers, while counterclockwise rotation would increase the distance. The closure’s precision would be dictated by the AX-12A’s resolution. Since the precision of the 18mm closing distance is not specified, it can be assumed the precion need only be sufficient to prevent the marker from being dislodged during writing, which is addressed in 1.8a. Therefore, with any number of foam pads, the gripper could close to 18 mm. With this gripper being used as an end effector attachment, \textbf{the manipulator meets specification 1.7.a.}
 
-Specification \textbf{1.7.b states: The end effector shall attach to the manipulator using screws configured in a pattern that can accommodate a Dynamixel AX-12A servo. In order to meet this specification, a dynamixel AX-12A smart servo must be compatible with the end effector’s screw configuration. This can simply be tested using screws and a screwdriver. If the smart servo can successfully be screwed onto the end effector, then this specification is met. The design matches measurements acquired in the lab and parts to accommodate an AX-12A were fabricated and assembled in the lab. This is enough to say that the manipulator meets specification 1.7.b.
+
+Specification \textbf{1.7.b} states: \textbf{The end effector shall attach to the manipulator using screws configured in a pattern that can accommodate a Dynamixel AX-12A servo.} In order to meet this specification, a dynamixel AX-12A smart servo must be compatible with the end effector’s screw configuration. This can simply be tested using screws and a screwdriver. If the smart servo can successfully be screwed onto the end effector, then this specification is met. The design matches measurements acquired in the lab and parts to accommodate an AX-12A were fabricated and assembled in the lab. This is enough to say that \textbf{the manipulator meets specification 1.7.b}.
+
+
+Specification \textbf{1.8.a} states: \textbf{The gripper shall be able to support 0.004 Newton meter moments about the axes normal to its gripping surfaces.} To meet specification 1.8.a, the gripper selected to be attached to the manipulator’s end effector should be capable of holding an object that provides 0.004 Newton meter moments about the axes normal to its gripping surfaces. Using the same Dynamixel gripper seen in Figure \ref{fig:gripper4}, a test can be performed
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.6\textwidth,frame]{image12}
+  \caption{Dynamixel Parallel Gripper with Servo Modified from \cite{gripper1}}
+  \label{fig:gripper4}
+\end{figure}
+
+While Dynamixel states the gripper’s gripping strength is 500g, they do not specify [1]. For testing, we can consider the convenient coordinate frame shown in Figure 9. Specifically, when writing, moments caused by the Expo marker’s contact force with paper can be decomposed along these axes. In the best case scenario, the marker provides force parallel to and perpendicular to the gripping plane denoted by PL and PD respectively.
+To test this specification, a set of masses and an expo marker  are required. First, the servo would be commanded to close the gripper on the expo marker and the masses would be gradually hung from the end of the expo marker. The moment could be calculated as more mass is added and if the marker is observed to slip or rotate, the moment is too large for the gripper. The gripper would be tested at different angles, grip force, and number of pieces of foam attached, as can be seen in Figure 7. Due to unforeseen circumstances, \textbf{adherence to specification 1.8.a cannot be determined.}
+
 
 Specification \textbf{2.1.a} states: \textbf{The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.} To satisfy this requirement, the software used to control the robot must be open source and publicly accessible; the use of the code repository GitHub allows for the former easily; by using the MIT licensing, the latter is accomplished, and possible legal implications due to misuse can be avoided. The license allows the end-user to modify, redistribute, or do with the code basically however they please: “...without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software...”\cite{mit} This makes it such that any end-user that makes a system with the manipulator, i.e. repurposes the given system for a task, has no limitations with how they wish to redistribute, share, or even sell the system. To implement the use of the license, all that must be done is the source code must contain the proper header including, shown by MIT \cite{mit}, which was completed, as well as the code is hosted in a public GitHub repository. Therefore \textbf{the system fulfills specification 2.1.a.}
+
 
 Specification \textbf{2.2.a} states: \textbf{The system shall have a user interface capable of accepting the end-effector’s desired cartesian position and Euler angle orientation as a six element row vector.} In order to satisfy specification 2.2.a, python scripts have been methodically developed to allow for user input of desired end effector position. These scripts could potentially be used as a backend for a graphical user interface (GUI) to further simplify the process of controlling the manipulator.
 
@@ -214,6 +238,8 @@ Due to uncertainties in the design caused by recent events, development for this
 
 Specification \textbf{2.2.b} states: \textbf{The system shall be capable of performing floating point arithmetic.} In order to fulfill specification 2.2.b, a computational system must be selected that can perform floating point arithmetic. The Raspberry Pi 3b+ includes an ARM Cortex A-53 \cite{rpi}, which is capable of performing high-speed floating point arithmetic \cite{arm}. Based on this fact, \textbf{the manipulator meets specification 2.2b.}
 
+
+\section{Further Testing}
 % \newpage
 \section{Conclusion}\label{sec:conc}
 Table \ref{tab:results} summarizes the results of the tests performed throughout the course of this semester.

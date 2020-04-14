@@ -483,6 +483,9 @@ INPUT ./images/image9.png
 INPUT images/image3.png
 INPUT ./images/image3.png
 INPUT ./images/image3.png
+INPUT images/image12.png
+INPUT ./images/image12.png
+INPUT ./images/image12.png
 INPUT images/gui.jpg
 INPUT ./images/gui.jpg
 INPUT ./images/gui.jpg
