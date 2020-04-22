@@ -331,7 +331,6 @@ The first subsection of the software works to receive the number of points the u
 \emph{Figure \ref{fig:sf1}} specifies that the software prompts the user for the number of points that the manipulator will travel through and stores the input as a variable, in this case ‘x’. The ‘x’ variable is only used to help preallocate data vectors so that the size of the vector does not change with each input. The software also receives the task specification as either a 0 for cartesian straight line pathing or a 1 for a straight line in the joint space and stores this value in the variable ‘c’.
 
 The second general block in the software flowchart works to receive and store the necessary data for the points the user is inputting depending on the path type as seen in \emph{Figure \ref{fig:sf2}}.
-\newpage
 \begin{figure}[htp] \ContinuedFloat
   \begin{subfigure}[c]{\textwidth}
   \center
@@ -434,7 +433,6 @@ The \texttt{setJA} method shown above is an example of how a basic function need
 \bibliographystyle{plainnat}
 \raggedright
 \bibliography{bibs}
-
 \newpage
 \appendix
 \renewcommand\thesection{\Roman{section}}

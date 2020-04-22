@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 APR 2020 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 APR 2020 10:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1250,7 +1250,7 @@ Package: listofitems 2019/03/03 v1.61 Grab items in lists using user-specified s
 \@centerbox=\box131
 \c@ROWcellindex@=\count374
 )
-Package Listings Info: Made | a short reference for \lstinline on input line 57.
+Package Listings Info: Made | a short reference for \lstinline on input line 58.
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
@@ -1560,42 +1560,42 @@ File: images/sf1.pdf Graphic file (type pdf)
 <use images/sf1.pdf>
 Package pdftex.def Info: images/sf1.pdf  used on input line 325.
 (pdftex.def)             Requested size: 469.75502pt x 72.6334pt.
- [14 <./images/sf1.pdf>]
-<images/sf2.pdf, id=278, 614.295pt x 235.00127pt>
+<images/sf2.pdf, id=255, 614.295pt x 235.00127pt>
 File: images/sf2.pdf Graphic file (type pdf)
 <use images/sf2.pdf>
-Package pdftex.def Info: images/sf2.pdf  used on input line 338.
+Package pdftex.def Info: images/sf2.pdf  used on input line 337.
 (pdftex.def)             Requested size: 469.75502pt x 179.70724pt.
-<images/sf3.pdf, id=279, 614.295pt x 170.4746pt>
+ [14 <./images/sf1.pdf> <./images/sf2.pdf>]
+<images/sf3.pdf, id=299, 614.295pt x 170.4746pt>
 File: images/sf3.pdf Graphic file (type pdf)
 <use images/sf3.pdf>
-Package pdftex.def Info: images/sf3.pdf  used on input line 351.
+Package pdftex.def Info: images/sf3.pdf  used on input line 350.
 (pdftex.def)             Requested size: 469.75502pt x 130.3632pt.
- [15 <./images/sf2.pdf> <./images/sf3.pdf>]
+ [15 <./images/sf3.pdf>]
 <images/sf4.pdf, id=323, 612.27617pt x 220.0205pt>
 File: images/sf4.pdf Graphic file (type pdf)
 <use images/sf4.pdf>
-Package pdftex.def Info: images/sf4.pdf  used on input line 364.
+Package pdftex.def Info: images/sf4.pdf  used on input line 363.
 (pdftex.def)             Requested size: 465.06004pt x 167.12329pt.
 <images/sf5.pdf, id=324, 383.20708pt x 149.40659pt>
 File: images/sf5.pdf Graphic file (type pdf)
 <use images/sf5.pdf>
-Package pdftex.def Info: images/sf5.pdf  used on input line 378.
+Package pdftex.def Info: images/sf5.pdf  used on input line 377.
 (pdftex.def)             Requested size: 469.75502pt x 183.158pt.
 <images/sf6.pdf, id=325, 518.22128pt x 257.91676pt>
 File: images/sf6.pdf Graphic file (type pdf)
 <use images/sf6.pdf>
-Package pdftex.def Info: images/sf6.pdf  used on input line 390.
+Package pdftex.def Info: images/sf6.pdf  used on input line 389.
 (pdftex.def)             Requested size: 469.75502pt x 233.79552pt.
  [16 <./images/sf4.pdf> <./images/sf5.pdf>] (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 ) [17 <./images/sf6.pdf>]
-LaTeX Font Info:    Try loading font information for T1+zlmtt on input line 412.
+LaTeX Font Info:    Try loading font information for T1+zlmtt on input line 411.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/zlmtt/t1zlmtt.fd
 File: t1zlmtt.fd 2014/02/07 v1.0 Alternate font definitions for Latin Modern Typewriter, Michael Sharpe
 )
 LaTeX Font Info:    Font shape `T1/zlmtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 412.
+(Font)              scaled to size 12.0pt on input line 411.
  (./cdr.bbl [18]) [19
 
 ] (./mmodel.tex
@@ -1615,14 +1615,14 @@ LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
 Here is how much of TeX's memory you used:
  44645 strings out of 492616
  957641 string characters out of 6129482
- 1390494 words of memory out of 5000000
+ 1390508 words of memory out of 5000000
  47815 multiletter control sequences out of 15000+600000
  718511 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,120p,2189b,1835s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2019/
 texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on cdr.pdf (27 pages, 3465134 bytes).
+Output written on cdr.pdf (27 pages, 3465105 bytes).
 PDF statistics:
  476 PDF objects out of 1000 (max. 8388607)
  329 compressed objects within 4 object streams
