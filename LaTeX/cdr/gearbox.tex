@@ -1,0 +1,20 @@
+\begin{center}
+\begin{tikzpicture}
+\pgfmathsetmacro{\cubex}{1}
+\pgfmathsetmacro{\cubey}{1}
+\pgfmathsetmacro{\cubez}{1}
+\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,-\cubey,0) -- ++(\cubex,0,0) -- cycle;
+\draw (0,0,0) -- ++(0,0,-\cubez) -- ++(0,-\cubey,0) -- ++(0,0,\cubez);
+\draw (0,0,0) -- ++(-\cubex,0,0) -- ++(0,0,-\cubez) -- ++(\cubex,0,0);
+\draw (-2,-.5,-.5) -- ++(.8,0,0) node(a)[midway,above]{} node(b)[midway]{} node(c)[midway,below]{};
+\pic [draw,angle radius=5,<-] {angle = a--b--c};
+\node at (-2.25,0,-.5) {\small $\theta_a$};
+\node at (-2.25,-1,-.5) {\small $\tau_{in}$};
+\draw (0,-.5,-.5) -- ++(1,0,0);
+\draw (0,-.5,-.5) -- ++(1,0,0) node(a1)[midway,above]{} node(b1)[midway]{} node(c1)[midway,below]{};
+\pic [draw,angle radius=5,<-] {angle = a1--b1--c1};
+\node at (1.5,0,-.5) {\small $\theta=\dfrac{\theta_a}{N}$};
+\node at (1.5,-1,-.5) {\small $\tau_{out}=\tau_{in}N\eta$};
+\node at (-.5,-.5,0) {$N$};
+\end{tikzpicture}
+\end{center}
