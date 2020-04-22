@@ -1,12 +1,12 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Labeled Image of Manipulator Render\relax }}{2}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Labeled Image of Manipulator Rendering\relax }}{2}% 
 \contentsline {figure}{\numberline {2}{\ignorespaces Measurement Test for Link Offset\relax }}{3}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Manipulator in its Zeroed Configuration\relax }}{3}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces Solidworks Measurement of Reachable Workspace\relax }}{5}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces Test of Link Length for Specification 1.5.a.\relax }}{5}% 
-\contentsline {figure}{\numberline {6}{\ignorespaces Matlab Plot of Invalid Dexterity Check\relax }}{6}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces Matlab Plot of Successful Dexterity Check\relax }}{7}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces Dynamixel Parallel Gripper with Servo Modified from \cite {gripper1}\relax }}{8}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening \cite {gripper1}\relax }}{9}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Manipulator in its Zeroed Configuration\relax }}{4}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Solidworks Measurement of Reachable Workspace\relax }}{6}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Test of Link Length for Specification 1.5.a.\relax }}{6}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Matlab Plot of Invalid Dexterity Check\relax }}{7}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Matlab Plot of Successful Dexterity Check\relax }}{8}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Dynamixel Parallel Gripper with Servo \cite {gripper1}\relax }}{9}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening \cite {gripper1}\relax }}{10}% 
 \contentsline {figure}{\numberline {10}{\ignorespaces Dynamixel Gripper Rotational to Linear Motion Mechanism \cite {gripper2}\relax }}{10}% 
-\contentsline {figure}{\numberline {11}{\ignorespaces Dynamixel Parallel Gripper with Servo Modified from \cite {gripper1}\relax }}{11}% 
-\contentsline {figure}{\numberline {12}{\ignorespaces GUI Template\relax }}{12}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Dynamixel Parallel Gripper with Servo \cite {gripper1}\relax }}{11}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces GUI Template\relax }}{13}% 

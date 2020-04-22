@@ -1,18 +1,32 @@
-This is BibTeX, Version 0.99d (TeX Live 2019)
+This is BibTeX, Version 0.99d (TeX Live 2019/W32TeX)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: test.aux
 The style file: plainnat.bst
+Illegal, another \bibstyle command---line 60 of file test.aux
+ : \bibstyle
+ :          {ieeetran}
+I'm skipping whatever remains of this command
 Database file #1: robo.bib
 Warning--entry type for "mit" isn't style-file defined
---line 11 of file robo.bib
+--line 21 of file robo.bib
 Warning--entry type for "arm" isn't style-file defined
---line 16 of file robo.bib
+--line 33 of file robo.bib
+I was expecting a `,' or a `}'---line 41 of file robo.bib
+ :  
+ :  Url = {https://developer.arm.com/ip-products/processors/cortex-a/cortex-a53},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--entry type for "rpi" isn't style-file defined
---line 22 of file robo.bib
+--line 47 of file robo.bib
+I was expecting a `,' or a `}'---line 55 of file robo.bib
+ :  
+ :  Url = {https://static.raspberrypi.org/files/product-briefs/200206+Raspberry+Pi+3+Model+B+plus+Product+Brief+PRINT&DIGITAL.pdf},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--entry type for "gripper2" isn't style-file defined
---line 34 of file robo.bib
+--line 73 of file robo.bib
 Warning--entry type for "gripper1" isn't style-file defined
---line 40 of file robo.bib
+--line 85 of file robo.bib
 Warning--to sort, need author or key in gripper1
 Warning--to sort, need author or key in gripper2
 Warning--to sort, need author or key in mit
@@ -25,34 +39,34 @@ Warning--empty year in mit
 Warning--empty year in rpi
 You've used 5 entries,
             2773 wiz_defined-function locations,
-            602 strings with 5303 characters,
-and the built_in function-call counts, 1195 in all, are:
-= -- 104
+            603 strings with 5216 characters,
+and the built_in function-call counts, 1203 in all, are:
+= -- 107
 > -- 0
 < -- 0
 + -- 6
 - -- 0
-* -- 86
-:= -- 96
-add.period$ -- 7
+* -- 82
+:= -- 99
+add.period$ -- 8
 call.type$ -- 5
-change.case$ -- 10
+change.case$ -- 13
 chr.to.int$ -- 4
 cite$ -- 25
 duplicate$ -- 75
 empty$ -- 176
 format.name$ -- 0
-if$ -- 285
+if$ -- 288
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 25
+newline$ -- 26
 num.names$ -- 0
-pop$ -- 63
+pop$ -- 68
 preamble$ -- 1
 purify$ -- 10
 quote$ -- 0
-skip$ -- 81
+skip$ -- 72
 stack$ -- 0
 substring$ -- 15
 swap$ -- 7
@@ -63,5 +77,5 @@ type$ -- 55
 warning$ -- 10
 while$ -- 0
 width$ -- 0
-write$ -- 46
-(There were 15 warnings)
+write$ -- 48
+(There were 3 error messages)

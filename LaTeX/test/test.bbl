@@ -6,7 +6,7 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[arm()]{arm}
-URL \url{https://developer.arm.com/ip-products/processors/cortex-a/cortex-a53}.
+{"Cortex-A53," arm Developer}.
 
 \bibitem[gri({\natexlab{a}})]{gripper1}
 {\natexlab{a}}.
@@ -19,10 +19,10 @@ URL \url{https://developer.arm.com/ip-products/processors/cortex-a/cortex-a53}.
   \url{https://www.trossenrobotics.com/productdocs/assemblyguides/phantomx-parallel-gripper.html}.
 
 \bibitem[mit()]{mit}
-URL \url{https://opensource.org/licenses/MIT}.
+{"The MIT License," Open Source Initiative}.
+\newblock URL \url{https://opensource.org/licenses/MIT}.
 
 \bibitem[rpi()]{rpi}
-URL
-  \url{https://static.raspberrypi.org/files/product-briefs/200206+Raspberry+Pi+3+Model+B+plus+Product+Brief+PRINT&DIGITAL.pdf}.
+{"Raspberry Pi 3 Model B+"}.
 
 \end{thebibliography}
