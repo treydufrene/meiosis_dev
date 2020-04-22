@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 APR 2020 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 APR 2020 18:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1455,11 +1455,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [4
 
 ]
-Overfull \hbox (3.31932pt too wide) detected at line 74
+<images/HarmonicGearboxLocations.png, id=36, 1239.63126pt x 696.6025pt>
+File: images/HarmonicGearboxLocations.png Graphic file (type png)
+<use images/HarmonicGearboxLocations.png>
+Package pdftex.def Info: images/HarmonicGearboxLocations.png  used on input line 48.
+(pdftex.def)             Requested size: 305.33789pt x 171.57791pt.
+<images/ExplodedViewoftheHarmonicGearbox.png, id=37, 1240.635pt x 697.60625pt>
+File: images/ExplodedViewoftheHarmonicGearbox.png Graphic file (type png)
+<use images/ExplodedViewoftheHarmonicGearbox.png>
+Package pdftex.def Info: images/ExplodedViewoftheHarmonicGearbox.png  used on input line 57.
+(pdftex.def)             Requested size: 305.33789pt x 171.68675pt.
+ [1 <./images/HarmonicGearboxLocations.png>]
+Overfull \hbox (3.31932pt too wide) detected at line 94
 \OML/lmm/m/it/12 d\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 ) = [] \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] [] [](\OML/lmm/m/it/12 ^^M; []\OT1/lmr/m/n/12 )[] + \OML/lmm/m/it/12 J[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^M\OT1/lmr/m/n/12 )[] []
  []
 
-(./motor.tex
+(./motor.tex [2 <./images/ExplodedViewoftheHarmonicGearbox.png>]
 LaTeX Font Info:    Calculating math sizes for size <8.4> on input line 11.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8.4> on input line 11.
@@ -1470,121 +1481,122 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  (./gearbox.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 11.
- [1]) [2]
+) [3]
 LaTeX Font Info:    Try loading font information for TS1+lmr on input line 96.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-<images/motorloc.png, id=49, 924.45375pt x 505.89pt>
+)) [4]
+<images/motorloc.png, id=64, 924.45375pt x 505.89pt>
 File: images/motorloc.png Graphic file (type png)
 <use images/motorloc.png>
-Package pdftex.def Info: images/motorloc.png  used on input line 88.
+Package pdftex.def Info: images/motorloc.png  used on input line 108.
 (pdftex.def)             Requested size: 352.31625pt x 192.79597pt.
- [3] [4 <./images/motorloc.png>]
-<images/clsnap1.pdf, id=62, 268.18796pt x 265.47028pt>
+ [5 <./images/motorloc.png>]
+<images/clsnap1.pdf, id=69, 268.18796pt x 265.47028pt>
 File: images/clsnap1.pdf Graphic file (type pdf)
 <use images/clsnap1.pdf>
-Package pdftex.def Info: images/clsnap1.pdf  used on input line 143.
+Package pdftex.def Info: images/clsnap1.pdf  used on input line 163.
 (pdftex.def)             Requested size: 139.51704pt x 138.11014pt.
-<images/clsnap2.pdf, id=63, 268.18796pt x 265.47028pt>
+<images/clsnap2.pdf, id=70, 268.18796pt x 265.47028pt>
 File: images/clsnap2.pdf Graphic file (type pdf)
 <use images/clsnap2.pdf>
-Package pdftex.def Info: images/clsnap2.pdf  used on input line 148.
+Package pdftex.def Info: images/clsnap2.pdf  used on input line 168.
 (pdftex.def)             Requested size: 139.51704pt x 138.11014pt.
-<images/clsnap3.pdf, id=64, 268.18796pt x 265.47028pt>
+<images/clsnap3.pdf, id=71, 268.18796pt x 265.47028pt>
 File: images/clsnap3.pdf Graphic file (type pdf)
 <use images/clsnap3.pdf>
-Package pdftex.def Info: images/clsnap3.pdf  used on input line 153.
+Package pdftex.def Info: images/clsnap3.pdf  used on input line 173.
 (pdftex.def)             Requested size: 139.51704pt x 138.11014pt.
-<images/cljplots1.pdf, id=65, 469.4791pt x 127.26054pt>
+<images/cljplots1.pdf, id=72, 469.4791pt x 127.26054pt>
 File: images/cljplots1.pdf Graphic file (type pdf)
 <use images/cljplots1.pdf>
-Package pdftex.def Info: images/cljplots1.pdf  used on input line 162.
+Package pdftex.def Info: images/cljplots1.pdf  used on input line 182.
 (pdftex.def)             Requested size: 446.26582pt x 120.96866pt.
-<images/cljplots2.pdf, id=66, 467.68422pt x 114.70906pt>
+<images/cljplots2.pdf, id=73, 467.68422pt x 114.70906pt>
 File: images/cljplots2.pdf Graphic file (type pdf)
 <use images/cljplots2.pdf>
-Package pdftex.def Info: images/cljplots2.pdf  used on input line 170.
+Package pdftex.def Info: images/cljplots2.pdf  used on input line 190.
 (pdftex.def)             Requested size: 446.26582pt x 109.46132pt.
-<images/cljplots3.pdf, id=67, 468.1643pt x 121.52803pt>
+<images/cljplots3.pdf, id=74, 468.1643pt x 121.52803pt>
 File: images/cljplots3.pdf Graphic file (type pdf)
 <use images/cljplots3.pdf>
-Package pdftex.def Info: images/cljplots3.pdf  used on input line 178.
+Package pdftex.def Info: images/cljplots3.pdf  used on input line 198.
 (pdftex.def)             Requested size: 446.26582pt x 115.84409pt.
-<images/tbar.png, id=68, 649.67719pt x 493.845pt>
+<images/tbar.png, id=75, 649.67719pt x 493.845pt>
 File: images/tbar.png Graphic file (type png)
 <use images/tbar.png>
-Package pdftex.def Info: images/tbar.png  used on input line 187.
+Package pdftex.def Info: images/tbar.png  used on input line 207.
 (pdftex.def)             Requested size: 234.8775pt x 178.5376pt.
-<images/ansys_forces.png, id=69, 768.62157pt x 490.08093pt>
+<images/ansys_forces.png, id=76, 768.62157pt x 490.08093pt>
 File: images/ansys_forces.png Graphic file (type png)
 <use images/ansys_forces.png>
-Package pdftex.def Info: images/ansys_forces.png  used on input line 195.
+Package pdftex.def Info: images/ansys_forces.png  used on input line 215.
 (pdftex.def)             Requested size: 258.36668pt x 164.74084pt.
- [5 <./images/clsnap1.pdf> <./images/clsnap2.pdf> <./images/clsnap3.pdf>] [6 <./images/cljplots1.pdf> <./images/cljplots2.pdf> <./images/cljplots3.pdf>] [7 <./images/tbar.png> <./images/ansys_forces.png>]
-<images/ansys_full.png, id=204, 728.7225pt x 487.06969pt>
+ [6] [7 <./images/clsnap1.pdf> <./images/clsnap2.pdf> <./images/clsnap3.pdf> <./images/cljplots1.pdf> <./images/cljplots2.pdf>] [8 <./images/cljplots3.pdf> <./images/tbar.png>] [9 <./images/ansys_forces.png>]
+<images/ansys_full.png, id=214, 728.7225pt x 487.06969pt>
 File: images/ansys_full.png Graphic file (type png)
 <use images/ansys_full.png>
-Package pdftex.def Info: images/ansys_full.png  used on input line 208.
+Package pdftex.def Info: images/ansys_full.png  used on input line 228.
 (pdftex.def)             Requested size: 211.3883pt x 141.28374pt.
-<images/ansys_bearing.png, id=205, 380.92313pt x 319.1925pt>
+<images/ansys_bearing.png, id=215, 380.92313pt x 319.1925pt>
 File: images/ansys_bearing.png Graphic file (type png)
 <use images/ansys_bearing.png>
-Package pdftex.def Info: images/ansys_bearing.png  used on input line 214.
+Package pdftex.def Info: images/ansys_bearing.png  used on input line 234.
 (pdftex.def)             Requested size: 176.15813pt x 147.6096pt.
-<images/ansys_life.png, id=206, 748.29562pt x 521.69907pt>
+<images/ansys_life.png, id=216, 748.29562pt x 521.69907pt>
 File: images/ansys_life.png Graphic file (type png)
 <use images/ansys_life.png>
-Package pdftex.def Info: images/ansys_life.png  used on input line 225.
+Package pdftex.def Info: images/ansys_life.png  used on input line 245.
 (pdftex.def)             Requested size: 281.85587pt x 196.50435pt.
- [8 <./images/ansys_full.png> <./images/ansys_bearing.png> <./images/ansys_life.png>] [9] [10]
-<images/soverall.pdf, id=219, 614.295pt x 190.284pt>
+ [10 <./images/ansys_full.png> <./images/ansys_bearing.png> <./images/ansys_life.png>] [11] [12]
+<images/soverall.pdf, id=229, 614.295pt x 190.284pt>
 File: images/soverall.pdf Graphic file (type pdf)
 <use images/soverall.pdf>
-Package pdftex.def Info: images/soverall.pdf  used on input line 293.
+Package pdftex.def Info: images/soverall.pdf  used on input line 313.
 (pdftex.def)             Requested size: 469.75502pt x 145.51161pt.
-<images/sf1.pdf, id=220, 614.295pt x 94.98195pt>
+ [13 <./images/soverall.pdf>]
+<images/sf1.pdf, id=254, 614.295pt x 94.98195pt>
 File: images/sf1.pdf Graphic file (type pdf)
 <use images/sf1.pdf>
-Package pdftex.def Info: images/sf1.pdf  used on input line 305.
+Package pdftex.def Info: images/sf1.pdf  used on input line 325.
 (pdftex.def)             Requested size: 469.75502pt x 72.6334pt.
- [11] [12 <./images/soverall.pdf> <./images/sf1.pdf>]
-<images/sf2.pdf, id=267, 614.295pt x 235.00127pt>
+ [14 <./images/sf1.pdf>]
+<images/sf2.pdf, id=278, 614.295pt x 235.00127pt>
 File: images/sf2.pdf Graphic file (type pdf)
 <use images/sf2.pdf>
-Package pdftex.def Info: images/sf2.pdf  used on input line 318.
+Package pdftex.def Info: images/sf2.pdf  used on input line 338.
 (pdftex.def)             Requested size: 469.75502pt x 179.70724pt.
-<images/sf3.pdf, id=268, 614.295pt x 170.4746pt>
+<images/sf3.pdf, id=279, 614.295pt x 170.4746pt>
 File: images/sf3.pdf Graphic file (type pdf)
 <use images/sf3.pdf>
-Package pdftex.def Info: images/sf3.pdf  used on input line 331.
+Package pdftex.def Info: images/sf3.pdf  used on input line 351.
 (pdftex.def)             Requested size: 469.75502pt x 130.3632pt.
- [13 <./images/sf2.pdf> <./images/sf3.pdf>]
-<images/sf4.pdf, id=313, 612.27617pt x 220.0205pt>
+ [15 <./images/sf2.pdf> <./images/sf3.pdf>]
+<images/sf4.pdf, id=323, 612.27617pt x 220.0205pt>
 File: images/sf4.pdf Graphic file (type pdf)
 <use images/sf4.pdf>
-Package pdftex.def Info: images/sf4.pdf  used on input line 344.
+Package pdftex.def Info: images/sf4.pdf  used on input line 364.
 (pdftex.def)             Requested size: 465.06004pt x 167.12329pt.
-<images/sf5.pdf, id=314, 383.20708pt x 149.40659pt>
+<images/sf5.pdf, id=324, 383.20708pt x 149.40659pt>
 File: images/sf5.pdf Graphic file (type pdf)
 <use images/sf5.pdf>
-Package pdftex.def Info: images/sf5.pdf  used on input line 358.
+Package pdftex.def Info: images/sf5.pdf  used on input line 378.
 (pdftex.def)             Requested size: 469.75502pt x 183.158pt.
-<images/sf6.pdf, id=315, 518.22128pt x 257.91676pt>
+<images/sf6.pdf, id=325, 518.22128pt x 257.91676pt>
 File: images/sf6.pdf Graphic file (type pdf)
 <use images/sf6.pdf>
-Package pdftex.def Info: images/sf6.pdf  used on input line 370.
+Package pdftex.def Info: images/sf6.pdf  used on input line 390.
 (pdftex.def)             Requested size: 469.75502pt x 233.79552pt.
- [14 <./images/sf4.pdf> <./images/sf5.pdf>] (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+ [16 <./images/sf4.pdf> <./images/sf5.pdf>] (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
-) [15 <./images/sf6.pdf>]
-LaTeX Font Info:    Try loading font information for T1+zlmtt on input line 393.
+) [17 <./images/sf6.pdf>]
+LaTeX Font Info:    Try loading font information for T1+zlmtt on input line 412.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/zlmtt/t1zlmtt.fd
 File: t1zlmtt.fd 2014/02/07 v1.0 Alternate font definitions for Latin Modern Typewriter, Michael Sharpe
 )
 LaTeX Font Info:    Font shape `T1/zlmtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 393.
- (./cdr.bbl [16]) [17
+(Font)              scaled to size 12.0pt on input line 412.
+ (./cdr.bbl [18]) [19
 
 ] (./mmodel.tex
 LaTeX Font Info:    Try loading font information for T1+fvm on input line 1.
@@ -1599,21 +1611,21 @@ File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 )
 LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
 (Font)              scaled to size 10.20007pt on input line 9.
- [18]) [19] (./cdr.aux) ) 
+ [20]) [21] (./cdr.aux) ) 
 Here is how much of TeX's memory you used:
- 44636 strings out of 492616
- 957212 string characters out of 6129482
- 1390362 words of memory out of 5000000
- 47808 multiletter control sequences out of 15000+600000
+ 44645 strings out of 492616
+ 957641 string characters out of 6129482
+ 1390494 words of memory out of 5000000
+ 47815 multiletter control sequences out of 15000+600000
  718511 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,120p,2189b,1835s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2019/
 texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on cdr.pdf (25 pages, 2450763 bytes).
+Output written on cdr.pdf (27 pages, 3465134 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 325 compressed objects within 4 object streams
+ 476 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

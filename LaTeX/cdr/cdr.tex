@@ -38,8 +38,28 @@ The Manipulator for Educational Institutions with Open Source Integrated Systems
 
 \pagenumbering{arabic}
 \section*{Preliminary and Detailed Design}
+\section{Electrical System}
 \section{Mechanical System}
-\subsection*{Description of mechanical design (include dynamics equations, all structural analysis, etc.)}
+\subsection*{Description of Mechanical Design}
+One of the main differences between the conceptual mechanical design and the final design is the inclusion of 3D-printed harmonic gearboxes. The previous designs utilized a combination of standard spur gears and timing belts. It was determined that neither of these options provided the necessary precision without also introducing backlash into the system, which is nearly impossible to correct for with our feedback configuration. The solution was to design and implement a harmonic drive system. The harmonic gearbox locations are shown below in Figure \ref{fig:HarmonicGearboxLocations}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.65\textwidth,frame]{HarmonicGearboxLocations}
+  \caption{Harmonic Gearbox Locations}
+  \label{fig:HarmonicGearboxLocations}
+\end{figure}
+
+As seen in Figure \ref{fig:HarmonicGearboxLocations}, each joint only requires a single actuator, which is a configuration not seen in the previous design. This is possible because harmonic drives allow for very high gear ratios with minimal backlash. The first prototype harmonic drive was provided by a posting on Thingiverse [citation]. This design was meant to be driven by a stepper motor and provided a gear ratio of 39:1. However, the gearboxes implemented in the manipulator need to be driven by a smart servo. Because the smart servo cannot drive as fast as a stepper motor, the ratio of 39:1 resulted in joint movement that was extremely slow. Additionally, given the link lengths and precision of the servos, only a gear ratio of 20:1 was necessary to meet the precision requirements of the system. For these reasons, a second harmonic drive was designed to provide the proper gear ratio of 20:1. Figure \ref{fig:ExplodedViewoftheHarmonicGearbox} provides an exploded view of the main structural components of the newest harmonic drive.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=.65\textwidth,frame]{ExplodedViewoftheHarmonicGearbox}
+  \caption{ExplodedViewoftheHarmonicGearbox}
+  \label{fig:ExplodedViewoftheHarmonicGearbox}
+\end{figure}
+
+As seen in Figure \ref{fig:ExplodedViewoftheHarmonicGearbox}, the basic harmonic drive design features an outer housing, a stiff output shaft, a flexible gear, and a bearing holder assembly. When fully assembled, the bearing holder sits on the inside of the flexible gear. As the servo drives the inner bearing holder, a continuous meshing of teeth occurs between the flexible gear and the set of teeth that are built into the outer housing. Because the inner set of teeth has two less teeth than the outer set (the inside has 40 while the outside has 42), the inner gear will move forward by two teeth per rotation of the bearing holder. This results in 1/20th of a rotation of the flexible gear per full rotation of the bearing holder. With the output shaft being attached to the flexible gear, the whole harmonic drive provides a ratio of 20:1.
 
 \subsubsection*{Equations of Motion}
 Given robot dynamics described by \(H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=F_{\gamma},\) the equations of motion for
@@ -229,8 +249,8 @@ To further validate that the structure is capable of handling alternating stress
 
 As seen in \emph{Figure \ref{fig:ansys_life}}, the lower bearing of the differential drive on the shoulder of the manipulator would be the most likely component to fail under repeating loadings.
 \newpage
-\subsection{Parts list and budget}
-\subsection{Parts List}
+\subsection*{Parts list and budget}
+\subsection*{Parts List}
 \emph{Table \ref{tab:bom1}} lists the parts MEIOSIS will require to build the manipulator. The total cost is \$629.22, including shipping. Specification 1.1b requires MEIOSOS’s cost to develop the manipulator be less than \$800. In addition to pulley belts for the current configuration, \emph{Table \ref{tab:bom1}} allocates \$20 for two additional belt sizes to increase joint 1/2’s and joint 3’s torque by a factor of 10. The belts must be purchased in packs of 3 from Automation Direct and two more belt sizes may be required for the two pulley design to allow the servos to be mounted without interfering with the base. \emph{Table \ref{tab:bom1}} also accounts for increased cable lengths of 500 mm to communication bus signals from motor 2 to 3 and motor 3 to 4. And cable lengths of 350 mm to communication bus signals from motor 5 to 6. Motors are identified in [MOTOR ORIENTATION FIGURE]. Aside from electronic hardware, \emph{Table \ref{tab:bom2}} for physical hardware.
 To allow screw mounting in plastic with metal threads, \emph{Table \ref{tab:bom2}} accounts for 100 threaded press-fit inserts. The manipulator will require between 21 and 46 inserts.The majority of inserts attach MX-12W servos to the manipulator. Mounting hardware accompanies each servo. Since purchasing six sets of pulleys would put MEIOSIS over the \$800 budget, they are printed.
 \renewcommand{\arraystretch}{1.15}
@@ -281,8 +301,8 @@ The robotics lab has an AX-12A servo and U2D2 communication module MEIOSIS will 
 \renewcommand{\arraystretch}{1}
 \newpage
 
-\section{Software (path/ trajectory planning, localization, object detection, and control algorithms)}
-\subsection{Flowcharts}
+\section{Software}
+\subsection*{Flowcharts}
 The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
 \captionsetup[sub]{
     labelformat=r-parens}
@@ -376,7 +396,6 @@ The final block in the software diagram runs the manipulator through the desired
 The code in \emph{Figure \ref{fig:sf6}} prompts the user to press space to close the end effector and grab the marker if drawing was the specified task, otherwise the software jumps straight into prompting the user to begin the task, and when the user begins the task the counts for each position are sent to the servos one at a time. The counts for the next position are not sent to the servos until the servos have reached the desired positions and the end effector function has been completed if there is one.
 
 \subsection*{Description of control system}
-
 \subsection*{Implementation}
 The implementation of the software control algorithm described in the software flowcharts was not able to be finished to completion, although the basic control scheme of the manipulator was established with Python scripts. The MATLAB code written for simulation of the manipulator, such as the inverse kinematics calculations, were converted to Python and successfully implemented. Since only two joints of the manipulator were written, a two link inverse kinematics function was implemented as well as servo control algorithms to ease future programming. Snippets of the servo control scheme as well as the two link arm inverse kinematics can be seen in Listings \ref{code:pyik} \& \ref{code:pyservo}.
 
