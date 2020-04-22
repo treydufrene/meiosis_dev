@@ -58,9 +58,9 @@ Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rot
 
 As is illustrated in Figure 1, the robot consists of six rotational joints. Joint 1 controls the rotation about the base,  joints 2 and 3 control the “shoulder” and “elbow” of the robot, and joints 4, 5, and 6 control the  spherical wrist. The rotational axis of joint 4 intersects with joint 5’s and joint 5’s intersects with joint 6’s rotational axis. To perform this test, the assembly file containing the manipulator was opened and the joints were counted. Using the move tool, each joint can be observed to be exclusively rotational. The data obtained is simulated due to the fact that the robot has not been fully fabricated. \textbf{This manipulator meets specification 1.2.a}.
 
-\newpage
-Specification \textbf{1.2.b} states: \textbf{The system shall have no link offsets.} For this specification to be satisfied, there must be no link offsets present in the design of the robotic manipulator meaning that the link should connect two joints by translating in only one direction and the axes of the joints attached to the link should be collinear with one another. Testing this specification requires SolidWorks’ measurement tool. Using the measurement tool, measure each joint to ensure there is only displacement along one axis. Figure \ref{fig:loff} shows an example of a measurement done on the elbow link of the manipulator.
+Specification \textbf{1.2.b} states: \textbf{The system shall have no link offsets.} For this specification to be satisfied, there must be no link offsets present in the design of the robotic manipulator meaning that the link should connect two joints by translating in only one direction. The axes of the joints attached to the link should be collinear with one another when there is no offset present. Testing this specification requires SolidWorks’ measurement tool. Using the measurement tool, measure each joint to ensure there is only displacement along one axis. Figure \ref{fig:loff} shows an example of a measurement done on the elbow link of the manipulator.
 
+\newpage
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.75\textwidth,frame]{loff}
@@ -72,7 +72,6 @@ Figure \ref{fig:loff} shows a screen capture of a measurement taken. The blue li
 
 Specification \textbf{1.3.a} states: \textbf{The system shall accommodate a process in which the end user can calibrate the end effector position and orientation to within 0.5 mm and 1 degree of the manipulator’s precision.} In order to fulfill specification 1.3.a, an algorithm was developed for calibration. This algorithm must allow the user to manually move the links into a desired zeroed configuration, then accurately retain that zeroed configuration as a reference position during use. Figure \ref{fig:zero} depicts the manipulator in a zeroed configuration.
 
-\newpage
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.75\textwidth,frame]{zero}
@@ -80,11 +79,11 @@ Specification \textbf{1.3.a} states: \textbf{The system shall accommodate a proc
   \label{fig:zero}
 \end{figure}
 
+\newpage
 The configuration shown in Figure \ref{fig:zero} is what we have defined to be the zeroed configuration. The purpose of the calibration algorithm is to force the software to consider every joint angle to be zero when the manipulator is in this configuration, even if the servos return non-zero angular values. The algorithm developed allows the users to move the joints one by one until the robot is in the desired “zeroed” position. The program then reads the servos positions and stores those values as offset variables. These offsets are subtracted from the desired joint angle values when commanding the servo positions.
 
 In order to measure the calibration accuracy, the PhaseSpace Motion Capture system will be required. The calibration algorithm itself is accurate to the same value as the manipulator, however inaccuracies can arise due to the user not being able to manually put the manipulator into the correct configuration. In completing this testing procedure, it is assumed that the motion capture system will be fully set up, including placing the tracking markers on the manipulator’s base and end-effector. Once the motion capture system is fully set up, the manipulator will be placed in an arbitrary configuration, at least 30° away from zero in each joint. The manipulator will then be restarted, which will erase the system’s memory of it’s configuration. At this point, the motion capture system will start recording data. Using the calibration software, the manipulator will then be manually zeroed to the best of the operator’s abilities. Once the zeroing is completed, error terms can be determined by comparing the tracking data to the known values of the end-effector’s position and orientation in the zeroed state. Due to circumstances beyond our control, we are not able to perform this test and \textbf{adherence to specification 1.3.a cannot be determined.}
 
-\newpage
 Specification \textbf{1.4.a} states: \textbf{Joint one and two of the system shall possess an angle error of no more than 0.025 degrees.} Specification \textbf{1.4.b} states: \textbf{Joint three of the system shall possess an angle error of no more than .03 degrees.} Specification \textbf{1.4.c} states: \textbf{Joints four, five, and six shall possess an angle error of no more than .29 degrees.} In order to verify specifications 1.4.a, 1.4.b, and 1.4.c, the angle accuracy of the system must be measured. To determine the accuracy, the PhaseSpace Motion Capture System is required. Three LED indicators will be placed at the end of each gearbox that is farthest from the previous gearbox in the line to indicate the farthest point directly controlled by the previous gearbox. The three LEDs will be placed at 120° increments around each link/gearbox so that one or more of the LEDs are visible to the motion capture system at a time. To attain accurate results, small divots will be placed on the manipulator where the LEDs will be located which allows for precise application of the LEDs to the system. Accurate LED placement will allow for more accurate kinematic/angle calculations.
 
 To test the system, the manipulator will be placed in the zeroed configuration and each joint will be tested individually. First, joint 1 will be tested by running from 0° to 90°, and then back to 0° ten times. Each time joint 1 has reached 90°, the motion capture system will collect the location data of the LEDs and store it for error calculation. When this procedure is completed, the data can be used to calculate the angle the link actually achieved, and can be compared to the desired angle. Any error in zeroing will be seen from the collected data. After joint 1 has been tested, joint 2 will be tested following the same procedure, after which joints 3 through 6 will be tested in order. The worst angle error achieved by each joint will be compared to the value defined in the specifications. This test is unable to be performed without lab access and thus \textbf{the manipulator’s adherence to specifications 1.4a-1.4c cannot be determined.}
@@ -172,21 +171,21 @@ Specification \textbf{1.6.b} states: \textbf{The rotational limit of joint one, 
 Table \ref{tab:table2} shows that the measurements for joints 3 and 5 do not meet the specification’s individual requirements for them, therefore \textbf{the manipulator does not meet specification 1.6.b.} This specification could be met following a major redesign of the system’s link and joint system.
 
 
-Specification \textbf{1.7a} states: \textbf{The system shall use a parallel gripper that can close to 18 mm.} To meet specification 1.7.a, a parallel gripper must be designed or purchased that can close to a distance of 18 mm or smaller. Dynamixel offers a parallel gripper actuated by an AX-12A servo as shown in Figure \ref{fig:gripper1}. This gripper can be utilized since the manipulator’s end effector is designed to attach an AX-12A smart servo.
+Specification \textbf{1.7.a} states: \textbf{The system shall use a parallel gripper that can close to 18 mm.} To meet specification 1.7.a, a parallel gripper must be designed or purchased that can close to a distance of 18 mm or smaller. Dynamixel offers a parallel gripper actuated by an AX-12A servo as shown in Figure \ref{fig:gripper1}. This gripper can be utilized since the manipulator’s end effector is designed to attach an AX-12A smart servo.
 
 \begin{figure}[htp]
   \centering
   \includegraphics[width=0.3\textwidth,frame]{image10}
-  \caption{Dynamixel Parallel Gripper with Servo \cite{gripper1}}
+  \caption{Dynamixel Parallel Gripper with Servo}
   \label{fig:gripper1}
 \end{figure}
 
-As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest extent. However, the gripper’s fingers have removable foam pads. The foam pads allow adjustments in the gripping plasticity and the maximum opening/closure. Figure \ref{fig:gripper2} shows the gripper in various configurations.
+As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest position. However, the gripper’s fingers have removable foam pads. The foam pads allow adjustments in the gripping plasticity and the maximum opening/closure. Figure \ref{fig:gripper2} shows the gripper in various configurations.
 \newpage
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.6\textwidth,frame]{image9}
-  \caption{Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening \cite{gripper1}}
+  \caption{Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening}
   \label{fig:gripper2}
 \end{figure}
 
@@ -202,26 +201,26 @@ The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are fu
 By sending the servo a position, the two highlighted red half-circular bars seen in Figure \ref{fig:gripper3} pivot about the servo face’s edges, translating the fingers either inward or outward. Clockwise rotation would decrease the distance between the fingers, while counterclockwise rotation would increase the distance. The closure’s precision would be dictated by the AX-12A’s resolution. Since the precision of the 18mm closing distance is not specified, it can be assumed the precion need only be sufficient to prevent the marker from being dislodged during writing, which is addressed in 1.8.a. Therefore, no matter the number of foam pads applied, the gripper can close to 18 mm. With the Dynamixel Parallel gripper being used as an end effector attachment, \textbf{the manipulator meets specification 1.7.a.}
 
 
-Specification \textbf{1.7.b} states: \textbf{The end effector shall attach to the manipulator using screws configured in a pattern that can accommodate a Dynamixel AX-12A servo.} In order to meet this specification, a dynamixel AX-12A smart servo must be compatible with the end effector’s screw configuration. This can simply be tested using screws and a screwdriver. If the smart servo can successfully be screwed onto the end effector, then this specification is met. The design matches measurements acquired in the lab and parts to accommodate an AX-12A were fabricated and assembled in the lab. Since the dynamixel smart servos have been tested and observed to fit on the parts printed, \textbf{the manipulator meets specification 1.7.b}.
+Specification \textbf{1.7.b} states: \textbf{The end effector shall attach to the manipulator using screws configured in a pattern that can accommodate a Dynamixel AX-12A servo.} In order to meet this specification, a Dynamixel AX-12A smart servo must be compatible with the end effector’s screw configuration. This specification can simply be tested using screws and a screwdriver. If the smart servo can successfully be screwed onto the end effector, then this specification is met. The design matches measurements acquired in the lab and parts to accommodate an AX-12A were fabricated and assembled in the lab. Since the Dynamixel smart servos have been tested and observed to fit on the parts printed, \textbf{the manipulator meets specification 1.7.b}.
 
 
 Specification \textbf{1.8.a} states: \textbf{The gripper shall be able to support 0.004 Newton meter moments about the axes normal to its gripping surfaces.} To meet specification 1.8.a, the gripper selected to be attached to the manipulator’s end effector should be capable of holding an object that provides 0.004 Newton meter moments about the axes normal to its gripping surfaces. Using the same Dynamixel gripper seen in Figure \ref{fig:gripper4}, a test can be performed
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.3\textwidth,frame]{image12}
-  \caption{Dynamixel Parallel Gripper with Servo \cite{gripper1}}
+  \includegraphics[width=0.4\textwidth,frame]{image12}
+  \caption{Dynamixel Parallel Gripper with Servo}
   \label{fig:gripper4}
 \end{figure}
 
 For testing, we can consider the convenient coordinate frame shown in Figure \ref{fig:gripper4}. Specifically, when writing, moments caused by the Expo marker’s contact force with paper can be decomposed along the axes of this coordinate frame. In the best case scenario, the marker provides force parallel to and perpendicular to the gripping plane denoted by PL and PD respectively.
-To test this specification, a set of masses and an Expo marker  are required. First, the servo would be commanded to close the gripper on the Expo marker and the masses would be gradually hung from the end of the Expo marker. The moment could be calculated as more mass is added. If the marker is observed to slip or rotate, the moment is too large for the gripper. The gripper would be tested at different angles, grip force, and number of pieces of foam attached, as can be seen in Figure 7. Due to unforeseen circumstances, \textbf{adherence to specification 1.8.a cannot be determined.}
+To test this specification, a set of masses and an Expo marker  are required. First, the servo would be commanded to close the gripper on the Expo marker and the masses would be gradually hung from the end of the Expo marker. The moment could be calculated as more mass is added. If the marker is observed to slip or rotate, the moment is too large for the gripper. The gripper would be tested at different angles, grip force, and number of pieces of foam attached, as can be seen in Figure \ref{fig:gripper2}. Due to unforeseen circumstances, \textbf{adherence to specification 1.8.a cannot be determined.}
 
 
 Specification \textbf{2.1.a} states: \textbf{The software shall be hosted publicly on an online repository and maintain an MIT license for distribution.} To satisfy this requirement, the software used to control the robot must be open source and publicly accessible. The use of the code repository GitHub allows team MEIOSIS to easily make the code publicly accessible; by using the MIT licensing, the software can be considered open source and possible legal implications due to misuse can be avoided. The license allows the end-user to modify, redistribute, or do whatever they please with the code: “...without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software...”\cite{mit} The MIT license makes it such that any end-user that makes a system with the manipulator, i.e. repurposes the given system for a task, has no limitations with how they wish to redistribute, share, or even sell the system. To implement the use of the license, the source code must contain the proper header, shown by MIT \cite{mit}. The header was added and can be observed in the software as well as the code is hosted in a public GitHub repository. Therefore \textbf{the system fulfills specification 2.1.a.}
 
 
-Specification \textbf{2.2.a} states: \textbf{The system shall have a user interface capable of accepting the end-effector’s desired cartesian position and Euler angle orientation as a six element row vector.} In order to satisfy specification 2.2.a, python scripts have been methodically developed to allow for user input of desired end effector position. These scripts could potentially be used as a backend for a graphical user interface (GUI) to further simplify the process of controlling the manipulator.
+Specification \textbf{2.2.a} states: \textbf{The system shall have a user interface capable of accepting the end-effector’s desired cartesian position and Euler angle orientation as a six element row vector.} In order to satisfy specification 2.2.a, Python scripts have been methodically developed to allow for user input of desired end effector position. These scripts could potentially be used as a backend for a graphical user interface (GUI) to further simplify the process of controlling the manipulator.
 
 In lieu of a Python based GUI directly controlling the manipulator, a GUI could be created to instead control an animated simulation of the manipulator. The simulation is currently generated by a MATLAB script that draws the robot STL files into a figure window. The possibilities of controlling the simulation consist of several options, the most efficient would likely be to develop a user interface entirely with MATLAB. This GUI avoids possible incompatibilities on systems without Python installed and avoids any communication issues that could incur with attempting to create the GUI in another language.
 
@@ -301,7 +300,9 @@ Overall, since the success of the manipulator largely depended on the accuracy a
 
 
 \bibliographystyle{plainnat}
-\null\newpage\bibliographystyle{ieeetran}\bibliography{robo}\null\newpage
+\nocite{*}
+\titlespacing*{\chapter}{0pt}{-10pt}{40pt} 
+\null\newpage\bibliography{robo}\null\newpage
 % \bibliography{robo}
 \appendix
 \renewcommand\thesection{\Roman{section}}
