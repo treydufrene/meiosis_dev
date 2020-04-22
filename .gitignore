@@ -1,2 +1,5 @@
 
 LaTeX/test/test.log
+LaTeX/test/test.fdb_latexmk
+*.fdb_latexmk
+LaTeX/final/images/.DS_Store

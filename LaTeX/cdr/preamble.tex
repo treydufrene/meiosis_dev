@@ -1,0 +1,110 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[compact,raggedright]{titlesec}
+\usepackage{setspace} % for single/doublespacing commands
+\usepackage{graphicx} % including graphics
+% \usepackage{sectsty} % sexy section headings
+\usepackage{pdfpages} % including multipage pdfs
+\usepackage[export]{adjustbox} % for graphic frames and center
+\usepackage{siunitx}
+\usepackage[numbered]{matlab-prettifier} % including matlab w/ syntax highlighting
+\usepackage[T1]{fontenc} % prettier matlab font
+\usepackage{xfrac} % more legible inline fractions (\sfrac)
+\usepackage{lmodern} % font package for above
+\usepackage{multicol} % multiple columns
+\usepackage[justification=centering]{caption} % figure captions (force centering)
+\usepackage{amsmath} % more math symbols and shit
+\usepackage{enumitem} % add arguments for enumerate to change style
+\usepackage{subcaption} % subfigures with list of figure support
+% \usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{ulem}
+\usepackage{blindtext}
+\usepackage[sort&compress,numbers]{natbib}
+% \usepackage{cite}
+\usepackage{contour}
+\usepackage{tabularx}
+\usepackage{circuitikz} % drawing fancy shit
+\usepackage{cancel} % arrow and cross math cancel symbol
+\usepackage{lineno}
+\usepackage{framed}
+\usepackage{amssymb} % special math symbols
+\usepackage{listings,zlmtt}
+\usepackage{array}
+\usepackage{BOONDOX-cal} % fancy mathtype script
+\usepackage{fancyhdr}
+\usepackage{flowchart}
+\usepackage{color, colortbl}
+\usepackage{tocloft}
+\usepackage{url}
+\usepackage{etoolbox}
+\usepackage[usestackEOL]{stackengine}
+\usepackage{caption}
+% \usepackage{hyperref}
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+\setcounter{secnumdepth}{5}
+\renewcommand{\bibname}{References}
+\sisetup{output-exponent-marker=\ensuremath{\mathrm{e}}}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+\lstMakeShortInline[style=Matlab-editor]| % matlab inline escape character
+\graphicspath{{images/}}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\labelitemi{---}
+\lstset{numberstyle=\ttfamily\small\color{gray}}
+\renewcommand\linenumberfont{\ttfamily\small\color{gray}}
+\setlength\linenumbersep{6mm}
+\hbadness=99999  % or any number >=10000
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\usetikzlibrary{arrows,calc,patterns,angles,quotes}
+% \usetikzlibrary{shapes.geometric}
+% \usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing} % for snakes!
+% \usetikzlibrary{positioning, circuits.logic.US}
+\newcommand{\Lag}{\mathcal{L}} % lagrangian L
+
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\setlength{\cftbeforetoctitleskip}{-2em}
+\setlength{\cftbeforeloftitleskip}{-2em}
+\setlength{\cftbeforelottitleskip}{-2em}
+% \allsectionsfont{\raggedright} % w/ secsty
+\setlist[enumerate]{wide=0pt, widest=99,
+                    leftmargin=\parindent,topsep=0pt,partopsep=0pt,
+                    label=\thesubsubsection.\alph*,font=\itshape}
+
+\newcommand{\hiddensubsection}[1]{
+  \stepcounter{subsection}
+  \subsection*{\arabic{section}.\arabic{subsection}\hspace{1em}{#1}}
+}
+\newcommand{\hiddenappsec}[1]{
+  \stepcounter{section}
+  \subsection*{\Alph{section}\hspace{1em}{#1}}
+}
+\newcommand{\hiddenappsub}[1]{
+  \stepcounter{subsection}
+  \subsection*{\Alph{section}.\Roman{subsection}\hspace{1em}{#1}}
+}
+
+\titlespacing\section{0pt}{0pt}{-5pt}
+\titlespacing\subsection{0pt}{0pt}{-5pt}
+\titlespacing\subsubsection{0pt}{0pt}{-5pt}
+
+\AtBeginEnvironment{thebibliography}{\def\UrlFont{\normalfont\itshape}}
+
+\DeclareCaptionFormat{cont}{#1 (cont.)#2#3\par}
+
+\DeclareCaptionLabelFormat{r-parens}{Figure \thefigure#2:} %Define our custom label
+
+% \captionsetup{font=footnotesize} % The general caption settings
+% \captionsetup[sub]{
+%     labelformat=r-parens}        % Use our custom label format
+
+% \renewcommand{\thesubfigure}{\thefigure\alph{subfigure}}
+% \looseness=-1 % for one-liners bleeding off into the next page
