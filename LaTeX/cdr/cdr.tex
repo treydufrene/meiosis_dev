@@ -429,11 +429,16 @@ def setJA(self, IDLIST, angle):
 \end{lstlisting}
 The \texttt{setJA} method shown above is an example of how a basic function needed for future programming was methodically created in an attempt to ease the burden of the final manipulator implementation. All methods were created with versatility in mind; the testing performed was limited to a two link manipulator since that is all that was physically available, but the underlying programming would remain very similar when all six joints were physically implemented.
 
+\section*{Integration}
+
+\section{Testing}
+\input{test}
+
 \nocite{*}
 \bibliographystyle{plainnat}
 \raggedright
 \titlespacing*{\chapter}{0pt}{-10pt}{40pt}
-\bibliography{bibs}
+\newpage\bibliography{bibs}
 \newpage
 \appendix
 \renewcommand\thesection{\Roman{section}}
@@ -456,42 +461,45 @@ The \texttt{setJA} method shown above is an example of how a basic function need
 \hiddenappsub{Salient Code}
 \input{mmodel}
 \vspace{10ex}
-%
-% \input{meiosisfk}
-% \vspace{10ex}
-%
-% \input{meiosisik}
-% \vspace{10ex}
-%
-% \input{clanim}
-% \vspace{10ex}
-%
-% \input{meiosisdraw}
-% \vspace{10ex}
-%
-% \input{hdg}
-% \vspace{10ex}
-%
-% \input{jlplot}
-% \vspace{10ex}
-%
-% \input{mname}
-% \vspace{10ex}
-%
-% \input{mstate}
-% \vspace{10ex}
-%
-% \input{mvel}
-% \vspace{10ex}
-%
-% \input{mjac}
-% \vspace{10ex}
-%
-% \input{olanim}
-% \vspace{10ex}
-%
-% \input{velkin}
-% \vspace{10ex}
+
+\input{meiosisfk}
+\vspace{10ex}
+
+\input{meiosisik}
+\vspace{10ex}
+
+\input{clanim}
+\vspace{10ex}
+
+\input{meiosisdraw}
+\vspace{10ex}
+
+\input{hdg}
+\vspace{10ex}
+
+\input{jlplot}
+\vspace{10ex}
+
+\input{mname}
+\vspace{10ex}
+
+\input{mstate}
+\vspace{10ex}
+
+\input{mvel}
+\vspace{10ex}
+
+\input{mjac}
+\vspace{10ex}
+
+\input{olanim}
+\vspace{10ex}
+
+\input{velkin}
+\vspace{10ex}
+
+\input{pycode}
+\vspace{10ex}
 
 % Code listing
 %\begin{lstlisting}[frame=lines,style=Matlab-editor,basicstyle = \mlttfamily, caption=Example Code]

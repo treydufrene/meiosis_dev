@@ -1,0 +1,329 @@
+\begin{lstlisting}[frame=lines,language=Python, caption=meiosis\_kinematics.py]
+import numpy as np
+import math as m
+from meiosis_utils import matrixOp as mf
+
+
+r1 = np.matrix([[0.00000],[0.00000],[0.12275]])
+r2 = np.matrix([[0.00000],[0.00000],[0.00000]])
+r3 = np.matrix([[0.00000],[0.26000],[0.00000]])
+r4 = np.matrix([[0.00000],[0.20000],[0.00000]])
+r5 = np.matrix([[0.00000],[0.07000],[0.00000]])
+r6 = np.matrix([[0.00000],[0.09600],[0.00000]])
+
+def FK(gamma):
+    T1 = mf.rotz(gamma[0])
+    T2 = T1*mf.rotx(gamma[1])
+    T3 = T2*mf.rotx(gamma[2])
+    T4 = T3*mf.roty(gamma[3])
+    T5 = T4*mf.rotx(gamma[4])
+    T6 = T5*mf.roty(gamma[5])
+
+    Ir1 = r1
+    Ir2 = Ir1 + T1*r2
+    Ir3 = Ir2 + T2*r3
+    Ir4 = Ir3 + T3*r4
+    Ir5 = Ir4 + T4*r5
+    Ir6 = Ir5 + T5*r6
+
+    return Ir6
+
+def IK(pos,R):
+    pi = m.pi
+    L1 = r1[2]
+    L2 = r3[1]
+    L3 = r4[1] + r5[1]
+    npos = pos - R*r6
+    xc = npos[0]
+    yc = npos[1]
+    zc = npos[2]
+
+    #Inverse Position
+    t1 = m.atan2(xc,yc) - pi/2
+    if t1 < -pi:
+        t1 = t1 + 2*pi
+    if t1 > pi:
+        t1 = t1 - 2*pi
+    D = (xc**2 + yc**2 + (zc - L1)**2 - L2**2 - L3**2)/(2*L2*L3)
+    t3 = m.atan2(-m.sqrt(1 - D**2),D)
+    t2 = m.atan2(zc - L1, m.sqrt(xc**2 + yc**2) - atan2(L3*m.sin(t3), L2 + L3*cos(t3)))
+
+    #Inverse Orientation
+    T3 = mf.rotz(t1)@mf.rotx(t2)@my.rotx(t3)
+    T = T.I*R
+    t6 = m.atan2(T[1,0],-T[1,2])
+    t4 = m.atan2(T[0,1],T[2,1])
+    while t4 > pi/2:
+        t4 -= pi
+    while t4 < -pi/2:
+        t4 += pi
+
+    if t6 < 0:
+        t6 += 2*pi
+
+    if (m.sin(t4) > -10e-6) and (sin(t4) < 10e-6):
+        t5 = m.atan2(T[2,1]/m.cos(t4),T[1,1])
+    else:
+        t5 = m.atan2(T[0,1]/m.sin(t4),T[1,1])
+
+    return np.matrix([[t1],[t2],[t3],[t4],[t5],[t6]])
+\end{lstlisting}
+\vspace{10ex}
+
+\begin{lstlisting}[frame=lines,language=Python, caption=meiosis\_servo.py]
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""basic readable servo commands"""
+
+from dynamixel_sdk import *
+
+# Control table addresses
+ADDR_MX_TORQUE_ENABLE      = 24
+ADDR_MX_GOAL_POSITION      = 30
+ADDR_MX_PRESENT_POSITION   = 36
+
+# Protocol version
+PROTOCOL_VERSION            = 1.0
+
+# Default setting
+numdxl                      = 1;
+BAUDRATE                    = 115200
+DEVICENAME                  = '/dev/ttyUSB0'
+
+gearidx = [(39.0)*(128.0/45.0), (39.0)*(128.0/45.0)]
+offset = [0,13700]
+
+# Initialize PortHandler instance
+portHandler = PortHandler(DEVICENAME)
+# Initialize PacketHandler instance
+packetHandler = PacketHandler(PROTOCOL_VERSION)
+
+class Servo:
+    def __init__(self):
+        self.data = []
+        #self.initialize()
+
+    def initialize(self):
+        # Open port
+        if portHandler.openPort():
+            print("Succeeded to open the port")
+        else:
+            print("Failed to open the port")
+            quit()
+        # Set port baudrate
+        if portHandler.setBaudRate(BAUDRATE):
+            print("Succeeded to change the baudrate")
+        else:
+            print("Failed to change the baudrate")
+            quit()
+
+        # Enable Dynamixel Torque
+        for i in range(0, numdxl):
+            dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, 1)
+            if dxl_comm_result != COMM_SUCCESS:
+                print("%s" % packetHandler.getTxRxResult(dxl_comm_result))
+            elif dxl_error != 0:
+                print("%s" % packetHandler.getRxPacketError(dxl_error))
+            else:
+                print("Dynamixel ID " + str(i) + " Torque has been enabled.")
+
+    def close(self):
+        # Disable Dynamixel Torque
+        for i in range(0,numdxl):
+            dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, i, ADDR_MX_TORQUE_ENABLE, 0)
+            if dxl_comm_result != COMM_SUCCESS:
+                print("%s" % packetHandler.getTxRxResult(dxl_comm_result))
+            elif dxl_error != 0:
+                print("%s" % packetHandler.getRxPacketError(dxl_error))
+            else:
+                print("Dynamixel ID " + str(i) + " Torque has been disabled.")
+        # Close port
+        portHandler.closePort()
+
+    def getPos(self, ID):
+        return packetHandler.read2ByteTxRx(portHandler, ID, ADDR_MX_PRESENT_POSITION)[0]
+
+    def setPos(self, ID, pos):
+        dxl_comm_result, dxl_error = packetHandler.write4ByteTxRx(portHandler, ID, ADDR_MX_GOAL_POSITION, pos)
+        #print(dxl_comm_result, dxl_error)
+
+    def setVel(self, ID, vel):
+        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 32, vel)
+
+    def moving(self, ID):
+        return packetHandler.read1ByteTxRx(portHandler, ID, 46)[0]
+
+    def anyMoving(self, IDLIST):
+        statusidx = [0,0]
+        for i in range(0,len(IDLIST)):
+            statusidx[i] = self.moving(IDLIST[i])
+        return any(statusidx)
+
+    def setRes(self, ID, res):
+        dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, ID, 22, res)
+
+    def readRes(self, ID):
+        return packetHandler.read1ByteTxRx(portHandler, ID, 22)[0]
+
+    def disableTorque(self, ID):
+        dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, ID, ADDR_MX_TORQUE_ENABLE, 0)
+
+    def enableTorque(self, ID):
+        dxl_comm_result, dxl_error = packetHandler.write1ByteTxRx(portHandler, ID, ADDR_MX_TORQUE_ENABLE, 1)
+
+    def setMultiturn(self, ID, on):
+        if(on):
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 6, 4095)
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 8, 4095)
+        else:
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 6, 0)
+            dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 8, 4095)
+
+    def setJA(self, IDLIST, angle):
+        if(type(IDLIST) == int):
+            IDLIST = [IDLIST]
+        if(type(angle) == int):
+            angle = [angle]
+        for i in range(0,len(IDLIST)):
+            self.setPos(IDLIST[i], int(round(angle[i] * gearidx[i] + offset[i])))
+            print(int(round(angle[i] * gearidx[i] + offset[i])))
+
+    def setOffset(self, ID, amount):
+        offset[ID] = amount
+        dxl_comm_result, dxl_error = packetHandler.write2ByteTxRx(portHandler, ID, 20, amount)
+        return offset[ID]
+\end{lstlisting}
+\vspace{10ex}
+
+\begin{lstlisting}[frame=lines,language=Python, caption=meiosis\_utils.py]
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import numpy as np
+# import math as m
+from math import *
+
+class matrixOp:
+    def rotx(theta):
+        return np.matrix([[1,0,0],[0,cos(theta),-sin(theta)],[0,sin(theta),cos(theta)]])
+
+    def roty(theta):
+        return np.matrix([[cos(theta),0,sin(theta)],[0,1,0],[-sin(theta),0,cos(theta)]])
+
+    def rotz(theta):
+        return np.matrix([[cos(theta),-sin(theta),0],[sin(theta),cos(theta),0],[0,0,1]])
+
+    def skew(r):
+        return np.matrix([[0,-r[2],r[1]],[r[2],0,-r[0]],[r[1],r[0],0]])
+\end{lstlisting}
+\vspace{10ex}
+
+\begin{lstlisting}[frame=lines,language=Python, caption=twolink.py]
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""messy two link manipulator testing"""
+
+import meiosis_encoder as ME
+import RPi.GPIO as GPIO
+import meiosis_servo as MS
+import time
+from math import *
+
+ser = MS.Servo()
+ser.initialize()
+
+#ser.setRes(0,4)
+#ser.setRes(1,4)
+#ser.setMultiturn(0, True)
+#ser.setMultiturn(1, True)
+
+IDs = [0,1]
+xoff = 0
+yoff = 0
+
+def twoLinkIK(x,y):
+    l1 = 265.0
+    l2 = 165.0
+    D = (x**2 + y**2 - l1**2 - l2**2)/(2*l1*l2)
+    theta2 = atan2(sqrt(1.0 - D**2),D)
+    theta1 = atan2(y,x) - atan2(l2*sin(theta2),l1+l2*cos(theta2))
+    print(degrees(theta1),degrees(theta2))
+    return [degrees(theta1),degrees(theta2)]
+
+def zeroArm():
+    print("Init:")
+    print(ser.getPos(0),ser.getPos(1))
+    print("servo 0 offset: ")
+    print(ser.setOffset(0,ser.getPos(0)))
+    print("servo 1 offset: ")
+    print(ser.setOffset(1,ser.getPos(1)))
+    print("New:")
+    print(ser.getPos(0),ser.getPos(1))
+
+def moveArm(gamma):
+    #global IDs
+    ser.setJA(IDs, gamma)
+    while (ser.anyMoving(IDs)):
+        pass
+    return True
+
+def pick(x,y):
+    #global xoff, yoff
+    moveArm(twoLinkIK(x-xoff,y-yoff))
+
+def place(x,y):
+    moveArm(twoLinkIK(x,y))
+
+try:
+    print("Entering Loop, press Ctrl-C to escape!")
+    pos = ser.getPos(0)*ser.readRes(0)
+    print(ser.getPos(0))
+    try:
+        dir = raw_input('Enter Direction (u/d), or (f) for Finished:')
+        zeroing = True
+        while zeroing:
+            while dir == 'u':
+                userInput = raw_input()
+                if userInput == 'f':
+                    zeroing = False
+                    break
+                elif userInput == 'd':
+                    dir = 'd'
+                else:
+                    pos += 50
+                    ser.setPos(0,pos)
+                    print(ser.getPos(0))
+            while dir == 'd':
+                userInput = raw_input()
+                if userInput == 'f':
+                    zeroing = False
+                    break
+                elif userInput == 'u':
+                    dir = 'u'
+                else:
+                    pos -= 50
+                    ser.setPos(0,pos)
+                    print(ser.getPos(0))
+        print(ser.getPos(0))
+
+    except KeyboardInterrupt:
+        print("interrupted")
+
+
+    '''
+    print(ser.getPos(0))
+    ser.setPos(0,10000)
+    while ser.moving(0):
+        pass
+    print(ser.getPos(0))
+    #pick(250,50)
+    #place(-250,50)
+'''
+except KeyboardInterrupt:
+    print("\nInterrupted!")
+
+print("Disabling Servo Interface...")
+ser.close()
+\end{lstlisting}

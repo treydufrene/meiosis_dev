@@ -24,15 +24,14 @@
 \usepackage{ulem}
 \usepackage{blindtext}
 \usepackage[sort&compress,numbers]{natbib}
-% \usepackage{cite}
 \usepackage{contour}
 \usepackage{tabularx}
-\usepackage{circuitikz} % drawing fancy shit
+% \usepackage{circuitikz} % drawing fancy shit
 \usepackage{cancel} % arrow and cross math cancel symbol
 \usepackage{lineno}
 \usepackage{framed}
 \usepackage{amssymb} % special math symbols
-\usepackage{listings,zlmtt}
+\usepackage{listings}
 \usepackage{array}
 \usepackage{BOONDOX-cal} % fancy mathtype script
 \usepackage{fancyhdr}
@@ -43,6 +42,13 @@
 \usepackage{etoolbox}
 \usepackage[usestackEOL]{stackengine}
 \usepackage{caption}
+% \usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{lipsum}
+\usepackage{filecontents}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 % \usepackage{hyperref}
 
 \setlength{\parskip}{\baselineskip}%
@@ -60,6 +66,11 @@
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\labelitemi{---}
 \lstset{numberstyle=\ttfamily\small\color{gray}}
+\lstset{
+  columns=fullflexible,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
 \renewcommand\linenumberfont{\ttfamily\small\color{gray}}
 \setlength\linenumbersep{6mm}
 \hbadness=99999  % or any number >=10000
@@ -72,8 +83,8 @@
 
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \setlength{\cftbeforetoctitleskip}{-2em}
-\setlength{\cftbeforeloftitleskip}{-2em}
-\setlength{\cftbeforelottitleskip}{-2em}
+% \setlength{\cftbeforeloftitleskip}{-2em}
+% \setlength{\cftbeforelottitleskip}{-2em}
 % \allsectionsfont{\raggedright} % w/ secsty
 \setlist[enumerate]{wide=0pt, widest=99,
                     leftmargin=\parindent,topsep=0pt,partopsep=0pt,
