@@ -60,7 +60,7 @@ As is illustrated in Figure 1, the robot consists of six rotational joints. Join
 
 Specification \textbf{1.2.b} states: \textbf{The system shall have no link offsets.} For this specification to be satisfied, there must be no link offsets present in the design of the robotic manipulator meaning that the link should connect two joints by translating in only one direction. The axes of the joints attached to the link should be collinear with one another when there is no offset present. Testing this specification requires SolidWorks’ measurement tool. Using the measurement tool, measure each joint to ensure there is only displacement along one axis. Figure \ref{fig:loff} shows an example of a measurement done on the elbow link of the manipulator.
 
-\newpage
+% \newpage
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.75\textwidth,frame]{loff}
@@ -79,7 +79,7 @@ Specification \textbf{1.3.a} states: \textbf{The system shall accommodate a proc
   \label{fig:zero}
 \end{figure}
 
-\newpage
+% \newpage
 The configuration shown in Figure \ref{fig:zero} is what we have defined to be the zeroed configuration. The purpose of the calibration algorithm is to force the software to consider every joint angle to be zero when the manipulator is in this configuration, even if the servos return non-zero angular values. The algorithm developed allows the users to move the joints one by one until the robot is in the desired “zeroed” position. The program then reads the servos positions and stores those values as offset variables. These offsets are subtracted from the desired joint angle values when commanding the servo positions.
 
 In order to measure the calibration accuracy, the PhaseSpace Motion Capture system will be required. The calibration algorithm itself is accurate to the same value as the manipulator, however inaccuracies can arise due to the user not being able to manually put the manipulator into the correct configuration. In completing this testing procedure, it is assumed that the motion capture system will be fully set up, including placing the tracking markers on the manipulator’s base and end-effector. Once the motion capture system is fully set up, the manipulator will be placed in an arbitrary configuration, at least 30° away from zero in each joint. The manipulator will then be restarted, which will erase the system’s memory of it’s configuration. At this point, the motion capture system will start recording data. Using the calibration software, the manipulator will then be manually zeroed to the best of the operator’s abilities. Once the zeroing is completed, error terms can be determined by comparing the tracking data to the known values of the end-effector’s position and orientation in the zeroed state. Due to circumstances beyond our control, we are not able to perform this test and \textbf{adherence to specification 1.3.a cannot be determined.}
@@ -91,7 +91,7 @@ To test the system, the manipulator will be placed in the zeroed configuration a
 
 Specification \textbf{1.5.a} states: \textbf{The manipulator shall have a maximum reach between 300 and 700 mm.} In order to satisfy this specification, the robot’s links must have a sum length of between 300 mm and 700 mm. Using Solidworks, the total reachable workspace can be measured using the “Measure” tool. This measurement can be seen in Figure \ref{fig:meas}.
 
-\newpage
+% \newpage
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.75\textwidth,frame]{image8}
@@ -152,7 +152,7 @@ As can be seen in Figure \ref{fig:plot2}, a successful dexterity check was achie
 
 Specification \textbf{1.6.b} states: \textbf{The rotational limit of joint one, two, three, four, five, and six shall be -165° to 180°, 13.7° to 179.8°, -179.6° to -19.2°, ±180°, -180° to 0°, and ±180° respectively.} This specification is met if the links can rotate to the maximum and minimum angles provided by the specification. These angles were tested in SolidWorks using the measurement tool. The links to be measured are moved until they collide with one another and then the measurement tool is selected. Once the measurement tool is selected, the two links that form the angle to be measured are selected and the “create sensor” button is pressed. SolidWorks then provides the angle in degrees on the left sidebar. The angles for each joint are then recorded and the results of the measurements can be seen in Table \ref{tab:table2}.
 
-\newpage
+% \newpage
 \begin{table}[htp]
   \centering
   \caption{Results of Angle Measurement Test for Specification 2.1.6.a}
@@ -181,7 +181,7 @@ Specification \textbf{1.7.a} states: \textbf{The system shall use a parallel gri
 \end{figure}
 
 As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest position. However, the gripper’s fingers have removable foam pads. The foam pads allow adjustments in the gripping plasticity and the maximum opening/closure. Figure \ref{fig:gripper2} shows the gripper in various configurations.
-\newpage
+% \newpage
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.6\textwidth,frame]{image9}
@@ -224,7 +224,7 @@ Specification \textbf{2.2.a} states: \textbf{The system shall have a user interf
 
 In lieu of a Python based GUI directly controlling the manipulator, a GUI could be created to instead control an animated simulation of the manipulator. The simulation is currently generated by a MATLAB script that draws the robot STL files into a figure window. The possibilities of controlling the simulation consist of several options, the most efficient would likely be to develop a user interface entirely with MATLAB. This GUI avoids possible incompatibilities on systems without Python installed and avoids any communication issues that could incur with attempting to create the GUI in another language.
 
-\newpage
+% \newpage
 The best option is to have a MATLAB GUI control the MATLAB simulation, therefore a basic interface shall be created in which the user can select which control scheme is desired as well as goal positions for the end effector. A sample GUI can be seen in Figure \ref{fig:gui}.
 
 \let\clearpage\relax
@@ -239,7 +239,7 @@ As shown in Figure \ref{fig:gui}, the GUI will have desired cartesian end effect
 
 In order to test this specification, several points within the workspace will be selected as well as at least three points outside of the workspace for the purpose of error checking. The points (in cartesian XYZ and Euler angles) are chosen randomly. These points are then given to the user interface, which will return joint angle values. The same randomly generated coordinates will be given to the verified kinematics functions, and the outputs will be compared to the output of the UI to check for validity.
 
-\newpage
+% \newpage
 Due to uncertainties in the design caused by recent events, development for this user interface has been stopped and verification of its accuracy can not be determined. Therefore, \textbf{adherence to specification 2.2.a cannot be determined.}
 
 

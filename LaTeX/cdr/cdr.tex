@@ -3,42 +3,7 @@
 \normalem
 \input{coverpage}
 \pagenumbering{roman}
-\begin{abstract}
-The Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to increase the accessibility of robotics to secondary educational institutions and hobbyists. Accordantly, the manipulator is 3D printed in PLA with aluminum tube supports and costs the end-user less than \$1000. The manipulator has six links and a base. The base houses a Raspberry Pi 3B and power supply. The Raspberry Pi controls seven Dynamixel smart servos with position feedback and proportional derivative control. Six MX-12W servos actuate six rotational joints, while one AX-12A servo actuates the removable end-effector. They provide the manipulator a position repeatability within 2mm of the previous pose. The manipulator can draw as well as perform pick and place operations within its dexterous workspace which is a hemispherical sub-shell of the reachable workspace of 280 mm thickness. The manipulator’s operation is controlled by open-source software.
-\end{abstract}
-% {\tableofcontents\let\clearpage\relax\listoffigures\let\clearpage\relax}
-{\tableofcontents\clearpage\listoffigures\clearpage\listoftables}
-\clearpage
-\newpage
-\section*{List Of Acronyms and Abbreviations}
-\begin{tabular}{rcl}
-  FK &:& Forward Kinematics \\
-  IK &:& Inverse Kinematics  \\
-  PD &:& Proportional Derivative \\
-  % $k$~:& Spring constant \\
-  % $h_{b}$~:& Distance to bar ($G$) from datum \\
-  % $F_s$~:& Force onto bar due to spring\\
-\end{tabular}
-
-\section*{Notation}\vspace{-\baselineskip}
-\renewcommand{\arraystretch}{2.25}
-\begin{tabular}{rcl}
-\large%
-\(
-{}^{\text{\scriptsize Frame}}_{\text{\scriptsize From}}~{r}~_{\text{\scriptsize To}}
-\)\normalsize &:& Direction Vectors\\
-\(
-{}^{\text{\scriptsize From}}~{T}~_{\text{\scriptsize To}}
-\)\normalsize &:& Direction Cosine (Transformation) Matrices \\
-\(c_{\theta_{nm}}\)&:& \( \cos(\theta_n + \theta_m)\)\\
-\(s_{\theta_{nm}}\)&:& \( \sin(\theta_n + \theta_m)\) \\
-\end{tabular}
-\renewcommand{\arraystretch}{1}
-\newpage
-
-\pagenumbering{arabic}
-\section{Introduction}
-Robotics is a rapidly growing field, yet numerous potential innovators for the discipline are never exposed to it. While many industrial style manipulators are available for commercial applications, their cost is so high that they are not practical for educational purposes. With the intention of making robotics education more accessible to classrooms, the Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to provide robotics classes with an accurate and precise manipulator for cost lower than traditional manipulators. MEIOSIS is designed to be 3D printed by the end-user to increase accessibility of the manipulator and will be modifiable to help create an increased understanding of robotics. The following document details the entirety of the design process, from conceptual design and definition of requirements to final implementation and testing.
+\input{introduction}
 \section{Conceptual Design}
 \input{concept}
 \newpage
@@ -56,6 +21,7 @@ Robotics is a rapidly growing field, yet numerous potential innovators for the d
 \input{motor}
 \subsubsection*{System Dynamics}
 \input{sysdynamics}
+\newpage
 \subsubsection*{ANSYS}
 \input{ansys}
 \newpage
@@ -65,48 +31,18 @@ Robotics is a rapidly growing field, yet numerous potential innovators for the d
 \section{Software}
 \subsection*{Flowcharts}
 \input{flowcharts}
-
 \subsection*{Description of control system}
+
 \subsection*{Implementation}
-The implementation of the software control algorithm described in the software flowcharts was not able to be finished to completion, although the basic control scheme of the manipulator was established with Python scripts. The MATLAB code written for simulation of the manipulator, such as the inverse kinematics calculations, were converted to Python and successfully implemented. Since only two joints of the manipulator were written, a two link inverse kinematics function was implemented as well as servo control algorithms to ease future programming. Snippets of the servo control scheme as well as the two link arm inverse kinematics can be seen in Listings \ref{code:pyik} \& \ref{code:pyservo}.
-
-\begin{lstlisting}[frame=line,language=Python,label=code:pyik,caption=twolink.py]
-def twoLinkIK(x,y):
-    l1 = 265.0
-    l2 = 165.0
-    D = (x**2 + y**2 - l1**2 - l2**2)/(2*l1*l2)
-    theta2 = atan2(sqrt(1.0 - D**2),D)
-    theta1 = atan2(y,x) - atan2(l2*sin(theta2),l1+l2*cos(theta2))
-    print(degrees(theta1),degrees(theta2))
-    return [degrees(theta1),degrees(theta2)]
-\end{lstlisting}
-The \texttt{meiosis\_servo.py} file contains several methods composed in an attempt to simplify and expedite future programming.
-\begin{lstlisting}[frame=line,language=Python,label=code:pyservo,caption=meiosis\_servo.py]
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""basic readable servo commands"""
-
-from dynamixel_sdk import *
-...
-def setJA(self, IDLIST, angle):
-  if(type(IDLIST) == int):
-      IDLIST = [IDLIST]
-  if(type(angle) == int):
-      angle = [angle]
-  for i in range(0,len(IDLIST)):
-      self.setPos(IDLIST[i], int(round(angle[i] * gearidx[i]...
-         + offset[i])))
-      print(int(round(angle[i] * gearidx[i] + offset[i])))
-\end{lstlisting}
-The \texttt{setJA} method shown above is an example of how a basic function needed for future programming was methodically created in an attempt to ease the burden of the final manipulator implementation. All methods were created with versatility in mind; the testing performed was limited to a two link manipulator since that is all that was physically available, but the underlying programming would remain very similar when all six joints were physically implemented.
-
+\input{implementation}
 \section*{Integration}
 
 \section{Testing}
 \input{test}
-
 \section{Project Management}
+
+\section{Conclusion}
+
 \nocite{*}
 \bibliographystyle{plainnat}
 \raggedright
@@ -173,11 +109,5 @@ The \texttt{setJA} method shown above is an example of how a basic function need
 
 \input{pycode}
 \vspace{10ex}
-
-% Code listing
-%\begin{lstlisting}[frame=lines,style=Matlab-editor,basicstyle = \mlttfamily, caption=Example Code]
-% Code Here
-%\end{lstlisting}
-% \includepdf[landscape,pages=-]{pdfname}
 
 \end{document}

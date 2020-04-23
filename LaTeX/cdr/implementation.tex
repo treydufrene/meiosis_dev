@@ -1,0 +1,32 @@
+The implementation of the software control algorithm described in the software flowcharts was not able to be finished to completion, although the basic control scheme of the manipulator was established with Python scripts. The MATLAB code written for simulation of the manipulator, such as the inverse kinematics calculations, were converted to Python and successfully implemented. Since only two joints of the manipulator were written, a two link inverse kinematics function was implemented as well as servo control algorithms to ease future programming. Snippets of the servo control scheme as well as the two link arm inverse kinematics can be seen in Listings \ref{code:pyik} \& \ref{code:pyservo}.
+
+\begin{lstlisting}[frame=line,language=Python,label=code:pyik,caption=twolink.py]
+def twoLinkIK(x,y):
+    l1 = 265.0
+    l2 = 165.0
+    D = (x**2 + y**2 - l1**2 - l2**2)/(2*l1*l2)
+    theta2 = atan2(sqrt(1.0 - D**2),D)
+    theta1 = atan2(y,x) - atan2(l2*sin(theta2),l1+l2*cos(theta2))
+    print(degrees(theta1),degrees(theta2))
+    return [degrees(theta1),degrees(theta2)]
+\end{lstlisting}
+The \texttt{meiosis\_servo.py} file contains several methods composed in an attempt to simplify and expedite future programming.
+\begin{lstlisting}[frame=line,language=Python,label=code:pyservo,caption=meiosis\_servo.py]
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""basic readable servo commands"""
+
+from dynamixel_sdk import *
+...
+def setJA(self, IDLIST, angle):
+  if(type(IDLIST) == int):
+      IDLIST = [IDLIST]
+  if(type(angle) == int):
+      angle = [angle]
+  for i in range(0,len(IDLIST)):
+      self.setPos(IDLIST[i], int(round(angle[i] * gearidx[i]...
+         + offset[i])))
+      print(int(round(angle[i] * gearidx[i] + offset[i])))
+\end{lstlisting}
+The \texttt{setJA} method shown above is an example of how a basic function needed for future programming was methodically created in an attempt to ease the burden of the final manipulator implementation. All methods were created with versatility in mind; the testing performed was limited to a two link manipulator since that is all that was physically available, but the underlying programming would remain very similar when all six joints were physically implemented.
