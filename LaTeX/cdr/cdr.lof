@@ -1,22 +1,31 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Harmonic Gearbox Locations\relax }}{1}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces ExplodedViewoftheHarmonicGearbox\relax }}{2}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Motor Locations and Orientations\relax }}{5}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{7}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{7}% 
-\contentsline {figure}{\numberline {6}{\ignorespaces T-Bar ANSYS FEA\relax }}{8}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces ANSYS Simulated Forces Image Capture\relax }}{9}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces ANSYS FEA of Dynamical Loading Scenario\relax }}{10}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces ANSYS Fatigue Test\relax }}{10}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Software Flowchart\relax }}{13}% 
-\contentsline {figure}{\numberline {11}{\ignorespaces Labeled Image of Manipulator Rendering\relax }}{20}% 
-\contentsline {figure}{\numberline {12}{\ignorespaces Measurement Test for Link Offset\relax }}{21}% 
-\contentsline {figure}{\numberline {13}{\ignorespaces Manipulator in its Zeroed Configuration\relax }}{21}% 
-\contentsline {figure}{\numberline {14}{\ignorespaces Solidworks Measurement of Reachable Workspace\relax }}{24}% 
-\contentsline {figure}{\numberline {15}{\ignorespaces Test of Link Length for Specification 1.5.a.\relax }}{24}% 
-\contentsline {figure}{\numberline {16}{\ignorespaces Matlab Plot of Invalid Dexterity Check\relax }}{25}% 
-\contentsline {figure}{\numberline {17}{\ignorespaces Matlab Plot of Successful Dexterity Check\relax }}{26}% 
-\contentsline {figure}{\numberline {18}{\ignorespaces Dynamixel Parallel Gripper with Servo\relax }}{27}% 
-\contentsline {figure}{\numberline {19}{\ignorespaces Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening\relax }}{28}% 
-\contentsline {figure}{\numberline {20}{\ignorespaces Dynamixel Gripper Rotational to Linear Motion Mechanism \cite {gripper2}\relax }}{28}% 
-\contentsline {figure}{\numberline {21}{\ignorespaces Dynamixel Parallel Gripper with Servo\relax }}{29}% 
-\contentsline {figure}{\numberline {22}{\ignorespaces GUI Template\relax }}{31}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Overall System Conceptual Design \relax }}{1}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Manipulator Base with Call-outs\relax }}{3}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Drawing Showing Key Features of Design\relax }}{4}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Drawing Showing Link Cross Section\relax }}{4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Electrical System Block Diagram\relax }}{5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Software Flowchart\relax }}{6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Overview of Physical System\relax }}{9}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Elbow Manipulator Configuration with Link Offset}}{10}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Kinematic Model Representing Zeroed Configuration}}{12}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Harmonic Gearbox Locations\relax }}{14}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces ExplodedViewoftheHarmonicGearbox\relax }}{15}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Motor Locations and Orientations\relax }}{18}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Closed-Loop Control Simulation Animation Snapshots\relax }}{20}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Joint Angles vs Time in Closed-Loop Simulation\relax }}{20}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces T-Bar ANSYS FEA\relax }}{21}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces ANSYS Simulated Forces Image Capture\relax }}{22}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces ANSYS FEA of Dynamical Loading Scenario\relax }}{23}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces ANSYS Fatigue Test\relax }}{23}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Software Flowchart\relax }}{26}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Labeled Image of Manipulator Rendering\relax }}{33}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Measurement Test for Link Offset\relax }}{34}% 
+\contentsline {figure}{\numberline {22}{\ignorespaces Manipulator in its Zeroed Configuration\relax }}{34}% 
+\contentsline {figure}{\numberline {23}{\ignorespaces Solidworks Measurement of Reachable Workspace\relax }}{37}% 
+\contentsline {figure}{\numberline {24}{\ignorespaces Test of Link Length for Specification 1.5.a.\relax }}{37}% 
+\contentsline {figure}{\numberline {25}{\ignorespaces Matlab Plot of Invalid Dexterity Check\relax }}{38}% 
+\contentsline {figure}{\numberline {26}{\ignorespaces Matlab Plot of Successful Dexterity Check\relax }}{39}% 
+\contentsline {figure}{\numberline {27}{\ignorespaces Dynamixel Parallel Gripper with Servo\relax }}{40}% 
+\contentsline {figure}{\numberline {28}{\ignorespaces Dynamixel Gripper with and without Foam Padding at Minimum and Maximum Opening\relax }}{41}% 
+\contentsline {figure}{\numberline {29}{\ignorespaces Dynamixel Gripper Rotational to Linear Motion Mechanism \cite {gripper2}\relax }}{41}% 
+\contentsline {figure}{\numberline {30}{\ignorespaces Dynamixel Parallel Gripper with Servo\relax }}{42}% 
+\contentsline {figure}{\numberline {31}{\ignorespaces GUI Template\relax }}{44}% 

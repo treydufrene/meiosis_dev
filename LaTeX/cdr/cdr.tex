@@ -37,362 +37,34 @@ The Manipulator for Educational Institutions with Open Source Integrated Systems
 \newpage
 
 \pagenumbering{arabic}
-\section*{Preliminary and Detailed Design}
+\section{Introduction}
+Robotics is a rapidly growing field, yet numerous potential innovators for the discipline are never exposed to it. While many industrial style manipulators are available for commercial applications, their cost is so high that they are not practical for educational purposes. With the intention of making robotics education more accessible to classrooms, the Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to provide robotics classes with an accurate and precise manipulator for cost lower than traditional manipulators. MEIOSIS is designed to be 3D printed by the end-user to increase accessibility of the manipulator and will be modifiable to help create an increased understanding of robotics. The following document details the entirety of the design process, from conceptual design and definition of requirements to final implementation and testing.
+\section{Conceptual Design}
+\input{concept}
+\newpage
+\section{Specifications}
+\input{specs}
+\newpage
+\section{Preliminary and Detailed Design}
 \section{Electrical System}
 \section{Mechanical System}
 \subsection*{Description of Mechanical Design}
-One of the main differences between the conceptual mechanical design and the final design is the inclusion of 3D-printed harmonic gearboxes. The previous designs utilized a combination of standard spur gears and timing belts. It was determined that neither of these options provided the necessary precision without also introducing backlash into the system, which is nearly impossible to correct for with our feedback configuration. The solution was to design and implement a harmonic drive system. The harmonic gearbox locations are shown below in Figure \ref{fig:HarmonicGearboxLocations}
-
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=.65\textwidth,frame]{HarmonicGearboxLocations}
-  \caption{Harmonic Gearbox Locations}
-  \label{fig:HarmonicGearboxLocations}
-\end{figure}
-
-As seen in Figure \ref{fig:HarmonicGearboxLocations}, each joint only requires a single actuator, which is a configuration not seen in the previous design. This is possible because harmonic drives allow for very high gear ratios with minimal backlash. The first prototype harmonic drive was provided by a posting on Thingiverse [citation]. This design was meant to be driven by a stepper motor and provided a gear ratio of 39:1. However, the gearboxes implemented in the manipulator need to be driven by a smart servo. Because the smart servo cannot drive as fast as a stepper motor, the ratio of 39:1 resulted in joint movement that was extremely slow. Additionally, given the link lengths and precision of the servos, only a gear ratio of 20:1 was necessary to meet the precision requirements of the system. For these reasons, a second harmonic drive was designed to provide the proper gear ratio of 20:1. Figure \ref{fig:ExplodedViewoftheHarmonicGearbox} provides an exploded view of the main structural components of the newest harmonic drive.
-
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=.65\textwidth,frame]{ExplodedViewoftheHarmonicGearbox}
-  \caption{ExplodedViewoftheHarmonicGearbox}
-  \label{fig:ExplodedViewoftheHarmonicGearbox}
-\end{figure}
-
-As seen in Figure \ref{fig:ExplodedViewoftheHarmonicGearbox}, the basic harmonic drive design features an outer housing, a stiff output shaft, a flexible gear, and a bearing holder assembly. When fully assembled, the bearing holder sits on the inside of the flexible gear. As the servo drives the inner bearing holder, a continuous meshing of teeth occurs between the flexible gear and the set of teeth that are built into the outer housing. Because the inner set of teeth has two less teeth than the outer set (the inside has 40 while the outside has 42), the inner gear will move forward by two teeth per rotation of the bearing holder. This results in 1/20th of a rotation of the flexible gear per full rotation of the bearing holder. With the output shaft being attached to the flexible gear, the whole harmonic drive provides a ratio of 20:1.
-
+\input{domd}
 \subsubsection*{Equations of Motion}
-Given robot dynamics described by \(H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=F_{\gamma},\) the equations of motion for
-the manipulator can be determined. Solving this equation for the acceleration, \(\ddot{\gamma}\), gives:
-\begin{equation}
-  \ddot{\gamma}=H(\gamma)^{-1}\left(F_{\gamma}-d(\gamma, \dot{\gamma})-G(\gamma)\right)
-  \label{eq:eoms}
-\end{equation}
-Where $H$ is the system mass matrix, $F_{\gamma}$ is the vector of generalized forces, $d$ is the vector of centripital and coriolis effects, and $G$ is gravitational effects.
-\[
-  \renewcommand{\arraystretch}{1.5}
-  H(\gamma) = \sum_B^N J_B(\gamma)^T
-  \begin{bmatrix}
-    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
-    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
-  \end{bmatrix}
-  J_B(\gamma)~,\quad
-  ^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
-\]
-\[
-  \renewcommand{\arraystretch}{1.5}
-  d(\gamma,\dot{\gamma}) = \sum_B^N J_B(\gamma)^T
-  \begin{bmatrix}
-    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
-    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
-  \end{bmatrix}
-  \dot{J}_B(\gamma,\dot{\gamma})\dot{\gamma}+J_B(\gamma)^T
-  \begin{bmatrix}
-    ^B_B\omega_I \times ^B_BJ ^B_B\omega_I \\
-    ^IT_B\left(^B_B\omega_I\times(^B_B\omega_I\times^B_B\Gamma)\right)
-  \end{bmatrix}
-\]
-\[
-G(\gamma) = \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T~,\quad U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
-\]
-Where $J_B$ is the jacobian of the body, $\Gamma$ is the vector of first mass moments, $m_B$ is the mass of the body, and $^B_B\omega_I$ is the rotational velocity of the body relative to the inertial frame.
+\input{eoms}
 \subsubsection*{Actuator Dynamics}
 \input{motor}
-
-% \subsection{Closed-Loop Simulation}
-The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of differential drive systems means that the joint angles, $\gamma$, do not directly correspond to motor rotations, $\theta$, as shown in \emph{Figure \ref{fig:motorloc}}.
-
-
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=.75\textwidth,frame]{motorloc}
-  \caption{Motor Locations and Orientations}
-  \label{fig:motorloc}
-\end{figure}
-
-\emph{Figure \ref{fig:motorloc}} shows the motor positions and relative orientations.
-This layout was used to define a linear relation between the joint angles and the motor rotations, described in equation (\ref{eq:A}).
-
-\begin{equation}
-  \gamma = A\theta\quad \text{where}~~A=\left[\begin{array}{cccccc}{1 /(2 N)} & {1 /(2 N)} & {0} & {0} & {0} & {0} \\ {1 /(2 N)} & {-1 /(2 N)} & {0} & {0} & {0} & {0} \\ {0} & {0} & {-1 / N} & {0} & {0} & {0} \\ {0} & {0} & {0} & {1} & {0} & {0} \\ {0} & {0} & {0} & {0} & {-1 / 2} & {1 / 2} \\ {0} & {0} & {0} & {0} & {1 / 2} & {1 / 2}\end{array}\right]
-\label{eq:A}
-\end{equation}
-Equation (\ref{eq:A}) can be used to map the joint angles to the motor angles. The gear ratio of 1:10 is represented by the variable N. Similarly, the motor angles can be determined by multiplying both sides of equation (\ref{eq:A}) by the inverse of matrix A, giving the following relation.
-\begin{equation}
-\theta=A^{-1} \gamma
-\label{eq:Ainv}
-\end{equation}
-It is important to note that the virtual work done by the joint torques ($F_{\gamma}$) and the virtual work done by the motor torques ($F_{\theta}$) are equal. Using equation (\ref{eq:Ainv}), a linear relation between the joint torques and motor torques can be determined.
-\[
-\begin{aligned}
-  \delta W = F_{\theta}^{T} \delta \theta&=F_{\gamma}^{T} \delta \gamma, \text { where } \delta \gamma=A \delta \theta \\
-  F_{\theta}^{T} \delta \theta &= F_{\gamma}^{T}(A \delta \theta) \\
-  F_{\theta}^{T}&=F_{\gamma}^{T} A\\
-  \left(F_{\theta}^{T}\right)^{T}&=\left(F_{\gamma}^{T} A\right)^{T}\\
-  F_{\theta}=A^{T} F_{\gamma} &\Leftrightarrow F_{\gamma}=A^{-T} F_{\theta}\qquad\quad
-\end{aligned}
-\]
-Using this equation, a relation can be determined between the motor dynamics and the system dynamics given in equation (\ref{eq:fin}) and equation (\ref{eq:eoms}) respectively.
-
-\[
-H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=-A^{-T}\left(C_1A^{-1} \ddot{\gamma}+C_2 A^{-1} \dot{\gamma}+C_3 \theta_{d}- C_3A^{-1} \gamma\right)
-\]
-\begin{equation}
-\ddot{\gamma}=H(\gamma)^{-1}\left(-A^{-T}\left(C_1 A^{-1} \ddot{\gamma}+C_2 A^{-1} \dot{\gamma}+C_3 \theta_{d}-C_3A^{-1} \gamma\right)-d(\gamma, \dot{\gamma})-G(\gamma)\right)
-\label{eq:gddot}
-\end{equation}
-
-Because this equation includes the motor model, which in turn includes an internal PD controller, this equation can be integrated to solve for the system response given a desired motor angle input, $\theta_d$. However, doing so will not result in the desired system response. This control scheme does not have any compensation for the inertia of the links, and it is also lacking gravity compensation. This can be remedied by modifying the input to the motors, $\theta_d$. A new input, $u$, is defined such that gravity can be compensated. Thus, the motor input term in equation (\ref{eq:gddot}) must include both compensation for gravity and the desired motor angle.
-\[
-A^{-T} C_3  u=G(\gamma)+d(\gamma, \dot{\gamma})+A^{-T} C_3\theta_{d}
-\]
-\begin{equation}
-u=\left(A^{-T} C_3\right)^{-1} \left(G(\gamma)+d(\gamma, \dot{\gamma})\right) + \theta_{d}
-\end{equation}
-With this new motor input, the closed loop control system equations of motion are given as:
-\begin{equation}
-\ddot{\gamma}=H(\gamma)^{-1}\left(-A^{-T}\left(C_1 A^{-1} \ddot{\gamma}+C_2 A^{-1} \dot{\gamma}+C_3 u-C_3A^{-1} \gamma\right)-d(\gamma, \dot{\gamma})-G(\gamma)\right)
-\label{eq:gddotfin}
-\end{equation}
-Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system response given desired motor angles.
-
-\begin{figure}[htp]
-  \center
-  \begin{subfigure}[c]{0.33\textwidth}
-    \center
-    \includegraphics[width=.9\textwidth,frame]{clsnap1}
-    \caption{Frame Snapshot near Simulation \\Initiation}
-  \end{subfigure}%
-  \begin{subfigure}[c]{0.33\textwidth}
-    \center
-    \includegraphics[width=.9\textwidth,frame]{clsnap2}
-    \caption{Frame Snapshot near Simulation \\Middle}
-  \end{subfigure}%
-\begin{subfigure}[c]{0.33\textwidth}
-  \center
-  \includegraphics[width=.9\textwidth,frame]{clsnap3}
-  \caption{Frame Snapshot near Simulation \\Termination}
-\end{subfigure}
-  \caption{Closed-Loop Control Simulation Animation Snapshots}
-  \label{fig:clsnaps}
-\end{figure}
-
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=.95\textwidth]{cljplots1}
-  \caption{Joint Angles vs Time in Closed-Loop Simulation}
-  \label{fig:cljplots1}
-\end{figure}
-\begin{figure}[htp]
-  \center
-  \ContinuedFloat
-  \captionsetup{list=off,format=cont}
-  \includegraphics[width=.95\textwidth]{cljplots2}
-  \caption{Joint Angles vs Time in Closed-Loop Simulation}
-  \label{fig:cljplots2}
-\end{figure}
-\begin{figure}[htp]
-  \center
-  \ContinuedFloat
-  \captionsetup{list=off,format=cont}
-  \includegraphics[width=.95\textwidth]{cljplots3}
-  \caption{Joint Angles vs Time in Closed-Loop Simulation}
-  \label{fig:cljplots3}
-\end{figure}
+\subsubsection*{System Dynamics}
+\input{sysdynamics}
 \subsubsection*{ANSYS}
-With 100\% infill, 3D printed PLA has a maximum shear stress of 13.6 kpsi. The manipulator applies a load of 13N in the negative y-direction. Without gears in the base differential, the differential support would bear the load on its bearing mounts. \emph{Figure \ref{fig:tbar}} shows the manipulator’s differential support could experience up to 97 kPa or 0.014 kpsi of shear stress, which is less than the maximum shear stress of PLA with 100\% infill. Since some of the manipulator’s mass is supported by the gears, the actual shear experienced by the differential support will be less.
-
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=.5\textwidth, frame]{tbar}
-  \caption{T-Bar ANSYS FEA}
-  \label{fig:tbar}
-\end{figure}
-
-To simulate a dynamical loading situation where the manipulator would be under the largest amount of stress, gravitational forces and an outward force (parallel to the arm direction in it's zeroed configuration) were applied to the structure. This situation represents the worst-case loading scenario, such as the manipulator swinging while outstretched. The supports and simulated forces can be seen in the ANSYS image capture shown in \emph{Figure \ref{fig:ansys_forces}}.
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=.55\textwidth, frame]{ansys_forces}
-  \caption{ANSYS Simulated Forces Image Capture}
-  \label{fig:ansys_forces}
-\end{figure}
-\newpage
-As shown in \emph{Figure \ref{fig:ansys_forces}}, the red arrow is the outward force simulating centrifugal forces, the yellow arrow represents gravity acting at the manipulator's center of mass, and the yellow highlighted faces show the fixed support at the base.
-
-The dynamical loadings resulted in a maximum shear stress at the shoulder differential bearing, as seen in \emph{Figure \ref{fig:ansys_full}}; a close-up image of the bearing analysis can be seen in \emph{Figure \ref{fig:ansys_bearing}}.
-
-\begin{figure}[htp]
-  \center
-  \begin{subfigure}[t]{0.5\textwidth}
-  \center
-  \includegraphics[width=.9\textwidth,frame]{ansys_full}
-  \caption{ANSYS Full View of Maximum Shear}
-  \label{fig:ansys_full}
-\end{subfigure}%
-\begin{subfigure}[t]{0.5\textwidth}
-  \center
-  \includegraphics[width=.75\textwidth,frame]{ansys_bearing}
-  \caption{ANSYS Bearing Shear Stress Close-up}
-  \label{fig:ansys_bearing}
-\end{subfigure}
-  \caption{ANSYS FEA of Dynamical Loading Scenario}
-\end{figure}
-
-To further validate that the structure is capable of handling alternating stresses, a fatigue test was also performed showing the life of the manipulator handles a minimum of 1e6 cycles, as seen in \emph{Figure \ref{fig:ansys_life}}, showing it is unlikely to fail due to material yeilding.
-
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=.6\textwidth, frame]{ansys_life}
-  \caption{ANSYS Fatigue Test}
-  \label{fig:ansys_life}
-\end{figure}
-
-As seen in \emph{Figure \ref{fig:ansys_life}}, the lower bearing of the differential drive on the shoulder of the manipulator would be the most likely component to fail under repeating loadings.
+\input{ansys}
 \newpage
 \subsection*{Parts list and budget}
 \subsection*{Parts List}
-\emph{Table \ref{tab:bom1}} lists the parts MEIOSIS will require to build the manipulator. The total cost is \$629.22, including shipping. Specification 1.1b requires MEIOSOS’s cost to develop the manipulator be less than \$800. In addition to pulley belts for the current configuration, \emph{Table \ref{tab:bom1}} allocates \$20 for two additional belt sizes to increase joint 1/2’s and joint 3’s torque by a factor of 10. The belts must be purchased in packs of 3 from Automation Direct and two more belt sizes may be required for the two pulley design to allow the servos to be mounted without interfering with the base. \emph{Table \ref{tab:bom1}} also accounts for increased cable lengths of 500 mm to communication bus signals from motor 2 to 3 and motor 3 to 4. And cable lengths of 350 mm to communication bus signals from motor 5 to 6. Motors are identified in [MOTOR ORIENTATION FIGURE]. Aside from electronic hardware, \emph{Table \ref{tab:bom2}} for physical hardware.
-To allow screw mounting in plastic with metal threads, \emph{Table \ref{tab:bom2}} accounts for 100 threaded press-fit inserts. The manipulator will require between 21 and 46 inserts.The majority of inserts attach MX-12W servos to the manipulator. Mounting hardware accompanies each servo. Since purchasing six sets of pulleys would put MEIOSIS over the \$800 budget, they are printed.
-\renewcommand{\arraystretch}{1.15}
-\begin{table}[htp]
-  \center
-  \caption{MEIOSIS Bill of Materials with Costs}
-  \label{tab:bom1}
-\begin{tabular}{cC{3cm}@{\hskip 3pt}c@{\hskip 3pt}C{3cm}@{\hskip 3pt}|C{3cm}}
-\multirow{2}{*}{\textbf{Part}} & \multirow{2}{*}{\textbf{Retailer}} & \multirow{2}{*}{\textbf{Quantity}} & \textbf{Unit Cost (USD)} & \textbf{Total Cost (USD)} \\\hline
-3 pack, 300 tooth & \multirow{4}{*}{\shortstack[c]{Automation \\Direct}} & 1 & 11.5 & 11.5 \\
-3 pack, 208 tooth &  & 1 & 9.5 & 28.5 \\
-Base second belts &   & 1 & 10 & 10 \\
-Link 3 second belts & & 1 & 10 & 10 \\\arrayrulecolor{gray}\hline
-MX-12W & \multirow{4}{*}{\shortstack[c]{Trossen \\Robotics}} & 6 & 65.9 & 395.4 \\
-500 mm, 1/2 pulleys &  & 2 & 3.95 & 7.9 \\
-350 mm, 3 pulley &  & 1 & 2.95 & 2.95 \\
-EE &  & 1 & 24.95 & 24.95 \\\arrayrulecolor{gray}\hline
-Pi 3 B & \multirow{2}{*}{Amazon} & 1 & 37.99 & 37.99 \\
-Bearings &  & 1 & 8.99 & 8.99 \\\arrayrulecolor{gray}\hline
-\multirow{2}{*}{2 Sch 10 12" Al tube} & Industrial Metal Sales & 1 & 2.99 & 2.99 \\\arrayrulecolor{gray}\hline
-\multirow{2}{*}{12 V, 5 V power supply} & Digi-Key Electronics & 1 & 43.21 & 43.21 \\\arrayrulecolor{gray}\hline
-Automation Direct & \multirow{5}{*}{Shipping} & \multirow{5}{*}{---} & \multirow{5}{*}{---} & 0 \\
-Trossen Robotics &  &  & & 13.15 \\
-Amazon & &  & & 0 \\
-Industrial Metal Sales &  & &  & 26.36 \\
-Digi-Key &  & &  & 8.99 \\
-& & & \textbf{Total} & 629.22 \\
-\end{tabular}
-\end{table}
-
-In addition to the costs listed in \emph{Table \ref{tab:bom1}}, \emph{Table \ref{tab:bom2}} shows further costs for the end-user highlighted in blue. Since the Embry Riddle robotics lab has 3D printing available without affecting MEIOSIS’s \$800 budget, \emph{Table \ref{tab:bom2}} accounts for outsourced 3D printing costs sufficient to print the entire manipulator with six sets of pulleys. If the end-user owns a 3D printer, the 3D printing cost would effectively reduce to filament cost. Additionally, \emph{Table \ref{tab:bom2}} assumes the end-user does not already possess an AX-12A servo to be used with the end-effector. Further, \emph{Table \ref{tab:bom2}} assumes the manipulator would be more accessible to end-users by using a proprietary U2D2 communication module in lieu of a soldered or bread-board circuit.
-The robotics lab has an AX-12A servo and U2D2 communication module MEIOSIS will use. With the aforementioned additional costs, the MEIOSIS manipulator costs the end-user  \$1,007.98 including shipping costs. While \$1,007.98 is slightly above the maximum cost of \$1000 from specification 1.1a, it provides greater accessibility, which may be diminished by assuming end-users poses 3D printers.
-
-\renewcommand{\arraystretch}{1.25}
-\begin{table}[htp]
-  \center
-  \caption{End-User Bill of Materials with Costs}
-  \label{tab:bom2}
-  \begin{tabular}{C{3cm}C{3cm}@{\hskip 3pt}c@{\hskip 3pt}C{3cm}@{\hskip 3pt}|C{3cm}}
-  \multirow{2}{*}{\textbf{Part}} & \multirow{2}{*}{\textbf{Retailer}} & \multirow{2}{*}{\textbf{Quantity}} & \textbf{Unit Cost (USD)} & \textbf{Total Cost (USD)} \\\hline
-  Aforementioned Costs & \multirow{2}{*}{\emph{Table \ref{tab:bom1}}} & \multirow{2}{*}{---} & \multirow{2}{*}{---} & 629.22 \\
-  \multirow{2}{*}{U2D2} & Trossen Robotics & \multirow{2}{*}{1} & \multirow{2}{*}{49.9} & \multirow{2}{*}{49.9}\\
-  \multirow{2}{*}{EE with servo} & Trossen Robotics & \multirow{2}{*}{1} & \multirow{2}{*}{64.95} & \multirow{2}{*}{64.95} \\
-  3D PLA outsourcing (incl. shipping) & \multirow{2}{*}{Craft Cloud} & \multirow{2}{*}{1} & \multirow{2}{*}{288.86} & \multirow{2}{*}{288.86} \\
-  & & & \textbf{Total} & 1007.98 \\
-  \end{tabular}
-\end{table}
-\renewcommand{\arraystretch}{1}
-\newpage
-
+\input{partslist}
 \section{Software}
 \subsection*{Flowcharts}
-The software the system will need will take in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and run the manipulator through the desired points following the specified paths requested. To do this, the user will first be asked what the number of points being input will be so that a few data structures can be preallocated. The user will then be asked if the manipulator will be writing or doing pick and place, and store the response. If the user is doing pick and place, the user will be asked for the full point data consisting of the x, y, and z location in millimeters, the phi, theta, and psi angles in degrees, the path type, and the end effector function. If the user is doing writing, only the x, y, and z locations will be requested. The orientation of the point will be defaulted in the “down” orientation since the marker will be held vertically, the path type will be set to cartesian straight line, and the end effector function will be set to stay unchanged. When all the desired points have been input, the software will then create intermediate points every centimeter between points whose paths are specified as cartesian straight line and store the new path points in a different data structure. After the path has been created, each point will be run through inverse kinematics to get the required joint angles to achieve the position and will be stored as the motor data for each point. If the user is writing with the manipulator, the user will be prompted to press a key to close the end effector to grab the marker. The user will then be prompted to press a key to begin, at which point the software will send the motor data to each servo for the first point that the system is trying to reach, wait till the servos are in the desired position, run the end effector function if there is one, and then repeat the process with the next set of motor data until all the points have been traveled through. When the last point has been reached, the program will prompt the user to input the number of desired points and wait for the input to start the process over again.
-\captionsetup[sub]{
-    labelformat=r-parens}
-The software the system uses takes in a row vector of position, orientation, path type, and end effector function information for all points to be traveled through and runs the manipulator through the desired points following the specified paths requested. The general overview of the code is shown in \emph{Figure \ref{fig:soverall}}.
-
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=\textwidth]{soverall}
-  \caption{Software Flowchart}
-  \label{fig:soverall}
-\end{figure}
-
-\emph{Figure \ref{fig:soverall}} shows that the software for the manipulator is broken up into six subsections, two sections that receive data, three that do calculations, and one that runs the specified task.
-
-The first subsection of the software works to receive the number of points the user is inputting as well as the general task the user is completing, shown in \emph{Figure \ref{fig:sf1}}. \\
-
-\begin{figure}[htp] \ContinuedFloat
-  \begin{subfigure}[c]{\textwidth}
-  \center
-  \includegraphics[width=\textwidth]{sf1}
-  \caption{Software Flowchart Subsection 1}
-  \label{fig:sf1}
-  \end{subfigure}
-\end{figure}
-
-\emph{Figure \ref{fig:sf1}} specifies that the software prompts the user for the number of points that the manipulator will travel through and stores the input as a variable, in this case ‘x’. The ‘x’ variable is only used to help preallocate data vectors so that the size of the vector does not change with each input. The software also receives the task specification as either a 0 for cartesian straight line pathing or a 1 for a straight line in the joint space and stores this value in the variable ‘c’.
-
-The second general block in the software flowchart works to receive and store the necessary data for the points the user is inputting depending on the path type as seen in \emph{Figure \ref{fig:sf2}}.
-\begin{figure}[htp] \ContinuedFloat
-  \begin{subfigure}[c]{\textwidth}
-  \center
-  \includegraphics[width=\textwidth]{sf2}
-  \caption{Software Flowchart Subsection 2}
-  \label{fig:sf2}
-\end{subfigure}
-\end{figure}
-
-\emph{Figure \ref{fig:sf2}} shows that the path type variable ‘c’ is used to determine what information is necessary to collect. If the user is doing a writing task, the software only collects the x, y, and z distances for the point and assumes that the end effector orientation will be facing down so that the marker is vertical. If the user is doing pick and place, the software prompts the user for the x, y, z, phi, theta, psi, path type, and end effector data. The software loops until all the points have been input.
-
-The next block in the software flowchart calculates the total points necessary to complete the task. The overview for this section can be seen in \emph{Figure \ref{fig:sf3}}.
-
-\begin{figure}[htp]\ContinuedFloat
-  \begin{subfigure}[c]{\textwidth}
-  \center
-  \includegraphics[width=\textwidth]{sf3}
-  \caption{Software Flowchart Subsection 3}
-  \label{fig:sf3}
-  \end{subfigure}
-\end{figure}
-
-As seen in \emph{Figure \ref{fig:sf3}}, the section of software calculates the distance between the current point and the previous point if the path type is cartesian straight line and divides the distance by ten to find the number of centimeters between the two points. This value is stored as the necessary number of intermediate points, and the software will loop through until every point has been checked. The section of code also stores the total number of points that will be used as the variable level for later use.
-\newpage
-The fourth code block in the flowchart creates and stores the necessary intermediate points along the desired path, shown in \emph{Figure \ref{fig:sf4}}.
-
-\begin{figure}[htp] \ContinuedFloat
-  \begin{subfigure}[c]{\textwidth}
-  \center
-  \includegraphics[width=.99\textwidth]{sf4}
-  \caption{Software Flowchart Subsection 4}
-  \label{fig:sf4}
-  \end{subfigure}
-\end{figure}
-\looseness=-1
-
-The code shown in \emph{Figure \ref{fig:sf4}} creates points every centimeter if the path type is cartesian straight line using the number of path points stored for each point from the previous block of software. This ensures that a straight line will be followed between the two user input points. If the path type is a straight line in the joint space, the software does not add any intermediate points since the path seen in the cartesian space does not matter.
-
-The fifth code block in the flowchart calculates inverse kinematics of the points defined in the previous block of code and stores the angles as counts that can be used by the servos. The overview of this section can be seen in \emph{Figure \ref{fig:sf5}}.
-
-\begin{figure}[htp] \ContinuedFloat
-  \begin{subfigure}[c]{\textwidth}
-  \center
-  \includegraphics[width=\textwidth]{sf5}
-  \caption{Software Flowchart Subsection 5}
-  \label{fig:sf5}
-  \end{subfigure}
-\end{figure}
-
-\emph{Figure \ref{fig:sf5}} shows that the new points found in the prior section of code are run through an inverse kinematics function that will output the necessary counts the servos can utilize. The code iterates through each point until the inverse kinematics have been calculated for all points.
-
-The final block in the software diagram runs the manipulator through the desired task, with this section of code requiring user input at certain stages depending on the path type, seen in \emph{Figure \ref{fig:sf6}}.
-\begin{figure}[htp] \ContinuedFloat
-  \begin{subfigure}[c]{\textwidth}
-  \center
-  \includegraphics[width=\textwidth]{sf6}
-  \caption{Software Flowchart Subsection 6}
-  \label{fig:sf6}
-  \end{subfigure}
-\end{figure}
-
-The code in \emph{Figure \ref{fig:sf6}} prompts the user to press space to close the end effector and grab the marker if drawing was the specified task, otherwise the software jumps straight into prompting the user to begin the task, and when the user begins the task the counts for each position are sent to the servos one at a time. The counts for the next position are not sent to the servos until the servos have reached the desired positions and the end effector function has been completed if there is one.
+\input{flowcharts}
 
 \subsection*{Description of control system}
 \subsection*{Implementation}
@@ -434,6 +106,7 @@ The \texttt{setJA} method shown above is an example of how a basic function need
 \section{Testing}
 \input{test}
 
+\section{Project Management}
 \nocite{*}
 \bibliographystyle{plainnat}
 \raggedright

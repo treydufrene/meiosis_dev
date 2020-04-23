@@ -1,8 +1,25 @@
-\contentsline {section}{\numberline {1}Electrical System}{1}% 
-\contentsline {section}{\numberline {2}Mechanical System}{1}% 
-\contentsline {section}{\numberline {3}Software}{13}% 
-\contentsline {section}{\numberline {4}Testing}{18}% 
-\contentsline {section}{\numberline {5}Introduction}{18}% 
-\contentsline {section}{\numberline {6}Specifications and Tests}{19}% 
-\contentsline {section}{\numberline {7}Further Testing}{32}% 
-\contentsline {section}{\numberline {8}Conclusion}{33}% 
+\contentsline {section}{\numberline {1}Introduction}{1}% 
+\contentsline {section}{\numberline {2}Conceptual Design}{1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Base}{3}% 
+\contentsline {subsubsection}{\numberline {2.1.2}Links}{4}% 
+\contentsline {section}{\numberline {3}Specifications}{9}% 
+\contentsline {subsubsection}{\numberline {3.2.1}The system shall cost the end-user no more than \$1000.}{9}% 
+\contentsline {subsubsection}{\numberline {3.2.2}The system shall be fully dexterous without being kinematically redundant.}{10}% 
+\contentsline {subsubsection}{\numberline {3.2.3}The system end effector shall maintain a positional accuracy magnitude of \(\pm 1\) mm and an orientation accuracy of \(\pm 5^{\circ }\) eigen angle from the base frame.}{10}% 
+\contentsline {subsubsection}{\numberline {3.2.4}The system end effector shall maintain a pose repeatability magnitude between 0.1\IeC {\textemdash }1.5 mm for the position and \(\pm 4^{\circ }\) eigen angle from the base frame for the orientation.}{11}% 
+\contentsline {subsubsection}{\numberline {3.2.5}The system\IeC {\textquoteright }s reachable workspace shall be a hemisphere with a radius of 300-700 mm.}{11}% 
+\contentsline {subsubsection}{\numberline {3.2.6}The system\IeC {\textquoteright }s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.}{11}% 
+\contentsline {subsubsection}{\numberline {3.2.7}The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}{12}% 
+\contentsline {subsubsection}{\numberline {3.2.8}The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}{12}% 
+\contentsline {subsubsection}{\numberline {3.3.1}The system shall be open source.}{13}% 
+\contentsline {subsubsection}{\numberline {3.3.2}The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}{13}% 
+\contentsline {section}{\numberline {4}Preliminary and Detailed Design}{14}% 
+\contentsline {section}{\numberline {5}Electrical System}{14}% 
+\contentsline {section}{\numberline {6}Mechanical System}{14}% 
+\contentsline {section}{\numberline {7}Software}{26}% 
+\contentsline {section}{\numberline {8}Testing}{31}% 
+\contentsline {section}{\numberline {9}Introduction}{31}% 
+\contentsline {section}{\numberline {10}Specifications and Tests}{32}% 
+\contentsline {section}{\numberline {11}Further Testing}{45}% 
+\contentsline {section}{\numberline {12}Conclusion}{46}% 
+\contentsline {section}{\numberline {13}Project Management}{47}% 

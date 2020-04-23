@@ -1,0 +1,34 @@
+Given robot dynamics described by \(H(\gamma) \ddot{\gamma}+d(\gamma, \dot{\gamma})+G(\gamma)=F_{\gamma},\) the equations of motion for
+the manipulator can be determined. Solving this equation for the acceleration, \(\ddot{\gamma}\), gives:
+\begin{equation}
+  \ddot{\gamma}=H(\gamma)^{-1}\left(F_{\gamma}-d(\gamma, \dot{\gamma})-G(\gamma)\right)
+  \label{eq:eoms}
+\end{equation}
+Where $H$ is the system mass matrix, $F_{\gamma}$ is the vector of generalized forces, $d$ is the vector of centripital and coriolis effects, and $G$ is gravitational effects.
+\[
+  \renewcommand{\arraystretch}{1.5}
+  H(\gamma) = \sum_B^N J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
+    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
+  \end{bmatrix}
+  J_B(\gamma)~,\quad
+  ^B_B\Gamma = ^B_Br_{cm}m_b~,\quad \mathring{S}(\omega)r=(\omega\times r)
+\]
+\[
+  \renewcommand{\arraystretch}{1.5}
+  d(\gamma,\dot{\gamma}) = \sum_B^N J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_BJ & \mathring{S}(^B_B\Gamma) ^IT_B^T\\
+    ^IT_B\mathring{S}(^B_B\Gamma)^T & m_BI
+  \end{bmatrix}
+  \dot{J}_B(\gamma,\dot{\gamma})\dot{\gamma}+J_B(\gamma)^T
+  \begin{bmatrix}
+    ^B_B\omega_I \times ^B_BJ ^B_B\omega_I \\
+    ^IT_B\left(^B_B\omega_I\times(^B_B\omega_I\times^B_B\Gamma)\right)
+  \end{bmatrix}
+\]
+\[
+G(\gamma) = \left(\frac{\partial U(^Ir(\gamma))}{\partial\gamma}\right)^T~,\quad U_B = \begin{bmatrix} 0 & 0 & g\end{bmatrix}\left(^I_Br_Bm_B + ^IT_B{}_B^B\Gamma\right)
+\]
+Where $J_B$ is the jacobian of the body, $\Gamma$ is the vector of first mass moments, $m_B$ is the mass of the body, and $^B_B\omega_I$ is the rotational velocity of the body relative to the inertial frame.
