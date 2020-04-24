@@ -11,12 +11,12 @@
 % \newpage
 % \pagenumbering{arabic}
 % \raggedright
-\section{Introduction}\label{sec:intro}
+% \section{Introduction}\label{sec:intro}
 
 With the intention of making robotics education more accessible to classrooms, the Manipulator for Educational Institutions with Open Source Integrated Systems (MEIOSIS) aims to provide robotics classes with an accurate and precise manipulator for cost lower than traditional manipulators. MEIOSIS is designed to be 3D printed by the end-user to reduce overall cost of the system and will be modifiable to create an increased understanding of robotics. The following document details the tests performed by the MEIOSIS team and the specific results obtained by each test. This is done in order to ensure that the design requirements are properly met by the finished product.
 
 
-\section{Specifications and Tests}\label{sec:tests}
+\subsection{Specifications and Tests}\label{sec:tests}
 The goal of testing each individual specification is to acquire feedback in order to enhance the design of MEIOSIS. The Specifications and Tests section of the document overviews the tests done and the data/results acquired from the tests.
 
 Specification \textbf{1.1.a} states: \textbf{The cost for the MEIOSIS team to develop the manipulator shall cost no more than \$800.} Team MEIOSIS meets this specification if the cost for the MEIOSIS team to develop the manipulator does not exceed \$800. This specification is tested by adding together the total cost of all parts ordered. This process can be seen in Table \ref{tab:bom}.
@@ -246,7 +246,7 @@ Due to uncertainties in the design caused by recent events, development for this
 Specification \textbf{2.2.b} states: \textbf{The system shall be capable of performing floating point arithmetic.} In order to fulfill specification 2.2.b, a computational system must be selected that can perform floating point arithmetic. The Raspberry Pi 3b+ includes an ARM Cortex A-53 \cite{rpi}, which is capable of performing high-speed floating point arithmetic \cite{arm}. Based on this fact, \textbf{the manipulator meets specification 2.2b.}
 
 
-\section{Further Testing}
+\subsection{Further Testing}
 
 In order to determine how useful the harmonic gearboxes are, each gearbox must be fatigue tested. The procedures for both the 1/39 ratio gearbox and the 1/20 gearbox are essentially the same, with the only difference being the load applied to each one. To run the test, each gearbox will be fitted with a load that represents the maximum resting force that the individual gearbox will have to support. For the 1/39 gearbox, the weight applied will be equivalent to the weight the manipulator must support in the shoulder joint. For the 1/20 gearbox, the gearbox will be loaded with the weight the manipulator must support in the elbow joint.
 
@@ -257,7 +257,7 @@ In order to collect useful data from the fatigue tests, certain measurements mus
 To test how gearbox fatigue will affect error, the PhaseSpace motion capture system will be utilized to determine any drift from the exact angle. Since the length of each load is known, a PhaseSpace marker can be placed at the end of each load so the motion capture system can see the location of the end of the link. The marker will be placed in a slightly recessed divot on the end of the link in order to make the forward kinematics calculations more exact. Another marker will be placed at the center of the motor cap, again placed within a small divot. These markers will allow us to determine the angle of the load by comparing the positions of the end of the load to the center of rotation. While the fatigue test is running, the motion capture system will capture data at each 0 and 180° position, and the actual angle will be plotted versus time to show any drift or error that occurs.
 
 % \newpage
-\section{Conclusion}\label{sec:conc}
+\subsection{Results}\label{sec:conc}
 Table \ref{tab:results} summarizes the results of the tests performed throughout the course of this semester. This table marks whether or not each specification was met or if it could not be determined.
 
 \begin{table}[htp]

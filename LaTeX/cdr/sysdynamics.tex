@@ -1,15 +1,4 @@
-The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of differential drive systems means that the joint angles, $\gamma$, do not directly correspond to motor rotations, $\theta$, as shown in \emph{Figure \ref{fig:motorloc}}.
-
-
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=.75\textwidth,frame]{motorloc}
-  \caption{Motor Locations and Orientations}
-  \label{fig:motorloc}
-\end{figure}
-
-\emph{Figure \ref{fig:motorloc}} shows the motor positions and relative orientations.
-This layout was used to define a linear relation between the joint angles and the motor rotations, described in equation (\ref{eq:A}).
+The motor equation (\ref{eq:fin}) gives an expression for the motor torques, however the system dynamics are defined in terms of geometric joint angles. The inclusion of harmonic gearboxes is taken care of by equation \ref{eq:A}.
 
 \begin{equation}
   \gamma = A\theta\quad \text{where}~~A=\left[\begin{array}{cccccc}
@@ -22,7 +11,7 @@ This layout was used to define a linear relation between the joint angles and th
     \end{array}\right]
 \label{eq:A}
 \end{equation}
-Equation (\ref{eq:A}) can be used to map the joint angles to the motor angles. The gear ratio of 1:10 is represented by the variable N. Similarly, the motor angles can be determined by multiplying both sides of equation (\ref{eq:A}) by the inverse of matrix A, giving the following relation.
+The gear ratios for the harmonics are taken care of by the diagonal entries in the matrix shown in equation \ref{eq:A} above. The motor angles can then be solved for using the inverse of the A matrix, as shown in equation \ref{eq:Ainv}.
 \begin{equation}
 \theta=A^{-1} \gamma
 \label{eq:Ainv}

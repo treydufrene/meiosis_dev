@@ -12,34 +12,32 @@
 \input{specs}
 \newpage
 \section{Preliminary and Detailed Design}
-\section*{Electrical System}
+%TODO Add words
+\subsection{Electrical System}
 \input{esystem}
-\section*{Mechanical System}
-\subsection*{Block Diagram}
+\subsection{Mechanical System}
 \input{mechblockdiagram}
-\subsection*{Description of Mechanical Design}
+\subsubsection{Mechanical Design}
 \input{domd}
-\subsubsection*{Equations of Motion}
+\subsubsection{Equations of Motion}
 \input{eoms}
-\subsubsection*{Actuator Dynamics}
+\subsubsection{Actuator Dynamics}
 \input{motor}
-\subsubsection*{System Dynamics}
+\subsubsection{System Dynamics}
 \input{sysdynamics}
 \newpage
-\subsubsection*{ANSYS}
+\subsubsection{Structural Analysis}
 \input{ansys}
 \newpage
-\subsection*{Parts List and Budget}
+\subsubsection{Parts List and Budget}
 \input{4.2.5}
 % \subsection*{Parts List}
 % \input{partslist}
-\section{Software}
-\subsection*{Flowcharts}
+\subsection{Software}
 \input{flowcharts}
-% \subsection*{Description of Control System}
-\subsection*{Implementation}
+\subsubsection{Implementation}
 \input{implementation}
-\section*{Integration}
+\subsection{Integration}
 \input{integration}
 \section{Testing}
 \input{test}
@@ -48,69 +46,69 @@
 \section{Conclusion}
 \input{conc}
 
-\nocite{*}
-\bibliographystyle{plainnat}
-\raggedright
-\titlespacing*{\chapter}{0pt}{-10pt}{40pt}
-\newpage\bibliography{bibs}
-\newpage
-\appendix
-\renewcommand\thesection{\Roman{section}}
-\renewcommand\thesubsection{\roman{subsection}}
-\hiddenappsec{Appendix}\label{sec:app}
-\hiddenappsub{Relevant Figures and Materials}
-\begin{figure}[htp]
-  \centering
-  \includegraphics[frame,width=.75\textwidth]{dex}
-  \caption{Cross Section of Dexterous Workspace Quadrant}
-  \label{fig:dex2}
-\end{figure}
-The plot shown in \emph{Figure \ref{fig:dex2}} exhibits a cross-section of the dexterous workspace defined by requirement 2.1.6 and shows how specification 2.1.6.a was calculated. The MATLAB script that created this plot was made to show red points where the robot is not fully dexterous and the lack of red dots shows that the robot is fully dexterous within the calculated area. This also drives specification 2.1.2.b as the workspace would have red points with a link offset.\newpage
-\hiddenappsub{CAD Drawings}
-The complete drawing package is attached.
-\includepdf[landscape,pages=-]{drawings}
-\includepdf[landscape,pages=-]{pulleys}
-\hiddenappsub{Salient Code}
-\input{mmodel}
-\vspace{10ex}
-
-\input{meiosisfk}
-\vspace{10ex}
-
-\input{meiosisik}
-\vspace{10ex}
-
-\input{clanim}
-\vspace{10ex}
-
-\input{meiosisdraw}
-\vspace{10ex}
-
-\input{hdg}
-\vspace{10ex}
-
-\input{jlplot}
-\vspace{10ex}
-
-\input{mname}
-\vspace{10ex}
-
-\input{mstate}
-\vspace{10ex}
-
-\input{mvel}
-\vspace{10ex}
-
-\input{mjac}
-\vspace{10ex}
-
-\input{olanim}
-\vspace{10ex}
-
-\input{velkin}
-\vspace{10ex}
-
-\input{pycode}
-\vspace{10ex}
+% \nocite{*}
+% \bibliographystyle{plainnat}
+% \raggedright
+% \titlespacing*{\chapter}{0pt}{-10pt}{40pt}
+% \newpage\bibliography{bibs}
+% \newpage
+% \appendix
+% \renewcommand\thesection{\Roman{section}}
+% \renewcommand\thesubsection{\roman{subsection}}
+% \hiddenappsec{Appendix}\label{sec:app}
+% \hiddenappsub{Relevant Figures and Materials}
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics[frame,width=.75\textwidth]{dex}
+%   \caption{Cross Section of Dexterous Workspace Quadrant}
+%   \label{fig:dex2}
+% \end{figure}
+% The plot shown in \emph{Figure \ref{fig:dex2}} exhibits a cross-section of the dexterous workspace defined by requirement 2.1.6 and shows how specification 2.1.6.a was calculated. The MATLAB script that created this plot was made to show red points where the robot is not fully dexterous and the lack of red dots shows that the robot is fully dexterous within the calculated area. This also drives specification 2.1.2.b as the workspace would have red points with a link offset.\newpage
+% \hiddenappsub{CAD Drawings}
+% The complete drawing package is attached.
+% \includepdf[landscape,pages=-]{drawings}
+% \includepdf[landscape,pages=-]{pulleys}
+% \hiddenappsub{Salient Code}
+% \input{mmodel}
+% \vspace{10ex}
+%
+% \input{meiosisfk}
+% \vspace{10ex}
+%
+% \input{meiosisik}
+% \vspace{10ex}
+%
+% \input{clanim}
+% \vspace{10ex}
+%
+% \input{meiosisdraw}
+% \vspace{10ex}
+%
+% \input{hdg}
+% \vspace{10ex}
+%
+% \input{jlplot}
+% \vspace{10ex}
+%
+% \input{mname}
+% \vspace{10ex}
+%
+% \input{mstate}
+% \vspace{10ex}
+%
+% \input{mvel}
+% \vspace{10ex}
+%
+% \input{mjac}
+% \vspace{10ex}
+%
+% \input{olanim}
+% \vspace{10ex}
+%
+% \input{velkin}
+% \vspace{10ex}
+%
+% \input{pycode}
+% \vspace{10ex}
 
 \end{document}
