@@ -189,7 +189,7 @@ As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest posi
   \label{fig:gripper2}
 \end{figure}
 
-The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are fully closed and the bottom three are fully opened. From left to right, the fingers have no, one, and two pieces of foam. The maximum opening with no foam is 37 mm and the maximum closure is 0 mm with four pieces of foam. While none of these configurations have exactly 18 mm between the fingers the distance between the fingers can be adjusted to accommodate this, as shown in Figure \ref{fig:gripper3}.
+The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are fully closed and the bottom three are fully opened. From left to right, the fingers have no, one, and two pieces of foam. The maximum opening with no foam is 37 mm and the maximum closure is 0 mm with four pieces of foam. While none of these configurations have exactly 18 mm between the fingers the distance between the fingers can be adjusted to accommodate this, as shown in Figure \ref{fig:gripper3}. \newpage
 
 \begin{figure}[htp]
   \centering
@@ -204,7 +204,7 @@ By sending the servo a position, the two highlighted red half-circular bars seen
 Specification \textbf{1.7.b} states: \textbf{The end effector shall attach to the manipulator using screws configured in a pattern that can accommodate a Dynamixel AX-12A servo.} In order to meet this specification, a Dynamixel AX-12A smart servo must be compatible with the end effector’s screw configuration. This specification can simply be tested using screws and a screwdriver. If the smart servo can successfully be screwed onto the end effector, then this specification is met. The design matches measurements acquired in the lab and parts to accommodate an AX-12A were fabricated and assembled in the lab. Since the Dynamixel smart servos have been tested and observed to fit on the parts printed, \textbf{the manipulator meets specification 1.7.b}.
 
 
-Specification \textbf{1.8.a} states: \textbf{The gripper shall be able to support 0.004 Newton meter moments about the axes normal to its gripping surfaces.} To meet specification 1.8.a, the gripper selected to be attached to the manipulator’s end effector should be capable of holding an object that provides 0.004 Newton meter moments about the axes normal to its gripping surfaces. Using the same Dynamixel gripper seen in Figure \ref{fig:gripper4}, a test can be performed
+Specification \textbf{1.8.a} states: \textbf{The gripper shall be able to support 0.004 Newton meter moments about the axes normal to its gripping surfaces.} To meet specification 1.8.a, the gripper selected to be attached to the manipulator’s end effector should be capable of holding an object that provides 0.004 Newton meter moments about the axes normal to its gripping surfaces. Using the same Dynamixel gripper seen in Figure \ref{fig:gripper4}, a test can be performed.
 
 \begin{figure}[htp]
   \centering
@@ -226,7 +226,7 @@ In lieu of a Python based GUI directly controlling the manipulator, a GUI could 
 
 % \newpage
 The best option is to have a MATLAB GUI control the MATLAB simulation, therefore a basic interface shall be created in which the user can select which control scheme is desired as well as goal positions for the end effector. A sample GUI can be seen in Figure \ref{fig:gui}.
-
+\newpage
 \let\clearpage\relax
 \begin{figure}[htp]
   \centering
