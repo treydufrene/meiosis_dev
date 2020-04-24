@@ -4,15 +4,19 @@
 \input{coverpage}
 \pagenumbering{roman}
 \input{introduction}
-\section{Conceptual Design}
+\section{Conceptual Designs}
 \input{concept}
+\input{concept2}
 \newpage
 \section{Specifications}
 \input{specs}
 \newpage
 \section{Preliminary and Detailed Design}
-\section{Electrical System}
-\section{Mechanical System}
+\section*{Electrical System}
+\input{esystem}
+\section*{Mechanical System}
+\subsection*{Block Diagram}
+\input{mechblockdiagram}
 \subsection*{Description of Mechanical Design}
 \input{domd}
 \subsubsection*{Equations of Motion}
@@ -25,9 +29,10 @@
 \subsubsection*{ANSYS}
 \input{ansys}
 \newpage
-\subsection*{Parts list and budget}
-\subsection*{Parts List}
-\input{partslist}
+\subsection*{Parts List and Budget}
+\input{4.2.5}
+% \subsection*{Parts List}
+% \input{partslist}
 \section{Software}
 \subsection*{Flowcharts}
 \input{flowcharts}
@@ -36,12 +41,13 @@
 \subsection*{Implementation}
 \input{implementation}
 \section*{Integration}
-
+\input{integration}
 \section{Testing}
 \input{test}
 \section{Project Management}
-
+\input{projman}
 \section{Conclusion}
+\input{conc}
 
 \nocite{*}
 \bibliographystyle{plainnat}
@@ -53,20 +59,18 @@
 \renewcommand\thesection{\Roman{section}}
 \renewcommand\thesubsection{\roman{subsection}}
 \hiddenappsec{Appendix}\label{sec:app}
-% % \section{Appendix}\label{sec:app}
-% \hiddenappsub{Relevant Figures and Materials}
-% % \subsection{Relevant Figures and Materials}
-% \begin{figure}[htp]
-%   \centering
-%   \includegraphics[frame,width=.75\textwidth]{dex}
-%   \caption{Cross Section of Dexterous Workspace Quadrant}
-%   \label{fig:dex}
-% \end{figure}
-% \hiddenappsub{CAD Drawings}
-% % \subsection{CAD Drawings}
-% The complete drawing package is attached.
-% \includepdf[landscape,pages=-]{drawings}
-% \includepdf[landscape,pages=-]{pulleys}
+\hiddenappsub{Relevant Figures and Materials}
+\begin{figure}[htp]
+  \centering
+  \includegraphics[frame,width=.75\textwidth]{dex}
+  \caption{Cross Section of Dexterous Workspace Quadrant}
+  \label{fig:dex2}
+\end{figure}
+The plot shown in \emph{Figure \ref{fig:dex2}} exhibits a cross-section of the dexterous workspace defined by requirement 2.1.6 and shows how specification 2.1.6.a was calculated. The MATLAB script that created this plot was made to show red points where the robot is not fully dexterous and the lack of red dots shows that the robot is fully dexterous within the calculated area. This also drives specification 2.1.2.b as the workspace would have red points with a link offset.\newpage
+\hiddenappsub{CAD Drawings}
+The complete drawing package is attached.
+\includepdf[landscape,pages=-]{drawings}
+\includepdf[landscape,pages=-]{pulleys}
 \hiddenappsub{Salient Code}
 \input{mmodel}
 \vspace{10ex}

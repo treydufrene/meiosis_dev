@@ -12,7 +12,14 @@ The motor equation (\ref{eq:fin}) gives an expression for the motor torques, how
 This layout was used to define a linear relation between the joint angles and the motor rotations, described in equation (\ref{eq:A}).
 
 \begin{equation}
-  \gamma = A\theta\quad \text{where}~~A=\left[\begin{array}{cccccc}{1 /(2 N)} & {1 /(2 N)} & {0} & {0} & {0} & {0} \\ {1 /(2 N)} & {-1 /(2 N)} & {0} & {0} & {0} & {0} \\ {0} & {0} & {-1 / N} & {0} & {0} & {0} \\ {0} & {0} & {0} & {1} & {0} & {0} \\ {0} & {0} & {0} & {0} & {-1 / 2} & {1 / 2} \\ {0} & {0} & {0} & {0} & {1 / 2} & {1 / 2}\end{array}\right]
+  \gamma = A\theta\quad \text{where}~~A=\left[\begin{array}{cccccc}
+  -1/20 & 0 & {0} & {0} & {0} & {0} \\
+   0 & -1/39 & {0} & {0} & {0} & {0} \\
+    {0} & {0} & -1/39 & {0} & {0} & {0} \\
+    {0} & {0} & {0} & -1/20 & {0} & {0} \\
+     {0} & {0} & {0} & {0} & -1/20 & 0\\
+      {0} & {0} & {0} & {0} & 0 & -1/20
+    \end{array}\right]
 \label{eq:A}
 \end{equation}
 Equation (\ref{eq:A}) can be used to map the joint angles to the motor angles. The gear ratio of 1:10 is represented by the variable N. Similarly, the motor angles can be determined by multiplying both sides of equation (\ref{eq:A}) by the inverse of matrix A, giving the following relation.
@@ -54,46 +61,46 @@ With this new motor input, the closed loop control system equations of motion ar
 \end{equation}
 Equation (\ref{eq:gddotfin}) can then be integrated to solve for the system response given desired motor angles.
 
-\begin{figure}[htp]
-  \center
-  \begin{subfigure}[c]{0.33\textwidth}
-    \center
-    \includegraphics[width=.9\textwidth,frame]{clsnap1}
-    \caption{Frame Snapshot near Simulation \\Initiation}
-  \end{subfigure}%
-  \begin{subfigure}[c]{0.33\textwidth}
-    \center
-    \includegraphics[width=.9\textwidth,frame]{clsnap2}
-    \caption{Frame Snapshot near Simulation \\Middle}
-  \end{subfigure}%
-\begin{subfigure}[c]{0.33\textwidth}
-  \center
-  \includegraphics[width=.9\textwidth,frame]{clsnap3}
-  \caption{Frame Snapshot near Simulation \\Termination}
-\end{subfigure}
-  \caption{Closed-Loop Control Simulation Animation Snapshots}
-  \label{fig:clsnaps}
-\end{figure}
-
-\begin{figure}[htp]
-  \center
-  \includegraphics[width=.95\textwidth]{cljplots1}
-  \caption{Joint Angles vs Time in Closed-Loop Simulation}
-  \label{fig:cljplots1}
-\end{figure}
-\begin{figure}[htp]
-  \center
-  \ContinuedFloat
-  \captionsetup{list=off,format=cont}
-  \includegraphics[width=.95\textwidth]{cljplots2}
-  \caption{Joint Angles vs Time in Closed-Loop Simulation}
-  \label{fig:cljplots2}
-\end{figure}
-\begin{figure}[htp]
-  \center
-  \ContinuedFloat
-  \captionsetup{list=off,format=cont}
-  \includegraphics[width=.95\textwidth]{cljplots3}
-  \caption{Joint Angles vs Time in Closed-Loop Simulation}
-  \label{fig:cljplots3}
-\end{figure}
+% \begin{figure}[htp]
+%   \center
+%   \begin{subfigure}[c]{0.33\textwidth}
+%     \center
+%     \includegraphics[width=.9\textwidth,frame]{clsnap1}
+%     \caption{Frame Snapshot near Simulation \\Initiation}
+%   \end{subfigure}%
+%   \begin{subfigure}[c]{0.33\textwidth}
+%     \center
+%     \includegraphics[width=.9\textwidth,frame]{clsnap2}
+%     \caption{Frame Snapshot near Simulation \\Middle}
+%   \end{subfigure}%
+% \begin{subfigure}[c]{0.33\textwidth}
+%   \center
+%   \includegraphics[width=.9\textwidth,frame]{clsnap3}
+%   \caption{Frame Snapshot near Simulation \\Termination}
+% \end{subfigure}
+%   \caption{Closed-Loop Control Simulation Animation Snapshots}
+%   \label{fig:clsnaps}
+% \end{figure}
+%
+% \begin{figure}[htp]
+%   \center
+%   \includegraphics[width=.95\textwidth]{cljplots1}
+%   \caption{Joint Angles vs Time in Closed-Loop Simulation}
+%   \label{fig:cljplots1}
+% \end{figure}
+% \begin{figure}[htp]
+%   \center
+%   \ContinuedFloat
+%   \captionsetup{list=off,format=cont}
+%   \includegraphics[width=.95\textwidth]{cljplots2}
+%   \caption{Joint Angles vs Time in Closed-Loop Simulation}
+%   \label{fig:cljplots2}
+% \end{figure}
+% \begin{figure}[htp]
+%   \center
+%   \ContinuedFloat
+%   \captionsetup{list=off,format=cont}
+%   \includegraphics[width=.95\textwidth]{cljplots3}
+%   \caption{Joint Angles vs Time in Closed-Loop Simulation}
+%   \label{fig:cljplots3}
+% \end{figure}
