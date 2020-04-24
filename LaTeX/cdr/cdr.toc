@@ -16,7 +16,7 @@
 \contentsline {subsubsection}{\numberline {3.2.6}The system\IeC {\textquoteright }s dexterous workspace shall contain a hemispherical shell within the reachable workspace with a thickness of 280 mm.}{12}% 
 \contentsline {subsubsection}{\numberline {3.2.7}The system shall have a removable end effector capable of picking and placing a low-odor chisel tip Expo dry erase marker.}{13}% 
 \contentsline {subsubsection}{\numberline {3.2.8}The system shall be able to write with a low-odor chisel tip Expo dry erase marker.}{13}% 
-\contentsline {subsubsection}{\numberline {3.3.1}The system shall be open source.}{14}% 
+\contentsline {subsubsection}{\numberline {3.3.1}The system shall be open source.}{13}% 
 \contentsline {subsubsection}{\numberline {3.3.2}The system shall be capable of operating given only desired end effector cartesian coordinates specified with respect to the base frame.}{14}% 
 \contentsline {section}{\numberline {4}Preliminary and Detailed Design}{15}% 
 \contentsline {subsection}{\numberline {4.1}Electrical System}{15}% 
@@ -33,6 +33,6 @@
 \contentsline {section}{\numberline {5}Testing}{30}% 
 \contentsline {subsection}{\numberline {5.1}Specifications and Tests}{30}% 
 \contentsline {subsection}{\numberline {5.2}Further Testing}{42}% 
-\contentsline {subsection}{\numberline {5.3}Results}{42}% 
+\contentsline {subsection}{\numberline {5.3}Results}{43}% 
 \contentsline {section}{\numberline {6}Project Management}{44}% 
 \contentsline {section}{\numberline {7}Conclusion}{47}% 

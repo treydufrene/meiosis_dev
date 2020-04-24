@@ -56,11 +56,11 @@ Specification \textbf{1.2.a} states: \textbf{The system shall consist of six rot
   \label{fig:manip}
 \end{figure}
 
-As is illustrated in Figure 1, the robot consists of six rotational joints. Joint 1 controls the rotation about the base,  joints 2 and 3 control the “shoulder” and “elbow” of the robot, and joints 4, 5, and 6 control the  spherical wrist. The rotational axis of joint 4 intersects with joint 5’s and joint 5’s intersects with joint 6’s rotational axis. To perform this test, the assembly file containing the manipulator was opened and the joints were counted. Using the move tool, each joint can be observed to be exclusively rotational. The data obtained is simulated due to the fact that the robot has not been fully fabricated. \textbf{This manipulator meets specification 1.2.a}.
+As is illustrated in Figure \ref{fig:manip}, the robot consists of six rotational joints. Joint 1 controls the rotation about the base,  joints 2 and 3 control the “shoulder” and “elbow” of the robot, and joints 4, 5, and 6 control the  spherical wrist. The rotational axis of joint 4 intersects with joint 5’s and joint 5’s intersects with joint 6’s rotational axis. To perform this test, the assembly file containing the manipulator was opened and the joints were counted. Using the move tool, each joint can be observed to be exclusively rotational. The data obtained is simulated due to the fact that the robot has not been fully fabricated. \textbf{This manipulator meets specification 1.2.a}.
 
 Specification \textbf{1.2.b} states: \textbf{The system shall have no link offsets.} For this specification to be satisfied, there must be no link offsets present in the design of the robotic manipulator meaning that the link should connect two joints by translating in only one direction. The axes of the joints attached to the link should be collinear with one another when there is no offset present. Testing this specification requires SolidWorks’ measurement tool. Using the measurement tool, measure each joint to ensure there is only displacement along one axis. Figure \ref{fig:loff} shows an example of a measurement done on the elbow link of the manipulator.
 
-% \newpage
+\newpage
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.75\textwidth,frame]{loff}
@@ -74,12 +74,12 @@ Specification \textbf{1.3.a} states: \textbf{The system shall accommodate a proc
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=.75\textwidth,frame]{zero}
+  \includegraphics[width=.75\textwidth,frame]{zeroconfig}
   \caption{Manipulator in its Zeroed Configuration}
   \label{fig:zero2}
 \end{figure}
 
-% \newpage
+\newpage
 The configuration shown in Figure \ref{fig:zero2} is what we have defined to be the zeroed configuration. The purpose of the calibration algorithm is to force the software to consider every joint angle to be zero when the manipulator is in this configuration, even if the servos return non-zero angular values. The algorithm developed allows the users to move the joints one by one until the robot is in the desired “zeroed” position. The program then reads the servos positions and stores those values as offset variables. These offsets are subtracted from the desired joint angle values when commanding the servo positions.
 
 In order to measure the calibration accuracy, the PhaseSpace Motion Capture system will be required. The calibration algorithm itself is accurate to the same value as the manipulator, however inaccuracies can arise due to the user not being able to manually put the manipulator into the correct configuration. In completing this testing procedure, it is assumed that the motion capture system will be fully set up, including placing the tracking markers on the manipulator’s base and end-effector. Once the motion capture system is fully set up, the manipulator will be placed in an arbitrary configuration, at least 30° away from zero in each joint. The manipulator will then be restarted, which will erase the system’s memory of it’s configuration. At this point, the motion capture system will start recording data. Using the calibration software, the manipulator will then be manually zeroed to the best of the operator’s abilities. Once the zeroing is completed, error terms can be determined by comparing the tracking data to the known values of the end-effector’s position and orientation in the zeroed state. Due to circumstances beyond our control, we are not able to perform this test and \textbf{adherence to specification 1.3.a cannot be determined.}
@@ -102,7 +102,7 @@ Specification \textbf{1.5.a} states: \textbf{The manipulator shall have a maximu
 As can be seen in Figure \ref{fig:meas}, the total reachable workspace is 643 mm. This measurement is between 300 and 700 millimeters and therefore \textbf{the manipulator meets specification 1.5.a.}
 
 Specification \textbf{1.5.b} states: \textbf{The length of links one, two, three, and the wrist shall be 161.5 mm, 250 mm, 250 mm, and 143 mm respectively.} For the manipulator to meet specification 1.5.a, each link and the wrist simply need to match the lengths provided in the specification. Testing this specification requires the SolidWorks measurement tool. An example of the measurement tool being used to test this specification can be seen in Figure \ref{fig:llength}.
-
+\newpage
 \begin{figure}[htp]
   \centering
   \includegraphics[width=.75\textwidth,frame]{image11}
@@ -130,10 +130,10 @@ As can be seen by Table \ref{tab:linklengths}, the link measurements obtained in
 
 Specification \textbf{1.6.a} states: \textbf{The system’s workspace must contain a hemispherical shell that has a thickness of 280 mm where the robot is theoretically fully dexterous.} In order to test the dexterity of the manipulator and ensure that it fulfills specification 1.6.a, a program was created that tests a series of points for dexterity. These points are 1 mm apart to match the manipulator’s precision and can be rotated around the z-axis to create a hemispherical shell. The script accomplishes this by calculating the inverse kinematics for the manipulator, given its dimensions. If any point is outside of the manipulator’s workspace it is marked on a MATLAB plot, as can be seen in Figure \ref{fig:plot1}.
 
-\let\clearpage\relax
+\newpage
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.5\textwidth,frame]{workspace}
+  \includegraphics[width=0.4\textwidth,frame]{workspace}
   \caption{Matlab Plot of Invalid Dexterity Check}
   \label{fig:plot1}
 \end{figure}
@@ -142,7 +142,7 @@ Figure \ref{fig:plot1} shows a failed configuration for our dexterity check. At 
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=0.5\textwidth,frame]{image4}
+  \includegraphics[width=0.4\textwidth,frame]{image4}
   \caption{Matlab Plot of Successful Dexterity Check}
   \label{fig:plot2}
 \end{figure}
@@ -189,7 +189,7 @@ As depicted in Figure \ref{fig:gripper1}, the gripper is open to its widest posi
   \label{fig:gripper2}
 \end{figure}
 
-The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are fully closed and the bottom three are fully opened. From left to right, the fingers have no, one, and two pieces of foam. The maximum opening with no foam is 37 mm and the maximum closure is 0 mm with four pieces of foam. While none of these configurations have exactly 18 mm between the fingers the distance between the fingers can be adjusted to accommodate this, as shown in Figure \ref{fig:gripper3}. \newpage
+The top three gripper configurations, shown in Figure \ref{fig:gripper2}, are fully closed and the bottom three are fully opened. From left to right, the fingers have no, one, and two pieces of foam. The maximum opening with no foam is 37 mm and the maximum closure is 0 mm with four pieces of foam. While none of these configurations have exactly 18 mm between the fingers the distance between the fingers can be adjusted to accommodate this, as shown in Figure \ref{fig:gripper3}.
 
 \begin{figure}[htp]
   \centering
@@ -256,7 +256,7 @@ In order to collect useful data from the fatigue tests, certain measurements mus
 
 To test how gearbox fatigue will affect error, the PhaseSpace motion capture system will be utilized to determine any drift from the exact angle. Since the length of each load is known, a PhaseSpace marker can be placed at the end of each load so the motion capture system can see the location of the end of the link. The marker will be placed in a slightly recessed divot on the end of the link in order to make the forward kinematics calculations more exact. Another marker will be placed at the center of the motor cap, again placed within a small divot. These markers will allow us to determine the angle of the load by comparing the positions of the end of the load to the center of rotation. While the fatigue test is running, the motion capture system will capture data at each 0 and 180° position, and the actual angle will be plotted versus time to show any drift or error that occurs.
 
-% \newpage
+\newpage
 \subsection{Results}\label{sec:conc}
 Table \ref{tab:results} summarizes the results of the tests performed throughout the course of this semester. This table marks whether or not each specification was met or if it could not be determined.
 
