@@ -1,5 +1,5 @@
 The terminator T-2000 is a science-fiction spectacle of a robot -- until you see the price. Channeling the inspiration many high school students may have for robotics, MEIOSIS robotics aims to provide an affordable manipulator to educators and enthusiasts. MEIOSIS uses primarily 3-D printed components and easily accessible materials. Among these materials are a Raspberry PI, smart servos and metal tubing. These features create an open-source manipulator accessible to the public to further robotics education.
-\hiddensubsection{Physical System Overview}
+\subsection{Physical System Overview}
 The physical design of the robotic manipulator is shown in Figures \emph{\ref{fig:overall}, \ref{fig:base}, \ref{fig:link1},} and \emph{\ref{fig:link2}}.
 
 \begin{figure}[htp]
@@ -52,9 +52,7 @@ In \emph{Figure \ref{fig:link1}}, call-out (a) shows the connection point for th
 
 The cross section seen in \emph{Figure \ref{fig:link2}} shows the internal design for links two and three. It features two clamps that hold a hollow aluminum bar in place (a) and allows for gaps between the aluminum tube and the 3D printed call-out (b). The proper length is dictated by the 3D printed guides lining up at call-out (c). This design allows for imprecision in the manufacturing of the aluminum tube.
 
-\hiddensubsection{System Functions}
-The system can be divided into two subsystems: the electrical and software systems. The electrical subsystem includes the wiring and hardware computational components, power system, actuators with drivers, and sensors. The software subsystem includes the algorithm for the computational system.
-\hiddensubsection{Electrical}
+\subsection{Electrical}
 \emph{Figure \ref{fig:eblock}} is the block diagram for the electrical system of the manipulator.
 
 \begin{figure}[htp]
@@ -65,8 +63,8 @@ The system can be divided into two subsystems: the electrical and software syste
 \end{figure}
 
 \emph{Figure \ref{fig:eblock}} shows that the electrical systems of the manipulator consists of three main components: the power supply, the Raspberry Pi, and the servos. Power is supplied by the 120V AC from standard wall outlets. A power supply converts the AC voltage to the required voltages for each component. One component is the Raspberry Pi, which performs calculations for motor control. The Raspberry Pi sends signals to the DC motor driver and the five smart servos. The smart servos have an on-board controller, so no feedback will be necessary. However, the first joint, between the base and the first link, is actuated by a DC motor with an encoder to minimize cost.
-
-\hiddensubsection{Software}
+\newpage
+\subsection{Software}
 \emph{Figure \ref{fig:sblock}} shows the software flowchart for the system.
 \begin{figure}[ht]
   \centering
@@ -77,7 +75,7 @@ The system can be divided into two subsystems: the electrical and software syste
 
 \emph{Figure \ref{fig:sblock}} shows that the software receives the desired pose or poses that the user would like the manipulator to reach. Next, the Raspberry Pi uses inverse kinematics to calculate the necessary joint angles. The wave-forms/desired angles are sent to the respective drivers/motors, and positional information is be sent back to the Raspberry Pi to adjust the DC motor angle. When the motors have reached their desired pose, the Raspberry Pi actuates the end effector if it is specified by the user. The system then checks to see if there are any more poses to reach and either repeats the steps in the motor control section given the desired angles of the new pose or ends the program if the last pose has been reached.
 
-\hiddensubsection{Decision Matrices}
+\subsection{Decision Matrices}
 
 Each team member’s conceptual design provides a variety of different options for select issues, and in order to narrow down the options into the best choice decision matrices are used to make unobjective decisions about each individual topic. The weights of each criteria are defined by the average of our votes on how important the criteria is on a scale of one to ten. The same method is used to rate the different options on each criteria. The most important decision that needs to be made is what configuration the manipulator will have as the configuration has an affect on almost all the design choices. There are five potential configurations, and the scores of each option can be seen in \emph{Table \ref{table:manip}}.
 

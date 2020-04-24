@@ -444,7 +444,6 @@ INPUT ./images/text.png
 INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT introduction.tex
 INPUT introduction.tex
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT cdr.toc
@@ -456,6 +455,7 @@ OUTPUT cdr.lof
 INPUT cdr.lot
 INPUT cdr.lot
 OUTPUT cdr.lot
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
@@ -749,6 +749,8 @@ INPUT images/gantt2.pdf
 INPUT ./images/gantt2.pdf
 INPUT conc.tex
 INPUT conc.tex
+INPUT cdr.bbl
+INPUT cdr.bbl
 INPUT cdr.aux
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc

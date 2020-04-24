@@ -1,7 +1,12 @@
 \contentsline {section}{\numberline {1}Introduction}{1}% 
 \contentsline {section}{\numberline {2}Conceptual Designs}{1}% 
+\contentsline {subsection}{\numberline {2.1}Physical System Overview}{1}% 
 \contentsline {subsubsection}{\numberline {2.1.1}Base}{2}% 
 \contentsline {subsubsection}{\numberline {2.1.2}Links}{3}% 
+\contentsline {subsection}{\numberline {2.2}Electrical}{4}% 
+\contentsline {subsection}{\numberline {2.3}Software}{5}% 
+\contentsline {subsection}{\numberline {2.4}Decision Matrices}{5}% 
+\contentsline {subsection}{\numberline {2.5}Further Design Development}{8}% 
 \contentsline {section}{\numberline {3}Specifications}{10}% 
 \contentsline {subsubsection}{\numberline {3.2.1}The system shall cost the end-user no more than \$1000.}{10}% 
 \contentsline {subsubsection}{\numberline {3.2.2}The system shall be fully dexterous without being kinematically redundant.}{11}% 
@@ -21,11 +26,11 @@
 \contentsline {subsubsection}{\numberline {4.2.3}Actuator Dynamics}{18}% 
 \contentsline {subsubsection}{\numberline {4.2.4}System Dynamics}{20}% 
 \contentsline {subsubsection}{\numberline {4.2.5}Structural Analysis}{22}% 
-\contentsline {subsubsection}{\numberline {4.2.6}Parts List and Budget}{24}% 
+\contentsline {subsubsection}{\numberline {4.2.6}Mechanical Parts List and Budget}{24}% 
 \contentsline {subsection}{\numberline {4.3}Software}{24}% 
 \contentsline {subsubsection}{\numberline {4.3.1}Implementation}{28}% 
 \contentsline {subsection}{\numberline {4.4}Integration}{29}% 
-\contentsline {section}{\numberline {5}Testing}{29}% 
+\contentsline {section}{\numberline {5}Testing}{30}% 
 \contentsline {subsection}{\numberline {5.1}Specifications and Tests}{30}% 
 \contentsline {subsection}{\numberline {5.2}Further Testing}{42}% 
 \contentsline {subsection}{\numberline {5.3}Results}{42}% 
